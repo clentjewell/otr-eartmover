@@ -1,0 +1,4 @@
+pymupdf>=1.24
+numpy>=1.26
+# No vendor SDKs required: provider calls use urllib so the trial stays light.
+# sqlite3 and csv are in the Python standard library.

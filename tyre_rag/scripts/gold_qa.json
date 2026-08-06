@@ -1,0 +1,12 @@
+[
+  {"q": "Explain the AS4457 earthmoving tyre standard in plain English.", "expect": "answer",
+   "tests": "Track B prose retrieval grounds in the reference corpus"},
+  {"q": "What are the key safety requirements for handling and inflating earthmover tyres?", "expect": "answer",
+   "tests": "Track B prose retrieval grounds in the WorkSafe guideline"},
+  {"q": "What is the recommended inflation pressure for a 40.00R57?", "expect": "abstain",
+   "tests": "Track A spec lookup abstains when the figure is not signed off"},
+  {"q": "What rim is recommended for 27.00R49?", "expect": "abstain",
+   "tests": "Track A spec lookup abstains - never answers a spec figure from prose"},
+  {"q": "What is the rim recommendation for size 99.99R99 code G-9?", "expect": "abstain",
+   "tests": "Track A abstains on an out-of-corpus size/code rather than guessing"}
+]

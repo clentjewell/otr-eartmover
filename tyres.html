@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tyre Guide · OTR Earthmover Tyre · Cross-brand OTR tyre index</title>
+  <meta name="description" content="Browse every OTR tyre by brand, size, TRA service code, or machine application. Independent reference, maintained by Jewell Tyres.">
+  <link rel="stylesheet" href="css/main.css?v=1">
+  <style>
+    .filters {
+      background: var(--otr-graphite-soft);
+      border: 1px solid var(--otr-rule-strong);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    @media (min-width: 768px) {
+      .filters { grid-template-columns: 2fr 1fr 1fr 1fr; }
+    }
+    .filters select, .filters input {
+      width: 100%;
+      padding: 0.6rem 0.8rem;
+      background: var(--otr-graphite);
+      color: var(--otr-bone);
+      border: 1px solid var(--otr-rule-strong);
+      font-family: var(--otr-sans);
+      font-size: 0.95rem;
+      border-radius: 2px;
+    }
+    .filter-label {
+      display: block;
+      font-family: var(--otr-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--otr-steel-light);
+      margin-bottom: 0.25rem;
+    }
+    .tyre-record {
+      background: var(--otr-graphite-soft);
+      border: 1px solid var(--otr-rule-strong);
+      padding: 1.25rem;
+      transition: all var(--t-base);
+      text-decoration: none;
+      color: var(--otr-bone);
+      border-bottom: 1px solid var(--otr-rule-strong);
+      display: block;
+    }
+    .tyre-record:hover {
+      border-color: var(--otr-amber);
+      transform: translateY(-1px);
+    }
+    .tyre-record__head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .tyre-record__brand {
+      font-family: var(--otr-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--otr-amber-bright);
+    }
+    .tyre-record__size {
+      font-family: var(--otr-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      color: var(--otr-steel-light);
+    }
+    .tyre-record__title {
+      font-family: var(--otr-display);
+      font-size: 1.3rem;
+      font-weight: 600;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+      color: var(--otr-bone);
+    }
+    .tyre-record__spec {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+    .tyre-record__chip {
+      font-family: var(--otr-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.04em;
+      padding: 0.15rem 0.4rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--otr-rule);
+      color: var(--otr-fog);
+    }
+    .tyre-record__body {
+      font-size: 0.88rem;
+      color: var(--otr-fog);
+      line-height: 1.5;
+      margin-top: 0.5rem;
+    }
+    .tyre-results {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    @media (min-width: 768px) { .tyre-results { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1280px) { .tyre-results { grid-template-columns: 1fr 1fr 1fr; } }
+  </style>
+
+  <link rel="canonical" href="https://otrearthmovertyres.com/tyres.html">
+  <meta property="og:title" content="Tyre Guide · OTR Earthmover Tyre · Cross-brand OTR tyre index">
+  <meta property="og:description" content="Browse every OTR tyre by brand, size, TRA service code, or machine application. Independent reference, maintained by Jewell Tyres.">
+  <meta property="og:image" content="https://otrearthmovertyres.com/public/img/og-default.jpg">
+  <meta property="og:url" content="https://otrearthmovertyres.com/tyres.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="OTR Earthmover Tyre">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tyre Guide · OTR Earthmover Tyre · Cross-brand OTR tyre index">
+  <meta name="twitter:description" content="Browse every OTR tyre by brand, size, TRA service code, or machine application. Independent reference, maintained by Jewell Tyres.">
+  <meta name="twitter:image" content="https://otrearthmovertyres.com/public/img/og-default.jpg">
+
+  <!-- Publisher identity. OTR Earthmover Tyre is the reference site; Jewell Tyres is the trading business behind it. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "OTR Earthmover Tyre",
+    "url": "https://otrearthmovertyres.com",
+    "description": "Independent, free-to-use technical reference for off-the-road earthmover and mining tyres. Published by Jewell Tyres, an independent Australian OTR tyre trader.",
+    "logo": "https://otrearthmovertyres.com/public/img/otr-logo-light.png",
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Jewell Tyres",
+      "url": "https://jewelltyres.com.au",
+      "telephone": "+61260241910",
+      "foundingDate": "1974"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "OTR Earthmover Tyre", "item": "https://otrearthmovertyres.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Tyre Guide", "item": "https://otrearthmovertyres.com/tyres.html" }
+    ]
+  }
+  </script>
+
+  <!-- The catalogue itself, described as a dataset. Fields mirror the record cards. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "OTR earthmover tyre reference catalogue",
+    "description": "Cross-brand index of off-the-road earthmover and mining tyres compiled from manufacturers' published databooks: brand, pattern, tyre size, TRA service code, rim diameter, construction, compound family and typical machine fitment. 27 sample records are published; 600+ records are in production.",
+    "url": "https://otrearthmovertyres.com/tyres.html",
+    "isAccessibleForFree": true,
+    "keywords": ["OTR tyres", "earthmover tyres", "mining tyres", "TRA service codes", "tyre sizes", "machine fitment"],
+    "variableMeasured": ["Brand", "Pattern", "Tyre size", "TRA service code", "Rim diameter", "Construction", "Compound family", "Typical machine fitment"],
+    "citation": "Manufacturer databooks across 19 OTR tyre brands, and the Tire and Rim Association Year Book. Values may be superseded by a later edition.",
+    "creator": {
+      "@type": "Organization",
+      "name": "OTR Earthmover Tyre",
+      "url": "https://otrearthmovertyres.com"
+    }
+  }
+  </script>
+
+  <!-- The record cards are rendered from the TYRES array below, so the same 27
+       sample records are mirrored here for crawlers that don't run JS. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "OTR earthmover tyre sample catalogue",
+    "description": "Twenty-seven sample records from the OTR Earthmover Tyre guide, across 14 brands. Specifications are drawn from published manufacturer databooks and may be superseded.",
+    "url": "https://otrearthmovertyres.com/tyres.html",
+    "numberOfItems": 27,
+    "itemListOrder": "https://schema.org/ItemListUnordered",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1,
+        "item": {"@type": "ProductModel", "name": "Bridgestone VRDP 45/65R45", "brand": {"@type": "Brand", "name": "Bridgestone"}, "model": "VRDP", "description": "45/65R45, TRA service code L-5, 45 inch rim, radial construction, heat-resistant compound. Typical fitment: CAT 992K, Komatsu WA800."} },
+      { "@type": "ListItem", "position": 2,
+        "item": {"@type": "ProductModel", "name": "Michelin XDR4 40.00R57", "brand": {"@type": "Brand", "name": "Michelin"}, "model": "XDR4", "description": "40.00R57, TRA service code E-4, 57 inch rim, radial construction, heat-resistant compound. Typical fitment: CAT 793F, Komatsu 830E."} },
+      { "@type": "ListItem", "position": 3,
+        "item": {"@type": "ProductModel", "name": "Goodyear RL-5K 26.5R25", "brand": {"@type": "Brand", "name": "Goodyear"}, "model": "RL-5K", "description": "26.5R25, TRA service code L-5, 25 inch rim, radial construction, standard compound. Typical fitment: CAT 980-988, Komatsu WA470-WA500."} },
+      { "@type": "ListItem", "position": 4,
+        "item": {"@type": "ProductModel", "name": "Yokohama RL5K+ 45/65R45", "brand": {"@type": "Brand", "name": "Yokohama"}, "model": "RL5K+", "description": "45/65R45, TRA service code L-5, 45 inch rim, radial construction, hot-region compound. Typical fitment: CAT 992K, Komatsu WA800."} },
+      { "@type": "ListItem", "position": 5,
+        "item": {"@type": "ProductModel", "name": "Continental EM-Master 23.5R25", "brand": {"@type": "Brand", "name": "Continental"}, "model": "EM-Master", "description": "23.5R25, TRA service code L-3, 25 inch rim, radial construction, standard compound. Typical fitment: CAT 966-972, Volvo L150."} },
+      { "@type": "ListItem", "position": 6,
+        "item": {"@type": "ProductModel", "name": "BKT Earthmax SR468 26.5R25", "brand": {"@type": "Brand", "name": "BKT"}, "model": "Earthmax SR468", "description": "26.5R25, TRA service code L-5, 25 inch rim, radial construction, cut-resistant compound. Typical fitment: CAT 980-988, Volvo L220."} },
+      { "@type": "ListItem", "position": 7,
+        "item": {"@type": "ProductModel", "name": "Aeolus AE57 27.00R49", "brand": {"@type": "Brand", "name": "Aeolus"}, "model": "AE57", "description": "27.00R49, TRA service code E-4, 49 inch rim, radial construction, standard compound. Typical fitment: CAT 777F, Komatsu HD785."} },
+      { "@type": "ListItem", "position": 8,
+        "item": {"@type": "ProductModel", "name": "Techking ETOT-L5 29.5R25", "brand": {"@type": "Brand", "name": "Techking"}, "model": "ETOT-L5", "description": "29.5R25, TRA service code L-5, 25 inch rim, radial construction, cut-resistant compound. Typical fitment: CAT 988, Komatsu WA600."} },
+      { "@type": "ListItem", "position": 9,
+        "item": {"@type": "ProductModel", "name": "Triangle TB598S+ 26.5R25", "brand": {"@type": "Brand", "name": "Triangle"}, "model": "TB598S+", "description": "26.5R25, TRA service code L-4, 25 inch rim, radial construction, standard compound. Typical fitment: CAT 980-988."} },
+      { "@type": "ListItem", "position": 10,
+        "item": {"@type": "ProductModel", "name": "Double Coin REM-2 17.5R25", "brand": {"@type": "Brand", "name": "Double Coin"}, "model": "REM-2", "description": "17.5R25, TRA service code L-3, 25 inch rim, radial construction, standard compound. Typical fitment: CAT 966H, Volvo L120."} },
+      { "@type": "ListItem", "position": 11,
+        "item": {"@type": "ProductModel", "name": "Bridgestone VSDL+ 23.5R25", "brand": {"@type": "Brand", "name": "Bridgestone"}, "model": "VSDL+", "description": "23.5R25, TRA service code L-3, 25 inch rim, radial construction, standard compound. Typical fitment: CAT 966-972."} },
+      { "@type": "ListItem", "position": 12,
+        "item": {"@type": "ProductModel", "name": "Michelin XHA2 26.5R25", "brand": {"@type": "Brand", "name": "Michelin"}, "model": "XHA2", "description": "26.5R25, TRA service code L-3, 25 inch rim, radial construction, standard compound. Typical fitment: CAT 980-988, Komatsu WA470."} },
+      { "@type": "ListItem", "position": 13,
+        "item": {"@type": "ProductModel", "name": "Bridgestone VRPS 50/80R57", "brand": {"@type": "Brand", "name": "Bridgestone"}, "model": "VRPS", "description": "50/80R57, TRA service code E-4, 57 inch rim, radial construction, heat-resistant compound. Typical fitment: CAT 793F, Komatsu 830E."} },
+      { "@type": "ListItem", "position": 14,
+        "item": {"@type": "ProductModel", "name": "Bridgestone VRLS 53/80R63", "brand": {"@type": "Brand", "name": "Bridgestone"}, "model": "VRLS", "description": "53/80R63, TRA service code E-4, 63 inch rim, radial construction, heat-resistant compound. Typical fitment: CAT 797F, Komatsu 930E."} },
+      { "@type": "ListItem", "position": 15,
+        "item": {"@type": "ProductModel", "name": "Michelin XDR3 26.5R25", "brand": {"@type": "Brand", "name": "Michelin"}, "model": "XDR3", "description": "26.5R25, TRA service code L-5, 25 inch rim, radial construction, heat-resistant compound. Typical fitment: CAT 988, Komatsu WA600."} },
+      { "@type": "ListItem", "position": 16,
+        "item": {"@type": "ProductModel", "name": "Goodyear RM-4A+ 27.00R49", "brand": {"@type": "Brand", "name": "Goodyear"}, "model": "RM-4A+", "description": "27.00R49, TRA service code E-4, 49 inch rim, radial construction, heat-resistant compound. Typical fitment: CAT 777F, Komatsu HD785."} },
+      { "@type": "ListItem", "position": 17,
+        "item": {"@type": "ProductModel", "name": "Goodyear RM-4B+ 33.00R51", "brand": {"@type": "Brand", "name": "Goodyear"}, "model": "RM-4B+", "description": "33.00R51, TRA service code E-4, 51 inch rim, radial construction, heat-resistant compound. Typical fitment: CAT 785D, Komatsu HD1500."} },
+      { "@type": "ListItem", "position": 18,
+        "item": {"@type": "ProductModel", "name": "Continental EM-Master 29.5R25", "brand": {"@type": "Brand", "name": "Continental"}, "model": "EM-Master", "description": "29.5R25, TRA service code L-5, 25 inch rim, radial construction, cut-resistant compound. Typical fitment: CAT 988, Komatsu WA600."} },
+      { "@type": "ListItem", "position": 19,
+        "item": {"@type": "ProductModel", "name": "BKT Earthmax SR45 50/80R57", "brand": {"@type": "Brand", "name": "BKT"}, "model": "Earthmax SR45", "description": "50/80R57, TRA service code E-4, 57 inch rim, radial construction, heat-resistant compound. Typical fitment: CAT 793F, Komatsu 830E."} },
+      { "@type": "ListItem", "position": 20,
+        "item": {"@type": "ProductModel", "name": "Galaxy LDSR 400 20.5R25", "brand": {"@type": "Brand", "name": "Galaxy"}, "model": "LDSR 400", "description": "20.5R25, TRA service code L-3, 25 inch rim, radial construction, standard compound. Typical fitment: CAT 972, Volvo L120."} },
+      { "@type": "ListItem", "position": 21,
+        "item": {"@type": "ProductModel", "name": "Alliance 585 14.00R24", "brand": {"@type": "Brand", "name": "Alliance"}, "model": "585", "description": "14.00R24, TRA service code G-2, 24 inch rim, radial construction, standard compound. Typical fitment: CAT 14M, 16M grader, Komatsu GD675."} },
+      { "@type": "ListItem", "position": 22,
+        "item": {"@type": "ProductModel", "name": "Mitas EM-22 17.5R25", "brand": {"@type": "Brand", "name": "Mitas"}, "model": "EM-22", "description": "17.5R25, TRA service code L-3, 25 inch rim, radial construction, standard compound. Typical fitment: CAT 966, Volvo L120."} },
+      { "@type": "ListItem", "position": 23,
+        "item": {"@type": "ProductModel", "name": "MRF Muscleroc 26.5R25", "brand": {"@type": "Brand", "name": "MRF"}, "model": "Muscleroc", "description": "26.5R25, TRA service code L-5, 25 inch rim, radial construction, cut-resistant compound. Typical fitment: CAT 980-988."} },
+      { "@type": "ListItem", "position": 24,
+        "item": {"@type": "ProductModel", "name": "Triangle TR568 23.5-25", "brand": {"@type": "Brand", "name": "Triangle"}, "model": "TR568", "description": "23.5-25, TRA service code L-3, 25 inch rim, bias construction, standard compound. Typical fitment: Older loaders, civil ag."} },
+      { "@type": "ListItem", "position": 25,
+        "item": {"@type": "ProductModel", "name": "Bridgestone VKT 17.5R25", "brand": {"@type": "Brand", "name": "Bridgestone"}, "model": "VKT", "description": "17.5R25, TRA service code L-3, 25 inch rim, radial construction, standard compound. Typical fitment: CAT 950, Volvo L90."} },
+      { "@type": "ListItem", "position": 26,
+        "item": {"@type": "ProductModel", "name": "Michelin X-Mine D2 L-5 50/65R51", "brand": {"@type": "Brand", "name": "Michelin"}, "model": "X-Mine D2 L-5", "description": "50/65R51, TRA service code L-5, 51 inch rim, radial construction, heat-resistant compound. Typical fitment: CAT 993K, 994."} },
+      { "@type": "ListItem", "position": 27,
+        "item": {"@type": "ProductModel", "name": "Yokohama Y69 50/80R57", "brand": {"@type": "Brand", "name": "Yokohama"}, "model": "Y69", "description": "50/80R57, TRA service code E-4, 57 inch rim, radial construction, heat-resistant compound. Typical fitment: CAT 793F, Komatsu 830E."} }
+    ]
+  }
+  </script>
+
+  <!-- Common questions, mirrored in the prose block near the foot of the page. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I find the right tyre for my machine in the Tyre Guide?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Type the machine model into the search box, for example CAT 992K or Komatsu WA600, and the guide returns the records whose typical fitment includes that machine. You can then narrow by brand, TRA service code or rim diameter. In our view that gets you to a shortlist fast, but it is a shortlist: confirm size, load index, speed symbol and inflation pressure against the current manufacturer databook and the OEM fitment data for your machine before ordering."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which brands and TRA service codes does the Tyre Guide cover?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The published sample covers 27 records across 14 brands: Bridgestone, Michelin, Goodyear, Yokohama, Continental, BKT, Aeolus, Techking, Triangle, Double Coin, Galaxy, Alliance, Mitas and MRF. TRA service codes in the sample are E-4, L-3, L-4, L-5 and G-2, on rim diameters of 24, 25, 45, 49, 51, 57 and 63 inch. The full database of 600+ records is in production."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are the specifications in the Tyre Guide guaranteed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Specifications and fitments are drawn from manufacturers' published databooks and may be superseded by a later edition. They are general reference, not engineering or fitment advice, and no fitment or suitability is guaranteed. Confirm fitment, load and pressure against current manufacturer and OEM data for your specific machine before ordering or fitting."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does a Tyre Guide record differ from a manufacturer databook?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A databook is one manufacturer's own catalogue, published as a PDF and not searchable against anyone else's. A Tyre Guide record carries the same kind of published data (brand, pattern, size, TRA code, construction, compound, typical fitment) but sits in one cross-brand index you can search by size, code or machine. The databook remains the authority on the numbers; this guide is the way to compare across brands, plus our own read on where each pattern earns its place."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I buy tyres directly from this page?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. This page is a technical reference and carries no prices, stock or checkout. Jewell Tyres, the independent trader that maintains the site, trades the inventory across every brand listed, so a buy enquiry goes to Jewell Tyres. Pricing, availability and freight are quoted case by case."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<div id="site-header-placeholder"></div>
+
+<section class="hero hero--full ground--graphite-deep">
+  <video class="hero__video" autoplay muted loop playsinline preload="metadata"
+         poster="public/img/ask-poster.jpg" aria-hidden="true" tabindex="-1">
+    <source src="public/video/ask-bg.mp4" type="video/mp4">
+  </video>
+  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero__inner" data-reveal>
+      <span class="eyebrow eyebrow--amber">/ Tyre Guide · Reference catalogue</span>
+      <h1 class="display about__title" style="margin-top: 1rem;">
+        Every tyre. Every brand. <span class="accent">Every spec.</span>
+      </h1>
+      <p class="about__lead" style="margin-top: 1.5rem;">
+        Direct references from manufacturer databooks. Independent and cross-brand searchable. 27 records live, more added as the databook rollout continues.
+      </p>
+
+      <!-- Key facts: short, self-contained statements, kept near the top so an
+           answer engine can lift them verbatim. Figures match the TYRES data below. -->
+      <div style="margin-top: var(--s-6); padding: var(--s-5); border: 1px solid var(--otr-rule); background: rgba(0,0,0,0.35); border-radius: 12px; max-width: 860px;">
+        <span class="mono" style="display: block; font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--otr-amber-bright); margin-bottom: var(--s-3);">/ Key facts</span>
+        <ul style="padding-left: var(--s-5); margin: 0; color: var(--otr-fog);">
+          <li style="margin-bottom: 0.55rem; line-height: 1.6;">The Tyre Guide is a cross-brand index of OTR earthmover and mining tyres, searchable by size, brand, pattern, <strong style="color: var(--otr-bone);">TRA service code</strong>, rim diameter and machine fitment.</li>
+          <li style="margin-bottom: 0.55rem; line-height: 1.6;"><strong style="color: var(--otr-bone);">27 sample records</strong> across <strong style="color: var(--otr-bone);">14 brands</strong> are published. The full database of 600+ records is in production.</li>
+          <li style="margin-bottom: 0.55rem; line-height: 1.6;">The sample covers TRA service codes <strong style="color: var(--otr-bone);">E-4, L-3, L-4, L-5 and G-2</strong>, rim diameters of <strong style="color: var(--otr-bone);">24, 25, 45, 49, 51, 57 and 63 inch</strong>, radial and bias construction, and standard, heat-resistant, cut-resistant and hot-region compounds.</li>
+          <li style="margin-bottom: 0.55rem; line-height: 1.6;">Every record lists brand, pattern, tyre size, TRA service code, rim diameter, construction, compound family and typical machine fitment.</li>
+          <li style="line-height: 1.6;">Specifications are drawn from manufacturers' published databooks, may be superseded by a later edition, and are reference only. Confirm fitment, load and pressure against current manufacturer and OEM data before ordering.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section ground--graphite">
+  <div class="container">
+
+    <div class="filters">
+      <div>
+        <label class="filter-label">Search</label>
+        <input type="text" id="search" oninput="filter()" placeholder="Size, brand, pattern, machine...">
+      </div>
+      <div>
+        <label class="filter-label">Brand</label>
+        <select id="brand-filter" onchange="filter()">
+          <option value="">All brands</option>
+          <option>Bridgestone</option><option>Michelin</option>
+          <option>Goodyear</option><option>Yokohama</option>
+          <option>Continental</option><option>BKT</option>
+          <option>Aeolus</option><option>Techking</option>
+          <option>Triangle</option><option>Double Coin</option>
+        </select>
+      </div>
+      <div>
+        <label class="filter-label">TRA code</label>
+        <select id="tra-filter" onchange="filter()">
+          <option value="">All codes</option>
+          <option>E-3</option><option>E-4</option>
+          <option>L-3</option><option>L-4</option>
+          <option>L-5</option><option>L-5S</option>
+          <option>G-2</option><option>C-1</option><option>C-2</option>
+        </select>
+      </div>
+      <div>
+        <label class="filter-label">Rim size</label>
+        <select id="rim-filter" onchange="filter()">
+          <option value="">All rims</option>
+          <option>24"</option><option>25"</option>
+          <option>33"</option><option>49"</option>
+          <option>51"</option><option>57"</option>
+          <option>63"</option>
+        </select>
+      </div>
+    </div>
+
+    <div style="margin: 0 0 1.5rem; padding: 1rem 1.25rem; border-left: 3px solid #E58080; background: rgba(0,0,0,0.2); font-size: 0.9rem; line-height: 1.55; color: var(--otr-fog);">
+      <strong style="color:#E58080; font-family: var(--otr-mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; display:block; margin-bottom:0.4rem;">/ Before you order</strong>
+      Specifications and fitments are drawn from manufacturers' published databooks and may be superseded by a later edition. Confirm fitment, load and pressure against current manufacturer and OEM data for your specific machine before ordering or fitting. This is a general reference, not engineering or fitment advice; performance and price characterisations are the opinion of an independent trader, not a warranty of performance.
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+      <span class="mono" style="font-size: 0.78rem; letter-spacing: 0.06em; color: var(--otr-steel-light);">
+        Showing <span id="result-count">27</span> records, more added as the rollout continues
+      </span>
+      <span class="mono" style="font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--otr-amber-bright);">
+        Sample catalogue · Full data v1.1
+      </span>
+    </div>
+
+    <div class="tyre-results" id="results">
+      <!-- Populated by JS -->
+    </div>
+
+    <div style="margin-top: 3rem; padding: 1.5rem; background: rgba(254,192,19,0.05); border-left: 4px solid var(--jt-endorse);">
+      <span style="font-family: var(--otr-mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--jt-endorse);">/ Looking to buy?</span>
+      <p style="margin-top: 0.5rem; color: var(--otr-fog); margin-bottom: 1rem;">
+        This is the technical reference. To actually buy any of these tyres, Jewell Tyres trades the inventory, independently, every brand.
+      </p>
+      <a href="https://jewelltyres.com.au/buy-tyres.html" class="btn" style="background: var(--jt-endorse); border-color: var(--jt-endorse); color: var(--otr-graphite);">Submit a buy enquiry →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ COMMON QUESTIONS ============ -->
+<!-- Mirrored by the FAQPage JSON-LD in the head. Keep the two in sync. -->
+<section class="section ground--graphite-soft">
+  <div class="container container--narrow">
+    <span class="eyebrow eyebrow--amber">/ Common questions</span>
+    <h2 class="h2" style="margin-top: 0.5rem; margin-bottom: var(--s-6); color: var(--otr-bone);">Questions about using the Tyre Guide</h2>
+
+    <h3 style="font-family: var(--otr-display); font-size: 1.15rem; font-weight: 600; color: var(--otr-bone); margin-bottom: var(--s-2);">How do I find the right tyre for my machine in the Tyre Guide?</h3>
+    <p style="font-size: 1rem; line-height: 1.65; color: var(--otr-fog); margin: 0 0 var(--s-5);">Type the machine model into the search box, for example CAT 992K or Komatsu WA600, and the guide returns the records whose typical fitment includes that machine. You can then narrow by brand, TRA service code or rim diameter. In our view that gets you to a shortlist fast, but it is a shortlist: confirm size, load index, speed symbol and inflation pressure against the current manufacturer databook and the OEM fitment data for your machine before ordering.</p>
+
+    <h3 style="font-family: var(--otr-display); font-size: 1.15rem; font-weight: 600; color: var(--otr-bone); margin-bottom: var(--s-2);">Which brands and TRA service codes does the Tyre Guide cover?</h3>
+    <p style="font-size: 1rem; line-height: 1.65; color: var(--otr-fog); margin: 0 0 var(--s-5);">The published sample covers 27 records across 14 brands: Bridgestone, Michelin, Goodyear, Yokohama, Continental, BKT, Aeolus, Techking, Triangle, Double Coin, Galaxy, Alliance, Mitas and MRF. TRA service codes in the sample are E-4, L-3, L-4, L-5 and G-2, on rim diameters of 24, 25, 45, 49, 51, 57 and 63 inch. The full database of 600+ records is in production. Code meanings are set out in the <a href="reference.html#tra-codes" style="color: var(--otr-amber-bright); border-bottom-color: rgba(191,110,27,0.4);">TRA service code matrix</a>.</p>
+
+    <h3 style="font-family: var(--otr-display); font-size: 1.15rem; font-weight: 600; color: var(--otr-bone); margin-bottom: var(--s-2);">Are the specifications in the Tyre Guide guaranteed?</h3>
+    <p style="font-size: 1rem; line-height: 1.65; color: var(--otr-fog); margin: 0 0 var(--s-5);">No. Specifications and fitments are drawn from manufacturers' published databooks and may be superseded by a later edition. They are general reference, not engineering or fitment advice, and no fitment or suitability is guaranteed. Confirm fitment, load and pressure against current manufacturer and OEM data for your specific machine before ordering or fitting.</p>
+
+    <h3 style="font-family: var(--otr-display); font-size: 1.15rem; font-weight: 600; color: var(--otr-bone); margin-bottom: var(--s-2);">How does a Tyre Guide record differ from a manufacturer databook?</h3>
+    <p style="font-size: 1rem; line-height: 1.65; color: var(--otr-fog); margin: 0 0 var(--s-5);">A databook is one manufacturer's own catalogue, published as a PDF and not searchable against anyone else's. A Tyre Guide record carries the same kind of published data (brand, pattern, size, TRA code, construction, compound, typical fitment) but sits in one cross-brand index you can search by size, code or machine. The databook remains the authority on the numbers; this guide is the way to compare across brands, plus our own read on where each pattern earns its place.</p>
+
+    <h3 style="font-family: var(--otr-display); font-size: 1.15rem; font-weight: 600; color: var(--otr-bone); margin-bottom: var(--s-2);">Can I buy tyres directly from this page?</h3>
+    <p style="font-size: 1rem; line-height: 1.65; color: var(--otr-fog); margin: 0;">No. This page is a technical reference and carries no prices, stock or checkout. Jewell Tyres, the independent trader that maintains the site, trades the inventory across every brand listed, so a buy enquiry goes to Jewell Tyres. Pricing, availability and freight are quoted case by case.</p>
+  </div>
+</section>
+
+<div id="site-footer-placeholder"></div>
+
+<script src="js/layout.js?v=1"></script>
+<script>
+const TYRES = [
+  { id: 'bridgestone-vrdp-45-65r45', brand: 'Bridgestone', pattern: 'VRDP', size: '45/65R45', tra: 'L-5', rim: '45"', construction: 'Radial',
+    compound: 'Heat-resistant', machines: 'CAT 992K, Komatsu WA800', notes: 'Default Pilbara wheel loader fitment. Strong cut resistance, well-known TKPH performance.' },
+  { id: 'michelin-xdr4-40-00r57', brand: 'Michelin', pattern: 'XDR4', size: '40.00R57', tra: 'E-4', rim: '57"', construction: 'Radial',
+    compound: 'Heat-resistant', machines: 'CAT 793F, Komatsu 830E', notes: 'Premium haul truck tyre. Extra-deep tread, excellent cut and heat resistance.' },
+  { id: 'goodyear-rl-5k-26-5r25', brand: 'Goodyear', pattern: 'RL-5K', size: '26.5R25', tra: 'L-5', rim: '25"', construction: 'Radial',
+    compound: 'Standard', machines: 'CAT 980-988, Komatsu WA470-WA500', notes: 'Versatile L-5 loader pattern. Common in civil and mining mid-fleet applications.' },
+  { id: 'yokohama-rl5k-45-65r45', brand: 'Yokohama', pattern: 'RL5K+', size: '45/65R45', tra: 'L-5', rim: '45"', construction: 'Radial',
+    compound: 'Hot-region', machines: 'CAT 992K, Komatsu WA800', notes: 'Strong residual value. Often a better delivered price than tier-one premium options.' },
+  { id: 'continental-em-master-23-5r25', brand: 'Continental', pattern: 'EM-Master', size: '23.5R25', tra: 'L-3', rim: '25"', construction: 'Radial',
+    compound: 'Standard', machines: 'CAT 966-972, Volvo L150', notes: 'Reliable mid-size loader tyre. Good wear resistance for civil work.' },
+  { id: 'bkt-earthmax-sr468-26-5r25', brand: 'BKT', pattern: 'Earthmax SR468', size: '26.5R25', tra: 'L-5', rim: '25"', construction: 'Radial',
+    compound: 'Cut-resistant', machines: 'CAT 980-988, Volvo L220', notes: 'Strong mid-tier option. 25-40% cheaper delivered than tier-one. Credible cut resistance for civil and quarry.' },
+  { id: 'aeolus-ae57-27-00r49', brand: 'Aeolus', pattern: 'AE57', size: '27.00R49', tra: 'E-4', rim: '49"', construction: 'Radial',
+    compound: 'Standard', machines: 'CAT 777F, Komatsu HD785', notes: 'Mid-tier rigid haul truck tyre. Wider availability through trader channels.' },
+  { id: 'techking-etot-l5-29-5r25', brand: 'Techking', pattern: 'ETOT-L5', size: '29.5R25', tra: 'L-5', rim: '25"', construction: 'Radial',
+    compound: 'Cut-resistant', machines: 'CAT 988, Komatsu WA600', notes: 'Specialist OTR brand. Increasingly common in Australian civil and secondary mining fleet.' },
+  { id: 'triangle-tb598s-26-5r25', brand: 'Triangle', pattern: 'TB598S+', size: '26.5R25', tra: 'L-4', rim: '25"', construction: 'Radial',
+    compound: 'Standard', machines: 'CAT 980-988', notes: 'Competitive mid-tier option. Strong all-rounder for general loader applications.' },
+  { id: 'double-coin-rem-2-17-5r25', brand: 'Double Coin', pattern: 'REM-2', size: '17.5R25', tra: 'L-3', rim: '25"', construction: 'Radial',
+    compound: 'Standard', machines: 'CAT 966H, Volvo L120', notes: 'Smaller loader applications. Civil construction and yard machines.' },
+  { id: 'bridgestone-vsdl-23-5r25', brand: 'Bridgestone', pattern: 'VSDL+', size: '23.5R25', tra: 'L-3', rim: '25"', construction: 'Radial',
+    compound: 'Standard', machines: 'CAT 966-972', notes: 'Default mid-size loader fitment. Long-running tier-one option.' },
+  { id: 'michelin-xha2-26-5r25', brand: 'Michelin', pattern: 'XHA2', size: '26.5R25', tra: 'L-3', rim: '25"', construction: 'Radial',
+    compound: 'Standard', machines: 'CAT 980-988, Komatsu WA470', notes: 'Premium L-3 loader tyre. Strong residual value, broad fitment.' },
+  /* expanded set */
+  { id: 'bridgestone-vrps-50-80r57', brand: 'Bridgestone', pattern: 'VRPS', size: '50/80R57', tra: 'E-4', rim: '57"', construction: 'Radial',
+    compound: 'Heat-resistant', machines: 'CAT 793F, Komatsu 830E', notes: 'Tier-one Pilbara haul truck workhorse. Premium pricing, premium service life.' },
+  { id: 'bridgestone-vrls-53-80r63', brand: 'Bridgestone', pattern: 'VRLS', size: '53/80R63', tra: 'E-4', rim: '63"', construction: 'Radial',
+    compound: 'Heat-resistant', machines: 'CAT 797F, Komatsu 930E', notes: 'Giant haul truck tyre. Narrow supply base globally. Long lead times typical.' },
+  { id: 'michelin-xdr3-26-5r25', brand: 'Michelin', pattern: 'XDR3', size: '26.5R25', tra: 'L-5', rim: '25"', construction: 'Radial',
+    compound: 'Heat-resistant', machines: 'CAT 988, Komatsu WA600', notes: 'Predecessor to XDR4 in some sizes. Still widely fitted, strong residuals.' },
+  { id: 'goodyear-rm-4a-27-00r49', brand: 'Goodyear', pattern: 'RM-4A+', size: '27.00R49', tra: 'E-4', rim: '49"', construction: 'Radial',
+    compound: 'Heat-resistant', machines: 'CAT 777F, Komatsu HD785', notes: 'Strong all-rounder for the 90-100t haul truck class. Solid residual value.' },
+  { id: 'goodyear-rm-4b-33-00r51', brand: 'Goodyear', pattern: 'RM-4B+', size: '33.00R51', tra: 'E-4', rim: '51"', construction: 'Radial',
+    compound: 'Heat-resistant', machines: 'CAT 785D, Komatsu HD1500', notes: 'Heat-resistant haul truck pattern. Common in mid-tier Pilbara fleet.' },
+  { id: 'continental-em-master-29-5r25', brand: 'Continental', pattern: 'EM-Master', size: '29.5R25', tra: 'L-5', rim: '25"', construction: 'Radial',
+    compound: 'Cut-resistant', machines: 'CAT 988, Komatsu WA600', notes: 'European tier-one alternative. Strong cut resistance for hard-rock duty.' },
+  { id: 'bkt-earthmax-sr45-50-80r57', brand: 'BKT', pattern: 'Earthmax SR45', size: '50/80R57', tra: 'E-4', rim: '57"', construction: 'Radial',
+    compound: 'Heat-resistant', machines: 'CAT 793F, Komatsu 830E', notes: 'Indian-manufactured E-4 haul truck pattern. Significant cost gap versus tier-one.' },
+  { id: 'galaxy-ldsr-400-20-5r25', brand: 'Galaxy', pattern: 'LDSR 400', size: '20.5R25', tra: 'L-3', rim: '25"', construction: 'Radial',
+    compound: 'Standard', machines: 'CAT 972, Volvo L120', notes: 'Mid-size civil and industrial loader tyre. Yokohama ATG manufactured.' },
+  { id: 'alliance-585-14-00r24', brand: 'Alliance', pattern: '585', size: '14.00R24', tra: 'G-2', rim: '24"', construction: 'Radial',
+    compound: 'Standard', machines: 'CAT 14M, 16M grader, Komatsu GD675', notes: 'General-purpose grader tyre. Strong civil and ag fitment.' },
+  { id: 'mitas-em-22-17-5r25', brand: 'Mitas', pattern: 'EM-22', size: '17.5R25', tra: 'L-3', rim: '25"', construction: 'Radial',
+    compound: 'Standard', machines: 'CAT 966, Volvo L120', notes: 'Czech-manufactured (Trelleborg). Steady mid-tier industrial earthmoving option.' },
+  { id: 'mrf-muscleroc-26-5r25', brand: 'MRF', pattern: 'Muscleroc', size: '26.5R25', tra: 'L-5', rim: '25"', construction: 'Radial',
+    compound: 'Cut-resistant', machines: 'CAT 980-988', notes: 'MRF\'s OTR pattern. Emerging Australian distribution, competitive pricing.' },
+  { id: 'triangle-tr568-23-5-25', brand: 'Triangle', pattern: 'TR568', size: '23.5-25', tra: 'L-3', rim: '25"', construction: 'Bias',
+    compound: 'Standard', machines: 'Older loaders, civil ag', notes: 'Bias-construction loader tyre. Still common in legacy machines and ag-civil mix.' },
+  { id: 'bridgestone-vkt-17-5r25', brand: 'Bridgestone', pattern: 'VKT', size: '17.5R25', tra: 'L-3', rim: '25"', construction: 'Radial',
+    compound: 'Standard', machines: 'CAT 950, Volvo L90', notes: 'Compact loader / civil yard fitment. Strong tier-one residual.' },
+  { id: 'michelin-xlds-50-65r51', brand: 'Michelin', pattern: 'X-Mine D2 L-5', size: '50/65R51', tra: 'L-5', rim: '51"', construction: 'Radial',
+    compound: 'Heat-resistant', machines: 'CAT 993K, 994', notes: 'Premium giant wheel loader pattern. Tier-one supply.' },
+  { id: 'yokohama-y69-50-80r57', brand: 'Yokohama', pattern: 'Y69', size: '50/80R57', tra: 'E-4', rim: '57"', construction: 'Radial',
+    compound: 'Heat-resistant', machines: 'CAT 793F, Komatsu 830E', notes: 'Strong cost-to-tier-one ratio. Wide availability through trader channels.' },
+];
+
+// NOTE for implementer: tyres/<id>.html detail pages don't exist yet (dir currently empty).
+// When generated, each detail page must inherit the shared site footer disclaimer AND carry
+// its own per-page reference note (same wording as the strip above the results grid).
+function renderTyres(data) {
+  document.getElementById('result-count').textContent = data.length;
+  const html = data.map(t => `
+    <div class="tyre-record" role="listitem">
+      <div class="tyre-record__head">
+        <span class="tyre-record__brand">${t.brand}</span>
+        <span class="tyre-record__size">${t.rim} · ${t.construction}</span>
+      </div>
+      <div class="tyre-record__title">${t.pattern}, ${t.size}</div>
+      <div class="tyre-record__spec">
+        <span class="tyre-record__chip">${t.tra}</span>
+        <span class="tyre-record__chip">${t.compound}</span>
+      </div>
+      <div class="tyre-record__body">
+        <strong>Fits:</strong> ${t.machines}<br>
+        ${t.notes}
+      </div>
+    </a>
+  `).join('');
+  document.getElementById('results').innerHTML = html;
+}
+
+function filter() {
+  const q = document.getElementById('search').value.toLowerCase();
+  const brand = document.getElementById('brand-filter').value;
+  const tra = document.getElementById('tra-filter').value;
+  const rim = document.getElementById('rim-filter').value;
+
+  const filtered = TYRES.filter(t => {
+    if (brand && t.brand !== brand) return false;
+    if (tra && t.tra !== tra) return false;
+    if (rim && t.rim !== rim) return false;
+    if (q) {
+      const blob = `${t.brand} ${t.pattern} ${t.size} ${t.machines} ${t.compound} ${t.tra}`.toLowerCase();
+      if (!blob.includes(q)) return false;
+    }
+    return true;
+  });
+  renderTyres(filtered);
+}
+
+renderTyres(TYRES);
+</script>
+</body>
+</html>

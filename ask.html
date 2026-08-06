@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<!-- Rebuild trigger: Vectorize/D1 bindings unbound from this Pages project so /api/ask falls through to the Supabase proxy. -->
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ask · OTR Earthmover Tyre · Technical Portal</title>
+  <meta name="description" content="Ask a technical question about OTR tyres, TRA codes, TKPH, fitment, mixing rules, and get a plain-language answer with sources. Independent opinion, not engineering advice.">
+  <link rel="stylesheet" href="css/main.css?v=1">
+
+  <link rel="canonical" href="https://otrearthmovertyres.com/ask.html">
+  <meta property="og:title" content="Ask · OTR Earthmover Tyre · Technical Portal">
+  <meta property="og:description" content="Ask a technical question about OTR tyres, TRA codes, TKPH, fitment, mixing rules, and get a plain-language answer with sources. Independent opinion, not engineering advice.">
+  <meta property="og:image" content="https://otrearthmovertyres.com/public/img/og-default.jpg">
+  <meta property="og:url" content="https://otrearthmovertyres.com/ask.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="OTR Earthmover Tyre">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ask · OTR Earthmover Tyre · Technical Portal">
+  <meta name="twitter:description" content="Ask a technical question about OTR tyres, TRA codes, TKPH, fitment, mixing rules, and get a plain-language answer with sources. Independent opinion, not engineering advice.">
+  <meta name="twitter:image" content="https://otrearthmovertyres.com/public/img/og-default.jpg">
+</head>
+<body>
+
+<div id="site-header-placeholder"></div>
+
+<section class="portal">
+  <video class="portal__video" autoplay muted loop playsinline preload="metadata"
+         poster="public/img/tyres-poster.jpg" aria-hidden="true" tabindex="-1">
+    <source src="public/video/tyres-bg.mp4" type="video/mp4">
+  </video>
+  <div class="portal__bg" aria-hidden="true"></div>
+  <div class="container container--narrow">
+
+    <span class="eyebrow eyebrow--amber">/ Knowledge Portal</span>
+    <h1 class="display" style="margin-top: 1rem; margin-bottom: 1.5rem;">
+      Ask a technical question about <span class="accent">OTR tyres</span>.
+    </h1>
+    <p style="font-size: 1.1rem; color: var(--otr-fog); margin-bottom: 2.5rem; max-width: 680px;">
+      Plain-language answers and independent opinion, with citations from publicly available manufacturer databooks, TRA standards, and 50 years of independent OTR trading. Free to use. Independent of every tyre manufacturer.
+    </p>
+
+    <form class="portal__search" onsubmit="askQuestion(event)">
+      <input aria-label="Ask a question about OTR earthmover tyres" type="text" id="q-input" class="portal__input" placeholder="e.g. Best tyre for CAT 992K in iron ore" autocomplete="off">
+      <button class="portal__btn" type="submit">Ask →</button>
+    </form>
+
+    <p style="margin-top: 0.75rem; font-size: 0.8rem; color: var(--otr-steel-light); line-height: 1.5;">Questions are processed by third-party AI providers, some overseas, don't include confidential or personal information. Answers are general reference and the opinion of an independent trader, not engineering advice. This site is maintained by Jewell Tyres, an independent trader, not a tyre engineer or manufacturer; enquiries route to it commercially. Use of the Portal is subject to our <a href="legal.html" style="color: var(--otr-steel-light);">Terms and Privacy</a>.</p>
+
+    <div class="portal__suggestions" id="suggestions">
+      <span class="portal__suggestion" onclick="askPrefab('cat992')">Best tyre for CAT 992K in iron ore</span>
+      <span class="portal__suggestion" onclick="askPrefab('tra-e4')">What is a TRA E-4 service code?</span>
+      <span class="portal__suggestion" onclick="askPrefab('tkph')">How do I calculate TKPH?</span>
+      <span class="portal__suggestion" onclick="askPrefab('26r25')">26.5R25 alternatives to Bridgestone</span>
+      <span class="portal__suggestion" onclick="askPrefab('mixing')">Can I mix radial and bias on the same machine?</span>
+    </div>
+
+    <!-- Mode notice -->
+    <div style="margin-top: 2.5rem; padding: 1rem 1.25rem; background: rgba(61,90,108,0.15); border-left: 3px solid var(--otr-steel-light); font-family: var(--otr-mono); font-size: 0.78rem; letter-spacing: 0.04em; line-height: 1.5; color: var(--otr-fog);">
+      <strong style="color: var(--otr-bone);">AI-GENERATED.</strong>
+      Answers draw on publicly available manufacturer databooks, TRA standards and AS4457 material, usually with citations. Treat them as the informed opinion of an independent trader, not advice from a tyre engineer, and not a professional recommendation. They can be incomplete, out of date or wrong. Confirm anything safety-critical against current OEM specifications and a competent person before acting.
+    </div>
+
+    <!-- Answer area -->
+    <div id="answer-area" style="margin-top: 3rem;"></div>
+
+  </div>
+</section>
+
+<div id="site-footer-placeholder"></div>
+
+<script src="js/layout.js?v=1"></script>
+<script>
+/* ============================================================
+   PORTAL
+   Live answers come from /api/ask (RAG over manufacturer databooks).
+   The RESPONSES set below is an offline fallback for the five standing
+   questions only, used when the API is unreachable.
+   ============================================================ */
+
+const AI_DISCLAIMER = "AI-generated answer. Composed by an automated system from publicly available manufacturer databooks, TRA and AS4457 material and Jewell Tyres' trading experience, it can be incomplete, out of date or wrong, and citations do not guarantee accuracy. It is the opinion of an independent trader, offered as general technical reference, not professional or engineering advice, and not a recommendation you should act on without checking. Verify every figure, especially pressures, loads, fitment, mixing and repair decisions, against current OEM/manufacturer documentation and qualified inspection before acting. To the maximum extent permitted by law, Jewell Tyres accepts no liability for reliance on this answer; nothing here excludes rights that cannot be excluded under the Australian Consumer Law.";
+
+// Renders the disclaimer footer for every answer render path (live, canned,
+// error). Uses the server-supplied disclaimer if present, otherwise always
+// falls back to AI_DISCLAIMER, an answer is never rendered without one.
+function disclaimerBlock(serverText) {
+  const t = (serverText && String(serverText).replace(/\r?\n+/g, ' ').replace(/-{2,}/g, '').replace(/\*/g, '').trim()) || AI_DISCLAIMER;
+  return '<div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--otr-rule); font-size: 0.8rem; color: var(--otr-steel-light); line-height: 1.5;">' + escapeHtml(t) + ' <a href="legal.html" style="color: var(--otr-steel-light);">Legal</a></div>';
+}
+
+// Guardrail: every answer on this page renders the same four labelled
+// sections, in the same order, Question / Answer / Opinion / Sources, // no matter which backend path produced it (exact spec lookup, extractive
+// quotes, generative summary, general-knowledge fallback, or canned demo).
+// A missing `suggestion` from an older/legacy response never collapses the
+// section, it falls back to a sensible default instead.
+function defaultSuggestion(data) {
+  if (data.escalation) {
+    return '<p>Confirm this against the current manufacturer specification, or call David Jewell direct on <strong><a href="tel:+61419358439">0419 358 439</a></strong>, 50 years of independent OTR trading.</p>';
+  }
+  return '<p>No further opinion beyond the answer above, if your situation has details that could change it (machine variant, duty cycle, application severity), it is worth confirming against the manufacturer databook.</p>';
+}
+
+function sectionBlock(label, html) {
+  return `<div class="portal__section"><div class="portal__section-label">${label}</div><div class="portal__answer-body">${html}</div></div>`;
+}
+
+// The trader's opinion gets its own amber panel so it reads as a distinct
+// voice from the factual answer above it.
+function opinionBlock(html) {
+  return `<div class="portal__opinion"><div class="portal__section-label">/ OPINION</div><div class="portal__answer-body">${html}</div></div>`;
+}
+
+// Shared card scaffolding: question header strip + padded body.
+function answerCard(q, innerHtml) {
+  return `
+    <div class="portal__answer">
+      <div class="portal__question">
+        <div class="portal__section-label" style="margin-bottom: 0.35rem;">/ YOUR QUESTION</div>
+        <div class="portal__question-text">${escapeHtml(q)}</div>
+      </div>
+      <div class="portal__answer-inner">${innerHtml}</div>
+    </div>`;
+}
+
+const RESPONSES = {
+
+  cat992: {
+    q: "Best tyre for CAT 992K in iron ore",
+    lede: "For a CAT 992K running iron ore in the Pilbara, the practical answer is a heat-resistant L-5 tyre in 45/65R45, with Bridgestone VRDP, Michelin XDR4, and Yokohama RL5K all credible. The right call depends on cycle length, ambient temperature, and price tolerance.",
+    answer: `
+      <p>The CAT 992K is one of the larger wheel loaders running in Pilbara iron ore. It fits a <strong>45/65R45 L-5</strong> tyre at standard configuration. L-5 is a deep-tread tyre intended for high cut and heat resistance, appropriate for the abrasive, hot conditions iron ore presents.</p>
+    `,
+    suggestion: `
+      <p>The credible tier-one options are:</p>
+      <ul style="margin: 0 0 1rem 1.5rem;">
+        <li style="margin-bottom: 0.5rem;"><strong>Bridgestone VRDP</strong>, long-running default in the region. Strong cut resistance, well-known TKPH performance, broad availability through Bridgestone Mining Solutions.</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Michelin XDR4</strong>, competitive cut and wear performance. Available through Michelin Earthmover. Premium positioning, premium price.</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Yokohama RL5K</strong>, strong residual value, good wear life, often a better delivered price than the above. Wider availability through Yokohama OTR / Goodyear OTR distribution.</li>
+      </ul>
+      <p>If the haul is short and the operator is running hot, prioritise the heat-resistant compound variants of the above (suffixes like H, RH, or HM depending on the brand). If the cycle is longer with more rolling, cut resistance matters more than heat.</p>
+      <p>Mid-tier options like <strong>Aeolus AE57</strong> or <strong>Triangle TL538S+</strong> can be 30-50% cheaper delivered. For non-critical units or fleet padding, they're worth considering. For your primary 992 doing 24/7 production, the tier-one cost premium is generally justified by tyre life and downtime risk.</p>
+    `,
+    sources: [
+      { num: '01', text: 'Bridgestone Earthmover Databook (Global E), VRDP specification, 45/65R45' },
+      { num: '02', text: 'Michelin OTR Databook 2022, XDR4 tread compound options' },
+      { num: '03', text: 'Yokohama OTR Databook (2024), RL5K Hot-region compound' },
+      { num: '04', text: 'TRA Service Code Reference, L-5 tread depth and intended use' },
+      { num: '05', text: 'Jewell Tyres trading experience, Pilbara iron ore fitments 2018-2025' }
+    ],
+    escalation: true,
+    related: [
+      "TKPH calculation for 45/65R45 loaders",
+      "What's the difference between L-4 and L-5?",
+      "Heat-resistant compound options"
+    ]
+  },
+
+  'tra-e4': {
+    q: "What is a TRA E-4 service code?",
+    lede: "E-4 is the TRA service code for a haul truck tyre with extra-deep tread, heavier rubber than E-3, designed for longer life and more aggressive applications. It's the workhorse tread for Pilbara-class haul fleets.",
+    answer: `
+      <p>The TRA (Tire and Rim Association) service code system describes the intended use, tread depth, and compound family for OTR tyres. The letter is the machine category, the number is the tread depth and pattern.</p>
+      <p>For the E-series, earthmovers and haul trucks, the standard codes are:</p>
+      <ul style="margin: 0 0 1rem 1.5rem;">
+        <li style="margin-bottom: 0.5rem;"><strong>E-3 Rock Regular</strong>, standard tread depth for normal-duty rock applications.</li>
+        <li style="margin-bottom: 0.5rem;"><strong>E-4 Rock Deep</strong>, extra-deep tread (roughly 1.5× E-3 depth), longer service life, better cut resistance. The default for tier-one Pilbara iron ore haul.</li>
+        <li style="margin-bottom: 0.5rem;"><strong>E-5 Rock Extra Deep</strong>, uncommon, used in extreme applications.</li>
+      </ul>
+    `,
+    suggestion: `
+      <p>Practical implication: an E-4 will cost more and last longer than an E-3 in the same size. The lifecycle cost can be lower per tonne hauled, particularly in cut-prone or long-cycle conditions. Most major Pilbara mines run E-4 as standard.</p>
+      <p>When matching tyres to a machine, the TRA code is one input. The other inputs that matter as much: <strong>TKPH rating</strong> (heat capacity), <strong>load capacity</strong>, <strong>compound type</strong> (heat- or cut-resistant), and <strong>star rating</strong> (load index reserve).</p>
+    `,
+    sources: [
+      { num: '01', text: 'Tire and Rim Association 2024 Year Book, Service Code Index' },
+      { num: '02', text: 'Bridgestone Earthmover Databook, E-3 vs E-4 selection guidance' },
+      { num: '03', text: 'Michelin OTR Databook 2022, Service classification reference' },
+      { num: '04', text: 'AS4457:2019 Earth-moving machinery, Off-the-road wheels and tyres, Maintenance and safety' }
+    ],
+    escalation: false,
+    related: [
+      "Full TRA service code matrix",
+      "E-3 vs E-4, when to upgrade",
+      "TKPH explained"
+    ]
+  },
+
+  tkph: {
+    q: "How do I calculate TKPH?",
+    lede: "TKPH (Tonne Kilometre Per Hour) is the heat-capacity rating for haul-truck tyres. To match a tyre to a haul, calculate your required TKPH from cycle data, then pick a tyre whose rated TKPH equals or exceeds it. Underestimating TKPH causes premature heat failures.",
+    answer: `
+      <p>The basic calculation:</p>
+      <p style="background: rgba(0,0,0,0.3); padding: 1rem; border-left: 3px solid var(--otr-amber-bright); font-family: var(--otr-mono); font-size: 0.92rem; margin: 1rem 0;">
+        <strong>TKPH = (Mean tyre load in tonnes) × (Average speed in km/h)</strong>
+      </p>
+      <p>Where:</p>
+      <ul style="margin: 0 0 1rem 1.5rem;">
+        <li style="margin-bottom: 0.5rem;"><strong>Mean tyre load</strong> = (loaded weight + empty weight) ÷ 2, divided by number of tyres. Account for axle weight distribution, front and rear tyres carry different loads.</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Average speed</strong> = total round-trip distance ÷ total cycle time including queuing, loading, and dumping.</li>
+      </ul>
+    `,
+    suggestion: `
+      <p>Then apply corrections for:</p>
+      <ul style="margin: 0 0 1rem 1.5rem;">
+        <li style="margin-bottom: 0.5rem;"><strong>Ambient temperature</strong>, for every 5°C above 38°C, increase required TKPH by approximately 5%. Pilbara summer can push this 15-20%.</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Haul profile</strong>, uphill loads and steep gradients add heat load.</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Speed variation</strong>, sustained high speed builds heat faster than the average suggests.</li>
+      </ul>
+      <p>The output is the <strong>required TKPH</strong>. Compare to the manufacturer's rated TKPH for the tyre. A safety margin of 10-20% is normal practice.</p>
+      <p>We have a free TKPH calculator on this site at <a href="calculators.html#tkph">calculators.html#tkph</a> that handles the corrections.</p>
+      <p style="margin-top: 1rem; padding: 0.75rem; background: rgba(191,110,27,0.1); border-left: 3px solid var(--otr-amber); font-size: 0.92rem;"><strong>Note:</strong> TMPH is the imperial-units equivalent (Ton Miles Per Hour). WCF (Work Capacity Factor) is the equivalent for loaders and dozers, different math, same purpose.</p>
+    `,
+    sources: [
+      { num: '01', text: 'Bridgestone Earthmover Databook, TKPH calculation methodology' },
+      { num: '02', text: 'Goodyear OTR Databook, TKPH/TMPH conversion and corrections' },
+      { num: '03', text: 'AS4457:2019, Operating-limit derating for OTR tyres' },
+      { num: '04', text: 'Jewell Tyres internal, Pilbara summer TKPH adjustment guidance' }
+    ],
+    escalation: false,
+    related: [
+      "TKPH vs TMPH conversion",
+      "WCF for loader tyres",
+      "Pressure adjustments for ambient temperature"
+    ]
+  },
+
+  '26r25': {
+    q: "26.5R25 alternatives to Bridgestone",
+    lede: "26.5R25 is the most common L-3/L-4/L-5 loader tyre in Australia. If you're looking outside Bridgestone (VSDL+, VSW, VLT), the credible options span tier-one (Michelin, Goodyear, Yokohama) and well-regarded mid-tier (BKT, Aeolus, Techking). The right choice depends on application severity and price tolerance.",
+    answer: `
+      <p>26.5R25 fits 25" rims and is available in the L-3, L-4, and L-5 TRA families across every major manufacturer.</p>
+    `,
+    suggestion: `
+      <p><strong>Tier-one alternatives</strong> (similar pricing to Bridgestone, similar performance expectation):</p>
+      <ul style="margin: 0 0 1rem 1.5rem;">
+        <li style="margin-bottom: 0.5rem;"><strong>Michelin XHA2 (L-3)</strong> / <strong>XLD D2 (L-5)</strong>, well-regarded, broad fitment, strong residual.</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Goodyear RL-3K / RL-4K / RL-5K</strong>, strong all-rounder, generally well-priced delivered.</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Yokohama RL-3 / RL-4 / RL-5</strong>, competitive on cost, particularly through trader channels.</li>
+      </ul>
+      <p><strong>Mid-tier alternatives</strong> (commonly 25-40% lower delivered cost, with appropriate service expectations):</p>
+      <ul style="margin: 0 0 1rem 1.5rem;">
+        <li style="margin-bottom: 0.5rem;"><strong>BKT Earthmax SR468 / SR468A</strong>, Indian manufacturing, well-regarded in OTR mid-tier, strong cut resistance for civil work.</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Aeolus AL37 / AL57</strong>, broad fitment range across L-3/L-5, competitive pricing.</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Techking ETOT L-5</strong>, increasingly common in Australian civil and mid-tier mining.</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Triangle TB598S</strong>, competitive option through trader channels.</li>
+      </ul>
+      <p>The rule of thumb: for primary production fleet on tier-one mining contracts, tier-one tyres earn their cost premium. For secondary fleet, civil work, ag and forestry loaders, or stockpiling against future demand, mid-tier brands are credible options when sourced from established suppliers.</p>
+      <p>Compatibility note: confirm rim compatibility (load capacity, valve placement) before ordering. Star rating and load index need to match the machine's operating envelope.</p>
+    `,
+    sources: [
+      { num: '01', text: 'Yokohama OTR Databook, RL-3 / RL-4 / RL-5 26.5R25 patterns' },
+      { num: '02', text: 'Goodyear OTR Databook, RL-K series fitment data' },
+      { num: '03', text: 'Michelin Earthmover Databook 2022, XHA2 and XLD D2 specifications' },
+      { num: '04', text: 'BKT OTR Catalogue 2024, Earthmax SR468 specifications' },
+      { num: '05', text: 'Jewell Tyres trading data, 26.5R25 movements 2020-2025' }
+    ],
+    escalation: false,
+    related: [
+      "BKT vs Triangle vs Aeolus, mid-tier comparison",
+      "Star rating and load capacity explained",
+      "Rim compatibility for 26.5R25"
+    ]
+  },
+
+  mixing: {
+    q: "Can I mix radial and bias on the same machine?",
+    lede: "Short answer: don't, except in narrow circumstances. Radial and bias tyres have different load curves, deflection characteristics, and heat behaviour. Mixing them on the same axle is a clear no. Mixing across axles is technically possible but creates handling, wear, and safety risks that aren't worth the saving.",
+    answer: `
+      <p>This sits in AS4457 territory, the Australian standard for OTR tyre maintenance and safety, and in manufacturer guidance, which is consistent across the major brands.</p>
+      <p><strong>What you cannot do:</strong></p>
+      <ul style="margin: 0 0 1rem 1.5rem;">
+        <li style="margin-bottom: 0.5rem;">Mix radial and bias on <strong>the same axle</strong>. The two tyres deflect differently under load, which means uneven contact pressure, uneven wear, and unpredictable handling. On a haul truck this is a safety issue.</li>
+        <li style="margin-bottom: 0.5rem;">Mix radial and bias on <strong>twin assemblies</strong> (the dual tyres on a single hub position). Same problem, amplified.</li>
+      </ul>
+    `,
+    suggestion: `
+      <p><strong>What's technically possible but, in our view, best avoided:</strong></p>
+      <ul style="margin: 0 0 1rem 1.5rem;">
+        <li style="margin-bottom: 0.5rem;">Different axles. e.g. radial fronts and bias rears on a wheel loader. Mechanically possible on some machines, OEM guidance varies. The handling characteristic of the machine changes. Tyre wear becomes uneven. Most operators standardise to one construction type per machine.</li>
+        <li style="margin-bottom: 0.5rem;">Mixing brands and patterns within the same construction type (e.g. Bridgestone radial front, Michelin radial rear). Acceptable in most circumstances, common in trader-sourced fleets.</li>
+      </ul>
+      <p><strong>The cleaner rules:</strong></p>
+      <ul style="margin: 0 0 1rem 1.5rem;">
+        <li style="margin-bottom: 0.5rem;">Same construction type on the same axle.</li>
+        <li style="margin-bottom: 0.5rem;">Same size, load index, and speed rating on the same axle.</li>
+        <li style="margin-bottom: 0.5rem;">Compatible TRA code (same family, e.g. all L-5).</li>
+        <li style="margin-bottom: 0.5rem;">Compound differences within reason, heat-resistant on hot duty, standard on cooler duty is fine.</li>
+      </ul>
+      <p>If you're forced into a mixed configuration because of supply constraints, document the decision, run the machine at reduced operating envelope, and replace to a consistent setup at first opportunity.</p>
+    `,
+    sources: [
+      { num: '01', text: 'AS4457:2019, Earth-moving machinery, Off-the-road wheels and tyres, Maintenance and safety' },
+      { num: '02', text: 'Bridgestone Earthmover Databook, Mixing tyres safety guidance' },
+      { num: '03', text: 'Michelin Earthmover Databook 2022, Mounting and demounting practices' },
+      { num: '04', text: 'OEM tyre fitment specifications, multiple manufacturers' }
+    ],
+    escalation: true,
+    related: [
+      "AS4457 compliance summary",
+      "Different patterns on the same axle, is it safe?",
+      "Bias vs radial, construction comparison"
+    ]
+  },
+
+  // Fallback for any question not in the prefab set
+  default: {
+    q: null, // dynamic
+    lede: null,
+    answer: null,
+    suggestion: null,
+    sources: [],
+    escalation: true,
+    related: []
+  }
+};
+
+// Public source links, map a cited databook to its canonical public PDF.
+// Verified, edition-checked only (see tyre_rag/scripts/sources_public_urls.csv).
+// In production the worker attaches these URLs to each retrieved source.
+const SOURCE_LINKS = [
+  [/Bridgestone (Earthmover|OTR) Databook/i, 'https://commercial.bridgestone.com/content/dam/bcs-sites/bridgestone-ex/products/Databooks/Archive/Bridgestone-OTR-Databook-2018-09-06-2018.pdf'],
+  [/Michelin (OTR|Earthmover) Databook/i, 'https://www.michelinb2b.com/wps/b2bcontent/OHT/EMDataBook_Global_E.pdf'],
+  [/Goodyear OTR Databook/i, 'https://www.goodyearotr.com/resources/engineering-data'],
+  [/BKT OTR Catalogue/i, 'https://otrtires.com/wp-content/uploads/24-BKT-Industrial-catalogue.pdf'],
+  [/Titan OTR/i, 'https://www.titan-intl.com/-/media/Vol-11-OTR-Tires-Databook-01032024-LOWRES.pdf'],
+  [/Triangle OTR/i, 'https://www.triangletyre.es/ftp/OTR%202020.pdf'],
+  [/Double Coin OTR/i, 'https://www.doublecointires.com/wp-content/uploads/Double-Coin-OTR-Data-Book.pdf'],
+  [/Techking/i, 'https://www.nortire.lt/files/pdf_files/Techking-OTR-Technical-Book-V17.0.pdf'],
+  [/MRF OTR/i, 'https://www.mrftyres.com/downloads/offtheroadtyre.pdf'],
+  [/Carlisle/i, 'https://www.carlislebrandtires.com/wp-content/uploads/2019/04/2019_Carlisle_Brand_Catalog.pdf'],
+  [/Yokohama/i, 'https://www.y-yokohama.com/global/product/tire/pdf/tires/catalogue/OR_HB02.pdf'],
+  // Standards/reference bodies (paid publications) link to the authoritative source page.
+  [/tire and rim|\bTRA\b/i, 'https://www.us-tra.org/publications/'],
+  [/as\s?4457/i, 'https://store.standards.org.au/product/as-4457-2-2008'],
+  // First-party trading experience links to the trading entity.
+  [/jewell/i, 'https://jewelltyres.com.au'],
+  // Generic OEM-spec references point to our full databook directory.
+  [/\bOEM\b/i, 'resources.html'],
+];
+// Catch-all so every cited source is clickable: the OTR databook directory.
+const SOURCE_FALLBACK = 'resources.html';
+function sourceUrl(s) {
+  if (s.url) return s.url;
+  for (const [re, u] of SOURCE_LINKS) { if (re.test(s.text)) return u; }
+  return SOURCE_FALLBACK;
+}
+
+function matchPrefab(q) {
+  const lower = q.toLowerCase();
+  if (lower.includes('992') || (lower.includes('cat') && lower.includes('iron'))) return 'cat992';
+  if (lower.includes('e-4') || lower.includes('e4 ') || lower.includes('tra code')) return 'tra-e4';
+  if (lower.includes('tkph')) return 'tkph';
+  if (lower.includes('26.5r25') || lower.includes('26r25') || lower.includes('alternative')) return '26r25';
+  if (lower.includes('mix') || (lower.includes('radial') && lower.includes('bias'))) return 'mixing';
+  return 'fallback';
+}
+
+function showLoading() {
+  document.getElementById('answer-area').innerHTML = '<div style="display: flex; gap: 0.75rem; align-items: center; padding: 1rem 0; font-family: var(--otr-mono); font-size: 0.85rem; color: var(--otr-amber-bright);"><span class="loader" style="display: inline-block; width: 14px; height: 14px; border: 2px solid var(--otr-amber); border-top-color: transparent; border-radius: 50%; animation: spin 0.8s linear infinite;"></span><span id="portal-loading">Searching the databooks…</span></div>';
+  // Staged status for the slower generative answers. The target element is
+  // replaced when the answer renders, so late timers are harmless no-ops.
+  [[2500, 'Reading the closest passages…'], [6000, 'Composing a cited answer…'], [12000, 'Still composing, nearly there…']]
+    .forEach(([ms, msg]) => setTimeout(() => {
+      const el = document.getElementById('portal-loading');
+      if (el) el.textContent = msg;
+    }, ms));
+}
+
+// Conversation memory: the last live exchange travels with the next question
+// so short follow-ups ("and for the WA800?") stay grounded in context.
+let lastExchange = null;
+
+function followUpForm(placeholder) {
+  return `<form onsubmit="return submitFollowUp(event)" style="display: flex; gap: 0.5rem; margin-top: 0.85rem; max-width: 560px;">
+    <input aria-label="${placeholder}" type="text" placeholder="${placeholder}" autocomplete="off" style="flex: 1; background: rgba(0,0,0,0.25); border: 1px solid var(--otr-rule); color: var(--otr-bone); padding: 0.55rem 0.85rem; font-size: 0.92rem; border-radius: 4px; font-family: inherit;">
+    <button class="portal__btn" type="submit">Ask →</button>
+  </form>`;
+}
+
+function submitFollowUp(e) {
+  e.preventDefault();
+  const input = e.target.querySelector('input');
+  const v = (input && input.value || '').trim();
+  if (!v) return false;
+  document.getElementById('q-input').value = v;
+  askQuestion({ preventDefault: () => {} });
+  return false;
+}
+
+async function askQuestion(e, prefabKey) {
+  e.preventDefault();
+  const q = document.getElementById('q-input').value.trim();
+  if (!q) return;
+  showLoading();
+  // Shareable answers: keep the question in the URL (the page already
+  // auto-asks from ?q= on load, so a copied link replays the answer).
+  try { history.replaceState(null, '', '?q=' + encodeURIComponent(q)); } catch (_) {}
+  // Live Knowledge Portal, two attempts (cold starts and blips happen).
+  for (let attempt = 0; attempt < 2; attempt++) {
+    try {
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), 30000);
+      const res = await fetch('/api/ask', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(lastExchange ? { q, prior: lastExchange } : { q }),
+        signal: ctrl.signal
+      });
+      clearTimeout(timer);
+      if (res.ok) {
+        const data = await res.json();
+        if (data && (data.lede || data.body)) { renderApiAnswer(q, data); return; }
+      }
+    } catch (_) { /* retry once, then fall through */ }
+  }
+  // Portal unreachable. A known canned answer is accurate content, use it;
+  // anything else gets an honest error, never stale demo copy.
+  const key = prefabKey || matchPrefab(q);
+  if (key && key !== 'fallback' && RESPONSES[key]) { renderAnswer(key, q); return; }
+  renderUnreachable(q);
+}
+
+function renderUnreachable(q) {
+  const area = document.getElementById('answer-area');
+  area.innerHTML = answerCard(q, `
+      <div class="portal__answer-lede">Couldn’t reach the knowledge base just now.</div>
+      <div class="portal__answer-body">
+        <p>The portal didn’t respond in time, usually a brief network blip rather than anything wrong with the question. Give it another go.</p>
+      </div>
+      <div style="margin: 1rem 0 0;">
+        <button class="portal__btn" type="button" onclick="askQuestion({ preventDefault: () => {} })">Try again →</button>
+      </div>
+      <div class="portal__escalation">
+        <div class="portal__escalation-label">/ OR TALK TO A HUMAN</div>
+        <div class="portal__escalation-text">If it’s urgent, <strong>speak to David Jewell direct: <a href="tel:+61419358439" style="color: var(--jt-endorse); border-bottom-color: var(--jt-endorse);">0419 358 439</a></strong>. 50 years of OTR trading. Straight answers.</div>
+      </div>
+      ${disclaimerBlock()}`);
+  area.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// Ask a follow-up chip's question (text comes from the chip itself, so no
+// quote-escaping issues in generated HTML).
+function askText(el) {
+  document.getElementById('q-input').value = el.textContent.trim();
+  askQuestion({ preventDefault: () => {} });
+}
+
+function renderApiAnswer(q, data) {
+  const area = document.getElementById('answer-area');
+  const sources = (data.sources || []).map(s => {
+    const u = sourceUrl(s);
+    return `<div class="portal__source"><span class="portal__source-num">[${s.num}]</span>${u ? `<a href="${u}" target="_blank" rel="noopener">${s.text}</a>` : `<span>${s.text}</span>`}</div>`;
+  }).join('');
+  const excerpts = (data.excerpts || []).map(x => {
+    const u = x.url || sourceUrl({ text: x.source });
+    const cite = u ? `<a href="${u}" target="_blank" rel="noopener">${x.source}</a>` : escapeHtml(x.source);
+    return `<blockquote style="margin: 0 0 1rem; padding: 0.75rem 1rem; border-left: 3px solid var(--otr-amber); background: rgba(0,0,0,0.2);">
+        <div style="font-size: 0.92rem; color: var(--otr-fog); line-height: 1.55;">${escapeHtml(x.text)}…</div>
+        <div style="margin-top: 0.5rem; font-family: var(--otr-mono); font-size: 0.72rem; color: var(--otr-steel-light);">[${x.num}] ${cite}</div>
+      </blockquote>`;
+  }).join('');
+  // Guardrail: Question / Answer / Opinion / Sources, in that fixed order,
+  // every time, data.answer falls back to the legacy lede+body shape so this
+  // renders correctly whether or not the backend has adopted the new field.
+  const answerHtml = (data.answer !== undefined ? data.answer : data.body) || '';
+  const suggestionHtml = data.suggestion || defaultSuggestion(data);
+  area.innerHTML = answerCard(q, `
+      <div class="portal__answer-lede">${data.lede || ''}</div>
+      <div class="portal__answer-body">${answerHtml}</div>
+      ${opinionBlock(suggestionHtml)}
+      <div class="portal__sources">
+        <div class="portal__sources-label">/ SOURCES</div>
+        ${sources || '<div class="portal__source" style="color: var(--otr-steel-light); border-bottom: none;">No verified databook sources for this answer, see the disclaimer below.</div>'}
+      </div>
+      ${excerpts ? `<div class="portal__sources"><div class="portal__sources-label">/ FROM THE DATABOOKS, VERBATIM</div>${excerpts}</div>` : ''}
+      ${data.escalation ? `
+        <div class="portal__escalation">
+          <div class="portal__escalation-label">/ THIS IS A QUESTION WORTH A PHONE CALL</div>
+          <div class="portal__escalation-text">For specifics on a fleet, a contract decision, or anything where the stakes are higher than $50k, <strong>speak to David Jewell direct: <a href="tel:+61419358439" style="color: var(--jt-endorse); border-bottom-color: var(--jt-endorse);">0419 358 439</a></strong>. 50 years of OTR trading. Straight answers.</div>
+        </div>` : ''}
+      ${data.clarify ? `
+        <div class="portal__sources">
+          <div class="portal__sources-label">/ ONE QUESTION BACK</div>
+          <div style="font-size: 0.98rem; color: var(--otr-bone); margin-top: 0.35rem;">${escapeHtml(data.clarify)}</div>
+          ${followUpForm('Type your answer, the conversation carries over')}
+        </div>` : ''}
+      ${relatedChips(q, data.related)}
+      ${disclaimerBlock(data.disclaimer)}`);
+  // Remember this exchange so the next question can reference it.
+  lastExchange = { q: q, lede: String(data.lede || '').replace(/<[^>]+>/g, '').trim() };
+  area.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// Follow-up chips: the server suggests questions for generative answers;
+// otherwise rotate the standing suggestions (minus the one just asked).
+function relatedChips(q, related) {
+  let items = (related || []).filter(Boolean);
+  if (!items.length) {
+    items = Object.values(RESPONSES).map(r => r.q)
+      .filter(s => s && s.toLowerCase() !== q.toLowerCase()).slice(0, 3);
+  }
+  const chips = items.map(t =>
+    `<span class="portal__suggestion" onclick="askText(this)">${escapeHtml(t)}</span>`).join('');
+  return `<div class="portal__sources"><div class="portal__sources-label">/ KEEP GOING</div>${chips ? `<div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">${chips}</div>` : ''}${followUpForm('Or ask your own follow-up question')}</div>`;
+}
+
+function askPrefab(key) {
+  const q = RESPONSES[key].q;
+  document.getElementById('q-input').value = q;
+  // Suggestion chips ask the live portal first, same as free-text questions;
+  // only fall back to the canned demo answer if /api/ask is unreachable.
+  askQuestion({ preventDefault: () => {} }, key);
+}
+
+function renderAnswer(key, customQ) {
+  const area = document.getElementById('answer-area');
+  area.innerHTML = '<div style="display: flex; gap: 0.75rem; align-items: center; padding: 1rem 0; font-family: var(--otr-mono); font-size: 0.85rem; color: var(--otr-amber-bright);"><span class="loader" style="display: inline-block; width: 14px; height: 14px; border: 2px solid var(--otr-amber); border-top-color: transparent; border-radius: 50%; animation: spin 0.8s linear infinite;"></span>Searching knowledge base…</div>';
+
+  setTimeout(() => {
+    // 'fallback' has no RESPONSES entry, guard so unmatched questions never
+    // throw (which would leave the spinner stuck).
+    let r = RESPONSES[key] || RESPONSES.default || {};
+    let displayQ = r.q || customQ;
+
+    let html;
+    if (key === 'fallback') {
+      // The portal is unreachable and the question matches no canned answer, // never show stale demo-mode copy; be honest and offer a retry.
+      renderUnreachable(customQ);
+      return;
+    } else {
+      html = answerCard(displayQ, `
+          <div class="portal__answer-lede">${r.lede}</div>
+          <div class="portal__answer-body">${r.answer}</div>
+
+          ${opinionBlock(r.suggestion || defaultSuggestion(r))}
+
+          <div class="portal__sources">
+            <div class="portal__sources-label">/ SOURCES</div>
+            ${r.sources.map(s => {
+              const u = sourceUrl(s);
+              return `
+              <div class="portal__source">
+                <span class="portal__source-num">[${s.num}]</span>
+                ${u
+                  ? `<a href="${u}" target="_blank" rel="noopener">${s.text}</a>`
+                  : `<span>${s.text}</span>`}
+              </div>
+            `;}).join('')}
+          </div>
+
+          ${r.escalation ? `
+            <div class="portal__escalation">
+              <div class="portal__escalation-label">/ THIS IS A QUESTION WORTH A PHONE CALL</div>
+              <div class="portal__escalation-text">
+                For specifics on a fleet, a contract decision, or anything where the stakes are higher than $50k, <strong>speak to David Jewell direct: <a href="tel:+61419358439" style="color: var(--jt-endorse); border-bottom-color: var(--jt-endorse);">0419 358 439</a></strong>. 50 years of OTR trading. Straight answers.
+              </div>
+            </div>
+          ` : ''}
+
+          ${r.related && r.related.length ? `
+            <div class="portal__sources">
+              <div class="portal__sources-label">/ RELATED QUESTIONS</div>
+              <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                ${r.related.map(rel => `<span class="portal__suggestion" onclick="document.getElementById('q-input').value='${escapeHtml(rel).replace(/'/g, "\\'")}'; window.scrollTo({top:0,behavior:'smooth'});">${escapeHtml(rel)}</span>`).join('')}
+              </div>
+            </div>
+          ` : ''}
+
+          ${disclaimerBlock()}`);
+    }
+
+    area.innerHTML = html;
+    area.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 750);
+}
+
+function escapeHtml(s) {
+  if (s === null || s === undefined) return '';
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+}
+
+// Auto-run if ?q= param present (from home page)
+window.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  const q = params.get('q');
+  if (q) {
+    document.getElementById('q-input').value = q;
+    // Trigger the same logic as form submit
+    const fakeEvent = { preventDefault: () => {} };
+    askQuestion(fakeEvent);
+  }
+});
+</script>
+
+<style>
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .portal__suggestion { user-select: none; }
+</style>
+
+</body>
+</html>

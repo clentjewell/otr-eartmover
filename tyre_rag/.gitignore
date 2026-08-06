@@ -1,0 +1,33 @@
+# Secrets
+.env
+
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Generated at upload time
+scripts/_r2_manifest.csv
+
+# Generated intermediates and indexes (reproducible from sources/)
+extracted/
+index/*.db
+index/*.db-wal
+index/*.db-shm
+index/*.jsonl
+# ...except the portal corpus: committed so RAG go-live needs only Node + wrangler.
+!index/prose_chunks.jsonl
+
+# Crops can be large; keep the directory, ignore the images by default.
+crops/**/*.png
+# ...but commit the synthetic sample's crops so the demo is self-contained.
+!crops/sample-otr-databook-synthetic-2099/
+!crops/sample-otr-databook-synthetic-2099/*.png
+
+# Source databooks are synced locally, not committed (publicly available, large).
+# The clearly-synthetic sample IS committed so the pipeline is demonstrable.
+sources/*.pdf
+!sources/SAMPLE-OTR-Databook-SYNTHETIC-2099.pdf
+
+# Generated reports are committed deliberately (see run); uncomment to ignore.
+# REVIEW_QUEUE.csv
+# MORNING_REPORT.md

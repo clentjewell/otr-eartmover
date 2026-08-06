@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brand Directory · OTR Earthmover Tyre · 19 OTR tyre brands</title>
+  <meta name="description" content="Independent reference directory of every major OTR earthmover tyre brand. Country of origin, year founded, tier classification, OTR focus, notable patterns, databook links.">
+  <link rel="stylesheet" href="css/main.css?v=1">
+  <style>
+    .brand-filter {
+      display: flex;
+      gap: var(--s-2);
+      flex-wrap: wrap;
+      margin-bottom: var(--s-6);
+    }
+    .brand-filter button {
+      padding: var(--s-2) var(--s-3);
+      background: var(--otr-graphite-soft);
+      color: var(--otr-fog);
+      border: 1px solid var(--otr-rule-strong);
+      font-family: var(--otr-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: all var(--t-fast);
+    }
+    .brand-filter button:hover, .brand-filter button.is-active {
+      background: var(--otr-amber);
+      color: var(--otr-graphite);
+      border-color: var(--otr-amber);
+    }
+    .brand-card {
+      background: var(--otr-graphite-soft);
+      border: 1px solid var(--otr-rule-strong);
+      padding: var(--s-5);
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-3);
+      transition: border-color var(--t-base);
+    }
+    .brand-card:hover { border-color: var(--otr-amber); }
+    .brand-card__head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: var(--s-3);
+      flex-wrap: wrap;
+    }
+    .brand-card__name {
+      font-family: var(--otr-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1;
+    }
+    .brand-card__tier {
+      font-family: var(--otr-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 2px 6px;
+      border: 1px solid var(--otr-rule-strong);
+      border-radius: 2px;
+    }
+    .brand-card__tier--1 { background: rgba(191,110,27,0.15); color: var(--otr-amber-bright); border-color: rgba(191,110,27,0.4); }
+    .brand-card__tier--2 { background: rgba(61,90,108,0.18); color: var(--otr-steel-light); border-color: rgba(61,90,108,0.4); }
+    .brand-card__tier--3 { background: rgba(255,255,255,0.05); color: var(--otr-fog); }
+    .brand-card__meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--s-2);
+      font-family: var(--otr-mono);
+      font-size: 0.75rem;
+      color: var(--otr-steel-light);
+    }
+    .brand-card__meta strong { color: var(--otr-bone); font-weight: 500; }
+    .brand-card__patterns {
+      font-size: 0.88rem;
+      color: var(--otr-fog);
+      line-height: 1.5;
+    }
+    .brand-card__patterns strong { color: var(--otr-bone); }
+    .brand-card__footer {
+      margin-top: auto;
+      padding-top: var(--s-3);
+      border-top: 1px solid var(--otr-rule);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--otr-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .brand-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--s-4);
+    }
+    @media (min-width: 640px) { .brand-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1024px) { .brand-grid { grid-template-columns: 1fr 1fr 1fr; } }
+  </style>
+
+  <link rel="canonical" href="https://otrearthmovertyres.com/brands.html">
+  <meta property="og:title" content="Brand Directory · OTR Earthmover Tyre · 19 OTR tyre brands">
+  <meta property="og:description" content="Independent reference directory of every major OTR earthmover tyre brand. Country of origin, year founded, tier classification, OTR focus, notable patterns, databook links.">
+  <meta property="og:image" content="https://otrearthmovertyres.com/public/img/og-default.jpg">
+  <meta property="og:url" content="https://otrearthmovertyres.com/brands.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="OTR Earthmover Tyre">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Brand Directory · OTR Earthmover Tyre · 19 OTR tyre brands">
+  <meta name="twitter:description" content="Independent reference directory of every major OTR earthmover tyre brand. Country of origin, year founded, tier classification, OTR focus, notable patterns, databook links.">
+  <meta name="twitter:image" content="https://otrearthmovertyres.com/public/img/og-default.jpg">
+
+  <!-- Publisher identity. OTR Earthmover Tyre is the reference site; Jewell Tyres is the trading business behind it. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "OTR Earthmover Tyre",
+    "url": "https://otrearthmovertyres.com",
+    "description": "Independent, free-to-use technical reference for off-the-road earthmover and mining tyres. Published by Jewell Tyres, an independent Australian OTR tyre trader.",
+    "logo": "https://otrearthmovertyres.com/public/img/otr-logo-light.png",
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Jewell Tyres",
+      "url": "https://jewelltyres.com.au",
+      "telephone": "+61260241910",
+      "foundingDate": "1974"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "OTR Earthmover Tyre", "item": "https://otrearthmovertyres.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Brand Directory", "item": "https://otrearthmovertyres.com/brands.html" }
+    ]
+  }
+  </script>
+
+  <!-- The brand cards are rendered from the BRANDS array below, so the same 19
+       brands are mirrored here for crawlers and answer engines that don't run JS. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "OTR earthmover tyre brand directory",
+    "description": "Nineteen off-the-road tyre brands with origin, founding year and OTR Earthmover Tyre's own editorial tier classification. Tiers are the opinion of an independent trader, not an official industry standard.",
+    "url": "https://otrearthmovertyres.com/brands.html",
+    "numberOfItems": 19,
+    "itemListOrder": "https://schema.org/ItemListUnordered",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1,
+        "item": { "@type": "Brand", "name": "Bridgestone", "description": "Tier 1 in OTR Earthmover Tyre's editorial classification. Origin: Japan. Founded 1931. Focus: mining, haul and loader." } },
+      { "@type": "ListItem", "position": 2,
+        "item": { "@type": "Brand", "name": "Michelin", "description": "Tier 1 in OTR Earthmover Tyre's editorial classification. Origin: France. Founded 1889. Focus: mining and premium OTR." } },
+      { "@type": "ListItem", "position": 3,
+        "item": { "@type": "Brand", "name": "Goodyear", "description": "Tier 1 in OTR Earthmover Tyre's editorial classification. Origin: USA. Founded 1898. Focus: mining and haul truck." } },
+      { "@type": "ListItem", "position": 4,
+        "item": { "@type": "Brand", "name": "Yokohama", "description": "Tier 1 in OTR Earthmover Tyre's editorial classification. Origin: Japan. Founded 1917. Focus: mining, loader and haul." } },
+      { "@type": "ListItem", "position": 5,
+        "item": { "@type": "Brand", "name": "Continental", "description": "Tier 1 in OTR Earthmover Tyre's editorial classification. Origin: Germany. Founded 1871. Focus: earthmoving and specialty." } },
+      { "@type": "ListItem", "position": 6,
+        "item": { "@type": "Brand", "name": "BKT", "description": "Tier 2 in OTR Earthmover Tyre's editorial classification. Origin: India. Founded 1987. Focus: mid-tier OTR and agricultural." } },
+      { "@type": "ListItem", "position": 7,
+        "item": { "@type": "Brand", "name": "Aeolus", "description": "Tier 2 in OTR Earthmover Tyre's editorial classification. Origin: China. Founded 1965. Focus: haul and loader." } },
+      { "@type": "ListItem", "position": 8,
+        "item": { "@type": "Brand", "name": "Techking", "description": "Tier 2 in OTR Earthmover Tyre's editorial classification. Origin: China. Founded 2003. Focus: specialist OTR." } },
+      { "@type": "ListItem", "position": 9,
+        "item": { "@type": "Brand", "name": "Triangle", "description": "Tier 2 in OTR Earthmover Tyre's editorial classification. Origin: China. Founded 1976. Focus: wide-range OTR." } },
+      { "@type": "ListItem", "position": 10,
+        "item": { "@type": "Brand", "name": "Double Coin", "description": "Tier 2 in OTR Earthmover Tyre's editorial classification. Origin: China. Founded 1928. Focus: mid-tier OTR." } },
+      { "@type": "ListItem", "position": 11,
+        "item": { "@type": "Brand", "name": "Galaxy", "description": "Tier 2 in OTR Earthmover Tyre's editorial classification. Origin: India (Yokohama ATG). Founded 1990. Focus: OTR and agricultural." } },
+      { "@type": "ListItem", "position": 12,
+        "item": { "@type": "Brand", "name": "Alliance", "description": "Tier 2 in OTR Earthmover Tyre's editorial classification. Origin: India (Yokohama ATG). Founded 1950. Focus: earthmoving and agricultural." } },
+      { "@type": "ListItem", "position": 13,
+        "item": { "@type": "Brand", "name": "Mitas", "description": "Tier 2 in OTR Earthmover Tyre's editorial classification. Origin: Czech Republic (Trelleborg). Founded 1932. Focus: earthmoving and agricultural." } },
+      { "@type": "ListItem", "position": 14,
+        "item": { "@type": "Brand", "name": "MRF", "description": "Tier 2 in OTR Earthmover Tyre's editorial classification. Origin: India. Founded 1946. Focus: mid-tier OTR." } },
+      { "@type": "ListItem", "position": 15,
+        "item": { "@type": "Brand", "name": "Solideal / Camso", "description": "Tier 2 in OTR Earthmover Tyre's editorial classification. Origin: Sri Lanka (Michelin). Founded 1972. Focus: industrial and port." } },
+      { "@type": "ListItem", "position": 16,
+        "item": { "@type": "Brand", "name": "Titan", "description": "Tier 3 in OTR Earthmover Tyre's editorial classification. Origin: USA. Founded 1890. Focus: heavy specialty." } },
+      { "@type": "ListItem", "position": 17,
+        "item": { "@type": "Brand", "name": "Trelleborg", "description": "Tier 3 in OTR Earthmover Tyre's editorial classification. Origin: Sweden. Founded 1905. Focus: industrial and agricultural." } },
+      { "@type": "ListItem", "position": 18,
+        "item": { "@type": "Brand", "name": "Firestone", "description": "Tier 3 in OTR Earthmover Tyre's editorial classification. Origin: USA (Bridgestone). Founded 1900. Focus: OTR and agricultural." } },
+      { "@type": "ListItem", "position": 19,
+        "item": { "@type": "Brand", "name": "Yokohama OTR", "description": "Tier 3 in OTR Earthmover Tyre's editorial classification. Origin: USA (former Goodyear OTR division). Founded 2015. Focus: OTR, historical Goodyear OTR range." } }
+    ]
+  }
+  </script>
+
+  <!-- Common questions, mirrored in the prose block near the foot of the page. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How many OTR earthmover tyre brands are in this directory?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nineteen. Five are classified tier 1 (Bridgestone, Michelin, Goodyear, Yokohama, Continental), ten tier 2 (BKT, Aeolus, Techking, Triangle, Double Coin, Galaxy, Alliance, Mitas, MRF, Solideal / Camso) and four tier 3 (Titan, Trelleborg, Firestone, Yokohama OTR). Each entry lists country of origin, year founded, OTR focus and notable patterns."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What do tier 1, tier 2 and tier 3 mean on this page?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "They are OTR Earthmover Tyre's own editorial classification, based on Jewell Tyres' independent trading experience in the Australian and New Zealand market. Tier 1 covers the established global premium makers, tier 2 credible mid-tier makers, tier 3 specialty and niche positions. It reflects our view of typical market positioning and supply, not an official industry standard, and manufacturers may hold a different view."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the tier ranking say anything about a tyre's safety or compliance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The tier is about market positioning and supply, not safety, compliance or fitness for a particular application. A tyre's suitability for a machine and duty depends on size, load index, speed symbol, TRA service code, TKPH rating and compound, confirmed against current manufacturer and OEM data and AS4457:2019."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are mid-tier OTR tyre brands worth buying?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In our view, often yes, but it depends on the application. Several tier 2 patterns have earned their place in Australian civil, quarry and secondary mining fleets at a materially lower delivered cost. We would lean to tier 1 where cut and heat conditions are at their hardest and downtime is the dominant cost, and to tier 2 where conditions are moderate and delivered price matters. That is trader opinion, not engineering advice, and it is worth testing per application on your own site data."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which countries do OTR earthmover tyre brands come from?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In this directory: Japan, France, Germany and the USA for the tier-one makers, then China, India, the Czech Republic, Sri Lanka and Sweden across the mid-tier and specialty brands. Several brands sit inside larger groups, so corporate ownership and country of manufacture can differ from the badge. Ownership changes over time, so verify current details with the manufacturer."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<div id="site-header-placeholder"></div>
+
+<section class="ground--graphite-deep" style="padding-block: var(--s-9); position: relative; overflow: hidden;">
+  <div class="hero__bg"></div>
+  <div class="container" style="position: relative;">
+    <span class="eyebrow eyebrow--amber">/ Brand directory · Reference</span>
+    <h1 class="display" style="margin-top: 1rem; max-width: 980px;">
+      19 OTR tyre brands. <span class="accent">Every one of them.</span>
+    </h1>
+    <p style="max-width: 720px; font-size: 1.15rem; margin-top: 1.5rem; color: var(--otr-fog); line-height: 1.55;">
+      An independent directory of off-the-road tyre manufacturers. Country of origin, year founded, tier classification, OTR focus, notable patterns. No manufacturer allegiances, the tiers below are our own honest opinion, not an official standard.
+    </p>
+
+    <!-- Key facts: short, self-contained statements, kept near the top so an
+         answer engine can lift them verbatim. Figures match the BRANDS data below. -->
+    <div style="margin-top: var(--s-6); padding: var(--s-5); border: 1px solid var(--otr-rule); background: rgba(0,0,0,0.22); border-radius: 12px; max-width: 860px;">
+      <span class="mono" style="display: block; font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--otr-amber-bright); margin-bottom: var(--s-3);">/ Key facts</span>
+      <ul style="padding-left: var(--s-5); margin: 0; color: var(--otr-fog);">
+        <li style="margin-bottom: 0.55rem; line-height: 1.6;">The directory lists <strong style="color: var(--otr-bone);">19 OTR earthmover tyre brands</strong> with country of origin, year founded, OTR focus and notable patterns.</li>
+        <li style="margin-bottom: 0.55rem; line-height: 1.6;"><strong style="color: var(--otr-bone);">Tier 1 (5 brands):</strong> Bridgestone (Japan, 1931), Michelin (France, 1889), Goodyear (USA, 1898), Yokohama (Japan, 1917), Continental (Germany, 1871).</li>
+        <li style="margin-bottom: 0.55rem; line-height: 1.6;"><strong style="color: var(--otr-bone);">Tier 2 (10 brands):</strong> BKT, Aeolus, Techking, Triangle, Double Coin, Galaxy, Alliance, Mitas, MRF, Solideal / Camso.</li>
+        <li style="margin-bottom: 0.55rem; line-height: 1.6;"><strong style="color: var(--otr-bone);">Tier 3 (4 brands):</strong> Titan, Trelleborg, Firestone, Yokohama OTR.</li>
+        <li style="margin-bottom: 0.55rem; line-height: 1.6;">Countries of origin represented: Japan, France, Germany, USA, China, India, Czech Republic, Sri Lanka and Sweden.</li>
+        <li style="line-height: 1.6;">The tiers are OTR Earthmover Tyre's own editorial opinion as an independent trader, not an official industry standard, and say nothing about any product's safety or compliance.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section ground--graphite">
+  <div class="container">
+    <div style="margin-bottom: var(--s-6); padding: var(--s-5); border: 1px solid var(--otr-rule); background: rgba(0,0,0,0.2);">
+      <span class="mono" style="font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--otr-amber-bright);">/ How we tier</span>
+      <p style="margin-top: var(--s-3); margin-bottom: var(--s-3); font-size: 0.92rem; line-height: 1.6; color: var(--otr-fog);">
+        Tier 1 / 2 / 3 here is OTR Earthmover Tyre's own editorial classification, based on Jewell Tyres' independent trading experience across the Australian and New Zealand market. It reflects our view of typical market positioning and supply, not an official industry standard, and not a statement about any product's safety, compliance or fitness for a particular application. Reasonable people disagree, and manufacturers may hold a different view.
+      </p>
+      <p style="margin-bottom: 0; font-size: 0.92rem; line-height: 1.6; color: var(--otr-fog);">
+        Corporate ownership, origin and founding details are compiled from public sources and correct to the best of our knowledge; group ownership changes over time, verify current details with the manufacturer.
+      </p>
+    </div>
+    <div class="brand-filter">
+      <button class="is-active" onclick="filterBrands('all', this)">All brands</button>
+      <button onclick="filterBrands('tier-1', this)">Tier 1</button>
+      <button onclick="filterBrands('tier-2', this)">Tier 2</button>
+      <button onclick="filterBrands('tier-3', this)">Tier 3</button>
+      <button onclick="filterBrands('china', this)">China</button>
+      <button onclick="filterBrands('india', this)">India</button>
+      <button onclick="filterBrands('mining', this)">Mining focus</button>
+    </div>
+
+    <div class="brand-grid" id="brand-grid">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMMON QUESTIONS ============ -->
+<!-- Mirrored by the FAQPage JSON-LD in the head. Keep the two in sync. -->
+<section class="section ground--graphite-soft">
+  <div class="container container--narrow">
+    <span class="eyebrow eyebrow--amber">/ Common questions</span>
+    <h2 class="h2" style="margin-top: 0.5rem; margin-bottom: var(--s-6); color: var(--otr-bone);">Questions about OTR tyre brands</h2>
+
+    <h3 style="font-family: var(--otr-display); font-size: 1.15rem; font-weight: 600; color: var(--otr-bone); margin-bottom: var(--s-2);">How many OTR earthmover tyre brands are in this directory?</h3>
+    <p style="font-size: 1rem; line-height: 1.65; color: var(--otr-fog); margin: 0 0 var(--s-5);">Nineteen. Five are classified tier 1 (Bridgestone, Michelin, Goodyear, Yokohama, Continental), ten tier 2 (BKT, Aeolus, Techking, Triangle, Double Coin, Galaxy, Alliance, Mitas, MRF, Solideal / Camso) and four tier 3 (Titan, Trelleborg, Firestone, Yokohama OTR). Each entry lists country of origin, year founded, OTR focus and notable patterns.</p>
+
+    <h3 style="font-family: var(--otr-display); font-size: 1.15rem; font-weight: 600; color: var(--otr-bone); margin-bottom: var(--s-2);">What do tier 1, tier 2 and tier 3 mean on this page?</h3>
+    <p style="font-size: 1rem; line-height: 1.65; color: var(--otr-fog); margin: 0 0 var(--s-5);">They are OTR Earthmover Tyre's own editorial classification, based on Jewell Tyres' independent trading experience in the Australian and New Zealand market. Tier 1 covers the established global premium makers, tier 2 credible mid-tier makers, tier 3 specialty and niche positions. It reflects our view of typical market positioning and supply, not an official industry standard, and manufacturers may hold a different view.</p>
+
+    <h3 style="font-family: var(--otr-display); font-size: 1.15rem; font-weight: 600; color: var(--otr-bone); margin-bottom: var(--s-2);">Does the tier ranking say anything about a tyre's safety or compliance?</h3>
+    <p style="font-size: 1rem; line-height: 1.65; color: var(--otr-fog); margin: 0 0 var(--s-5);">No. The tier is about market positioning and supply, not safety, compliance or fitness for a particular application. A tyre's suitability for a machine and duty depends on size, load index, speed symbol, TRA service code, TKPH rating and compound, confirmed against current manufacturer and OEM data and AS4457:2019.</p>
+
+    <h3 style="font-family: var(--otr-display); font-size: 1.15rem; font-weight: 600; color: var(--otr-bone); margin-bottom: var(--s-2);">Are mid-tier OTR tyre brands worth buying?</h3>
+    <p style="font-size: 1rem; line-height: 1.65; color: var(--otr-fog); margin: 0 0 var(--s-5);">In our view, often yes, but it depends on the application. Several tier 2 patterns have earned their place in Australian civil, quarry and secondary mining fleets at a materially lower delivered cost. We'd lean to tier 1 where cut and heat conditions are at their hardest and downtime is the dominant cost, and to tier 2 where conditions are moderate and delivered price matters. That is trader opinion, not engineering advice, and it is worth testing per application on your own site data.</p>
+
+    <h3 style="font-family: var(--otr-display); font-size: 1.15rem; font-weight: 600; color: var(--otr-bone); margin-bottom: var(--s-2);">Which countries do OTR earthmover tyre brands come from?</h3>
+    <p style="font-size: 1rem; line-height: 1.65; color: var(--otr-fog); margin: 0;">In this directory: Japan, France, Germany and the USA for the tier-one makers, then China, India, the Czech Republic, Sri Lanka and Sweden across the mid-tier and specialty brands. Several brands sit inside larger groups, so corporate ownership and country of manufacture can differ from the badge. Ownership changes over time, so verify current details with the manufacturer.</p>
+  </div>
+</section>
+
+<section class="section--sm ground--graphite">
+  <div class="container container--narrow">
+    <div style="padding: var(--s-5); background: rgba(254,192,19,0.05); border-left: 4px solid var(--jt-endorse);">
+      <span class="mono" style="font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--jt-endorse);">/ Looking to source these brands?</span>
+      <p style="margin-top: var(--s-3); margin-bottom: var(--s-4); color: var(--otr-bone); font-size: 1rem;">
+        Jewell Tyres trades across every brand in this directory. Independent. National. No allegiances. If you need a specific pattern, size, or compound, we'll find it. This site is maintained by Jewell Tyres, which trades these tyres commercially.
+      </p>
+      <div style="display: flex; gap: var(--s-3); flex-wrap: wrap;">
+        <a href="https://jewelltyres.com.au/buy-tyres.html" class="btn" style="background: var(--jt-endorse); border-color: var(--jt-endorse); color: var(--otr-graphite);">Submit a buy enquiry</a>
+        <a href="tyres.html" class="btn btn--ghost">Browse the Tyre Guide</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer-placeholder"></div>
+
+<script src="js/layout.js?v=1"></script>
+<script>
+const BRANDS = [
+  { name: 'Bridgestone', country: 'Japan', founded: 1931, tier: 1, focus: 'Mining / haul / loader',
+    patterns: 'VRDP, VRPS, VRLS, VSDL+, VHST, VKT, full OTR range across L-3 to L-5, E-3 to E-4', tags: ['tier-1', 'mining'] },
+  { name: 'Michelin', country: 'France', founded: 1889, tier: 1, focus: 'Mining / premium OTR',
+    patterns: 'XDR, XDR3, XDR4, XHA2, XLD D2, X-Traction, premium tier across all major sizes', tags: ['tier-1', 'mining'] },
+  { name: 'Goodyear', country: 'USA', founded: 1898, tier: 1, focus: 'Mining / haul truck',
+    patterns: 'RL-3K, RL-4K, RL-5K, RL-5L, RH-4A, RM-4A+, strong all-rounder presence', tags: ['tier-1', 'mining'] },
+  { name: 'Yokohama', country: 'Japan', founded: 1917, tier: 1, focus: 'Mining / loader / haul',
+    patterns: 'RL5K+, RB02, RB42, Y69, competitive cost-to-tier-one ratio, broad distribution', tags: ['tier-1', 'mining'] },
+  { name: 'Continental', country: 'Germany', founded: 1871, tier: 1, focus: 'Earthmoving / specialty',
+    patterns: 'EM-Master, ContiEarth, RDT-Master, broad earthmoving range', tags: ['tier-1'] },
+  { name: 'BKT', country: 'India', founded: 1987, tier: 2, focus: 'Mid-tier OTR / ag',
+    patterns: 'Earthmax SR468, SR468A, SR45, SR41, EM 936, strong cut resistance, well-regarded mid-tier', tags: ['tier-2', 'india', 'mining'] },
+  { name: 'Aeolus', country: 'China', founded: 1965, tier: 2, focus: 'Haul / loader',
+    patterns: 'AE57, AL37, AL57, A50, A52, wide availability through trader channels', tags: ['tier-2', 'china', 'mining'] },
+  { name: 'Techking', country: 'China', founded: 2003, tier: 2, focus: 'Specialist OTR',
+    patterns: 'ETOT-L5, ETD, ETDA, increasingly common in Australian civil and secondary mining', tags: ['tier-2', 'china', 'mining'] },
+  { name: 'Triangle', country: 'China', founded: 1976, tier: 2, focus: 'Wide-range OTR',
+    patterns: 'TB598S+, TL538S+, TR568, TL525, competitive mid-tier across L-3, L-4, L-5', tags: ['tier-2', 'china'] },
+  { name: 'Double Coin', country: 'China', founded: 1928, tier: 2, focus: 'Mid-tier OTR',
+    patterns: 'REM-2, REM-4, REM-8, broad civil and industrial application range', tags: ['tier-2', 'china'] },
+  // REVIEW: verify Yokohama-OTR/Goodyear OTR provenance + ATG/Michelin/Bridgestone ownership before publish.
+  { name: 'Galaxy', country: 'India (Yokohama ATG)', founded: 1990, tier: 2, focus: 'OTR / agricultural',
+    patterns: 'LDSR 400, EM Trac, Hippo, Yardmaster, strong industrial and ag presence', tags: ['tier-2', 'india'] },
+  { name: 'Alliance', country: 'India (Yokohama ATG)', founded: 1950, tier: 2, focus: 'Earthmoving / ag',
+    patterns: '550, 580, 585, 600, competitive industrial earthmoving fitments', tags: ['tier-2', 'india'] },
+  { name: 'Mitas', country: 'Czech Republic (Trelleborg)', founded: 1932, tier: 2, focus: 'Earthmoving / ag',
+    patterns: 'EM-22, EM-60, NB38, strong European industrial heritage', tags: ['tier-2'] },
+  { name: 'MRF', country: 'India', founded: 1946, tier: 2, focus: 'OTR mid-tier',
+    patterns: 'Muscleroc, RockTuff, emerging Australian distribution, competitive pricing', tags: ['tier-2', 'india'] },
+  { name: 'Solideal / Camso', country: 'Sri Lanka (Michelin)', founded: 1972, tier: 2, focus: 'Industrial / port',
+    patterns: 'SLM-12, SKS-322, SKS-732, material handling and industrial specialty', tags: ['tier-2'] },
+  { name: 'Titan', country: 'USA', founded: 1890, tier: 3, focus: 'Heavy specialty',
+    patterns: 'Hi-T Lift, MaxTraction Loader, MaxTraction Grader, specialty heavy applications', tags: ['tier-3'] },
+  { name: 'Trelleborg', country: 'Sweden', founded: 1905, tier: 3, focus: 'Industrial / agricultural',
+    patterns: 'Industrial Pro, EMR series, solid industrial and material handling presence', tags: ['tier-3'] },
+  { name: 'Firestone', country: 'USA (Bridgestone)', founded: 1900, tier: 3, focus: 'OTR / agricultural',
+    patterns: 'Duraload, SDT, Duraforce, Bridgestone subsidiary, specialty fitments', tags: ['tier-3'] },
+  { name: 'Yokohama OTR', country: 'USA (Goodyear OTR division)', founded: 2015, tier: 3, focus: 'OTR, historical Goodyear OTR',
+    patterns: 'Inherited Goodyear OTR range, running under Yokohama-OTR badge in some markets', tags: ['tier-3'] },
+];
+
+function renderBrands(list) {
+  const html = list.map(b => `
+    <div class="brand-card">
+      <div class="brand-card__head">
+        <span class="brand-card__name">${b.name}</span>
+        <span class="brand-card__tier brand-card__tier--${b.tier}">Tier ${b.tier}</span>
+      </div>
+      <div class="brand-card__meta">
+        <span><strong>Origin:</strong><br>${b.country}</span>
+        <span><strong>Founded:</strong><br>${b.founded}</span>
+      </div>
+      <div class="brand-card__patterns">
+        <strong>${b.focus}.</strong> ${b.patterns}
+      </div>
+      <div class="brand-card__footer">
+        <span style="color: var(--otr-steel-light);">/ ${b.tags.join(' · ').toUpperCase()}</span>
+        <a href="tyres.html" style="color: var(--otr-amber-bright); border-bottom: 0;">View tyres →</a>
+      </div>
+    </div>
+  `).join('');
+  document.getElementById('brand-grid').innerHTML = html;
+}
+
+function filterBrands(filter, btn) {
+  document.querySelectorAll('.brand-filter button').forEach(b => b.classList.remove('is-active'));
+  btn.classList.add('is-active');
+
+  if (filter === 'all') return renderBrands(BRANDS);
+  if (filter.startsWith('tier-')) {
+    const tier = parseInt(filter.split('-')[1]);
+    return renderBrands(BRANDS.filter(b => b.tier === tier));
+  }
+  return renderBrands(BRANDS.filter(b => b.tags.includes(filter)));
+}
+
+renderBrands(BRANDS);
+</script>
+</body>
+</html>

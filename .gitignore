@@ -1,0 +1,23 @@
+# Secrets
+.env
+.env.local
+.env*.local
+
+# Build artifacts
+node_modules/
+.next/
+out/
+dist/
+
+# Worker / Cloudflare
+.wrangler/
+.dev.vars
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp

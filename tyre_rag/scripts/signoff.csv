@@ -1,0 +1,7 @@
+size_designation,tra_code,signed_off_by,date,notes
+# Add one row per human-verified spec record to authorise it for serving.
+# A record is promoted to the served set only when it is high-confidence,
+# passes every validation gate, appears here, AND the run is finalised with
+# --commit. Leave empty to keep the served set empty (abstain by default).
+# Example (delete the leading # to activate after genuine human verification):
+# 27.00R49,E-4,your-name,2026-05-31,verified against source crop

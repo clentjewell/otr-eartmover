@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources · OTR Earthmover Tyre · Brand technical data books &amp; download links</title>
+  <meta name="description" content="An independent directory of off-the-road tyre manufacturers' technical data books, with direct links to the publicly available PDFs and download pages. Reference only, confirm against current manufacturer specifications.">
+  <link rel="canonical" href="https://otrearthmovertyres.com/resources.html">
+  <meta property="og:title" content="Resources · OTR Earthmover Tyre · Brand technical data books and download links">
+  <meta property="og:description" content="An independent directory of off-the-road tyre manufacturers' technical data books, with direct links to the publicly available PDFs and download pages.">
+  <meta property="og:image" content="https://otrearthmovertyres.com/public/img/og-default.jpg">
+  <meta property="og:url" content="https://otrearthmovertyres.com/resources.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="OTR Earthmover Tyre">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Resources · OTR Earthmover Tyre">
+  <meta name="twitter:description" content="Independent directory of OTR tyre manufacturers' technical data books and download links.">
+  <meta name="twitter:image" content="https://otrearthmovertyres.com/public/img/og-default.jpg">
+  <link rel="stylesheet" href="css/main.css?v=1">
+  <style>
+    .res-note-band {
+      background: var(--otr-graphite-soft);
+      border: 1px solid var(--otr-rule-strong);
+      padding: var(--s-4) var(--s-5);
+      margin: var(--s-6) 0;
+    }
+    .res-note-band .res-note-label {
+      font-family: var(--otr-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--otr-amber-bright);
+      display: block;
+      margin-bottom: var(--s-2);
+    }
+    .res-note-band p { color: var(--otr-fog); font-size: 0.92rem; line-height: 1.6; margin: 0; }
+    .res-group { padding-block: var(--s-7); border-top: 1px solid var(--otr-rule); }
+    .res-group:first-of-type { border-top: 0; }
+    .res-group__label {
+      font-family: var(--otr-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--otr-steel-light);
+      margin-bottom: var(--s-4);
+    }
+    .res-brand {
+      padding: var(--s-4) 0;
+      border-bottom: 1px solid var(--otr-rule);
+    }
+    .res-brand:last-child { border-bottom: 0; }
+    .res-brand__name {
+      font-family: var(--otr-display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--otr-bone);
+      margin: 0 0 var(--s-2);
+    }
+    .res-list { list-style: none; padding: 0; margin: 0; }
+    .res-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: var(--s-3);
+      padding: var(--s-2) 0;
+    }
+    .res-doc { font-size: 0.98rem; line-height: 1.4; }
+    .res-doc--none { color: var(--otr-steel-light); border-bottom: 0; }
+    .res-badge {
+      font-family: var(--otr-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border: 1px solid;
+      border-radius: 2px;
+      flex: 0 0 auto;
+    }
+    .res-badge--pdf { color: var(--otr-amber-bright); border-color: rgba(224,132,40,0.5); }
+    .res-badge--page { color: var(--otr-steel-light); border-color: var(--otr-rule-strong); }
+    .res-badge--none { color: var(--otr-steel-light); border-color: var(--otr-rule); }
+    .res-note { color: var(--otr-steel-light); font-size: 0.85rem; line-height: 1.4; }
+    .res-note a { font-size: 0.85rem; }
+    .res-badge { border-radius: 999px; }
+    .res-brand { scroll-margin-top: 96px; }
+
+    /* Brand quick-nav: filter + tile grid */
+    .brand-nav { margin-bottom: var(--s-7); }
+    .brand-filter-wrap { position: relative; margin-bottom: var(--s-5); }
+    .brand-filter-wrap::before {
+      content: "⌕";
+      position: absolute; left: var(--s-4); top: 50%; transform: translateY(-50%);
+      color: var(--otr-steel-light); font-size: 1.1rem; pointer-events: none;
+    }
+    #brand-filter { padding-left: var(--s-7); }
+    .brand-count { font-family: var(--otr-mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--otr-steel-light); margin-top: var(--s-2); }
+    .brand-tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--s-3); }
+    @media (min-width: 640px)  { .brand-tiles { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 1024px) { .brand-tiles { grid-template-columns: repeat(4, 1fr); } }
+    .brand-tile {
+      display: flex; align-items: center; gap: var(--s-3);
+      padding: var(--s-4);
+      background: var(--otr-graphite-soft);
+      border-radius: 14px;
+      text-decoration: none; border-bottom: 0;
+      will-change: transform;
+      transition: transform var(--t-base), background var(--t-base);
+    }
+    .brand-tile:hover { transform: translateY(-4px); background: #212a33; }
+    .brand-tile__chip {
+      flex: 0 0 auto;
+      width: 46px; height: 46px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(255,255,255,0.06);
+      font-family: var(--otr-display);
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      color: var(--otr-amber-bright);
+      overflow: hidden;
+    }
+    .brand-tile__chip.has-logo { background: #fff; }
+    .brand-tile__chip img { width: 100%; height: 100%; object-fit: contain; padding: 6px; }
+    .brand-tile__text { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+    .brand-tile__name { font-family: var(--otr-display); font-weight: 600; font-size: 1.02rem; color: var(--otr-bone); line-height: 1.1; }
+    .brand-tile__count { font-family: var(--otr-mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--otr-steel-light); }
+    .brand-tile[hidden], .res-brand[hidden], .res-group[hidden] { display: none; }
+    #brand-empty { color: var(--otr-fog); padding: var(--s-5) 0; }
+
+    /* Master-detail layout: sticky brand list (left) + selected databooks (right) */
+    .res-layout { display: grid; grid-template-columns: 1fr; gap: var(--s-6); align-items: start; margin-top: var(--s-6); }
+    @media (min-width: 900px) { .res-layout { grid-template-columns: 320px 1fr; gap: var(--s-7); } }
+    @media (min-width: 900px) { .res-sidebar { position: sticky; top: 90px; } }
+    .res-navlist { display: flex; flex-direction: column; gap: 2px; margin-top: var(--s-3); }
+    @media (min-width: 900px) { .res-navlist { max-height: calc(100vh - 210px); overflow-y: auto; padding-right: var(--s-2); } }
+    .res-navitem {
+      display: flex; align-items: center; gap: var(--s-3);
+      width: 100%; text-align: left;
+      padding: var(--s-2) var(--s-3);
+      border: 0; background: transparent; cursor: pointer;
+      border-radius: 10px; font: inherit; color: var(--otr-bone);
+      transition: background var(--t-fast);
+    }
+    .res-navitem[hidden] { display: none; }
+    .res-navitem:hover { background: var(--otr-graphite-soft); }
+    .res-navitem.is-active { background: var(--otr-graphite-soft); }
+    .res-navitem.is-active .brand-tile__name { color: var(--otr-amber-bright); }
+    .res-navitem .brand-tile__chip { width: 40px; height: 40px; font-size: 0.82rem; }
+
+    .res-detail { min-height: 320px; }
+    .res-detail__head { display: flex; align-items: center; gap: var(--s-4); margin-bottom: var(--s-5); padding-bottom: var(--s-4); border-bottom: 1px solid var(--otr-rule); }
+    .res-detail__head .brand-tile__chip { width: 56px; height: 56px; font-size: 1.05rem; border-radius: 12px; }
+    .res-detail__title { font-family: var(--otr-display); font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 700; letter-spacing: -0.01em; color: var(--otr-bone); margin: 0; }
+    .res-detail .res-row {
+      padding: var(--s-4);
+      background: var(--otr-graphite-soft);
+      border-radius: 12px;
+      margin-bottom: var(--s-3);
+    }
+  </style>
+</head>
+<body>
+
+<div id="site-header-placeholder"></div>
+
+<section class="hero ground--graphite-deep">
+  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="container container--narrow">
+    <div class="hero__inner" data-reveal>
+      <span class="eyebrow eyebrow--amber">/ Resources · Technical data books</span>
+      <h1 class="display about__title" style="margin-top: 1rem;">
+        Brand databooks. <span class="accent">Straight to the source.</span>
+      </h1>
+      <p class="about__lead" style="margin-top: 1.5rem;">
+        An independent directory of off-the-road tyre manufacturers' technical data books. Where a brand publishes openly, we link straight to it, no allegiances, no gating.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-block: var(--s-8);">
+  <div class="container" style="max-width: 1160px;">
+
+    <div class="res-note-band" data-reveal>
+      <span class="res-note-label">/ Before you rely on a figure</span>
+      <p>These documents are reproduced and hosted by their manufacturers and distributors, and editions change. Always confirm load, rim, and inflation figures against the current manufacturer specification before any fitment, loading, or inflation decision.</p>
+    </div>
+
+    <!-- Master, detail: filterable brand list (left, sticky) + selected databooks (right) -->
+    <h2 style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">Technical data books by brand</h2>
+    <div class="res-layout" data-reveal>
+      <aside class="res-sidebar">
+        <div class="brand-filter-wrap">
+          <input type="text" id="brand-filter" class="field__control" placeholder="Filter brands…" autocomplete="off" aria-label="Filter brands">
+        </div>
+        <div class="brand-count" id="brand-count"></div>
+        <nav class="res-navlist" id="res-navlist" aria-label="Brands"></nav>
+        <p id="brand-empty" hidden>No match. <a href="contact.html">Ask us to source it →</a></p>
+      </aside>
+      <div class="res-detail" id="res-detail" aria-live="polite"></div>
+    </div>
+
+    <!-- Data source (hidden): the brand list powers the master-detail above -->
+    <div id="res-data" hidden>
+
+    <!-- A, C -->
+    <div class="res-group">
+      <div class="res-group__label">A, C</div>
+
+      <div class="res-brand">
+        <h3 class="res-brand__name">Aeolus</h3>
+        <ul class="res-list">
+          <li class="res-row">
+            <a class="res-doc" href="https://www.aeolus-tyres.com/downloads" target="_blank" rel="noopener">Downloads page (all brochures)</a>
+            <span class="res-badge res-badge--page">Page</span>
+            <span class="res-note">Truck, agriculture, earthmoving brochures</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="res-brand">
+        <h3 class="res-brand__name">Alliance (ATG)</h3>
+        <ul class="res-list">
+          <li class="res-row">
+            <a class="res-doc" href="https://www.yournexttire.com/content/Tirecatalog2017Alliance.pdf" target="_blank" rel="noopener" download>Alliance Technical Catalog 2018</a>
+            <span class="res-badge res-badge--pdf">PDF</span>
+            <span class="res-note">Now under Yokohama Off-Highway Tires · via distributor</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="res-brand">
+        <h3 class="res-brand__name">BKT</h3>
+        <ul class="res-list">
+          <li class="res-row">
+            <a class="res-doc" href="https://otrtires.com/wp-content/uploads/24-BKT-Industrial-catalogue.pdf" target="_blank" rel="noopener" download>Industrial / Construction Technical Data Book</a>
+            <span class="res-badge res-badge--pdf">PDF</span>
+            <span class="res-note">2024 edition</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="res-brand">
+        <h3 class="res-brand__name">Bridgestone</h3>
+        <ul class="res-list">
+          <li class="res-row">
+            <a class="res-doc" href="https://commercial.bridgestone.com/content/dam/bcs-sites/bridgestone-ex/products/Databooks/Archive/Bridgestone-OTR-Databook-2018-09-06-2018.pdf" target="_blank" rel="noopener" download>OTR Databook 2018 (official archive)</a>
+            <span class="res-badge res-badge--pdf">PDF</span>
+            <span class="res-note">Official commercial site</span>
+          </li>
+          <li class="res-row">
+            <a class="res-doc" href="https://www.calameo.com/theglobalotrlibrary/books/0058070248d89bead0de2" target="_blank" rel="noopener">2025 OTR Data Book</a>
+            <span class="res-badge res-badge--page">Page</span>
+            <span class="res-note">Hosted on Calaméo, most current version</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="res-brand">
+        <h3 class="res-brand__name">Carlisle</h3>
+        <ul class="res-list">
+          <li class="res-row">
+            <a class="res-doc" href="https://www.carlislebrandtires.com/wp-content/uploads/2019/04/2019_Carlisle_Brand_Catalog.pdf" target="_blank" rel="noopener" download>Brand Specialty Tire &amp; Wheel Catalog 2019</a>
+            <span class="res-badge res-badge--pdf">PDF</span>
+            <span class="res-note">Official site</span>
+          </li>
+          <li class="res-row">
+            <a class="res-doc" href="http://www.usautoforce.com/wp-content/uploads/2023/03/Carlisle-Specialty-Data-Book.pdf" target="_blank" rel="noopener" download>Specialty Data Book</a>
+            <span class="res-badge res-badge--pdf">PDF</span>
+            <span class="res-note">Via authorised distributor</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="res-brand">
+        <h3 class="res-brand__name">CEAT Specialty</h3>
+        <ul class="res-list">
+          <li class="res-row">
+            <a class="res-doc" href="https://www.ceatspecialty.com/content/dam/ceatspeciality/pattern-pdf/product-brochure/cstl-brochure-us.pdf" target="_blank" rel="noopener" download>OTR / Specialty Product Brochure (US)</a>
+            <span class="res-badge res-badge--pdf">PDF</span>
+            <span class="res-note">Official site</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="res-brand">
+        <h3 class="res-brand__name">Continental</h3>
+        <ul class="res-list">
+          <li class="res-row">
+            <a class="res-doc" href="https://www.continental-tires.com/content/dam/conti-tires-cms/continental/market-content/pl/download-/cst/Continental_Technical_Data_Book_OTR_Tires_24.01.2020-12.01.28.pdf.coredownload.pdf" target="_blank" rel="noopener" download>Off-The-Road Technical Data Book</a>
+            <span class="res-badge res-badge--pdf">PDF</span>
+            <span class="res-note">Official site, 2020 edition</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- D, G -->
+    <div class="res-group">
+      <div class="res-group__label">D, G</div>
+
+      <div class="res-brand">
+        <h3 class="res-brand__name">Double Coin</h3>
+        <ul class="res-list">
+          <li class="res-row">
+            <a class="res-doc" href="https://www.doublecointires.com/wp-content/uploads/Double-Coin-OTR-Data-Book.pdf" target="_blank" rel="noopener" download>OTR Data &amp; Reference Book</a>
+            <span class="res-badge res-badge--pdf">PDF</span>
+            <span class="res-note">Official site</span>
+          </li>
+          <li class="res-row">
+            <a class="res-doc" href="https://www.doublecointires.com/downloads/" target="_blank" rel="noopener">All downloads page</a>
+            <span class="res-badge res-badge--page">Page</span>
+            <span class="res-note">Data books, warranties, specs</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="res-brand">
+        <h3 class="res-brand__name">Firestone</h3>
+        <ul class="res-list">
+          <li class="res-row">
+            <span class="res-doc res-doc--none">OTR databook</span>
+            <span class="res-badge res-badge--none">N/A</span>
+            <span class="res-note">Official PDF no longer public, <a href="contact.html">contact us for this catalogue</a></span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="res-brand">
+        <h3 class="res-brand__name">Galaxy</h3>
+        <ul class="res-list">
+          <li class="res-row">
+            <span class="res-doc res-doc--none">OTR Catalogue (Primex)</span>
+            <span class="res-badge res-badge--none">N/A</span>
+            <span class="res-note">Public PDF withdrawn, <a href="contact.html">contact us for this catalogue</a></span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="res-brand">
+        <h3 class="res-brand__name">Goodyear</h3>
+        <ul class="res-list">
+          <li class="res-row">
+            <a class="res-doc" href="https://www.goodyearotr.com/resources/engineering-data" target="_blank" rel="noopener">OTR Engineering Data</a>
+            <span class="res-badge res-badge--page">Page</span>
+            <span class="res-note">Official Goodyear OTR portal</span>
+          </li>
+          <li class="res-row">
+            <a class="res-doc" href="https://www.goodyearotr.com/resources/brochures" target="_blank" rel="noopener">OTR Brochures</a>
+            <span class="res-badge res-badge--page">Page</span>
+            <span class="res-note">Full brochure library</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- K, M -->
+    <div class="res-group">
+      <div class="res-group__label">K, M</div>
+
+      <div class="res-brand">
+        <h3 class="res-brand__name">Kumho</h3>
+        <ul class="res-list">
+          <li class="res-row">
+            <a class="res-doc" href="https://images.carid.com/kumho-tires/info/kumho-commercial-catalog.pdf" target="_blank" rel="noopener" download>Commercial Product Data Guide</a>
+            <span class="res-badge res-badge--pdf">PDF</span>
+            <span class="res-note">No OTR-specific book on the official site · via distributor</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="res-brand">
+        <h3 class="res-brand__name">Linglong</h3>
+        <ul class="res-list">
+          <li class="res-row">
+            <a class="res-doc" href="https://www.linglongotr.com/download.html" target="_blank" rel="noopener">OTR downloads page</a>
+            <span class="res-badge res-badge--page">Page</span>
+            <span class="res-note">Official OTR, agriculture, bias downloads</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="res-brand">
+        <h3 class="res-brand__name">Michelin</h3>
+        <ul class="res-list">
+          <li class="res-row">
+            <a class="res-doc" href="https://www.michelinb2b.com/wps/b2bcontent/OHT/EMDataBook_Global_E.pdf" target="_blank" rel="noopener" download>Technical Data Earthmover Tires (2019)</a>
+            <span class="res-badge res-badge--pdf">PDF</span>
+            <span class="res-note">Official B2B site · June 2019, Global E</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="res-brand">
+        <h3 class="res-brand__name">Mitas</h3>
+        <ul class="res-list">
+          <li class="res-row">
+            <a class="res-doc" href="https://www.mitas-tires.com/en/tech/downloads" target="_blank" rel="noopener">Technical downloads page</a>
+            <span class="res-badge res-badge--page">Page</span>
+            <span class="res-note">Official download centre</span>
+          </li>
+          <li class="res-row">
+            <a class="res-doc" href="https://www.mitas-tires.com/-/media/mitas-tyres/catalogues-leaflets/us/mitas_agri_2023_us_lr_agricultural_tires_databook.pdf?rev=-1" target="_blank" rel="noopener" download>Agricultural Tyres Technical Databook 2023</a>
+            <span class="res-badge res-badge--pdf">PDF</span>
+            <span class="res-note">US edition 2023</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="res-brand">
+        <h3 class="res-brand__name">MRF</h3>
+        <ul class="res-list">
+          <li class="res-row">
+            <a class="res-doc" href="https://www.mrftyres.com/downloads/offtheroadtyre.pdf" target="_blank" rel="noopener" download>OTR Tyre Catalogue 2023</a>
+            <span class="res-badge res-badge--pdf">PDF</span>
+            <span class="res-note">Official site</span>
+          </li>
+          <li class="res-row">
+            <a class="res-doc" href="https://www.mrftyres.com/downloads/tyres_full.pdf" target="_blank" rel="noopener" download>Full Tyre Catalogue (OTR in section 5)</a>
+            <span class="res-badge res-badge--pdf">PDF</span>
+            <span class="res-note">Full range, OTR section 5</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- N, P -->
+    <div class="res-group">
+      <div class="res-group__label">N, P</div>
+
+      <div class="res-brand">
+        <h3 class="res-brand__name">Nokian Heavy Tyres</h3>
+        <ul class="res-list">
+          <li class="res-row">
+            <a class="res-doc" href="https://www.nokiantyres.com/heavy/technical-tire-manual/" target="_blank" rel="noopener">Technical Tyre Manual</a>
+            <span class="res-badge res-badge--page">Page</span>
+            <span class="res-note">Imperial full data book linked on page</span>
+          </li>
+          <li class="res-row">
+            <a class="res-doc" href="https://www.nokiantyres.com/heavy/download-center/" target="_blank" rel="noopener">Download centre</a>
+            <span class="res-badge res-badge--page">Page</span>
+            <span class="res-note">Manuals, brochures, catalogues</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="res-brand">
+        <h3 class="res-brand__name">Petlas</h3>
+        <ul class="res-list">
+          <li class="res-row">
+            <a class="res-doc" href="http://www.maliktradingco.com/wp-content/uploads/2019/09/Petlas-OTR-Catalogue-2018.pdf" target="_blank" rel="noopener" download>OTR Catalogue 2018</a>
+            <span class="res-badge res-badge--pdf">PDF</span>
+            <span class="res-note">Via distributor</span>
+          </li>
+          <li class="res-row">
+            <a class="res-doc" href="https://mistralatlantic.com/wp-content/uploads/2023/07/Petlas-OTR-Brochure.pdf" target="_blank" rel="noopener" download>Industrial OTR Brochure</a>
+            <span class="res-badge res-badge--pdf">PDF</span>
+            <span class="res-note">Via distributor, 2023</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="res-brand">
+        <h3 class="res-brand__name">Pirelli / Prometeon</h3>
+        <ul class="res-list">
+          <li class="res-row">
+            <a class="res-doc" href="https://prometeon-website-assets.s3-eu-west-1.amazonaws.com/uploads/3e7f4efe-486a-4659-8009-c0758a207251.pdf" target="_blank" rel="noopener" download>Truck &amp; Bus Technical Data &amp; Regrooving</a>
+            <span class="res-badge res-badge--pdf">PDF</span>
+            <span class="res-note">Pirelli &amp; Formula brands under Prometeon · truck/bus (no public OTR earthmover book)</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- S, T -->
+    <div class="res-group">
+      <div class="res-group__label">S, T</div>
+
+      <div class="res-brand">
+        <h3 class="res-brand__name">Solideal-Camso</h3>
+        <ul class="res-list">
+          <li class="res-row">
+            <a class="res-doc" href="https://pdf.directindustry.com/pdf/camso-inc/solideal-construction-tires-catalog/25575-3020.html" target="_blank" rel="noopener">Construction Tires Catalog</a>
+            <span class="res-badge res-badge--page">Page</span>
+            <span class="res-note">Via DirectIndustry</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="res-brand">
+        <h3 class="res-brand__name">Sumitomo</h3>
+        <ul class="res-list">
+          <li class="res-row">
+            <span class="res-doc res-doc--none">OTR / earthmover databook</span>
+            <span class="res-badge res-badge--none">N/A</span>
+            <span class="res-note">No public OTR-specific book found, <a href="contact.html">contact us for this catalogue</a></span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="res-brand">
+        <h3 class="res-brand__name">Techking</h3>
+        <ul class="res-list">
+          <li class="res-row">
+            <a class="res-doc" href="https://www.nortire.lt/files/pdf_files/Techking-OTR-Technical-Book-V17.0.pdf" target="_blank" rel="noopener" download>Off-The-Road Radial OTR Databook V17.0</a>
+            <span class="res-badge res-badge--pdf">PDF</span>
+            <span class="res-note">Via distributor</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="res-brand">
+        <h3 class="res-brand__name">Tianli</h3>
+        <ul class="res-list">
+          <li class="res-row">
+            <span class="res-doc res-doc--none">Radial OTR 2024 Catalogue</span>
+            <span class="res-badge res-badge--none">N/A</span>
+            <span class="res-note">No public link available, <a href="contact.html">contact us for this catalogue</a></span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="res-brand">
+        <h3 class="res-brand__name">Titan International</h3>
+        <ul class="res-list">
+          <li class="res-row">
+            <a class="res-doc" href="https://www.titan-intl.com/-/media/Vol-11-OTR-Tires-Databook-01032024-LOWRES.pdf" target="_blank" rel="noopener" download>OTR Tires Databook Vol. 11 (2024)</a>
+            <span class="res-badge res-badge--pdf">PDF</span>
+            <span class="res-note">Official site, most current</span>
+          </li>
+          <li class="res-row">
+            <a class="res-doc" href="https://www.titan-intl.com/-/media/2057_Vol_10_Issue_2_OTR_Databook_10072022_LOWRES-(1).pdf" target="_blank" rel="noopener" download>OTR Tires Databook Vol. 10 (2022)</a>
+            <span class="res-badge res-badge--pdf">PDF</span>
+            <span class="res-note">Official site, previous edition</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="res-brand">
+        <h3 class="res-brand__name">Torch</h3>
+        <ul class="res-list">
+          <li class="res-row">
+            <span class="res-doc res-doc--none">OTR catalogue</span>
+            <span class="res-badge res-badge--none">N/A</span>
+            <span class="res-note">Not available publicly, <a href="contact.html">contact us for this catalogue</a></span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="res-brand">
+        <h3 class="res-brand__name">Toyo</h3>
+        <ul class="res-list">
+          <li class="res-row">
+            <a class="res-doc" href="https://www.toyotires.com/media/3313/toyo_4150_2019_commerical_databook_update_v18-42419.pdf" target="_blank" rel="noopener" download>Commercial Truck Product Data Book</a>
+            <span class="res-badge res-badge--pdf">PDF</span>
+            <span class="res-note">Commercial truck, no public OTR earthmover book</span>
+          </li>
+          <li class="res-row">
+            <a class="res-doc" href="https://www.toyotires.com/commercial-truck/customer-care/application-technical-data/" target="_blank" rel="noopener">Application &amp; Technical Data page</a>
+            <span class="res-badge res-badge--page">Page</span>
+            <span class="res-note">Official technical data portal</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="res-brand">
+        <h3 class="res-brand__name">Trelleborg</h3>
+        <ul class="res-list">
+          <li class="res-row">
+            <a class="res-doc" href="https://pdf.directindustry.com/pdf/trelleborg-wheel-systems-23374.html" target="_blank" rel="noopener">Full Catalogue Collection</a>
+            <span class="res-badge res-badge--page">Page</span>
+            <span class="res-note">All Trelleborg Wheel Systems catalogues · via DirectIndustry</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="res-brand">
+        <h3 class="res-brand__name">Triangle</h3>
+        <ul class="res-list">
+          <li class="res-row">
+            <a class="res-doc" href="https://www.triangletyre.es/ftp/OTR%202020.pdf" target="_blank" rel="noopener" download>OTR Product Catalogue 2020</a>
+            <span class="res-badge res-badge--pdf">PDF</span>
+            <span class="res-note">Official site</span>
+          </li>
+          <li class="res-row">
+            <a class="res-doc" href="https://triangletireus.com/wp-content/uploads/2018/10/Triangle_OTR_pocket-guide.pdf" target="_blank" rel="noopener" download>OTR Pocket Guide</a>
+            <span class="res-badge res-badge--pdf">PDF</span>
+            <span class="res-note">Quick reference guide</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- V, Y -->
+    <div class="res-group">
+      <div class="res-group__label">V, Y</div>
+
+      <div class="res-brand">
+        <h3 class="res-brand__name">Vredestein</h3>
+        <ul class="res-list">
+          <li class="res-row">
+            <a class="res-doc" href="https://www.vredestein.co.in/brochure/" target="_blank" rel="noopener">Brochure download page</a>
+            <span class="res-badge res-badge--page">Page</span>
+            <span class="res-note">No OTR-specific technical data book found publicly</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="res-brand">
+        <h3 class="res-brand__name">Westlake</h3>
+        <ul class="res-list">
+          <li class="res-row">
+            <a class="res-doc" href="https://www.westlakeotr.com/pages/download/" target="_blank" rel="noopener">OTR download page</a>
+            <span class="res-badge res-badge--page">Page</span>
+            <span class="res-note">Official OTR download centre</span>
+          </li>
+          <li class="res-row">
+            <a class="res-doc" href="https://www.westlaketyres.com.au/wp-content/uploads/2023/03/OTR%E5%B8%B8%E8%A7%84%E7%89%88-2022.pdf" target="_blank" rel="noopener" download>OTR Catalogue 2022 (Australia)</a>
+            <span class="res-badge res-badge--pdf">PDF</span>
+            <span class="res-note">Official AU site</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="res-brand">
+        <h3 class="res-brand__name">Yokohama / Alliance</h3>
+        <ul class="res-list">
+          <li class="res-row">
+            <a class="res-doc" href="https://pdf.agriexpo.online/pdf/yokohama-off-highway-tires/technical-catalog/168447-45213.html" target="_blank" rel="noopener">Technical Catalog (both brands)</a>
+            <span class="res-badge res-badge--page">Page</span>
+            <span class="res-note">Yokohama Off-Highway Tires, covers Alliance brand too</span>
+          </li>
+          <li class="res-row">
+            <a class="res-doc" href="https://pdf.agriexpo.online/pdf/yokohama-off-highway-tires/alliance-technical-catalog-2018/168447-23765.html" target="_blank" rel="noopener">Alliance Technical Catalog 2018</a>
+            <span class="res-badge res-badge--page">Page</span>
+            <span class="res-note">Alliance brand · via AgriExpo</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    </div><!-- /#res-data -->
+
+    <div class="res-note-band" style="margin-top: var(--s-8);">
+      <span class="res-note-label">/ Can't find a brand or a current edition?</span>
+      <p>We hold a wider technical library than is publicly linkable, and editions move. If a link is broken or you need a specific edition, <a href="contact.html">contact us</a> and we will source it. Maintained by Jewell Tyres, independent since 1974.</p>
+    </div>
+
+  </div>
+</section>
+
+<div id="site-footer-placeholder"></div>
+<script src="js/layout.js?v=1"></script>
+<script>
+  /* Resources master-detail: a sticky, filterable brand list (left) and the
+     selected brand's databooks (right). The hidden #res-data block is the
+     single source of truth; the list and detail are built from it. */
+  (function () {
+    var data = document.getElementById('res-data');
+    var navlist = document.getElementById('res-navlist');
+    var detail = document.getElementById('res-detail');
+    var input = document.getElementById('brand-filter');
+    var empty = document.getElementById('brand-empty');
+    var countEl = document.getElementById('brand-count');
+    if (!data || !navlist || !detail) return;
+
+    var brands = Array.prototype.slice.call(data.querySelectorAll('.res-brand'));
+    function slug(s) { return s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
+
+    /* Drop a file at public/img/brands/<slug>.<ext> and add it here to replace
+       the monogram with a real logo. */
+    var LOGOS = {}; // e.g. { 'bridgestone': 'svg' }
+
+    function monogram(name) {
+      var first = name.split(/[^A-Za-z0-9]+/)[0] || name;
+      if (/^[A-Z0-9]{2,4}$/.test(first)) return first;
+      var words = name.split(/[^A-Za-z0-9]+/).filter(Boolean);
+      if (words.length >= 2) return (words[0][0] + words[1][0]).toUpperCase();
+      return name.slice(0, 2).toUpperCase();
+    }
+    function chipEl(name, big) {
+      var s = slug(name);
+      var chip = document.createElement('span');
+      chip.className = 'brand-tile__chip';
+      chip.textContent = monogram(name);
+      if (LOGOS[s]) {
+        var img = new Image();
+        img.onload = function () { chip.classList.add('has-logo'); chip.textContent = ''; img.alt = name + ' logo'; chip.appendChild(img); };
+        img.src = 'public/img/brands/' + s + '.' + LOGOS[s];
+      }
+      return chip;
+    }
+
+    var items = [];
+    brands.forEach(function (b) {
+      var name = (b.querySelector('.res-brand__name') || {}).textContent;
+      if (!name) return; name = name.trim();
+      var count = b.querySelectorAll('.res-doc:not(.res-doc--none)').length;
+
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'res-navitem';
+      btn.dataset.brand = name.toLowerCase();
+      btn.dataset.slug = slug(name);
+      var text = document.createElement('span');
+      text.className = 'brand-tile__text';
+      var nm = document.createElement('span'); nm.className = 'brand-tile__name'; nm.textContent = name;
+      var ct = document.createElement('span'); ct.className = 'brand-tile__count';
+      ct.textContent = count ? (count + ' databook' + (count > 1 ? 's' : '')) : 'directory';
+      text.appendChild(nm); text.appendChild(ct);
+      btn.appendChild(chipEl(name)); btn.appendChild(text);
+      btn._brand = b; btn._name = name;
+      btn.addEventListener('click', function () { select(btn, true); });
+      navlist.appendChild(btn);
+      items.push(btn);
+    });
+
+    function select(btn, userInitiated) {
+      items.forEach(function (i) { i.classList.toggle('is-active', i === btn); });
+      detail.innerHTML = '';
+      var head = document.createElement('div');
+      head.className = 'res-detail__head';
+      head.appendChild(chipEl(btn._name));
+      var h = document.createElement('h2'); h.className = 'res-detail__title'; h.textContent = btn._name;
+      head.appendChild(h);
+      detail.appendChild(head);
+      var list = btn._brand.querySelector('.res-list');
+      if (list) { detail.appendChild(list.cloneNode(true)); }
+      else { var p = document.createElement('p'); p.style.color = 'var(--otr-fog)';
+        p.innerHTML = 'No public databook listed for this brand. <a href="contact.html">Ask us to source it →</a>'; detail.appendChild(p); }
+      if (history.replaceState) history.replaceState(null, '', '#' + btn.dataset.slug);
+      if (userInitiated && window.matchMedia('(max-width: 899px)').matches) {
+        detail.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    var total = items.length;
+    function setCount(n) { countEl.textContent = (n === total ? total : n + ' of ' + total) + ' brands'; }
+    setCount(total);
+
+    input.addEventListener('input', function () {
+      var q = input.value.trim().toLowerCase();
+      var shown = 0;
+      items.forEach(function (i) {
+        var m = !q || i.dataset.brand.indexOf(q) !== -1;
+        i.hidden = !m; if (m) shown++;
+      });
+      empty.hidden = shown !== 0;
+      setCount(shown);
+    });
+
+    var initial = null;
+    if (location.hash) {
+      var hs = location.hash.replace('#', '');
+      initial = items.filter(function (i) { return i.dataset.slug === hs; })[0];
+    }
+    if (items.length) select(initial || items[0], false);
+  })();
+</script>
+</body>
+</html>

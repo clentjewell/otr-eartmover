@@ -1,0 +1,60 @@
+# Cloudflare Workers + Pages config for otrearthmovertyre.com
+# Status: scaffolded, not yet deployed. Run `wrangler login` then `wrangler deploy --dry-run` to validate.
+
+name = "otr-earthmover-tyre"
+main = "worker/api/ask.js"
+compatibility_date = "2026-05-27"
+compatibility_flags = ["nodejs_compat"]
+
+# Static asset serving (Cloudflare Pages-managed by default; the worker handles only /api/*)
+[assets]
+directory = "."
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+
+# Workers AI binding (for embeddings)
+[ai]
+binding = "AI"
+
+# Vectorize binding (for RAG corpus)
+[[vectorize]]
+binding = "VECTORIZE_INDEX"
+index_name = "otr-corpus"
+
+# R2 bucket — authoritative, durable store for the source databooks and the
+# source-table crops. Private; served to the portal only via the worker so the
+# original manufacturer table image can be shown alongside a figure.
+# Keys: databooks/{brand}/{title}.pdf , crops/{file}/{crop}.png , _manifest.csv
+[[r2_buckets]]
+binding = "TYRE_DATA"
+bucket_name = "jewell-tyre-data"
+
+# D1 — verified, signed-off numeric specifications (Track A). The worker serves
+# spec values by exact lookup from here, verbatim, or abstains. Until this is
+# created and the binding is uncommented, numeric questions abstain safely.
+#   wrangler d1 create otr-specs
+#   wrangler d1 execute otr-specs --file=./worker/specs-schema.sql
+# Then load signed-off rows (export from tyre_rag spec_records where servable=1).
+# [[d1_databases]]
+# binding = "SPECS"
+# database_name = "otr-specs"
+# database_id = "<from wrangler d1 create>"
+
+# Routes — the worker handles /api/* only, Pages handles the rest
+[[routes]]
+pattern = "otrearthmovertyre.com/api/*"
+zone_name = "otrearthmovertyre.com"
+
+# Secrets (set via `wrangler secret put`):
+#   wrangler secret put ANTHROPIC_API_KEY
+#   wrangler secret put RESEND_API_KEY     (if form submissions wired)
+
+# To create the Vectorize index initially:
+#   wrangler vectorize create otr-corpus --dimensions=768 --metric=cosine
+
+# To create the R2 bucket and upload the databooks:
+#   wrangler r2 bucket create jewell-tyre-data
+#   python -m tyre_rag.scripts.upload_to_r2 --bucket jewell-tyre-data
+
+# To ingest the corpus:
+#   node scripts/rag-ingest.js

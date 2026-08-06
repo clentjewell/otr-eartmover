@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculators · OTR Earthmover Tyre · TKPH, TMPH, WCF</title>
+  <meta name="description" content="Free OTR tyre calculators. TKPH heat-capacity matching for haul trucks. WCF for loaders. Pressure adjustments. Cost-per-tonne models.">
+  <link rel="stylesheet" href="css/main.css?v=1">
+
+  <link rel="canonical" href="https://otrearthmovertyres.com/calculators.html">
+  <meta property="og:title" content="Calculators · OTR Earthmover Tyre · TKPH, TMPH, WCF">
+  <meta property="og:description" content="Free OTR tyre calculators. TKPH heat-capacity matching for haul trucks. WCF for loaders. Pressure adjustments. Cost-per-tonne models.">
+  <meta property="og:image" content="https://otrearthmovertyres.com/public/img/og-default.jpg">
+  <meta property="og:url" content="https://otrearthmovertyres.com/calculators.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="OTR Earthmover Tyre">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Calculators · OTR Earthmover Tyre · TKPH, TMPH, WCF">
+  <meta name="twitter:description" content="Free OTR tyre calculators. TKPH heat-capacity matching for haul trucks. WCF for loaders. Pressure adjustments. Cost-per-tonne models.">
+  <meta name="twitter:image" content="https://otrearthmovertyres.com/public/img/og-default.jpg">
+
+  <!-- Publisher identity. OTR Earthmover Tyre is the reference site; Jewell Tyres is the trading business behind it. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "OTR Earthmover Tyre",
+    "url": "https://otrearthmovertyres.com",
+    "description": "Independent, free-to-use technical reference for off-the-road earthmover and mining tyres. Published by Jewell Tyres, an independent Australian OTR tyre trader.",
+    "logo": "https://otrearthmovertyres.com/public/img/otr-logo-light.png",
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Jewell Tyres",
+      "url": "https://jewelltyres.com.au",
+      "telephone": "+61260241910",
+      "foundingDate": "1974"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "OTR Earthmover Tyre", "item": "https://otrearthmovertyres.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://otrearthmovertyres.com/calculators.html" }
+    ]
+  }
+  </script>
+
+  <!-- The live tool on this page. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "TKPH calculator",
+    "url": "https://otrearthmovertyres.com/calculators.html#tkph",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "isAccessibleForFree": true,
+    "inLanguage": "en-AU",
+    "description": "Free calculator for the Tonne Kilometre Per Hour (TKPH) heat-capacity requirement of haul truck tyres. Takes loaded and empty machine weight, tyre count, round-trip distance, cycle time and ambient temperature, and returns the required TKPH with a temperature correction. Results are indicative reference, not engineering advice.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "OTR Earthmover Tyre",
+      "url": "https://otrearthmovertyres.com"
+    }
+  }
+  </script>
+
+  <!-- Common questions, mirrored in the prose block near the foot of the page. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does the TKPH calculator work out?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It works out the TKPH (Tonne Kilometre Per Hour) figure a haul truck tyre has to cope with on the cycle you enter, which is mean tyre load multiplied by average haul speed, then corrected for ambient temperature. You enter loaded weight, empty weight, number of tyres on the machine, round-trip distance, cycle time and ambient temperature. The output is indicative reference for comparing against a manufacturer's published TKPH rating."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is mean tyre load calculated here?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mean tyre load is the average of loaded and empty machine weight, divided by the number of tyres on the machine. That is a whole-machine average, not a per-axle figure. In our view it is a fair first pass, but real haul trucks carry more weight on the drive axle than the steer axle, so it is worth confirming actual axle loads with the OEM data before selecting on the result."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does ambient temperature change the required TKPH?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TKPH is a heat rating, and hot air cools a working tyre less. This calculator adds 5% to the requirement for every 5°C of ambient above 38°C, so a Pilbara summer shift lands on a higher number than the same cycle in cool weather. Manufacturers publish their own ambient correction guidance, and theirs governs over ours."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What TKPH margin should I allow above the calculated figure?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The calculator shows a figure 15% above the calculated requirement, purely as an illustration of what a margin looks like. In our view carrying some margin is sensible because planned cycle data rarely matches the worst shift, but the size of it is not our call: use the manufacturer's rated TKPH for the specific tyre and the safety margin they state for it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are these calculator results engineering advice?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The results are indicative general reference based on the formula shown on the page. They are not a substitute for current manufacturer specifications for a specific tyre, engineering review of a specific machine and application, qualified inspection by a competent tyre engineer or fitter, or compliance with AS4457:2019 and OEM operating limits. Confirm the output against current manufacturer data and your actual operating envelope before acting on it."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<div id="site-header-placeholder"></div>
+
+<section class="ground--graphite-deep" style="padding-block: 4rem;">
+  <div class="container">
+    <span class="eyebrow eyebrow--amber">/ Calculators · Technical Tools</span>
+    <h1 class="display" style="margin-top: 1rem; max-width: 880px;">
+      Free OTR tyre <span class="accent">calculators</span>.
+    </h1>
+    <p style="max-width: 680px; font-size: 1.15rem; margin-top: 1rem; color: var(--otr-fog);">
+      Heat-capacity matching, work capacity factors, pressure adjustments, cost-per-tonne. The math you actually need.
+    </p>
+
+    <!-- Key facts: short, self-contained statements, kept near the top so an
+         answer engine can lift them verbatim. Figures match the calculator below. -->
+    <div style="margin-top: var(--s-6); padding: var(--s-5); border: 1px solid var(--otr-rule); background: rgba(0,0,0,0.28); border-radius: 12px; max-width: 860px;">
+      <span class="mono" style="display: block; font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--otr-amber-bright); margin-bottom: var(--s-3);">/ Key facts</span>
+      <ul style="padding-left: var(--s-5); margin: 0; color: var(--otr-fog);">
+        <li style="margin-bottom: 0.55rem; line-height: 1.6;"><strong style="color: var(--otr-bone);">TKPH</strong> (Tonne Kilometre Per Hour) is the heat-capacity rating for haul truck tyres. Required TKPH = mean tyre load × average haul speed.</li>
+        <li style="margin-bottom: 0.55rem; line-height: 1.6;">This calculator takes mean tyre load as (loaded weight + empty weight) ÷ 2, divided by the number of tyres on the machine, and average speed as round-trip distance ÷ cycle time.</li>
+        <li style="margin-bottom: 0.55rem; line-height: 1.6;">It applies a temperature correction of <strong style="color: var(--otr-bone);">5% for every 5°C of ambient above 38°C</strong>.</li>
+        <li style="margin-bottom: 0.55rem; line-height: 1.6;">The result also shows a figure <strong style="color: var(--otr-bone);">15% above</strong> the calculated requirement, as an illustration of a margin only. The manufacturer's rated TKPH and their own safety margin govern.</li>
+        <li style="line-height: 1.6;">The TKPH tool is live and free to use. Six more calculators (TMPH, WCF, pressure adjustment, cost-per-hour, cost-per-tonne, rim compatibility) are scaffolded for v1.1.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section ground--graphite">
+  <div class="container container--narrow">
+
+    <!-- TKPH Calculator (functional) -->
+    <div id="tkph" style="background: var(--otr-graphite-soft); border: 1px solid var(--otr-rule-strong); padding: 2rem; margin-bottom: 2rem;">
+      <span class="eyebrow eyebrow--amber">/ 01 · Functional</span>
+      <h2 class="h2" style="margin-top: 0.5rem; margin-bottom: 1.5rem;">TKPH Calculator</h2>
+      <p style="color: var(--otr-fog); margin-bottom: 2rem;">
+        Tonne Kilometre Per Hour for haul truck tyre heat-capacity matching. Enter cycle data, get required TKPH with temperature correction.
+      </p>
+
+      <div style="display: grid; gap: 1rem; grid-template-columns: 1fr; margin-bottom: 1.5rem;" id="tkph-inputs">
+        <div>
+          <label style="display: block; font-family: var(--otr-mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--otr-steel-light); margin-bottom: 0.5rem;">Loaded weight (tonnes)</label>
+          <input type="number" id="loaded-w" placeholder="290" oninput="calcTKPH()" style="width: 100%; padding: 0.75rem; background: var(--otr-graphite); color: var(--otr-bone); border: 1px solid var(--otr-rule-strong); font-family: var(--otr-sans); font-size: 1rem;">
+        </div>
+        <div>
+          <label style="display: block; font-family: var(--otr-mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--otr-steel-light); margin-bottom: 0.5rem;">Empty weight (tonnes)</label>
+          <input type="number" id="empty-w" placeholder="160" oninput="calcTKPH()" style="width: 100%; padding: 0.75rem; background: var(--otr-graphite); color: var(--otr-bone); border: 1px solid var(--otr-rule-strong); font-family: var(--otr-sans); font-size: 1rem;">
+        </div>
+        <div>
+          <label style="display: block; font-family: var(--otr-mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--otr-steel-light); margin-bottom: 0.5rem;">Number of tyres on machine</label>
+          <input type="number" id="tyre-count" placeholder="6" value="6" oninput="calcTKPH()" style="width: 100%; padding: 0.75rem; background: var(--otr-graphite); color: var(--otr-bone); border: 1px solid var(--otr-rule-strong); font-family: var(--otr-sans); font-size: 1rem;">
+        </div>
+        <div>
+          <label style="display: block; font-family: var(--otr-mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--otr-steel-light); margin-bottom: 0.5rem;">Round-trip distance (km)</label>
+          <input type="number" step="0.1" id="distance" placeholder="6.4" oninput="calcTKPH()" style="width: 100%; padding: 0.75rem; background: var(--otr-graphite); color: var(--otr-bone); border: 1px solid var(--otr-rule-strong); font-family: var(--otr-sans); font-size: 1rem;">
+        </div>
+        <div>
+          <label style="display: block; font-family: var(--otr-mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--otr-steel-light); margin-bottom: 0.5rem;">Cycle time (minutes)</label>
+          <input type="number" step="0.1" id="cycle-time" placeholder="22" oninput="calcTKPH()" style="width: 100%; padding: 0.75rem; background: var(--otr-graphite); color: var(--otr-bone); border: 1px solid var(--otr-rule-strong); font-family: var(--otr-sans); font-size: 1rem;">
+        </div>
+        <div>
+          <label style="display: block; font-family: var(--otr-mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--otr-steel-light); margin-bottom: 0.5rem;">Ambient temp (°C)</label>
+          <input type="number" id="ambient" placeholder="38" value="38" oninput="calcTKPH()" style="width: 100%; padding: 0.75rem; background: var(--otr-graphite); color: var(--otr-bone); border: 1px solid var(--otr-rule-strong); font-family: var(--otr-sans); font-size: 1rem;">
+        </div>
+      </div>
+
+      <div id="tkph-result" style="background: var(--otr-graphite-deep); padding: 1.5rem; border-left: 4px solid var(--otr-amber-bright);">
+        <span style="font-family: var(--otr-mono); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--otr-amber-bright);">/ Required TKPH</span>
+        <div id="tkph-value" style="font-family: var(--otr-display); font-size: 3rem; font-weight: 700; line-height: 1; color: var(--otr-bone); margin: 0.5rem 0;">, </div>
+        <div id="tkph-detail" style="font-family: var(--otr-mono); font-size: 0.8rem; color: var(--otr-fog); line-height: 1.5;">Enter haul cycle data above to calculate.</div>
+        <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--otr-rule); font-size: 0.8rem; line-height: 1.5; color: var(--otr-steel-light);">Indicative only, not a tyre-selection or engineering recommendation. Confirm against the manufacturer's rated figures and your actual operating envelope, and apply the manufacturer's own safety margins, before acting.</div>
+      </div>
+
+      <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(254,192,19,0.06); border-left: 3px solid var(--jt-endorse); font-size: 0.9rem; line-height: 1.5;">
+        <strong style="color: var(--jt-endorse); font-family: var(--otr-mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; display: block; margin-bottom: 0.5rem;">/ TALK TO JEWELL TYRES</strong>
+        <span style="color: var(--otr-fog);">For tyre selection against a calculated TKPH, including manufacturer-rated comparisons and supply availability, <a href="https://jewelltyres.com.au/buy-tyres.html">submit a buy enquiry</a> or call David direct on <a href="tel:+61419358439">0419 358 439</a>.</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ CALCULATOR DISCLAIMER ============ -->
+<section class="section--sm ground--graphite-soft">
+  <div class="container container--narrow">
+    <div style="padding: var(--s-5); border: 1px solid var(--otr-rule-strong); background: rgba(0,0,0,0.25);">
+      <span class="mono" style="font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--otr-amber-bright);">/ Calculator disclaimer</span>
+      <p style="margin-top: var(--s-3); margin-bottom: 0; font-size: 0.92rem; line-height: 1.6; color: var(--otr-fog);">
+        These calculators are provided as a general technical reference. Results are illustrative and based on the formulas published in the calculator. They are <strong style="color: var(--otr-bone);">not a substitute</strong> for: (a) current manufacturer specifications for a specific tyre, (b) engineering review of a specific machine and application, (c) qualified inspection by a competent tyre engineer or fitter, or (d) compliance with AS4457:2019 and OEM operating limits. The user is responsible for confirming results against current manufacturer data and the actual operating envelope before acting on the output. Always include manufacturer safety margins.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section ground--graphite">
+  <div class="container container--narrow">
+
+    <!-- Other calculators - scaffolded -->
+    <div class="ref-grid">
+      <div class="ref-card" id="tmph">
+        <span class="ref-card__code">/ 02 · COMING SOON</span>
+        <h3 class="ref-card__title">TMPH Calculator</h3>
+        <p class="ref-card__body">Ton Miles Per Hour, imperial equivalent of TKPH for North American manufacturer specifications.</p>
+        <div class="ref-card__footer"><span>v1.1</span><span>SCAFFOLDED</span></div>
+      </div>
+      <div class="ref-card" id="wcf">
+        <span class="ref-card__code">/ 03 · COMING SOON</span>
+        <h3 class="ref-card__title">WCF Calculator</h3>
+        <p class="ref-card__body">Work Capacity Factor for wheel loaders and dozers. Different math from TKPH, similar purpose: match tyre to duty.</p>
+        <div class="ref-card__footer"><span>v1.1</span><span>SCAFFOLDED</span></div>
+      </div>
+      <div class="ref-card" id="pressure">
+        <span class="ref-card__code">/ 04 · COMING SOON</span>
+        <h3 class="ref-card__title">Pressure Adjustment</h3>
+        <p class="ref-card__body">Cold-fill pressure adjustments for altitude, ambient temperature, and load variation.</p>
+        <div class="ref-card__footer"><span>v1.1</span><span>SCAFFOLDED</span></div>
+      </div>
+      <div class="ref-card" id="cph">
+        <span class="ref-card__code">/ 05 · COMING SOON</span>
+        <h3 class="ref-card__title">Cost-per-hour</h3>
+        <p class="ref-card__body">Lifecycle cost per operating hour for a tyre, purchase, fitment, expected service life, scrap value.</p>
+        <div class="ref-card__footer"><span>v1.1</span><span>SCAFFOLDED</span></div>
+      </div>
+      <div class="ref-card" id="cpt">
+        <span class="ref-card__code">/ 06 · COMING SOON</span>
+        <h3 class="ref-card__title">Cost-per-tonne</h3>
+        <p class="ref-card__body">Tyre cost per tonne hauled, with cycle data and expected tyre life. Useful for tier-one vs mid-tier brand comparison.</p>
+        <div class="ref-card__footer"><span>v1.1</span><span>SCAFFOLDED</span></div>
+      </div>
+      <div class="ref-card" id="rim">
+        <span class="ref-card__code">/ 07 · COMING SOON</span>
+        <h3 class="ref-card__title">Rim Compatibility</h3>
+        <p class="ref-card__body">Cross-reference tyre size to compatible rim widths, including load capacity and valve placement.</p>
+        <div class="ref-card__footer"><span>v1.1</span><span>SCAFFOLDED</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ COMMON QUESTIONS ============ -->
+<!-- Mirrored by the FAQPage JSON-LD in the head. Keep the two in sync. -->
+<section class="section ground--graphite-soft">
+  <div class="container container--narrow">
+    <span class="eyebrow eyebrow--amber">/ Common questions</span>
+    <h2 class="h2" style="margin-top: 0.5rem; margin-bottom: var(--s-6); color: var(--otr-bone);">Questions about the TKPH calculator</h2>
+
+    <h3 style="font-family: var(--otr-display); font-size: 1.15rem; font-weight: 600; color: var(--otr-bone); margin-bottom: var(--s-2);">What does the TKPH calculator work out?</h3>
+    <p style="font-size: 1rem; line-height: 1.65; color: var(--otr-fog); margin: 0 0 var(--s-5);">It works out the TKPH (Tonne Kilometre Per Hour) figure a haul truck tyre has to cope with on the cycle you enter, which is mean tyre load multiplied by average haul speed, then corrected for ambient temperature. You enter loaded weight, empty weight, number of tyres on the machine, round-trip distance, cycle time and ambient temperature. The output is indicative reference for comparing against a manufacturer's published TKPH rating.</p>
+
+    <h3 style="font-family: var(--otr-display); font-size: 1.15rem; font-weight: 600; color: var(--otr-bone); margin-bottom: var(--s-2);">How is mean tyre load calculated here?</h3>
+    <p style="font-size: 1rem; line-height: 1.65; color: var(--otr-fog); margin: 0 0 var(--s-5);">Mean tyre load is the average of loaded and empty machine weight, divided by the number of tyres on the machine. That is a whole-machine average, not a per-axle figure. In our view it is a fair first pass, but real haul trucks carry more weight on the drive axle than the steer axle, so it is worth confirming actual axle loads with the OEM data before selecting on the result.</p>
+
+    <h3 style="font-family: var(--otr-display); font-size: 1.15rem; font-weight: 600; color: var(--otr-bone); margin-bottom: var(--s-2);">Why does ambient temperature change the required TKPH?</h3>
+    <p style="font-size: 1rem; line-height: 1.65; color: var(--otr-fog); margin: 0 0 var(--s-5);">TKPH is a heat rating, and hot air cools a working tyre less. This calculator adds 5% to the requirement for every 5°C of ambient above 38°C, so a Pilbara summer shift lands on a higher number than the same cycle in cool weather. Manufacturers publish their own ambient correction guidance, and theirs governs over ours.</p>
+
+    <h3 style="font-family: var(--otr-display); font-size: 1.15rem; font-weight: 600; color: var(--otr-bone); margin-bottom: var(--s-2);">What TKPH margin should I allow above the calculated figure?</h3>
+    <p style="font-size: 1rem; line-height: 1.65; color: var(--otr-fog); margin: 0 0 var(--s-5);">The calculator shows a figure 15% above the calculated requirement, purely as an illustration of what a margin looks like. In our view carrying some margin is sensible because planned cycle data rarely matches the worst shift, but the size of it is not our call: use the manufacturer's rated TKPH for the specific tyre and the safety margin they state for it.</p>
+
+    <h3 style="font-family: var(--otr-display); font-size: 1.15rem; font-weight: 600; color: var(--otr-bone); margin-bottom: var(--s-2);">Are these calculator results engineering advice?</h3>
+    <p style="font-size: 1rem; line-height: 1.65; color: var(--otr-fog); margin: 0;">No. The results are indicative general reference based on the formula shown on the page. They are not a substitute for current manufacturer specifications for a specific tyre, engineering review of a specific machine and application, qualified inspection by a competent tyre engineer or fitter, or compliance with AS4457:2019 and OEM operating limits. Confirm the output against current manufacturer data and your actual operating envelope before acting on it.</p>
+  </div>
+</section>
+
+<div id="site-footer-placeholder"></div>
+<script src="js/layout.js?v=1"></script>
+<script>
+  function calcTKPH() {
+    const loaded = parseFloat(document.getElementById('loaded-w').value);
+    const empty = parseFloat(document.getElementById('empty-w').value);
+    const tyres = parseFloat(document.getElementById('tyre-count').value);
+    const dist = parseFloat(document.getElementById('distance').value);
+    const cycle = parseFloat(document.getElementById('cycle-time').value);
+    const temp = parseFloat(document.getElementById('ambient').value);
+
+    if (!loaded || !empty || !tyres || !dist || !cycle) {
+      document.getElementById('tkph-value').textContent = ', ';
+      document.getElementById('tkph-detail').textContent = 'Enter haul cycle data above to calculate.';
+      return;
+    }
+
+    const meanLoad = ((loaded + empty) / 2) / tyres;
+    const avgSpeed = (dist / (cycle / 60));
+    let tkph = meanLoad * avgSpeed;
+
+    // Temperature correction: +5% per 5°C above 38°C
+    let tempFactor = 1.0;
+    let tempNote = '';
+    if (temp > 38) {
+      const adj = ((temp - 38) / 5) * 0.05;
+      tempFactor = 1 + adj;
+      tempNote = ` · adjusted +${(adj * 100).toFixed(0)}% for ambient`;
+    }
+    const required = tkph * tempFactor;
+
+    document.getElementById('tkph-value').textContent = required.toFixed(0);
+    document.getElementById('tkph-detail').innerHTML = `
+      Base TKPH: ${tkph.toFixed(0)}${tempNote}<br>
+      Mean tyre load: ${meanLoad.toFixed(1)} t · Avg speed: ${avgSpeed.toFixed(1)} km/h<br>
+      <strong style="color: var(--otr-amber-bright);">As a guide, look for a tyre rated at or above ${(required * 1.15).toFixed(0)} TKPH, this applies a 15% margin for illustration; confirm the manufacturer's rated TKPH and use their own safety margin.</strong>
+    `;
+  }
+</script>
+</body>
+</html>

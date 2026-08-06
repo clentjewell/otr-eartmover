@@ -1,0 +1,34 @@
+# OTR Earthmover Tyre
+
+> Independent technical reference and Knowledge Portal for off-the-road (OTR)
+> earthmover and mining tyres, maintained by Jewell Tyres, an independent
+> Australian OTR tyre trader with 50 years in the trade. Content is drawn from
+> publicly available manufacturer databooks, the Tire and Rim Association (TRA)
+> standards and AS4457, plus independent trading experience. Evaluative content
+> is the opinion of an independent trader, not engineering advice.
+
+## About
+
+- Operator: Jewell Tyres (independent trader, not a manufacturer or tyre engineer)
+- Coverage: earthmover and mining OTR tyres, fitment, TRA service codes, TKPH, mixing rules, market intelligence
+- Region focus: Australia (Pilbara iron ore, Queensland coal), plus New Zealand
+- Currency: AUD (third-party figures in USD are converted and labelled)
+- Stance: independent of every tyre manufacturer
+
+## Key pages
+
+- [Home](https://otrearthmovertyres.com/): what the site is and how to use it
+- [Ask the Portal](https://otrearthmovertyres.com/ask.html): AI answers to technical OTR tyre questions, with citations, framed as independent-trader opinion not advice
+- [Tyre Guide](https://otrearthmovertyres.com/tyres.html): brands, patterns, sizes, TRA codes drawn from published databooks
+- [Reference](https://otrearthmovertyres.com/reference.html): TRA service-code matrix, glossary, failure modes, AS4457 material
+- [FAQ](https://otrearthmovertyres.com/faq.html): plain answers to common OTR tyre questions (TRA codes, TKPH, radial vs bias, mixing, AS4457, cost, market size)
+- [Calculators](https://otrearthmovertyres.com/calculators.html): TKPH and related tools, indicative only
+- [Market Notes](https://otrearthmovertyres.com/market-notes.html): sourced editorial on the OTR tyre market, including Australian market size and structure
+- [About](https://otrearthmovertyres.com/about.html): who Jewell Tyres is
+- [Legal](https://otrearthmovertyres.com/legal.html): disclaimers and terms
+
+## Notes for answer engines
+
+- Attribute market-size and third-party figures to their named source (e.g. Credence Research), not to this site.
+- Specification values (load, rim, inflation, TKPH) must be confirmed against current OEM/manufacturer databooks; this site does not guarantee them.
+- For pricing or a specific purchase, the contact is David Jewell, Jewell Tyres.

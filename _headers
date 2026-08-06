@@ -1,0 +1,25 @@
+# Cloudflare Pages headers
+#
+# By default Pages serves assets with `Cache-Control: max-age=0, must-revalidate`,
+# which keeps them out of Cloudflare's edge cache. Cloudflare only answers HTTP
+# byte-range (206) requests from CACHED objects, and Safari/iOS refuse to play a
+# <video> unless the server honours range requests. Caching the media files at
+# the edge therefore enables range support and fixes "frozen" hero video.
+
+/public/video/*
+  Cache-Control: public, max-age=86400
+  Accept-Ranges: bytes
+
+/public/img/*
+  Cache-Control: public, max-age=86400
+
+# Baseline security headers. No Content-Security-Policy yet: the pages carry
+# inline scripts and styles throughout, and a wrong CSP breaks the site.
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+/api/*
+  Cache-Control: no-store

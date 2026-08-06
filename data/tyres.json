@@ -1,0 +1,638 @@
+{
+  "generated": "2026-05-26T18:04:22.610Z",
+  "count": 26,
+  "source": "tyres.html",
+  "schema_version": 1,
+  "notes": "Phase 2 prep: swap this static JSON for an Airtable API response in worker/api/tyres.js.",
+  "tyres": [
+    {
+      "slug": "bridgestone-vrdp-45-65r45",
+      "brand": "Bridgestone",
+      "model": "VRDP",
+      "size": "45/65R45",
+      "tra_code": "L-5",
+      "rim": "45\"",
+      "construction": "Radial",
+      "compound": "Heat-resistant",
+      "application": [
+        "mining"
+      ],
+      "compatible_machines": [
+        "CAT 992K",
+        "Komatsu WA800"
+      ],
+      "description": "Default Pilbara wheel loader fitment. Strong cut resistance, well-known TKPH performance.",
+      "tier": 1,
+      "availability": "enquire",
+      "featured_image": "",
+      "detail_url": "/tyres/bridgestone-vrdp-45-65r45.html",
+      "source": "manufacturer-databook",
+      "last_updated": "2026-05-27"
+    },
+    {
+      "slug": "michelin-xdr4-40-00r57",
+      "brand": "Michelin",
+      "model": "XDR4",
+      "size": "40.00R57",
+      "tra_code": "E-4",
+      "rim": "57\"",
+      "construction": "Radial",
+      "compound": "Heat-resistant",
+      "application": [
+        "mining"
+      ],
+      "compatible_machines": [
+        "CAT 793F",
+        "Komatsu 830E"
+      ],
+      "description": "Premium haul truck tyre. Extra-deep tread, excellent cut and heat resistance.",
+      "tier": 1,
+      "availability": "enquire",
+      "featured_image": "",
+      "detail_url": "/tyres/michelin-xdr4-40-00r57.html",
+      "source": "manufacturer-databook",
+      "last_updated": "2026-05-27"
+    },
+    {
+      "slug": "goodyear-rl-5k-26-5r25",
+      "brand": "Goodyear",
+      "model": "RL-5K",
+      "size": "26.5R25",
+      "tra_code": "L-5",
+      "rim": "25\"",
+      "construction": "Radial",
+      "compound": "Standard",
+      "application": [
+        "mining",
+        "earthmoving"
+      ],
+      "compatible_machines": [
+        "CAT 980-988",
+        "Komatsu WA470-WA500"
+      ],
+      "description": "Versatile L-5 loader pattern. Common in civil and mining mid-fleet applications.",
+      "tier": 1,
+      "availability": "enquire",
+      "featured_image": "",
+      "detail_url": "/tyres/goodyear-rl-5k-26-5r25.html",
+      "source": "manufacturer-databook",
+      "last_updated": "2026-05-27"
+    },
+    {
+      "slug": "yokohama-rl5k-45-65r45",
+      "brand": "Yokohama",
+      "model": "RL5K+",
+      "size": "45/65R45",
+      "tra_code": "L-5",
+      "rim": "45\"",
+      "construction": "Radial",
+      "compound": "Hot-region",
+      "application": [
+        "earthmoving"
+      ],
+      "compatible_machines": [
+        "CAT 992K",
+        "Komatsu WA800"
+      ],
+      "description": "Strong residual value. Often a better delivered price than tier-one premium options.",
+      "tier": 1,
+      "availability": "enquire",
+      "featured_image": "",
+      "detail_url": "/tyres/yokohama-rl5k-45-65r45.html",
+      "source": "manufacturer-databook",
+      "last_updated": "2026-05-27"
+    },
+    {
+      "slug": "continental-em-master-23-5r25",
+      "brand": "Continental",
+      "model": "EM-Master",
+      "size": "23.5R25",
+      "tra_code": "L-3",
+      "rim": "25\"",
+      "construction": "Radial",
+      "compound": "Standard",
+      "application": [
+        "earthmoving"
+      ],
+      "compatible_machines": [
+        "CAT 966-972",
+        "Volvo L150"
+      ],
+      "description": "Reliable mid-size loader tyre. Good wear resistance for civil work.",
+      "tier": 1,
+      "availability": "enquire",
+      "featured_image": "",
+      "detail_url": "/tyres/continental-em-master-23-5r25.html",
+      "source": "manufacturer-databook",
+      "last_updated": "2026-05-27"
+    },
+    {
+      "slug": "bkt-earthmax-sr468-26-5r25",
+      "brand": "BKT",
+      "model": "Earthmax SR468",
+      "size": "26.5R25",
+      "tra_code": "L-5",
+      "rim": "25\"",
+      "construction": "Radial",
+      "compound": "Cut-resistant",
+      "application": [
+        "earthmoving"
+      ],
+      "compatible_machines": [
+        "CAT 980-988",
+        "Volvo L220"
+      ],
+      "description": "Strong mid-tier option. 25-40% cheaper delivered than tier-one. Credible cut resistance for civil and quarry.",
+      "tier": 2,
+      "availability": "enquire",
+      "featured_image": "",
+      "detail_url": "/tyres/bkt-earthmax-sr468-26-5r25.html",
+      "source": "manufacturer-databook",
+      "last_updated": "2026-05-27"
+    },
+    {
+      "slug": "aeolus-ae57-27-00r49",
+      "brand": "Aeolus",
+      "model": "AE57",
+      "size": "27.00R49",
+      "tra_code": "E-4",
+      "rim": "49\"",
+      "construction": "Radial",
+      "compound": "Standard",
+      "application": [
+        "mining"
+      ],
+      "compatible_machines": [
+        "CAT 777F",
+        "Komatsu HD785"
+      ],
+      "description": "Mid-tier rigid haul truck tyre. Wider availability through trader channels.",
+      "tier": 2,
+      "availability": "enquire",
+      "featured_image": "",
+      "detail_url": "/tyres/aeolus-ae57-27-00r49.html",
+      "source": "manufacturer-databook",
+      "last_updated": "2026-05-27"
+    },
+    {
+      "slug": "techking-etot-l5-29-5r25",
+      "brand": "Techking",
+      "model": "ETOT-L5",
+      "size": "29.5R25",
+      "tra_code": "L-5",
+      "rim": "25\"",
+      "construction": "Radial",
+      "compound": "Cut-resistant",
+      "application": [
+        "mining",
+        "earthmoving"
+      ],
+      "compatible_machines": [
+        "CAT 988",
+        "Komatsu WA600"
+      ],
+      "description": "Specialist OTR brand. Increasingly common in Australian civil and secondary mining fleet.",
+      "tier": 2,
+      "availability": "enquire",
+      "featured_image": "",
+      "detail_url": "/tyres/techking-etot-l5-29-5r25.html",
+      "source": "manufacturer-databook",
+      "last_updated": "2026-05-27"
+    },
+    {
+      "slug": "triangle-tb598s-26-5r25",
+      "brand": "Triangle",
+      "model": "TB598S+",
+      "size": "26.5R25",
+      "tra_code": "L-4",
+      "rim": "25\"",
+      "construction": "Radial",
+      "compound": "Standard",
+      "application": [
+        "earthmoving"
+      ],
+      "compatible_machines": [
+        "CAT 980-988"
+      ],
+      "description": "Competitive mid-tier option. Strong all-rounder for general loader applications.",
+      "tier": 2,
+      "availability": "enquire",
+      "featured_image": "",
+      "detail_url": "/tyres/triangle-tb598s-26-5r25.html",
+      "source": "manufacturer-databook",
+      "last_updated": "2026-05-27"
+    },
+    {
+      "slug": "double-coin-rem-2-17-5r25",
+      "brand": "Double Coin",
+      "model": "REM-2",
+      "size": "17.5R25",
+      "tra_code": "L-3",
+      "rim": "25\"",
+      "construction": "Radial",
+      "compound": "Standard",
+      "application": [
+        "earthmoving"
+      ],
+      "compatible_machines": [
+        "CAT 966H",
+        "Volvo L120"
+      ],
+      "description": "Smaller loader applications. Civil construction and yard machines.",
+      "tier": 2,
+      "availability": "enquire",
+      "featured_image": "",
+      "detail_url": "/tyres/double-coin-rem-2-17-5r25.html",
+      "source": "manufacturer-databook",
+      "last_updated": "2026-05-27"
+    },
+    {
+      "slug": "bridgestone-vsdl-23-5r25",
+      "brand": "Bridgestone",
+      "model": "VSDL+",
+      "size": "23.5R25",
+      "tra_code": "L-3",
+      "rim": "25\"",
+      "construction": "Radial",
+      "compound": "Standard",
+      "application": [
+        "earthmoving"
+      ],
+      "compatible_machines": [
+        "CAT 966-972"
+      ],
+      "description": "Default mid-size loader fitment. Long-running tier-one option.",
+      "tier": 1,
+      "availability": "enquire",
+      "featured_image": "",
+      "detail_url": "/tyres/bridgestone-vsdl-23-5r25.html",
+      "source": "manufacturer-databook",
+      "last_updated": "2026-05-27"
+    },
+    {
+      "slug": "michelin-xha2-26-5r25",
+      "brand": "Michelin",
+      "model": "XHA2",
+      "size": "26.5R25",
+      "tra_code": "L-3",
+      "rim": "25\"",
+      "construction": "Radial",
+      "compound": "Standard",
+      "application": [
+        "earthmoving"
+      ],
+      "compatible_machines": [
+        "CAT 980-988",
+        "Komatsu WA470"
+      ],
+      "description": "Premium L-3 loader tyre. Strong residual value, broad fitment.",
+      "tier": 1,
+      "availability": "enquire",
+      "featured_image": "",
+      "detail_url": "/tyres/michelin-xha2-26-5r25.html",
+      "source": "manufacturer-databook",
+      "last_updated": "2026-05-27"
+    },
+    {
+      "slug": "bridgestone-vrps-50-80r57",
+      "brand": "Bridgestone",
+      "model": "VRPS",
+      "size": "50/80R57",
+      "tra_code": "E-4",
+      "rim": "57\"",
+      "construction": "Radial",
+      "compound": "Heat-resistant",
+      "application": [
+        "mining"
+      ],
+      "compatible_machines": [
+        "CAT 793F",
+        "Komatsu 830E"
+      ],
+      "description": "Tier-one Pilbara haul truck workhorse. Premium pricing, premium service life.",
+      "tier": 1,
+      "availability": "enquire",
+      "featured_image": "",
+      "detail_url": "/tyres/bridgestone-vrps-50-80r57.html",
+      "source": "manufacturer-databook",
+      "last_updated": "2026-05-27"
+    },
+    {
+      "slug": "bridgestone-vrls-53-80r63",
+      "brand": "Bridgestone",
+      "model": "VRLS",
+      "size": "53/80R63",
+      "tra_code": "E-4",
+      "rim": "63\"",
+      "construction": "Radial",
+      "compound": "Heat-resistant",
+      "application": [
+        "mining"
+      ],
+      "compatible_machines": [
+        "CAT 797F",
+        "Komatsu 930E"
+      ],
+      "description": "Giant haul truck tyre. Narrow supply base globally. Long lead times typical.",
+      "tier": 1,
+      "availability": "enquire",
+      "featured_image": "",
+      "detail_url": "/tyres/bridgestone-vrls-53-80r63.html",
+      "source": "manufacturer-databook",
+      "last_updated": "2026-05-27"
+    },
+    {
+      "slug": "michelin-xdr3-26-5r25",
+      "brand": "Michelin",
+      "model": "XDR3",
+      "size": "26.5R25",
+      "tra_code": "L-5",
+      "rim": "25\"",
+      "construction": "Radial",
+      "compound": "Heat-resistant",
+      "application": [
+        "earthmoving"
+      ],
+      "compatible_machines": [
+        "CAT 988",
+        "Komatsu WA600"
+      ],
+      "description": "Predecessor to XDR4 in some sizes. Still widely fitted, strong residuals.",
+      "tier": 1,
+      "availability": "enquire",
+      "featured_image": "",
+      "detail_url": "/tyres/michelin-xdr3-26-5r25.html",
+      "source": "manufacturer-databook",
+      "last_updated": "2026-05-27"
+    },
+    {
+      "slug": "goodyear-rm-4a-27-00r49",
+      "brand": "Goodyear",
+      "model": "RM-4A+",
+      "size": "27.00R49",
+      "tra_code": "E-4",
+      "rim": "49\"",
+      "construction": "Radial",
+      "compound": "Heat-resistant",
+      "application": [
+        "mining"
+      ],
+      "compatible_machines": [
+        "CAT 777F",
+        "Komatsu HD785"
+      ],
+      "description": "Strong all-rounder for the 90-100t haul truck class. Solid residual value.",
+      "tier": 1,
+      "availability": "enquire",
+      "featured_image": "",
+      "detail_url": "/tyres/goodyear-rm-4a-27-00r49.html",
+      "source": "manufacturer-databook",
+      "last_updated": "2026-05-27"
+    },
+    {
+      "slug": "goodyear-rm-4b-33-00r51",
+      "brand": "Goodyear",
+      "model": "RM-4B+",
+      "size": "33.00R51",
+      "tra_code": "E-4",
+      "rim": "51\"",
+      "construction": "Radial",
+      "compound": "Heat-resistant",
+      "application": [
+        "mining"
+      ],
+      "compatible_machines": [
+        "CAT 785D",
+        "Komatsu HD1500"
+      ],
+      "description": "Heat-resistant haul truck pattern. Common in mid-tier Pilbara fleet.",
+      "tier": 1,
+      "availability": "enquire",
+      "featured_image": "",
+      "detail_url": "/tyres/goodyear-rm-4b-33-00r51.html",
+      "source": "manufacturer-databook",
+      "last_updated": "2026-05-27"
+    },
+    {
+      "slug": "continental-em-master-29-5r25",
+      "brand": "Continental",
+      "model": "EM-Master",
+      "size": "29.5R25",
+      "tra_code": "L-5",
+      "rim": "25\"",
+      "construction": "Radial",
+      "compound": "Cut-resistant",
+      "application": [
+        "earthmoving"
+      ],
+      "compatible_machines": [
+        "CAT 988",
+        "Komatsu WA600"
+      ],
+      "description": "European tier-one alternative. Strong cut resistance for hard-rock duty.",
+      "tier": 1,
+      "availability": "enquire",
+      "featured_image": "",
+      "detail_url": "/tyres/continental-em-master-29-5r25.html",
+      "source": "manufacturer-databook",
+      "last_updated": "2026-05-27"
+    },
+    {
+      "slug": "bkt-earthmax-sr45-50-80r57",
+      "brand": "BKT",
+      "model": "Earthmax SR45",
+      "size": "50/80R57",
+      "tra_code": "E-4",
+      "rim": "57\"",
+      "construction": "Radial",
+      "compound": "Heat-resistant",
+      "application": [
+        "mining"
+      ],
+      "compatible_machines": [
+        "CAT 793F",
+        "Komatsu 830E"
+      ],
+      "description": "Indian-manufactured E-4 haul truck pattern. Significant cost gap versus tier-one.",
+      "tier": 2,
+      "availability": "enquire",
+      "featured_image": "",
+      "detail_url": "/tyres/bkt-earthmax-sr45-50-80r57.html",
+      "source": "manufacturer-databook",
+      "last_updated": "2026-05-27"
+    },
+    {
+      "slug": "galaxy-ldsr-400-20-5r25",
+      "brand": "Galaxy",
+      "model": "LDSR 400",
+      "size": "20.5R25",
+      "tra_code": "L-3",
+      "rim": "25\"",
+      "construction": "Radial",
+      "compound": "Standard",
+      "application": [
+        "earthmoving",
+        "industrial"
+      ],
+      "compatible_machines": [
+        "CAT 972",
+        "Volvo L120"
+      ],
+      "description": "Mid-size civil and industrial loader tyre. Yokohama ATG manufactured.",
+      "tier": 2,
+      "availability": "enquire",
+      "featured_image": "",
+      "detail_url": "/tyres/galaxy-ldsr-400-20-5r25.html",
+      "source": "manufacturer-databook",
+      "last_updated": "2026-05-27"
+    },
+    {
+      "slug": "alliance-585-14-00r24",
+      "brand": "Alliance",
+      "model": "585",
+      "size": "14.00R24",
+      "tra_code": "G-2",
+      "rim": "24\"",
+      "construction": "Radial",
+      "compound": "Standard",
+      "application": [
+        "earthmoving",
+        "agricultural"
+      ],
+      "compatible_machines": [
+        "CAT 14M",
+        "16M grader",
+        "Komatsu GD675"
+      ],
+      "description": "General-purpose grader tyre. Strong civil and ag fitment.",
+      "tier": 2,
+      "availability": "enquire",
+      "featured_image": "",
+      "detail_url": "/tyres/alliance-585-14-00r24.html",
+      "source": "manufacturer-databook",
+      "last_updated": "2026-05-27"
+    },
+    {
+      "slug": "mitas-em-22-17-5r25",
+      "brand": "Mitas",
+      "model": "EM-22",
+      "size": "17.5R25",
+      "tra_code": "L-3",
+      "rim": "25\"",
+      "construction": "Radial",
+      "compound": "Standard",
+      "application": [
+        "earthmoving",
+        "industrial"
+      ],
+      "compatible_machines": [
+        "CAT 966",
+        "Volvo L120"
+      ],
+      "description": "Czech-manufactured (Trelleborg). Steady mid-tier industrial earthmoving option.",
+      "tier": 2,
+      "availability": "enquire",
+      "featured_image": "",
+      "detail_url": "/tyres/mitas-em-22-17-5r25.html",
+      "source": "manufacturer-databook",
+      "last_updated": "2026-05-27"
+    },
+    {
+      "slug": "triangle-tr568-23-5-25",
+      "brand": "Triangle",
+      "model": "TR568",
+      "size": "23.5-25",
+      "tra_code": "L-3",
+      "rim": "25\"",
+      "construction": "Bias",
+      "compound": "Standard",
+      "application": [
+        "earthmoving",
+        "agricultural"
+      ],
+      "compatible_machines": [
+        "Older loaders",
+        "civil ag"
+      ],
+      "description": "Bias-construction loader tyre. Still common in legacy machines and ag-civil mix.",
+      "tier": 2,
+      "availability": "enquire",
+      "featured_image": "",
+      "detail_url": "/tyres/triangle-tr568-23-5-25.html",
+      "source": "manufacturer-databook",
+      "last_updated": "2026-05-27"
+    },
+    {
+      "slug": "bridgestone-vkt-17-5r25",
+      "brand": "Bridgestone",
+      "model": "VKT",
+      "size": "17.5R25",
+      "tra_code": "L-3",
+      "rim": "25\"",
+      "construction": "Radial",
+      "compound": "Standard",
+      "application": [
+        "earthmoving"
+      ],
+      "compatible_machines": [
+        "CAT 950",
+        "Volvo L90"
+      ],
+      "description": "Compact loader / civil yard fitment. Strong tier-one residual.",
+      "tier": 1,
+      "availability": "enquire",
+      "featured_image": "",
+      "detail_url": "/tyres/bridgestone-vkt-17-5r25.html",
+      "source": "manufacturer-databook",
+      "last_updated": "2026-05-27"
+    },
+    {
+      "slug": "michelin-xlds-50-65r51",
+      "brand": "Michelin",
+      "model": "X-Mine D2 L-5",
+      "size": "50/65R51",
+      "tra_code": "L-5",
+      "rim": "51\"",
+      "construction": "Radial",
+      "compound": "Heat-resistant",
+      "application": [
+        "earthmoving"
+      ],
+      "compatible_machines": [
+        "CAT 993K",
+        "994"
+      ],
+      "description": "Premium giant wheel loader pattern. Tier-one supply.",
+      "tier": 1,
+      "availability": "enquire",
+      "featured_image": "",
+      "detail_url": "/tyres/michelin-xlds-50-65r51.html",
+      "source": "manufacturer-databook",
+      "last_updated": "2026-05-27"
+    },
+    {
+      "slug": "yokohama-y69-50-80r57",
+      "brand": "Yokohama",
+      "model": "Y69",
+      "size": "50/80R57",
+      "tra_code": "E-4",
+      "rim": "57\"",
+      "construction": "Radial",
+      "compound": "Heat-resistant",
+      "application": [
+        "earthmoving"
+      ],
+      "compatible_machines": [
+        "CAT 793F",
+        "Komatsu 830E"
+      ],
+      "description": "Strong cost-to-tier-one ratio. Wide availability through trader channels.",
+      "tier": 1,
+      "availability": "enquire",
+      "featured_image": "",
+      "detail_url": "/tyres/yokohama-y69-50-80r57.html",
+      "source": "manufacturer-databook",
+      "last_updated": "2026-05-27"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+title,brand,candidate_public_url,source_type,edition_match,verified,notes
+Bridgestone-OTR-DataBook-2024.pdf,Bridgestone,https://commercial.bridgestone.com/content/dam/connectedassets/enterprise/commercial/web-assets/global/pdfs/load-and-inflation-tables/pdf-202410-databook-bridgestone-otr-web-commercial.pdf,official,likely,no,Official Bridgestone commercial; filename dated 202410 (2024). Confirm it is the OTR earthmover databook not truck.
+Bridgestone-OTR-DataBook-2018.pdf,Bridgestone,https://commercial.bridgestone.com/content/dam/bcs-sites/bridgestone-ex/products/Databooks/Archive/Bridgestone-OTR-Databook-2018-09-06-2018.pdf,official,yes,yes,Official commercial archive; live PDF confirmed (Sam doc + link check).
+Michelin-Earthmover-Technical-DataBook-2019.pdf,Michelin,https://www.michelinb2b.com/wps/b2bcontent/OHT/EMDataBook_Global_E.pdf,official,yes,yes,Official Michelin B2B; June 2019 Global E; live PDF confirmed.
+Michelin-Caterpillar-OEM-DataBook.pdf,Michelin,,none,,no,Not yet researched.
+Michelin-Earthmover-Product-Catalogue-Construction-Mining-Quarry.pdf,Michelin,,none,,no,Not yet researched; likely on michelinearthmover.com.
+Michelin-Ag-DataBook.pdf,Michelin,,none,,no,Not yet researched.
+Michelin-Ag-Technical-DataBook-2020.pdf,Michelin,,none,,no,Not yet researched.
+Goodyear-OTR-Specialty-Catalogue.pdf,Goodyear,http://www.goodyearotr.com/cfmx/web/otr/brochures/pdf/off_the_road_tires.pdf,official,verify,no,Official goodyearotr.com (http). This is the OTR engineering data book - confirm it equals the Specialty Catalogue we hold.
+Yokohama-OTR-DataBook.pdf,Yokohama,https://www.y-yokohama.com/global/product/tire/pdf/tires/catalogue/OR_HB02.pdf,official,verify,no,Official Yokohama global OTR handbook; confirm edition matches.
+Yokohama-Construction-Mining-Radial-2021.pdf,Yokohama,,none,,no,Not yet researched; likely on yokohama-oht.com.
+Yokohama-ATG-Full-Catalogue-2025.pdf,Yokohama,,none,,no,Not yet researched; ATG/Yokohama-OHT.
+Titan-OTR-Databook-2024.pdf,Titan,https://www.titan-intl.com/-/media/Vol-11-OTR-Tires-Databook-01032024-LOWRES.pdf,official,yes,yes,Official Titan; Vol 11 (2024); live PDF confirmed.
+Triangle-OTR-Catalogue-2020.pdf,Triangle,https://www.triangletyre.es/ftp/OTR%202020.pdf,official,yes,yes,Official Triangle (ES); OTR 2020; live PDF confirmed.
+Techking-OTR-Radial-Databook-V17.pdf,Techking,https://www.nortire.lt/files/pdf_files/Techking-OTR-Technical-Book-V17.0.pdf,mirror,yes,yes,Distributor mirror; V17.0; live PDF confirmed. Prefer an official techking.com URL if found.
+Double-Coin-OTR-Data-Book.pdf,Double Coin,https://www.doublecointires.com/wp-content/uploads/Double-Coin-OTR-Data-Book.pdf,official,likely,yes,Official doublecointires.com; live PDF confirmed (a _2025 edition also exists).
+Continental-Agricultural-DataBook.pdf,Continental,https://www.continental-tires.com/content/dam/conti-tires-cms/continental/b2b/agriculture/Continental__AG__Databook__A4__EN__copy.pdf.coredownload.pdf,official,likely,no,Official Continental agriculture technical databook.
+Prometeon-OTR-Catalogue.pdf,Prometeon,,none,,no,No direct official OTR PDF found; prometeon.com product pages only. Needs URL.
+Pirelli-Agricultural-Technical-Manual-2022.pdf,Pirelli,,none,,no,No clean official 2022 ag manual found. Needs URL.
+CEAT-Specialty-OTR-Agricultural-Brochure.pdf,CEAT,https://www.ceatspecialty.com/content/dam/ceatspeciality/pattern-pdf/product-brochure/cstl-brochure-us.pdf,official,verify,no,Official ceatspecialty.com domain but this is the CSTL solid-tyre brochure - confirm it is the OTR+Ag brochure we hold.
+Mitas-Agricultural-Catalogue-2019-2020.pdf,Mitas,https://first-tire.com/static/Mitas_agricultural-9f4c439352e6e9e673c55538da2815c3.pdf,mirror,yes,no,Distributor mirror; Edition 2019/2020 matches. Official downloads: mitas-tires.com/en/tech/downloads.
+Mitas-ICT-Construction-Catalogue.pdf,Mitas,,none,,no,Construction catalogue on agriexpo only; needs official URL.
+Alliance-Tire-Range-Ag-Forestry-Industrial-OTR.pdf,Alliance,https://www.ferruz.com/wp-content/uploads/proveedores/AllianceTireRange.pdf,mirror,yes,no,Distributor mirror; title matches. Prefer an official atgtire/yokohama-oht URL.
+Alliance-Product-Catalog-2021.pdf,Alliance,https://tyrezim.com/wp-content/uploads/2024/01/Alliance-Product-Catalog-2021.pdf,mirror,yes,no,Distributor mirror; exact filename match. Prefer official if available.
+Galaxy-Primex-OTR-Catalogue.pdf,Galaxy,,none,,no,Public PDF withdrawn (galaxyprimex.com now redirects to a distributor HTML page) - confirmed dead in link check. Offer via contact.
+Westlake-OTR-Catalogue-2022.pdf,Westlake,https://www.westlaketyres.com.au/wp-content/uploads/2023/03/OTR%E5%B8%B8%E8%A7%84%E7%89%88-2022.pdf,official,verify,no,Westlake AU distributor; OTR 2022. Official global: westlakeotr.com/pages/download.
+Linglong-Tyre-Catalogue-Specialty.pdf,Linglong,https://en.linglong.cn/Upload/202005/20200515083512_6848.pdf,official,verify,no,Official linglong.cn combined PCR/TBR/Specialty catalogue; confirm specialty section matches.
+MRF-OTR-Catalogue-2023.pdf,MRF,https://www.mrftyres.com/downloads/offtheroadtyre.pdf,official,yes,yes,Official mrftyres.com; OTR Catalogue 2023; live PDF confirmed.
+MRF-Full-Tyre-Catalogue.pdf,MRF,https://www.mrftyres.com/downloads/tyres_full.pdf,official,likely,yes,Official mrftyres.com full catalogue; live PDF confirmed (OTR in section 5).
+Carlisle-Specialty-Tire-Wheel-Catalog-2019.pdf,Carlisle,https://www.carlislebrandtires.com/wp-content/uploads/2019/04/2019_Carlisle_Brand_Catalog.pdf,official,yes,yes,Official carlislebrandtires.com; 2019 catalog; live PDF confirmed.
+BKT-Industrial-OTR-Catalogue.pdf,BKT,https://otrtires.com/wp-content/uploads/24-BKT-Industrial-catalogue.pdf,mirror,yes,yes,Mirror (otrtires.com); 2024; live PDF confirmed. Prefer an official bkt-tires.com URL if found.
+BKT-Tires-Update-2024.pdf,BKT,,none,,no,Not yet researched.
+OTR-Agricultural-Products-Catalogue-2024.pdf,Multi-Brand,,none,,no,Multi-brand file; brand/origin unclear. Needs identification + URL.
+OTR-Mining-Products-Catalogue-2024.pdf,Multi-Brand,,none,,no,Multi-brand file; brand/origin unclear. Needs identification + URL.

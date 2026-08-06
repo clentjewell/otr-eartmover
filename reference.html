@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reference · OTR Earthmover Tyre · TRA codes, naming, mixing rules, glossary, failure modes, AS4457</title>
+  <meta name="description" content="The technical reference for off-the-road earthmover tyres. TRA service code matrix, tyre naming systems, mixing rules under AS4457, glossary of 40+ terms, common failure modes.">
+  <link rel="stylesheet" href="css/main.css?v=1">
+  <style>
+    .ref-toc {
+      position: sticky;
+      top: 100px;
+      background: var(--otr-graphite-soft);
+      border: 1px solid var(--otr-rule-strong);
+      padding: var(--s-5);
+    }
+    .ref-toc h3 {
+      font-family: var(--otr-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--otr-amber-bright);
+      margin-bottom: var(--s-4);
+      font-weight: 500;
+    }
+    .ref-toc ol {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      counter-reset: toc-item;
+    }
+    .ref-toc li {
+      counter-increment: toc-item;
+      padding: var(--s-2) 0;
+      border-bottom: 1px solid var(--otr-rule);
+    }
+    .ref-toc li:last-child { border-bottom: 0; }
+    .ref-toc li::before {
+      content: '0' counter(toc-item);
+      font-family: var(--otr-mono);
+      font-size: 0.7rem;
+      color: var(--otr-steel-light);
+      margin-right: var(--s-3);
+      letter-spacing: 0.1em;
+    }
+    .ref-toc a {
+      color: var(--otr-fog);
+      font-size: 0.92rem;
+      border-bottom: 0;
+    }
+    .ref-toc a:hover { color: var(--otr-amber-bright); }
+    .ref-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--s-6);
+    }
+    @media (min-width: 1024px) {
+      .ref-layout { grid-template-columns: 240px 1fr; gap: var(--s-7); }
+    }
+    .ref-section { padding-block: var(--s-7); border-top: 1px solid var(--otr-rule); }
+    .ref-section:first-child { border-top: 0; padding-top: 0; }
+    .ref-section__num {
+      font-family: var(--otr-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--otr-amber-bright);
+    }
+    .ref-section__title {
+      font-family: var(--otr-display);
+      font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      margin-top: var(--s-3);
+      margin-bottom: var(--s-5);
+      color: var(--otr-bone);
+    }
+    .ref-section h3 {
+      font-family: var(--otr-display);
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-top: var(--s-6);
+      margin-bottom: var(--s-3);
+      color: var(--otr-bone);
+    }
+    .ref-section h4 {
+      font-family: var(--otr-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--otr-amber-bright);
+      margin-top: var(--s-5);
+      margin-bottom: var(--s-3);
+      font-weight: 500;
+    }
+    .ref-section p { font-size: 1rem; line-height: 1.6; color: var(--otr-fog); }
+    .ref-section p strong { color: var(--otr-bone); }
+    .ref-section ul { padding-left: var(--s-5); color: var(--otr-fog); }
+    .ref-section ul li { margin-bottom: var(--s-2); line-height: 1.55; }
+    .ref-section ul li strong { color: var(--otr-bone); }
+    .ref-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: var(--s-5) 0;
+      font-size: 0.92rem;
+    }
+    .ref-table th, .ref-table td {
+      padding: var(--s-3) var(--s-3);
+      text-align: left;
+      border-bottom: 1px solid var(--otr-rule);
+    }
+    .ref-table th {
+      font-family: var(--otr-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--otr-amber-bright);
+      font-weight: 500;
+      vertical-align: bottom;
+      background: rgba(0,0,0,0.2);
+    }
+    .ref-table td { color: var(--otr-fog); vertical-align: top; }
+    .ref-table td strong { color: var(--otr-bone); }
+    .ref-table tr:hover td { background: rgba(255,255,255,0.02); }
+    .ref-table .code {
+      font-family: var(--otr-mono);
+      font-size: 0.88rem;
+      color: var(--otr-amber-bright);
+      letter-spacing: 0.04em;
+    }
+    .callout {
+      margin: var(--s-5) 0;
+      padding: var(--s-4) var(--s-5);
+      background: rgba(191,110,27,0.08);
+      border-left: 4px solid var(--otr-amber);
+    }
+    .callout--safety {
+      background: rgba(139,26,26,0.12);
+      border-left-color: #C04040;
+    }
+    .callout--endorse {
+      background: rgba(254,192,19,0.05);
+      border-left-color: var(--jt-endorse);
+    }
+    .callout__label {
+      font-family: var(--otr-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--otr-amber-bright);
+      margin-bottom: var(--s-2);
+    }
+    .callout--safety .callout__label { color: #E58080; }
+    .callout--endorse .callout__label { color: var(--jt-endorse); }
+    .callout p { margin: 0; color: var(--otr-bone); }
+    .gloss-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1px;
+      background: var(--otr-rule);
+      border: 1px solid var(--otr-rule);
+      margin: var(--s-5) 0;
+    }
+    @media (min-width: 640px) { .gloss-grid { grid-template-columns: 1fr 1fr; } }
+    .gloss-item {
+      padding: var(--s-4);
+      background: var(--otr-graphite);
+    }
+    .gloss-item dt {
+      font-family: var(--otr-mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      color: var(--otr-amber-bright);
+      text-transform: uppercase;
+      margin-bottom: var(--s-2);
+      font-weight: 500;
+    }
+    .gloss-item dd { margin: 0; font-size: 0.92rem; line-height: 1.55; color: var(--otr-fog); }
+    .gloss-item dd strong { color: var(--otr-bone); }
+    .fail-mode {
+      padding: var(--s-5);
+      border: 1px solid var(--otr-rule-strong);
+      background: var(--otr-graphite-soft);
+      margin-bottom: var(--s-3);
+    }
+    .fail-mode h4 {
+      margin-top: 0;
+      margin-bottom: var(--s-3);
+      color: var(--otr-amber-bright);
+    }
+    .fail-mode__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--s-3);
+    }
+    @media (min-width: 768px) { .fail-mode__grid { grid-template-columns: 1fr 1fr 1fr; gap: var(--s-4); } }
+    .fail-mode__cell strong {
+      display: block;
+      font-family: var(--otr-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--otr-steel-light);
+      margin-bottom: var(--s-2);
+    }
+    .fail-mode__cell p { font-size: 0.92rem; margin: 0; }
+
+    /* ---- Drastic refresh ---- */
+    .ref-section { scroll-margin-top: 96px; }
+
+    /* Sticky scrollspy TOC */
+    .ref-toc { border-radius: 16px; border-color: var(--otr-rule); }
+    .ref-toc li::before { transition: color var(--t-fast); }
+    .ref-toc a { transition: color var(--t-fast); }
+    .ref-toc li:has(a.is-active) { position: relative; }
+    .ref-toc a.is-active { color: var(--otr-amber-bright); font-weight: 600; }
+    .ref-toc li:has(a.is-active)::before { color: var(--otr-amber-bright); }
+
+    /* Premium tables: rounded, contained, horizontally scrollable, zebra+hover */
+    .ref-table-wrap {
+      margin: var(--s-5) 0;
+      border: 1px solid var(--otr-rule);
+      border-radius: 14px;
+      overflow: hidden auto;
+      overflow-x: auto;
+      background: var(--otr-graphite-soft);
+    }
+    .ref-table { margin: 0; border-collapse: collapse; min-width: 520px; }
+    .ref-table th { background: rgba(0,0,0,0.28); position: sticky; top: 0; }
+    .ref-table th, .ref-table td { border-bottom: 1px solid var(--otr-rule); }
+    .ref-table tbody tr:last-child td { border-bottom: 0; }
+    .ref-table tbody tr:nth-child(even) td { background: rgba(255,255,255,0.018); }
+    .ref-table tbody tr:hover td { background: rgba(224,132,40,0.06); }
+    .ref-table .code {
+      display: inline-block;
+      padding: 2px 10px;
+      border: 1px solid rgba(224,132,40,0.5);
+      border-radius: 999px;
+      color: var(--otr-amber-bright);
+      font-family: var(--otr-mono);
+      font-size: 0.8rem;
+      white-space: nowrap;
+    }
+
+    /* Glossary filter */
+    .gloss-toolbar { margin: var(--s-4) 0 var(--s-5); position: relative; }
+    .gloss-toolbar::before {
+      content: "⌕"; position: absolute; left: var(--s-4); top: 50%; transform: translateY(-50%);
+      color: var(--otr-steel-light); font-size: 1.1rem; pointer-events: none;
+    }
+    #gloss-filter { padding-left: var(--s-7); }
+    .gloss-item[hidden] { display: none; }
+    #gloss-empty { color: var(--otr-fog); padding: var(--s-4) 0; }
+  </style>
+
+  <link rel="canonical" href="https://otrearthmovertyres.com/reference.html">
+  <meta property="og:title" content="Reference · OTR Earthmover Tyre · TRA codes, naming, mixing rules, glossary, failure modes, AS4457">
+  <meta property="og:description" content="The technical reference for off-the-road earthmover tyres. TRA service code matrix, tyre naming systems, mixing rules under AS4457, glossary of 40+ terms, common failure modes.">
+  <meta property="og:image" content="https://otrearthmovertyres.com/public/img/og-default.jpg">
+  <meta property="og:url" content="https://otrearthmovertyres.com/reference.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="OTR Earthmover Tyre">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Reference · OTR Earthmover Tyre · TRA codes, naming, mixing rules, glossary, failure modes, AS4457">
+  <meta name="twitter:description" content="The technical reference for off-the-road earthmover tyres. TRA service code matrix, tyre naming systems, mixing rules under AS4457, glossary of 40+ terms, common failure modes.">
+  <meta name="twitter:image" content="https://otrearthmovertyres.com/public/img/og-default.jpg">
+
+  <!-- Publisher identity. OTR Earthmover Tyre is the reference site; Jewell Tyres is the trading business behind it. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "OTR Earthmover Tyre",
+    "url": "https://otrearthmovertyres.com",
+    "description": "Independent, free-to-use technical reference for off-the-road earthmover and mining tyres. Published by Jewell Tyres, an independent Australian OTR tyre trader.",
+    "logo": "https://otrearthmovertyres.com/public/img/otr-logo-light.png",
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Jewell Tyres",
+      "url": "https://jewelltyres.com.au",
+      "telephone": "+61260241910",
+      "foundingDate": "1974"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "OTR Earthmover Tyre", "item": "https://otrearthmovertyres.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Reference", "item": "https://otrearthmovertyres.com/reference.html" }
+    ]
+  }
+  </script>
+
+  <!-- The reference library itself, with the standards it draws on cited. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "OTR tyre reference: TRA service codes, tyre naming, mixing rules, glossary, failure modes and AS4457",
+    "description": "Technical reference for off-the-road earthmover and mining tyres: the TRA service code matrix (E, L, G, C and industrial), how to read a tyre name, mixing rules under AS4457:2019, a 40-term glossary, 8 common failure modes, and a plain-language summary of AS4457:2019.",
+    "url": "https://otrearthmovertyres.com/reference.html",
+    "inLanguage": "en-AU",
+    "isAccessibleForFree": true,
+    "dateModified": "2026-07-27",
+    "author": {
+      "@type": "Organization",
+      "name": "OTR Earthmover Tyre",
+      "url": "https://otrearthmovertyres.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "OTR Earthmover Tyre",
+      "url": "https://otrearthmovertyres.com"
+    },
+    "citation": [
+      "Tire and Rim Association Year Book (service codes, construction types and load tables)",
+      "AS4457:2019 Earth-moving machinery, Off-the-road wheels and tyres, Maintenance and safety (Standards Australia)",
+      "Manufacturer databooks across 19 OTR tyre brands"
+    ],
+    "about": [
+      { "@type": "Thing", "name": "TRA service codes" },
+      { "@type": "Thing", "name": "OTR tyre sizing and naming" },
+      { "@type": "Thing", "name": "OTR tyre mixing rules" },
+      { "@type": "Thing", "name": "OTR tyre failure modes" },
+      { "@type": "Thing", "name": "AS4457:2019" }
+    ]
+  }
+  </script>
+
+  <!-- Common questions, mirrored in the prose block at the foot of the reference. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the difference between an E-3 and an E-4 OTR tyre?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Both are TRA earthmover codes for haul trucks. E-3 is rock regular: standard tread depth for normal-duty rock work, typically mid-size haul trucks in the 90 to 150 tonne class. E-4 is rock deep, with roughly 1.5 times the tread depth of E-3, for longer wear life and better cut resistance, and it is the usual choice on tier-one Pilbara iron ore haulage such as the CAT 793 and Komatsu 830E and 930E. Deeper tread also carries more rubber and runs hotter, so the TKPH rating and the haul cycle still decide which code suits. Confirm against current manufacturer data before ordering."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you read an OTR tyre size like 45/65R45?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In 45/65R45 the first number is the section width in inches, 65 is the aspect ratio (section height as a percentage of section width), R means radial construction, and the last number is the rim diameter in inches. Inch-based sizes read differently: in 33.00R51 the section width is 33 inches, R is radial, and 51 is the rim diameter. Bias construction is written with a hyphen instead of the R, for example 33.00-51."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much difference in worn diameter is acceptable on a twin assembly?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Typically within the manufacturer's tolerance, usually a 2 to 4 percent difference in worn diameter between the paired tyres. Beyond that the larger tyre carries a disproportionate share of the load and heat failure follows. The manufacturer's own tolerance for the specific tyre governs, and the assessment is a matter for a competent person under AS4457:2019."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What causes heat separation on a haul truck tyre?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Heat exceeded the bond strength between the tread and the casing, so the tread lifts away, often as a full tread strip departure. The usual cause is running above the tyre's TKPH rating: too much load, too much speed, high ambient temperature, or all three together. The tyre is scrap. Recalculate the required TKPH for the haul cycle, then either upgrade the tyre rating, slow the cycle or split the load. Repeats point to a systemic mismatch rather than a bad tyre."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does AS4457:2019 cover?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AS4457:2019 is the Australian Standard for earth-moving machinery, off-the-road wheels and tyres, maintenance and safety. It covers tyre selection criteria, mounting and demounting practice, inflation pressure management, mixing rules, in-service inspection, repair criteria, storage, disposal, wheel and rim inspection including non-destructive testing frequency, and operator competency. The summary on this page is plain-language reference only. The standard itself is the authoritative document, available from Standards Australia."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<div id="site-header-placeholder"></div>
+
+<section class="hero ground--graphite-deep">
+  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="container container--narrow">
+    <div class="hero__inner" data-reveal>
+      <span class="eyebrow eyebrow--amber">/ Reference library · Technical</span>
+      <h1 class="display about__title" style="margin-top: 1rem;">
+        The OTR <span class="accent">reference library</span>.
+      </h1>
+      <p class="about__lead" style="margin-top: 1.5rem;">
+        TRA service codes, tyre naming, mixing rules under AS4457, glossary and failure modes, the standards reference for off-the-road earthmover tyres.
+      </p>
+      <p class="mono" style="font-size: 0.72rem; letter-spacing: 0.06em; line-height: 1.6; margin-top: var(--s-5); color: var(--otr-steel-light); max-width: 640px;">
+        <strong style="color: var(--otr-fog);">Reference notice.</strong> General technical reference, not engineering advice, confirm against current manufacturer specs, AS4457:2019, and qualified inspection.
+      </p>
+
+      <!-- Key facts: short, self-contained statements, kept near the top so an
+           answer engine can lift them verbatim. Every figure is on this page. -->
+      <div style="margin-top: var(--s-6); padding: var(--s-5); border: 1px solid var(--otr-rule); background: rgba(0,0,0,0.28); border-radius: 12px;">
+        <span class="mono" style="display: block; font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--otr-amber-bright); margin-bottom: var(--s-3);">/ Key facts</span>
+        <ul style="padding-left: var(--s-5); margin: 0; color: var(--otr-fog);">
+          <li style="margin-bottom: 0.55rem; line-height: 1.6;">A <strong style="color: var(--otr-bone);">TRA service code</strong> has two parts: the letter is the machine category (E earthmover, L loader and dozer, G grader, C compactor, plus industrial codes), and the number is tread depth and duty.</li>
+          <li style="margin-bottom: 0.55rem; line-height: 1.6;"><strong style="color: var(--otr-bone);">E-4 rock deep</strong> carries roughly <strong style="color: var(--otr-bone);">1.5 times</strong> the tread depth of E-3 rock regular. <strong style="color: var(--otr-bone);">L-5</strong> is the extra-deep loader code used in hard rock and abrasive iron ore.</li>
+          <li style="margin-bottom: 0.55rem; line-height: 1.6;">On the sidewall, <strong style="color: var(--otr-bone);">load index 200</strong> is about <strong style="color: var(--otr-bone);">14,000 kg</strong> per tyre. Speed symbol <strong style="color: var(--otr-bone);">A2 is 10 km/h</strong>, <strong style="color: var(--otr-bone);">A5 is 25 km/h</strong> and <strong style="color: var(--otr-bone);">B is 50 km/h</strong>.</li>
+          <li style="margin-bottom: 0.55rem; line-height: 1.6;">Radial and bias construction must never be mixed on the same axle or twin assembly. Worn diameters on a twin assembly typically must stay within a <strong style="color: var(--otr-bone);">2 to 4% difference</strong>.</li>
+          <li style="margin-bottom: 0.55rem; line-height: 1.6;"><strong style="color: var(--otr-bone);">AS4457:2019</strong> is the Australian Standard for off-the-road wheel and tyre maintenance and safety, and covers selection, mounting, inflation, mixing, inspection, repair, storage, disposal, rim inspection and operator competency.</li>
+          <li style="line-height: 1.6;">This library covers 6 sections: TRA service codes, tyre naming, mixing rules, a <strong style="color: var(--otr-bone);">40-term glossary</strong>, <strong style="color: var(--otr-bone);">8 common failure modes</strong>, and an AS4457 summary.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section ground--graphite">
+  <div class="container">
+    <div class="ref-layout">
+
+      <!-- TOC -->
+      <aside>
+        <div class="ref-toc">
+          <h3>/ Contents</h3>
+          <ol>
+            <li><a href="#tra-codes">TRA service codes</a></li>
+            <li><a href="#naming">Tyre naming</a></li>
+            <li><a href="#mixing">Mixing rules</a></li>
+            <li><a href="#glossary">Glossary</a></li>
+            <li><a href="#failure-modes">Failure modes</a></li>
+            <li><a href="#as4457">AS4457 summary</a></li>
+            <li><a href="#common-questions">Common questions</a></li>
+          </ol>
+        </div>
+      </aside>
+
+      <!-- BODY -->
+      <div>
+
+        <!-- ====== 01 TRA CODES ====== -->
+        <section class="ref-section" data-reveal id="tra-codes">
+          <span class="ref-section__num">/ 01 · TRA SERVICE CODES</span>
+          <h2 class="ref-section__title">What do TRA service codes mean?</h2>
+
+          <p>
+            The Tire and Rim Association service code is the cross-manufacturer system for describing OTR tyre application. The letter is the machine category. The number is tread depth, intended use, and compound family. Where the same physical tyre appears in two manufacturer databooks, the TRA code is usually the only label that's consistent.
+          </p>
+
+          <p>
+            Service codes do not specify the tyre size, load capacity, or compound type. They sit alongside those things. A 26.5R25 L-5 from Bridgestone has the same TRA code as a 26.5R25 L-5 from BKT, the codes match the application, not the maker.
+          </p>
+
+          <h3>E, Earthmover (haul trucks and ADTs)</h3>
+          <table class="ref-table">
+            <thead>
+              <tr>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Typical fitment</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="code">E-1</td><td>Rib</td><td>Smooth-shoulder ribbed tread for on-highway haul vehicles.</td><td>Highway dump trucks, water carts</td></tr>
+              <tr><td class="code">E-2</td><td>Traction</td><td>Standard traction tread for general earthmoving.</td><td>ADTs, smaller haul trucks</td></tr>
+              <tr><td class="code">E-3</td><td>Rock Regular</td><td>Standard tread depth, normal-duty rock applications.</td><td>Mid-size haul trucks (90-150t)</td></tr>
+              <tr><td class="code">E-4</td><td>Rock Deep</td><td>Extra-deep tread (~1.5× E-3), longer life, cut resistance.</td><td>Tier-one Pilbara iron ore haul (CAT 793, Komatsu 830E, 930E)</td></tr>
+              <tr><td class="code">E-5</td><td>Rock Extra Deep</td><td>Maximum tread depth, extreme applications. Uncommon.</td><td>Severe rock conditions, niche fleet</td></tr>
+              <tr><td class="code">E-7</td><td>Flotation</td><td>Wide footprint, low ground pressure.</td><td>Soft-ground earthmoving</td></tr>
+            </tbody>
+          </table>
+
+          <h3>L, Loader and dozer</h3>
+          <table class="ref-table">
+            <thead>
+              <tr><th>Code</th><th>Name</th><th>Description</th><th>Typical fitment</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="code">L-2</td><td>Traction</td><td>General traction lug pattern.</td><td>Light loader, smaller dozers</td></tr>
+              <tr><td class="code">L-3</td><td>Rock Regular</td><td>Standard rock tread, general-purpose loader.</td><td>CAT 966-972, Volvo L150</td></tr>
+              <tr><td class="code">L-4</td><td>Rock Deep</td><td>Deeper tread, longer wear, mid-tier mining and quarry.</td><td>CAT 980-988, Komatsu WA470, WA500</td></tr>
+              <tr><td class="code">L-5</td><td>Rock Extra Deep</td><td>Extra-deep tread, high cut and heat resistance. The default for hard-rock and abrasive iron ore.</td><td>CAT 988-994, Komatsu WA600, WA1200</td></tr>
+              <tr><td class="code">L-5S</td><td>Smooth Extra Deep</td><td>Smooth tread, extra deep, underground loader applications.</td><td>Underground LHDs, dozers in fine material</td></tr>
+            </tbody>
+          </table>
+
+          <h3>G, Grader</h3>
+          <table class="ref-table">
+            <thead>
+              <tr><th>Code</th><th>Name</th><th>Description</th><th>Typical fitment</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="code">G-1</td><td>Rib</td><td>Smooth-shoulder ribbed pattern, on-haul road grading.</td><td>Civil road graders, highway maintenance</td></tr>
+              <tr><td class="code">G-2</td><td>Traction</td><td>General-purpose traction pattern for grader applications.</td><td>CAT 14M, 16M, 24M; Komatsu GD-series</td></tr>
+              <tr><td class="code">G-3</td><td>Rock</td><td>Deeper tread for off-road grading.</td><td>Quarry graders, rough-ground civil</td></tr>
+            </tbody>
+          </table>
+
+          <h3>C, Compactor</h3>
+          <table class="ref-table">
+            <thead>
+              <tr><th>Code</th><th>Name</th><th>Description</th><th>Typical fitment</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="code">C-1</td><td>Smooth</td><td>Smooth tread for landfill and waste compactors.</td><td>Landfill compactors, RTLT</td></tr>
+              <tr><td class="code">C-2</td><td>Lug</td><td>Deep lug pattern, traction-focused compaction.</td><td>Waste compactor, soil compaction</td></tr>
+            </tbody>
+          </table>
+
+          <h3>IND, Industrial and specialty</h3>
+          <table class="ref-table">
+            <thead>
+              <tr><th>Code</th><th>Description</th><th>Typical fitment</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>SLM</td><td>Smooth multi-purpose for material handlers and port equipment.</td><td>Container handlers, RTGs, reach stackers</td></tr>
+              <tr><td>SKS</td><td>Standard pattern for skid-steer and small wheel loader applications.</td><td>Skid-steer, mini-loader</td></tr>
+              <tr><td>SDT</td><td>Solid drive tyre, port and industrial.</td><td>Port handlers, ferry decks</td></tr>
+            </tbody>
+          </table>
+
+          <div class="callout">
+            <span class="callout__label">/ Practical note</span>
+            <p>The TRA code is one input when matching a tyre to a machine. The other inputs that matter just as much: <strong>load index</strong>, <strong>speed symbol</strong>, <strong>TKPH rating</strong> (heat capacity), <strong>compound type</strong> (heat- or cut-resistant), and <strong>star rating</strong>. The right tyre passes all of these, not just the code.</p>
+          </div>
+        </section>
+
+        <!-- ====== 02 NAMING ====== -->
+        <section class="ref-section" data-reveal id="naming">
+          <span class="ref-section__num">/ 02 · TYRE NAMING SYSTEMS</span>
+          <h2 class="ref-section__title">How do you read an OTR tyre name?</h2>
+
+          <p>
+            OTR tyres use two main naming systems: the older inch-based system (e.g. 33.00R51) and the metric / aspect-ratio system (e.g. 45/65R45). They look different but describe the same kind of thing: cross-section width, construction type, and rim diameter.
+          </p>
+
+          <h3>Inch-based, e.g. 33.00R51</h3>
+          <table class="ref-table">
+            <thead>
+              <tr><th>Component</th><th>Means</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="code">33.00</td><td>Section width: 33 inches at the widest point of the tyre at correct inflation.</td></tr>
+              <tr><td class="code">R</td><td>Construction: R = radial. The alternative is bias (no letter, or "-" between numbers, e.g. 33.00-51).</td></tr>
+              <tr><td class="code">51</td><td>Rim diameter: 51 inches. The wheel rim this tyre fits.</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Metric / aspect-ratio, e.g. 45/65R45</h3>
+          <table class="ref-table">
+            <thead>
+              <tr><th>Component</th><th>Means</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="code">45</td><td>Section width in inches (or sometimes a coded width, Bridgestone uses 45 for ~45" width).</td></tr>
+              <tr><td class="code">65</td><td>Aspect ratio (section height as percentage of section width). 65 means height = 65% of width.</td></tr>
+              <tr><td class="code">R</td><td>Construction: R = radial.</td></tr>
+              <tr><td class="code">45</td><td>Rim diameter in inches.</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Load index and speed symbol</h3>
+          <p>
+            On the sidewall, after the size, you'll typically see a load index number (e.g. 200) and a speed symbol (e.g. A2, A5, B). The load index converts to a maximum load via a lookup table. The speed symbol indicates the maximum speed at which the load index applies.
+          </p>
+          <ul>
+            <li><strong>Load index 200</strong> ≈ 14,000 kg per tyre. Higher indices carry more.</li>
+            <li><strong>Speed symbol A2</strong> = 10 km/h max. <strong>A5</strong> = 25 km/h. <strong>B</strong> = 50 km/h.</li>
+            <li>Most OTR mining tyres run A2 or A5. ADTs and civil graders are typically A5 or B.</li>
+          </ul>
+
+          <h3>Star rating</h3>
+          <p>
+            The star rating (★, ★★, ★★★) indicates a reserve load capacity above the published load index. Five-star ratings exist but are rare. Each star adds a load capacity increment. A three-star tyre allows higher loads at the same speed, or the same load at higher speeds, than a one-star equivalent.
+          </p>
+
+          <h3>Pattern code</h3>
+          <p>
+            Pattern codes are manufacturer-specific. Bridgestone uses VRDP, VSDL+, VRPS, etc. Michelin uses XDR, XHA2, XLD D2. There's no cross-manufacturer standard for pattern code, only for the TRA service code that the pattern fits within.
+          </p>
+        </section>
+
+        <!-- ====== 03 MIXING RULES ====== -->
+        <section class="ref-section" data-reveal id="mixing">
+          <span class="ref-section__num">/ 03 · MIXING RULES</span>
+          <h2 class="ref-section__title">What can you mix on an OTR machine?</h2>
+
+          <p>
+            Tyre mixing on OTR machines sits in AS4457 territory, the Australian standard for OTR wheel and tyre maintenance and safety. Manufacturer guidance from Bridgestone, Michelin, Goodyear, Yokohama and Continental is consistent on the principles, though specific limits vary.
+          </p>
+
+          <div class="callout callout--safety">
+            <span class="callout__label">/ Safety first</span>
+            <p>Mixing rules exist because mis-matched tyres cause real failures. Heat separation. Bead damage. Uneven contact patch leading to handling loss. On a haul truck this is a fatal-incident risk. When in doubt, don't mix, replace the set.</p>
+          </div>
+
+          <h3>The hard rules, must not mix</h3>
+          <ul>
+            <li><strong>Construction type on the same axle.</strong> Radial and bias have different deflection characteristics. Mixing them on one axle creates uneven contact pressure and unpredictable handling. Universal manufacturer no.</li>
+            <li><strong>Construction type on twin assemblies.</strong> The dual tyres on a single hub position must match, same construction, same size, same load index. Mixing on twins amplifies the deflection problem.</li>
+            <li><strong>Tyres with significantly different worn diameters on twins.</strong> A new tyre paired with a half-worn tyre on the same hub forces the new tyre to carry disproportionate load. Heat failure follows.</li>
+            <li><strong>Different load indices on the same axle.</strong> The lower-rated tyre is over-loaded; the higher-rated tyre is under-loaded.</li>
+            <li><strong>Different speed symbols on the same axle.</strong> The lower-rated tyre's speed limit governs the axle.</li>
+          </ul>
+
+          <h3>The soft rules, discouraged but possible</h3>
+          <ul>
+            <li><strong>Different brands on the same axle.</strong> Acceptable when construction type, size, load index, speed symbol, and TRA code match. Common in trader-sourced fleets. Wear may be slightly uneven but it's a working configuration.</li>
+            <li><strong>Different patterns within the same TRA code.</strong> A Bridgestone L-5 alongside a Michelin L-5, same size and load, is acceptable. The tread looks different but the application is the same.</li>
+            <li><strong>Heat-resistant compound with standard compound on the same machine.</strong> Common at axle level (e.g. heat-resistant fronts on a 992 doing tight cycles). Acceptable provided load and speed match.</li>
+            <li><strong>Mixed bias and radial across different axles.</strong> Mechanically possible on some machines, OEM guidance varies, handling characteristic changes. Most operators standardise to one construction type per machine.</li>
+          </ul>
+
+          <h3>The clean rules, what to aim for</h3>
+          <ul>
+            <li>Same <strong>construction type</strong> on every position of a machine.</li>
+            <li>Same <strong>size, load index, and speed symbol</strong> on the same axle.</li>
+            <li>Same <strong>worn diameter</strong> (within manufacturer tolerance, typically 2-4% diameter difference) on twins.</li>
+            <li><strong>Compatible TRA code family</strong> (all L-5 across a 992, all E-4 across a haul truck).</li>
+            <li><strong>Compound matched to duty</strong>, heat-resistant where heat is the constraint, cut-resistant where cuts are the constraint, standard where neither dominates.</li>
+          </ul>
+
+          <div class="callout callout--endorse">
+            <span class="callout__label">/ When supply forces a mixed fit</span>
+            <p>If you're forced into a mixed configuration because the right tyre is on a 14-week lead time and the machine has to run, document the decision, run the machine at a reduced operating envelope (lower speed, lower load), and replace to a consistent setup at the first opportunity. <strong>For sourcing the right tyre fast: <a href="https://jewelltyres.com.au" style="color: var(--jt-endorse); border-bottom-color: rgba(254,192,19,0.4);">Jewell Tyres</a></strong>, independent traders move tyres the OEM channel can't.</p>
+          </div>
+        </section>
+
+        <!-- ====== 04 GLOSSARY ====== -->
+        <section class="ref-section" data-reveal id="glossary">
+          <span class="ref-section__num">/ 04 · GLOSSARY</span>
+          <h2 class="ref-section__title">OTR tyre glossary</h2>
+
+          <p>
+            Forty common terms that come up in OTR tyre conversations. Definitions are practical, not academic, what the term means and when you'd actually hear it used.
+          </p>
+
+          <div class="gloss-toolbar">
+            <input type="text" id="gloss-filter" class="field__control" placeholder="Search the glossary, e.g. TKPH, radial, casing" autocomplete="off" aria-label="Search glossary">
+          </div>
+          <p id="gloss-empty" hidden>No terms match. <a href="ask.html">Ask the Portal →</a></p>
+
+          <dl class="gloss-grid">
+            <div class="gloss-item"><dt>Aspect ratio</dt><dd>Section height expressed as a percentage of section width. A 45/65R45 has aspect ratio 65 (height is 65% of width).</dd></div>
+            <div class="gloss-item"><dt>AS4457</dt><dd>The Australian Standard for off-the-road wheel and tyre maintenance and safety. Updated in 2019. Covers mixing rules, inspection, storage and handling.</dd></div>
+            <div class="gloss-item"><dt>Bead</dt><dd>The reinforced inner edge of the tyre that seats on the rim. Bead damage usually means scrap.</dd></div>
+            <div class="gloss-item"><dt>Bias</dt><dd>Construction type where ply cords cross diagonally at angles (typically 30-40° to the centreline). Older construction, stiffer sidewall, lower fuel efficiency. Largely replaced by radial in OTR.</dd></div>
+            <div class="gloss-item"><dt>Casing</dt><dd>The fabric and steel skeleton of the tyre under the tread and sidewall rubber. The casing is what holds the tyre's shape under load. Casing integrity determines whether a tyre can be retreaded.</dd></div>
+            <div class="gloss-item"><dt>Compound</dt><dd>The specific rubber recipe of the tread. Heat-resistant compounds run cooler under high TKPH duty. Cut-resistant compounds resist sharp-rock damage at the cost of heat performance.</dd></div>
+            <div class="gloss-item"><dt>Contact patch</dt><dd>The portion of the tyre tread actually touching the ground at any moment. Larger contact patch = lower ground pressure = better flotation but more rolling resistance.</dd></div>
+            <div class="gloss-item"><dt>Cut resistance</dt><dd>The compound and tread design properties that resist sharp-rock penetration. Important in iron ore, hard-rock quarrying, abrasive material handling.</dd></div>
+            <div class="gloss-item"><dt>Deflection</dt><dd>How much the tyre flattens under load. Higher deflection = more contact area but more heat generation. Manufacturers specify a deflection range for the load index.</dd></div>
+            <div class="gloss-item"><dt>Drive tyre</dt><dd>A tyre on a powered axle. On a haul truck the rear axle is the drive axle and typically carries the larger or higher-load-index tyre.</dd></div>
+            <div class="gloss-item"><dt>Earthmover</dt><dd>The general category of off-the-road machine that moves earth or material, haul trucks, wheel loaders, dozers, graders. Source of the "E" in TRA service codes.</dd></div>
+            <div class="gloss-item"><dt>End-of-mine</dt><dd>Inventory remaining when a mine closes or a contract ends. Often sold via independent traders as surplus dispersal.</dd></div>
+            <div class="gloss-item"><dt>Footprint</dt><dd>The contact patch, viewed from below. Wider footprint distributes load over more ground area.</dd></div>
+            <div class="gloss-item"><dt>Heat separation</dt><dd>A common OTR failure mode: tread separates from the casing because heat broke the bond between layers. Caused by overload, over-pressure, or running above the TKPH rating.</dd></div>
+            <div class="gloss-item"><dt>Inflation pressure</dt><dd>Air pressure inside the tyre. Set per the manufacturer's load, pressure chart for the actual axle load. Under- and over-inflation both cause heat issues.</dd></div>
+            <div class="gloss-item"><dt>Load index</dt><dd>A number from the international load index table that converts to a maximum load (kg or lb) at a specified speed. Load index 200 ≈ 14,000 kg.</dd></div>
+            <div class="gloss-item"><dt>OTR</dt><dd>Off-the-road. Tyres for machines that don't operate on public highways, mining, civil, ag, forestry, industrial.</dd></div>
+            <div class="gloss-item"><dt>Pattern</dt><dd>The tread design of a tyre. Each manufacturer names its own patterns, Bridgestone VRDP, Michelin XDR4, etc.</dd></div>
+            <div class="gloss-item"><dt>Ply rating</dt><dd>Historic measure of casing strength derived from the number of fabric layers. Largely replaced by load index, but still appears on older bias tyres.</dd></div>
+            <div class="gloss-item"><dt>Plug repair</dt><dd>A field repair where a hole in the tread is filled with rubber. Acceptable for small punctures only. Not suitable for sidewall damage.</dd></div>
+            <div class="gloss-item"><dt>Radial</dt><dd>Construction type where ply cords run radially (90° to the centreline). Standard modern OTR construction. Better heat dissipation and lower rolling resistance than bias.</dd></div>
+            <div class="gloss-item"><dt>Retread</dt><dd>A tyre whose worn tread has been replaced by bonding new tread onto the original casing. Cost-effective for tyres whose casings are sound. Mature technology for E-3 and E-4 sizes.</dd></div>
+            <div class="gloss-item"><dt>Rim</dt><dd>The metal wheel the tyre seats on. OTR rims are sized in inches (24", 25", 33", 49", 51", 57", 63"). The "R" in 26.5R25 says it's radial and fits a 25" rim.</dd></div>
+            <div class="gloss-item"><dt>Section repair</dt><dd>A factory-grade repair of more extensive damage than a plug. Patch from the inside, vulcanised. More expensive than plug, more durable.</dd></div>
+            <div class="gloss-item"><dt>Section width</dt><dd>The widest point of the inflated tyre, measured across the sidewall.</dd></div>
+            <div class="gloss-item"><dt>Sidewall</dt><dd>The outer surface of the tyre between the bead and the tread. Sidewall damage is generally not repairable.</dd></div>
+            <div class="gloss-item"><dt>Speed symbol</dt><dd>A letter (A1, A2, A5, B, etc.) indicating the maximum continuous speed at which the load index applies. OTR mining tyres typically A2 (10 km/h) or A5 (25 km/h).</dd></div>
+            <div class="gloss-item"><dt>Star rating</dt><dd>A symbol (★, ★★, ★★★) indicating reserve load capacity above the published load index. More stars = more capacity at the same speed.</dd></div>
+            <div class="gloss-item"><dt>Steer tyre</dt><dd>A tyre on a steering axle. Front of a haul truck, front of a wheel loader. Usually carries less load than the drive axle, often runs a less aggressive tread.</dd></div>
+            <div class="gloss-item"><dt>Tier 1</dt><dd>The established global premium manufacturers, Bridgestone, Michelin, Goodyear, Yokohama, Continental. Highest cost, highest residual, broadest fitment data.</dd></div>
+            <div class="gloss-item"><dt>Tier 2</dt><dd>Credible mid-tier manufacturers, BKT, Aeolus, Techking, Triangle, Double Coin and similar. 25-45% lower delivered cost; appropriate for many applications.</dd></div>
+            <div class="gloss-item"><dt>TKPH</dt><dd>Tonne Kilometre Per Hour. Heat-capacity rating for haul-truck tyres. Required TKPH = mean tyre load × average speed. Used to match tyre selection to haul cycle.</dd></div>
+            <div class="gloss-item"><dt>TMPH</dt><dd>Ton Mile Per Hour. The imperial-units equivalent of TKPH. Same purpose, different units.</dd></div>
+            <div class="gloss-item"><dt>TRA</dt><dd>Tire and Rim Association. Publishes the cross-manufacturer service code system and the Year Book reference for OTR tyre standards.</dd></div>
+            <div class="gloss-item"><dt>Tread</dt><dd>The portion of the tyre that contacts the ground. The pattern is moulded into the tread. The tread compound determines heat and cut behaviour.</dd></div>
+            <div class="gloss-item"><dt>Tread depth</dt><dd>The depth of the tread groove, typically measured in 32nds of an inch (US) or millimetres (metric). New OTR tyres run 80-110 mm depending on pattern.</dd></div>
+            <div class="gloss-item"><dt>Tube / tubeless</dt><dd>Tube tyres have an inner tube holding air; tubeless seal directly to the rim. Most modern OTR is tubeless. Tube fitment persists in some older machines and bias applications.</dd></div>
+            <div class="gloss-item"><dt>Twin assembly</dt><dd>Two tyres mounted on a single hub position, common on haul truck rear axles. Both tyres must match closely or the inner carries disproportionate load.</dd></div>
+            <div class="gloss-item"><dt>WCF</dt><dd>Work Capacity Factor. The equivalent of TKPH for loader and dozer tyres. Different math, same purpose, match tyre selection to operating duty.</dd></div>
+            <div class="gloss-item"><dt>Worn diameter</dt><dd>The outside diameter of a tyre after some wear. On twin assemblies, worn diameters between paired tyres must be within manufacturer tolerance (typically 2-4%).</dd></div>
+          </dl>
+        </section>
+
+        <!-- ====== 05 FAILURE MODES ====== -->
+        <section class="ref-section" data-reveal id="failure-modes">
+          <span class="ref-section__num">/ 05 · COMMON FAILURE MODES</span>
+          <h2 class="ref-section__title">Why do OTR tyres fail?</h2>
+
+          <div class="callout callout--safety">
+            <span class="callout__label">/ Read this first</span>
+            <p>Repair, scrap and mixing decisions must be made by a competent person on the specific tyre and rim under AS4457:2019 and manufacturer limits. The thresholds and rules below are general reference, not a determination for any specific tyre.</p>
+          </div>
+
+          <p>
+            Off-the-road tyres fail in patterns. Understanding the patterns helps with the diagnosis after the fact and the prevention before. Eight common modes, what they look like, what causes them, what to do.
+          </p>
+
+          <div class="fail-mode">
+            <h4>01, Heat separation</h4>
+            <div class="fail-mode__grid">
+              <div class="fail-mode__cell"><strong>What it looks like</strong><p>Tread sections lifting away from the casing. Sometimes a visible bulge before the tread leaves. Often catastrophic on a haul truck, full tread strip departure.</p></div>
+              <div class="fail-mode__cell"><strong>What caused it</strong><p>Heat exceeded the bond strength between tread and casing. Usually because the tyre ran above its TKPH rating, too much load, too much speed, too much ambient temperature, or all three.</p></div>
+              <div class="fail-mode__cell"><strong>What to do</strong><p>Tyre is scrap. Reassess the haul cycle: recalculate required TKPH, upgrade the tyre rating, slow the cycle, or split the load. Repeats indicate a systemic mismatch.</p></div>
+            </div>
+          </div>
+
+          <div class="fail-mode">
+            <h4>02, Impact break / cut to ply</h4>
+            <div class="fail-mode__grid">
+              <div class="fail-mode__cell"><strong>What it looks like</strong><p>A cut through the tread that exposes the underlying steel belt or fabric ply. Often from a hit by a large rock or sharp object. May be repairable depending on size and location.</p></div>
+              <div class="fail-mode__cell"><strong>What caused it</strong><p>Single high-energy impact, typically from haul road rock or a poorly placed bench at the pit. May indicate haul road condition needs attention.</p></div>
+              <div class="fail-mode__cell"><strong>What to do</strong><p>Small cuts (<25 mm, away from sidewall): section repair viable. Larger cuts, sidewall cuts, or cuts through to the bead: scrap. Investigate haul road condition.</p></div>
+            </div>
+          </div>
+
+          <div class="fail-mode">
+            <h4>03, Shoulder separation</h4>
+            <div class="fail-mode__grid">
+              <div class="fail-mode__cell"><strong>What it looks like</strong><p>Tread separation at the edge where the tread meets the sidewall. Often visible as a bulge or split running circumferentially around the tyre.</p></div>
+              <div class="fail-mode__cell"><strong>What caused it</strong><p>Shoulder area runs hotter than the centre of the tread under most loads. Persistent under-inflation accelerates this. Heavy side-loading (cornering) contributes.</p></div>
+              <div class="fail-mode__cell"><strong>What to do</strong><p>Tyre is scrap. Audit inflation pressure management. If the machine corners hard, consider whether the tyre's load index includes adequate sidewall reserve.</p></div>
+            </div>
+          </div>
+
+          <div class="fail-mode">
+            <h4>04, Bead damage</h4>
+            <div class="fail-mode__grid">
+              <div class="fail-mode__cell"><strong>What it looks like</strong><p>Visible damage to the bead, the reinforced inner edge that seats on the rim. Can be cuts, distortion, or visible wire from the bead bundle.</p></div>
+              <div class="fail-mode__cell"><strong>What caused it</strong><p>Improper mounting (forcing the tyre over the rim), rim damage transferring to the bead, or extreme overload. Sometimes from running flat.</p></div>
+              <div class="fail-mode__cell"><strong>What to do</strong><p>Tyre is scrap. Inspect the rim, a damaged rim will repeat the failure on the next tyre. Review mounting procedure with the fitter team.</p></div>
+            </div>
+          </div>
+
+          <div class="fail-mode">
+            <h4>05, Rim damage</h4>
+            <div class="fail-mode__grid">
+              <div class="fail-mode__cell"><strong>What it looks like</strong><p>The wheel rim itself is bent, cracked, or has a damaged flange. Often visible only when the tyre comes off. May cause repeat bead damage on successive tyres.</p></div>
+              <div class="fail-mode__cell"><strong>What caused it</strong><p>Impact (kerb strike, rock hit, ramp drop), heat from a flat run, or fatigue cracking. Sometimes from misuse during demount.</p></div>
+              <div class="fail-mode__cell"><strong>What to do</strong><p>Don't fit a new tyre to a damaged rim. Inspect, refurbish or replace the rim. AS4457 specifies rim inspection cycles for high-cost OTR rims.</p></div>
+            </div>
+          </div>
+
+          <div class="fail-mode">
+            <h4>06, Sidewall flex failure</h4>
+            <div class="fail-mode__grid">
+              <div class="fail-mode__cell"><strong>What it looks like</strong><p>A bulge or weakness in the sidewall, often with internal fibre damage visible after demount. May progress to a sudden blowout.</p></div>
+              <div class="fail-mode__cell"><strong>What caused it</strong><p>Sustained under-inflation flexing the sidewall beyond its design envelope, generating heat. Sometimes from running on a kerb or against fixed objects.</p></div>
+              <div class="fail-mode__cell"><strong>What to do</strong><p>Tyre is scrap. Audit the inflation management programme, daily or per-shift pressure checks are standard practice on tier-one mining contracts.</p></div>
+            </div>
+          </div>
+
+          <div class="fail-mode">
+            <h4>07, Ply failure</h4>
+            <div class="fail-mode__grid">
+              <div class="fail-mode__cell"><strong>What it looks like</strong><p>Internal layers (ply) breaking down, often invisible from outside until a bulge appears or air leaks through the casing. Sometimes evident only post-failure when the tyre is dissected.</p></div>
+              <div class="fail-mode__cell"><strong>What caused it</strong><p>Sustained overload, age, water ingress through unrepaired cuts, or manufacturing defect.</p></div>
+              <div class="fail-mode__cell"><strong>What to do</strong><p>Tyre is scrap. If a pattern emerges across multiple tyres of the same age and brand, raise with the supplier, could be a batch quality issue.</p></div>
+            </div>
+          </div>
+
+          <div class="fail-mode">
+            <h4>08, Tread chunking</h4>
+            <div class="fail-mode__grid">
+              <div class="fail-mode__cell"><strong>What it looks like</strong><p>Chunks of tread rubber breaking away from the surface. Distinct from cuts, this is the rubber itself fragmenting, not being sliced.</p></div>
+              <div class="fail-mode__cell"><strong>What caused it</strong><p>Compound mis-match, cut-resistant compound used in heavy heat-stress duty, or vice versa. Sometimes from rapid wear at the end of a tyre's life.</p></div>
+              <div class="fail-mode__cell"><strong>What to do</strong><p>If early in tyre life: review compound selection. If late: normal end-of-life behaviour, plan replacement.</p></div>
+            </div>
+          </div>
+
+          <div class="callout">
+            <span class="callout__label">/ Pattern recognition</span>
+            <p>One tyre failing is an incident. Three tyres failing the same way in the same fleet position is a systemic problem. Track failures by mode, position, brand, batch and operator. Patterns will appear before catastrophic events do.</p>
+          </div>
+        </section>
+
+        <!-- ====== 06 AS4457 ====== -->
+        <section class="ref-section" data-reveal id="as4457">
+          <span class="ref-section__num">/ 06 · AS4457 SUMMARY</span>
+          <h2 class="ref-section__title">What does AS4457:2019 cover?</h2>
+
+          <p>
+            AS4457:2019, full title <em>Earth-moving machinery, Off-the-road wheels and tyres, Maintenance and safety</em>, is the Australian Standard that governs OTR tyre handling on Australian mine and civil sites. Tier-one mining contracts require compliance. Insurance, work-health-and-safety regulators, and procurement teams all reference it.
+          </p>
+
+          <p>
+            This is a summary in plain language. The actual standard is the authoritative document, purchase from SAI Global or Standards Australia if you need the formal text.
+          </p>
+
+          <h3>What the standard includes</h3>
+          <ul>
+            <li><strong>Tyre selection criteria</strong>, load capacity, TRA service code, speed symbol, compound matching to duty.</li>
+            <li><strong>Mounting and demounting practice</strong>, equipment requirements, safety procedures, exclusion zones.</li>
+            <li><strong>Inflation pressure management</strong>, initial inflation, ongoing checks, derating for under-inflation.</li>
+            <li><strong>Mixing rules</strong>, what can and can't be mixed across positions and axles (see Section 03 above).</li>
+            <li><strong>In-service inspection</strong>, frequency, what to look for, when to remove from service.</li>
+            <li><strong>Repair criteria</strong>, what's repairable (small cuts away from sidewall), what isn't (sidewall damage, bead damage, heat separation).</li>
+            <li><strong>Storage</strong>, environmental conditions, ageing limits, rotation procedures for held stock.</li>
+            <li><strong>Disposal</strong>, end-of-life tyre handling, retread eligibility, scrap pathways.</li>
+            <li><strong>Wheel and rim inspection</strong>, cycle requirements, NDT (non-destructive testing) frequency for high-cost OTR rims.</li>
+            <li><strong>Operator training</strong>, competency requirements for fitters working with OTR equipment.</li>
+          </ul>
+
+          <h3>How it affects buying and selling</h3>
+          <ul>
+            <li>A tyre destined for a tier-one mining contract should have documented provenance, fitment history, and current condition assessment. Independent trader sales typically include this documentation.</li>
+            <li>A used tyre's residual value depends on its AS4457-compliant condition: tyres with sidewall damage, bead damage, or heat separation are scrap regardless of remaining tread depth.</li>
+            <li>Storage age and conditions affect saleability. AS4457 has guidance on this.</li>
+            <li>Mixing constraints affect inventory liquidity, a single tyre that doesn't match the rest of a customer's fleet may be hard to sell into the contract market and is better placed in secondary fleet or trader stock.</li>
+          </ul>
+
+          <div class="callout callout--endorse">
+            <span class="callout__label">/ Jewell Tyres and AS4457</span>
+            <p>Jewell Tyres trades within AS4457 compliance: tyres sold include documented condition assessment, age, and provenance where known. Tyres that don't meet AS4457 standards aren't sold, they're scrapped through compliant disposal channels. <strong><a href="https://jewelltyres.com.au/safety-info.html" style="color: var(--jt-endorse); border-bottom-color: rgba(254,192,19,0.4);">More on the Jewell Tyres safety position →</a></strong></p>
+          </div>
+        </section>
+
+        <!-- ====== 07 COMMON QUESTIONS ====== -->
+        <!-- Mirrored by the FAQPage JSON-LD in the head. Keep the two in sync. -->
+        <section class="ref-section" data-reveal id="common-questions">
+          <span class="ref-section__num">/ 07 · COMMON QUESTIONS</span>
+          <h2 class="ref-section__title">Common questions on the reference</h2>
+
+          <h3>What is the difference between an E-3 and an E-4 OTR tyre?</h3>
+          <p>Both are TRA earthmover codes for haul trucks. E-3 is rock regular: standard tread depth for normal-duty rock work, typically mid-size haul trucks in the 90 to 150 tonne class. E-4 is rock deep, with roughly 1.5 times the tread depth of E-3, for longer wear life and better cut resistance, and it is the usual choice on tier-one Pilbara iron ore haulage such as the CAT 793 and Komatsu 830E and 930E. Deeper tread also carries more rubber and runs hotter, so the TKPH rating and the haul cycle still decide which code suits. Confirm against current manufacturer data before ordering.</p>
+
+          <h3>How do you read an OTR tyre size like 45/65R45?</h3>
+          <p>In 45/65R45 the first number is the section width in inches, 65 is the aspect ratio (section height as a percentage of section width), R means radial construction, and the last number is the rim diameter in inches. Inch-based sizes read differently: in 33.00R51 the section width is 33 inches, R is radial, and 51 is the rim diameter. Bias construction is written with a hyphen instead of the R, for example 33.00-51.</p>
+
+          <h3>How much difference in worn diameter is acceptable on a twin assembly?</h3>
+          <p>Typically within the manufacturer's tolerance, usually a 2 to 4 percent difference in worn diameter between the paired tyres. Beyond that the larger tyre carries a disproportionate share of the load and heat failure follows. The manufacturer's own tolerance for the specific tyre governs, and the assessment is a matter for a competent person under AS4457:2019.</p>
+
+          <h3>What causes heat separation on a haul truck tyre?</h3>
+          <p>Heat exceeded the bond strength between the tread and the casing, so the tread lifts away, often as a full tread strip departure. The usual cause is running above the tyre's TKPH rating: too much load, too much speed, high ambient temperature, or all three together. The tyre is scrap. Recalculate the required TKPH for the haul cycle on the <a href="calculators.html#tkph">TKPH calculator</a>, then either upgrade the tyre rating, slow the cycle or split the load. Repeats point to a systemic mismatch rather than a bad tyre.</p>
+
+          <h3>What does AS4457:2019 cover?</h3>
+          <p>AS4457:2019 is the Australian Standard for earth-moving machinery, off-the-road wheels and tyres, maintenance and safety. It covers tyre selection criteria, mounting and demounting practice, inflation pressure management, mixing rules, in-service inspection, repair criteria, storage, disposal, wheel and rim inspection including non-destructive testing frequency, and operator competency. The summary on this page is plain-language reference only. The standard itself is the authoritative document, available from Standards Australia.</p>
+        </section>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer-placeholder"></div>
+<script src="js/layout.js?v=1"></script>
+<script>
+  /* Reference page enhancements */
+  (function () {
+    /* 1. Wrap tables so they round and scroll horizontally on small screens. */
+    document.querySelectorAll('.ref-table').forEach(function (t) {
+      if (t.parentElement && t.parentElement.classList.contains('ref-table-wrap')) return;
+      var w = document.createElement('div');
+      w.className = 'ref-table-wrap';
+      t.parentNode.insertBefore(w, t);
+      w.appendChild(t);
+    });
+
+    /* 2. Scrollspy, highlight the current section in the sticky TOC. */
+    var links = Array.prototype.slice.call(document.querySelectorAll('.ref-toc a'));
+    var sections = links
+      .map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); })
+      .filter(Boolean);
+    function onScroll() {
+      var current = sections[0], i;
+      for (i = 0; i < sections.length; i++) {
+        if (sections[i].getBoundingClientRect().top <= 140) current = sections[i];
+      }
+      links.forEach(function (a) {
+        a.classList.toggle('is-active', current && a.getAttribute('href') === '#' + current.id);
+      });
+    }
+    if (sections.length) {
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll);
+      onScroll();
+    }
+
+    /* 3. Glossary live filter. */
+    var gf = document.getElementById('gloss-filter');
+    if (gf) {
+      var items = Array.prototype.slice.call(document.querySelectorAll('.gloss-item'));
+      var empty = document.getElementById('gloss-empty');
+      gf.addEventListener('input', function () {
+        var q = gf.value.trim().toLowerCase(), shown = 0;
+        items.forEach(function (it) {
+          var m = !q || it.textContent.toLowerCase().indexOf(q) !== -1;
+          it.hidden = !m; if (m) shown++;
+        });
+        if (empty) empty.hidden = shown !== 0;
+      });
+    }
+  })();
+</script>
+</body>
+</html>
