@@ -70,6 +70,8 @@ body {
 .nav-link.active .nav-num { color: var(--orange); }
 .nav-link.nav-edge { color: var(--white); font-weight: 600; }
 .nav-sep { height: 1px; background: var(--hair); margin: 12px 8px; }
+.nav-phase { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 9.5px; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange); margin: 14px 10px 6px; }
 
 /* ── CONTENT ── */
 .content { flex: 1 1 auto; min-width: 0; padding: 34px clamp(28px, 5vw, 70px) 80px; max-width: 1060px; }
@@ -662,6 +664,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
     <nav class="nav" id="nav">
       <a class="nav-link nav-edge" href="#top"><span class="nav-num">&middot;</span><span>Welcome</span></a>
       <a class="nav-link nav-edge" href="#starthere"><span class="nav-num">&#9733;</span><span>Start here</span></a>
+      <p class="nav-phase">Summary on a page</p>
+      <a class="nav-link sop-nav" href="#sop-process"><span class="nav-num">&middot;</span><span>3D Process</span></a>
+      <a class="nav-link sop-nav" href="#sop-discover"><span class="nav-num">&middot;</span><span>Discover on a page</span></a>
+      <a class="nav-link sop-nav" href="#sop-design"><span class="nav-num">&middot;</span><span>Design on a page</span></a>
+      <a class="nav-link sop-nav" href="#sop-deploy"><span class="nav-num">&middot;</span><span>Deploy on a page</span></a>
       <div class="nav-sep"></div>
       <a class="nav-link" href="#note"><span class="nav-num">01</span><span>A note up front</span></a>
       <a class="nav-link" href="#whatsinside"><span class="nav-num">02</span><span>What this is</span></a>
