@@ -7,7 +7,7 @@
 // Every figure is counted from the otr-eartmover repository or attributed to
 // its source at the point of use.
 
-import { otrLogo, poweredByJewell } from './marks.js';
+import { markStyles, otrLogo, poweredByJewell } from './marks.js';
 
 export function summaryPage() {
   return `<!doctype html>
@@ -64,10 +64,8 @@ body {
   box-shadow: none;
 }
 .brand { display: block; margin: 2px 8px 0; text-decoration: none; color: var(--white); }
-.otr-logo { display: block; height: auto; }
 .jt-endorse { display: inline-flex; align-items: center; gap: 9px; margin: 12px 8px 0; padding-top: 12px;
   border-top: 1px solid var(--hair); white-space: nowrap; }
-.jt-tread { display: block; flex-shrink: 0; }
 .jt-type { display: flex; flex-direction: column; gap: 1px; text-align: left; }
 .jt-type small { font-size: 8px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--meta); }
 .jt-type b { font-size: 11px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: #FFFFFF; }
@@ -327,6 +325,7 @@ html.viewing .viewer-split { display: block; position: absolute; left: 0; top: 0
   .mdot { width: 36px; height: 36px; }
   .pn-btn { padding: 12px 15px; }
 }
+  ${markStyles()}
 </style>
 </head>
 <body>

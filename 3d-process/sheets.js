@@ -1,4 +1,4 @@
-import { otrLogo, poweredByJewell } from './marks.js';
+import { markStyles, otrLogo, poweredByJewell } from './marks.js';
 
 // The four 3D Process sheets: 3D on a page, Discover, Design, Deploy.
 
@@ -97,9 +97,7 @@ export function packPage() {
     text-transform:uppercase;color:var(--sop-meta);background:var(--sop-s1);border:1px solid var(--sop-hair);
     border-radius:999px;padding:4px 11px;white-space:nowrap}
   .sop-tag.is-accent{color:var(--sop-orange);border-color:rgba(191,110,27,.45);background:rgba(191,110,27,.08)}
-  .otr-logo{display:block;height:auto}
   .jt-endorse{display:inline-flex;align-items:center;gap:9px;white-space:nowrap}
-  .jt-tread{display:block;flex-shrink:0}
   .jt-type{display:flex;flex-direction:column;gap:1px;text-align:left}
   .sop-mx{padding-left:14px;border-left:1px solid var(--sop-hair)}
     .jt-type small{font-family:var(--sop-font-label);font-size:8px;font-weight:600;letter-spacing:.22em;
@@ -330,6 +328,7 @@ export function packPage() {
     .sop-cols.c4{grid-template-columns:repeat(4,1fr) !important}
     .sop-band-cols{grid-template-columns:repeat(3,1fr) !important}
   }
+  ${markStyles()}
 </style>
 </head>
 <body>

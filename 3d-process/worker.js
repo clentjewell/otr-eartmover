@@ -10,7 +10,7 @@
 // Deployed separately from the Knowledge Portal worker. See README.md for
 // deploy and password rotation.
 
-import { otrLogo, poweredByJewell } from './marks.js';
+import { markStyles, otrLogo, poweredByJewell } from './marks.js';
 import { packPage } from './sheets.js';
 import { summaryPage } from './summary.js';
 
@@ -105,10 +105,8 @@ function gatePage(next, failed) {
     font-family:'Archivo','Helvetica Neue',system-ui,Helvetica,Arial,sans-serif;
     background:#0B0B0B}
   .card{width:100%;max-width:392px;text-align:center}
-  .otr-logo{display:block;height:auto;margin:0 auto}
   .jt-endorse{display:inline-flex;align-items:center;gap:9px;margin-top:16px;padding-top:14px;
     border-top:1px solid #2C2C2C}
-  .jt-tread{display:block;flex-shrink:0}
   .jt-type{display:flex;flex-direction:column;gap:1px;text-align:left}
   .jt-type small{font-size:8px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#6E6E6E}
   .jt-type b{font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#FFFFFF}
@@ -125,6 +123,7 @@ function gatePage(next, failed) {
   button:hover{background:#FFA24D}
   p.foot{margin:26px 0 0;font-family:'IBM Plex Mono',ui-monospace,monospace;
     font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;opacity:.45}
+  ${markStyles()}
 </style>
 </head>
 <body>
