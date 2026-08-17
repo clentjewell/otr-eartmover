@@ -1,8 +1,23 @@
 # otrearthmovertyres.com - 3D Process pack
 
-The four-sheet 3D Process output for otrearthmovertyres.com: 3D on a page,
-Discover, Design, Deploy. Same structure and artifact set as the Adam Hall
-pack, populated from this repository.
+The 3D Process output for otrearthmovertyres.com, built the way the Adam Hall
+pack is built, in two layers:
+
+| Route | What it is |
+|---|---|
+| `/` | The summary walkthrough. Sticky sidebar contents, welcome landing, Start here band, ten numbered pages with prev/next, and an inline viewer so links open in place. |
+| `/pack` | The four printable sheets: 3D on a page, Discover, Design, Deploy. |
+
+Same structure and artifact set as the Adam Hall pack, in the OTR palette,
+populated from this repository.
+
+## Files
+
+| File | Purpose |
+|---|---|
+| `worker.js` | Routing and the password gate. |
+| `summary.js` | The summary walkthrough. |
+| `sheets.js` | The four sheets. |
 
 It is a private pack, not a site page. It is not in `sitemap.xml`, it is not
 crawlable, and it is served by its own worker so it never touches the
