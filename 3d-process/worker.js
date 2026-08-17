@@ -10,6 +10,7 @@
 // Deployed separately from the Knowledge Portal worker. See README.md for
 // deploy and password rotation.
 
+import { otrLogo, poweredByJewell } from './marks.js';
 import { packPage } from './sheets.js';
 import { summaryPage } from './summary.js';
 
@@ -104,10 +105,13 @@ function gatePage(next, failed) {
     font-family:'Archivo','Helvetica Neue',system-ui,Helvetica,Arial,sans-serif;
     background:#0B0B0B}
   .card{width:100%;max-width:392px;text-align:center}
-  .wm{font-size:17px;font-weight:800;letter-spacing:-0.02em;text-transform:lowercase;margin:0 0 4px;color:#FFFFFF}
-  .wm u{text-decoration:none;color:#FB8C1F}
-  .wm i{display:block;font-style:normal;font-size:8px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#6E6E6E;margin-top:14px;padding-top:12px;border-top:1px solid #2C2C2C}
-  .wm i em{display:block;font-style:normal;font-size:10px;letter-spacing:.12em;color:#FEC013;margin-top:2px}
+  .otr-logo{display:block;height:auto;margin:0 auto}
+  .jt-endorse{display:inline-flex;align-items:center;gap:9px;margin-top:16px;padding-top:14px;
+    border-top:1px solid #2C2C2C}
+  .jt-tread{display:block;flex-shrink:0}
+  .jt-type{display:flex;flex-direction:column;gap:1px;text-align:left}
+  .jt-type small{font-size:8px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#6E6E6E}
+  .jt-type b{font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#FFFFFF}
   h1{font-weight:800;margin:22px 0 6px;font-size:28px;text-transform:uppercase;letter-spacing:-0.03em}
   p.sub{opacity:.72;margin:0 0 22px;font-size:14.5px}
   p.err{background:rgba(255,138,128,.14);border:1px solid rgba(255,138,128,.5);
@@ -125,7 +129,8 @@ function gatePage(next, failed) {
 </head>
 <body>
   <main class="card">
-    <p class="wm">otr earthmovertyres.com<u>.</u><i>Powered by<em>Jewell Tyres</em></i></p>
+    ${otrLogo({ width: 250 })}
+    ${poweredByJewell({ height: 26 })}
     <h1>3D Process</h1>
     <p class="sub">Prepared for Clent Jewell.</p>
     ${failed ? '<p class="err">That password did not match. Try again.</p>' : ''}

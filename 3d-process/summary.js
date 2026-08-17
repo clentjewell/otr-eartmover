@@ -7,6 +7,8 @@
 // Every figure is counted from the otr-eartmover repository or attributed to
 // its source at the point of use.
 
+import { otrLogo, poweredByJewell } from './marks.js';
+
 export function summaryPage() {
   return `<!doctype html>
 <html lang="en">
@@ -61,13 +63,15 @@ body {
   background: var(--s1); border: 1px solid var(--hair); border-radius:0;
   box-shadow: none;
 }
-.brand { display: block; margin: 4px 8px 6px; text-decoration: none; color: var(--white); }
-.brand .bname { display: block; font-size: 15px; font-weight: 800; letter-spacing: -0.02em; text-transform: lowercase; }
-.brand .bname u { text-decoration: none; color: var(--orange); }
-.brand .bendorse { display: block; margin-top: 7px; padding-top: 7px; border-top: 1px solid var(--hair);
-  font-size: 8px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--meta); }
-.brand .bendorse b { display: block; margin-top: 2px; font-size: 10px; letter-spacing: 0.12em; color: var(--amber); }
-.brand-sub { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--meta); margin: 4px 8px 16px; }
+.brand { display: block; margin: 2px 8px 0; text-decoration: none; color: var(--white); }
+.otr-logo { display: block; height: auto; }
+.jt-endorse { display: inline-flex; align-items: center; gap: 9px; margin: 12px 8px 0; padding-top: 12px;
+  border-top: 1px solid var(--hair); white-space: nowrap; }
+.jt-tread { display: block; flex-shrink: 0; }
+.jt-type { display: flex; flex-direction: column; gap: 1px; text-align: left; }
+.jt-type small { font-size: 8px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--meta); }
+.jt-type b { font-size: 11px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: #FFFFFF; }
+.brand-sub { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--meta); margin: 14px 8px 16px; }
 .navtoggle { display: none; }
 .nav { display: flex; flex-direction: column; gap: 1px; }
 .nav-link {
@@ -333,7 +337,8 @@ html.viewing .viewer-split { display: block; position: absolute; left: 0; top: 0
 
   <!-- ── SIDEBAR NAV ── -->
   <aside class="sidebar">
-    <a class="brand" href="#top"><span class="bname">otr earthmovertyres.com<u>.</u></span><span class="bendorse">Powered by<b>Jewell Tyres</b></span></a>
+    <a class="brand" href="#top">${otrLogo({ width: 202 })}</a>
+    ${poweredByJewell({ height: 28 })}
     <p class="brand-sub">3D Process</p>
     <button class="navtoggle" id="navtoggle" type="button" aria-expanded="true">Contents</button>
     <nav class="nav" id="nav">
@@ -360,7 +365,7 @@ html.viewing .viewer-split { display: block; position: absolute; left: 0; top: 0
 
     <!-- ── WELCOME ── -->
     <section class="welcome" id="top">
-      <div class="eyebrow reveal">Jewell Projects &middot; Prepared for Clent Jewell</div>
+      <div class="eyebrow reveal">Jewell &middot; Prepared for Clent Jewell</div>
       <h1 class="h-hero reveal" style="transition-delay:.06s">Your 3D Process.<br>Read from the build.</h1>
       <p class="lead mt28 reveal" style="transition-delay:.14s">The Discover, Design and Deploy set for otrearthmovertyres.com, on four sheets. There was no discovery session for this one. The CORE was read out of the repository, front end and backend, because the material was already there.</p>
       <div class="rule mt40 reveal"></div>
@@ -382,8 +387,8 @@ html.viewing .viewer-split { display: block; position: absolute; left: 0; top: 0
     <!-- ── START HERE ── -->
     <section class="starthere" id="starthere">
       <span class="eyebrow amber reveal">Start here &middot; if you read nothing else</span>
-      <h2 class="h-section reveal">An authority play wearing a reference-site shell. The product being published is the judgement.</h2>
-      <p class="lead mt20 reveal">The site is built and it works. What is missing is depth of content and any measure of whether the one thing it was built for, being cited as the source, is actually happening.</p>
+      <h2 class="h-section reveal">Fifty years of answers, finally written down.</h2>
+      <p class="lead mt20 reveal">The site is built and it works. Two things are missing: most of the content it promises, and any way of telling whether it is being read.</p>
 
       <div class="stat-row mt40 stagger">
         <div class="stat"><span class="stat-n">19</span><span class="stat-l">brands covered</span></div>
@@ -451,7 +456,7 @@ html.viewing .viewer-split { display: block; position: absolute; left: 0; top: 0
 
       <div class="method mt56" id="method">
         <div class="method-lockup">
-          <span class="ml-j">Jewell Projects</span>
+          <span class="ml-j">Jewell</span>
           <span class="ml-x">&middot;</span>
           <span style="font-size:15px;font-weight:600;letter-spacing:-0.01em;">3D Process</span>
         </div>
@@ -482,7 +487,7 @@ html.viewing .viewer-split { display: block; position: absolute; left: 0; top: 0
       <div class="mt40 stagger">
         <div class="row">
           <div class="row-k">The belief</div>
-          <div class="row-v">An authority play, not a catalogue. The product being published is 50 years of trading judgement, given away free so that buyers and answer engines treat Jewell as the source.</div>
+          <div class="row-v">Jewell Tyres trades the tyres. otrearthmovertyres.com teaches the trade. Fifty years of answers get published free, so that buyers and answer engines come here for them.</div>
         </div>
         <div class="row">
           <div class="row-k">The position</div>
@@ -494,7 +499,7 @@ html.viewing .viewer-split { display: block; position: absolute; left: 0; top: 0
         </div>
         <div class="row">
           <div class="row-k">The constraint</div>
-          <div class="row-v">The frame is built and the content is thin. Nothing records whether an answer engine has ever cited the site, which is the one outcome the whole strategy is aimed at.</div>
+          <div class="row-v">The frame is built and the content is thin. Nothing records whether an answer engine has ever cited the site, and being cited is the whole point of it.</div>
         </div>
         <div class="row">
           <div class="row-k">The plan</div>
@@ -681,7 +686,7 @@ html.viewing .viewer-split { display: block; position: absolute; left: 0; top: 0
     <article class="page" id="ask">
       <div class="page-head"><span class="page-chip">The trade read</span><span class="page-count">09 / 10</span></div>
       <h2 class="h-section reveal">Ask it anything.</h2>
-      <p class="body mt28 reveal" style="max-width:660px;">Where the portal earns its keep is not the spec, which any databook holds. It is the judgement question a databook will not answer, grounded in the corpus and framed as the opinion of an independent trader.</p>
+      <p class="body mt28 reveal" style="max-width:660px;">Any databook holds the spec. What a databook will not tell you is which tyre to put on a 992K in the Pilbara, and that is the question buyers actually arrive with.</p>
       <div class="darkwrap mt40 reveal">
         <div class="cols-2" style="gap:clamp(32px,4vw,56px); align-items:start;">
           <div>

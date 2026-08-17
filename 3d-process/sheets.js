@@ -1,3 +1,5 @@
+import { otrLogo, poweredByJewell } from './marks.js';
+
 // The four 3D Process sheets: 3D on a page, Discover, Design, Deploy.
 
 export function packPage() {
@@ -48,7 +50,7 @@ export function packPage() {
   .sop-bar{background:var(--sop-black);border-bottom:1px solid var(--sop-hair);position:sticky;top:0;z-index:20}
   .sop-bar-inner{max-width:1760px;margin-inline:auto;padding:11px clamp(14px,3vw,28px);
     display:flex;align-items:center;gap:12px 18px;flex-wrap:wrap}
-  .sop-wordmark{display:inline-flex;align-items:baseline;gap:9px;white-space:nowrap}
+  .sop-wordmark{display:inline-flex;align-items:center;gap:16px;white-space:nowrap}
   .sop-wordmark b{font-family:var(--sop-font-display);font-weight:800;font-size:15px;
     letter-spacing:-0.02em;color:var(--sop-white);text-transform:lowercase}
   .sop-wordmark b u{text-decoration:none;color:var(--sop-orange)}
@@ -83,7 +85,7 @@ export function packPage() {
   /* ---- head / foot ---- */
   .sop-head{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;
     gap:10px 20px;padding-bottom:14px;margin-bottom:18px;border-bottom:2px solid var(--sop-white)}
-  .sop-head-l{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+  .sop-head-l{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
   .sop-mark{font-family:var(--sop-font-display);font-weight:800;font-size:13px;letter-spacing:-0.02em;
     text-transform:lowercase;color:var(--sop-white)}
   .sop-mark u{text-decoration:none;color:var(--sop-orange)}
@@ -95,11 +97,14 @@ export function packPage() {
     text-transform:uppercase;color:var(--sop-meta);background:var(--sop-s1);border:1px solid var(--sop-hair);
     border-radius:999px;padding:4px 11px;white-space:nowrap}
   .sop-tag.is-accent{color:var(--sop-orange);border-color:rgba(191,110,27,.45);background:rgba(191,110,27,.08)}
-  .sop-mx{display:inline-flex;flex-direction:column;gap:1px;padding:2px 0 2px 13px;
-    border-left:1px solid var(--sop-hair);white-space:nowrap;text-align:left}
-  .sop-mx small{font-family:var(--sop-font-label);font-size:8px;font-weight:600;letter-spacing:.22em;
+  .otr-logo{display:block;height:auto}
+  .jt-endorse{display:inline-flex;align-items:center;gap:9px;white-space:nowrap}
+  .jt-tread{display:block;flex-shrink:0}
+  .jt-type{display:flex;flex-direction:column;gap:1px;text-align:left}
+  .sop-mx{padding-left:14px;border-left:1px solid var(--sop-hair)}
+    .jt-type small{font-family:var(--sop-font-label);font-size:8px;font-weight:600;letter-spacing:.22em;
     text-transform:uppercase;color:var(--sop-meta)}
-  .sop-mx b{font-family:var(--sop-font-label);font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--sop-amber)}
+    .jt-type b{font-family:var(--sop-font-label);font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#FFFFFF}
 
   .sop-foot{margin-top:20px;padding-top:14px;border-top:1px solid var(--sop-hair);
     display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:12px 24px;
@@ -332,7 +337,7 @@ export function packPage() {
 <!-- ================= PACK BAR ================= -->
 <div class="sop-bar">
   <div class="sop-bar-inner">
-    <span class="sop-wordmark"><b>otr earthmovertyres.com<u>.</u></b><i>Powered by<em>Jewell Tyres</em></i><span>3D Process on a Page</span></span>
+    <span class="sop-wordmark">${otrLogo({ width: 178 })}${poweredByJewell({ height: 26 })}<span>3D Process on a Page</span></span>
     <nav class="sop-pills" aria-label="Pack sheets">
       <button type="button" class="sop-pill" data-target="sop-process"><span class="sop-pill-l">3D on a page</span><span class="sop-pill-s">The engagement</span></button>
       <button type="button" class="sop-pill" data-target="sop-discover"><span class="sop-pill-l">Discover</span><span class="sop-pill-s">Gate 1 &middot; read from source</span></button>
@@ -349,13 +354,13 @@ export function packPage() {
 <section id="sop-process" class="sop-sheet" data-reveal>
   <header class="sop-head">
     <div class="sop-head-l">
-      <span class="sop-mark">otr earthmovertyres.com<u>.</u></span>
+      <span class="sop-mark">${otrLogo({ width: 164 })}</span>
       <h2 class="sop-title">The 3D Process <em>&middot; on a page</em></h2>
     </div>
     <div class="sop-meta">
       <span class="sop-tag is-accent">Read v01</span>
       <span class="sop-tag">From repository &middot; Aug 2026</span>
-      <span class="sop-mx"><small>Powered by</small><b>Jewell Tyres</b></span>
+      ${poweredByJewell({ height: 24, className: "jt-endorse sop-mx" })}
     </div>
   </header>
 
@@ -366,7 +371,7 @@ export function packPage() {
     <div class="sop-cell">
       <p class="sop-k">The belief</p>
       <span class="sop-status">Read from source</span>
-      <p class="sop-body is-lead">otrearthmovertyres.com is an authority play, not a catalogue. The product being published is 50 years of trading judgement, given away free so that buyers and answer engines treat Jewell as the source.</p>
+      <p class="sop-body is-lead">Jewell Tyres trades the tyres. otrearthmovertyres.com teaches the trade. Fifty years of answers get published free, so that buyers and answer engines come here for them.</p>
       <p class="sop-body">The site sells nothing. Its job is to be the reference a buyer reads before they buy, and the page a chatbot quotes when someone asks what fits a 992K.</p>
     </div>
     <div class="sop-cell">
@@ -379,7 +384,7 @@ export function packPage() {
       <p class="sop-k">The constraint</p>
       <span class="sop-status">Read from source</span>
       <p class="sop-body">The frame is built and the content is thin. 26 tyre records live against a stated 600+ rollout, one of seven calculators, four programmatic SEO samples.</p>
-      <p class="sop-body">The bigger constraint is measurement. Nothing in the repository records whether an answer engine has ever cited the site, which is the one outcome the whole strategy is aimed at.</p>
+      <p class="sop-body">The bigger constraint is measurement. Nothing in the repository records whether an answer engine has ever cited the site, and being cited is the whole point of it.</p>
     </div>
   </div>
 
@@ -433,13 +438,13 @@ export function packPage() {
     </div>
     <div class="sop-cell">
       <p class="sop-k">The north star</p>
-      <p class="sop-body">Be the source. When a fleet engineer, a procurement officer or a chatbot needs an OTR answer in Australia, the answer comes from here and is attributed here. That is the asset, and it compounds in a way that a catalogue does not.</p>
+      <p class="sop-body">Be the source. When a fleet engineer, a procurement officer or a chatbot needs an OTR answer in Australia, the answer comes from here and is attributed here. The manual sets the horizon: a national reference, built to be sold inside 36 months.</p>
     </div>
   </div>
 
   <!-- engine -->
   <p class="sop-label" style="margin-top:20px">Automated retrieval, human judgement</p>
-  <p class="sop-engine-line">The portal does the retrieval. The trade keeps the judgement, and the numbers never come from a language model.</p>
+  <p class="sop-engine-line">The portal retrieves and cites. A trader makes the call, and no number is ever written by a language model.</p>
   <div class="sop-cols c2 sop-block">
     <div class="sop-cell">
       <p class="sop-k">What the system does</p>
@@ -454,7 +459,7 @@ export function packPage() {
       <ul class="sop-bullets">
         <li>The number. Specs are looked up or abstained on, never generated</li>
         <li>Price, and any fleet-specific call. Both decline and escalate to David direct</li>
-        <li>The trade read: what actually fails in a Pilbara summer, and which mid-tier patterns earn their place</li>
+        <li>The trade read: what actually fails in a Pilbara summer, and which mid-tier patterns are worth the money</li>
       </ul>
     </div>
   </div>
@@ -489,7 +494,7 @@ export function packPage() {
   </div>
 
   <footer class="sop-foot">
-    <div class="sop-sign"><span>Prepared by: Jewell Projects</span><span>Approved by</span><span>Date: Aug 2026 (Read v01)</span></div>
+    <div class="sop-sign"><span>Prepared by: Jewell</span><span>Approved by</span><span>Date: Aug 2026 (Read v01)</span></div>
     <span class="sop-foot-c">The working single-page view of otrearthmovertyres.com's 3D Process.</span>
     <span class="sop-foot-r">otr earthmovertyres.com &middot; powered by Jewell Tyres</span>
   </footer>
@@ -499,13 +504,13 @@ export function packPage() {
 <section id="sop-discover" class="sop-sheet" data-reveal>
   <header class="sop-head">
     <div class="sop-head-l">
-      <span class="sop-mark">otr earthmovertyres.com<u>.</u></span>
+      <span class="sop-mark">${otrLogo({ width: 164 })}</span>
       <h2 class="sop-title">Discover <em>&middot; on a page</em></h2>
     </div>
     <div class="sop-meta">
       <span class="sop-tag is-accent">Gate 1 &middot; read from source</span>
       <span class="sop-tag">Read v01 &middot; Aug 2026</span>
-      <span class="sop-mx"><small>Powered by</small><b>Jewell Tyres</b></span>
+      ${poweredByJewell({ height: 24, className: "jt-endorse sop-mx" })}
     </div>
   </header>
 
@@ -616,7 +621,7 @@ export function packPage() {
   </div>
 
   <footer class="sop-foot">
-    <div class="sop-sign"><span>Prepared by: Jewell Projects</span><span>Approved by</span><span>Date: Aug 2026 (Read v01)</span></div>
+    <div class="sop-sign"><span>Prepared by: Jewell</span><span>Approved by</span><span>Date: Aug 2026 (Read v01)</span></div>
     <span class="sop-foot-c">Discover &middot; Gate 1, read from source, pending sign-off.</span>
     <span class="sop-foot-r">otr earthmovertyres.com &middot; powered by Jewell Tyres</span>
   </footer>
@@ -626,13 +631,13 @@ export function packPage() {
 <section id="sop-design" class="sop-sheet" data-reveal>
   <header class="sop-head">
     <div class="sop-head-l">
-      <span class="sop-mark">otr earthmovertyres.com<u>.</u></span>
+      <span class="sop-mark">${otrLogo({ width: 164 })}</span>
       <h2 class="sop-title">Design <em>&middot; on a page</em></h2>
     </div>
     <div class="sop-meta">
       <span class="sop-tag is-accent">Gate 2 &middot; built, not reviewed</span>
       <span class="sop-tag">Read v01 &middot; Aug 2026</span>
-      <span class="sop-mx"><small>Powered by</small><b>Jewell Tyres</b></span>
+      ${poweredByJewell({ height: 24, className: "jt-endorse sop-mx" })}
     </div>
   </header>
 
@@ -727,7 +732,7 @@ export function packPage() {
     <ol class="sop-killers">
       <li><strong>Naming:</strong> Does otrearthmovertyres.com stay a separate brand, or converge on Jewell Tyres once it has authority of its own?</li>
       <li><strong>Depth or breadth:</strong> Finish the 600 record catalogue, or go deeper on fewer sizes with trade commentary a databook cannot match?</li>
-      <li><strong>The calculators:</strong> Which of the six unbuilt calculators still earn their place, and which were an idea that has not survived contact?</li>
+      <li><strong>The calculators:</strong> Which of the six unbuilt calculators do buyers actually need, and which were an idea that has not survived?</li>
       <li><strong>Sign-off:</strong> What is the procedure for signing off a verified spec before it can be served, and who signs it?</li>
       <li><strong>Opinion:</strong> How far can the OPINION voice go before it becomes advice we carry liability for?</li>
       <li><strong>The portal's job:</strong> Is Ask a lead capture tool, a citation magnet, or a service to existing customers? It is currently built as all three.</li>
@@ -757,7 +762,7 @@ export function packPage() {
   </div>
 
   <footer class="sop-foot">
-    <div class="sop-sign"><span>Prepared by: Jewell Projects</span><span>Approved by</span><span>Date: Aug 2026 (Read v01)</span></div>
+    <div class="sop-sign"><span>Prepared by: Jewell</span><span>Approved by</span><span>Date: Aug 2026 (Read v01)</span></div>
     <span class="sop-foot-c">Design &middot; Gate 2, built and running, pending review.</span>
     <span class="sop-foot-r">otr earthmovertyres.com &middot; powered by Jewell Tyres</span>
   </footer>
@@ -767,13 +772,13 @@ export function packPage() {
 <section id="sop-deploy" class="sop-sheet" data-reveal>
   <header class="sop-head">
     <div class="sop-head-l">
-      <span class="sop-mark">otr earthmovertyres.com<u>.</u></span>
+      <span class="sop-mark">${otrLogo({ width: 164 })}</span>
       <h2 class="sop-title">Deploy <em>&middot; on a page</em></h2>
     </div>
     <div class="sop-meta">
       <span class="sop-tag is-accent">Gate 3 &middot; partly deployed</span>
       <span class="sop-tag">Read v01 &middot; Aug 2026</span>
-      <span class="sop-mx"><small>Powered by</small><b>Jewell Tyres</b></span>
+      ${poweredByJewell({ height: 24, className: "jt-endorse sop-mx" })}
     </div>
   </header>
 
@@ -898,7 +903,7 @@ export function packPage() {
   </div>
 
   <footer class="sop-foot">
-    <div class="sop-sign"><span>Prepared by: Jewell Projects</span><span>Approved by</span><span>Date: Aug 2026 (Read v01)</span></div>
+    <div class="sop-sign"><span>Prepared by: Jewell</span><span>Approved by</span><span>Date: Aug 2026 (Read v01)</span></div>
     <span class="sop-foot-c">Deploy &middot; Gate 3, partly deployed, pending definition of done.</span>
     <span class="sop-foot-r">otr earthmovertyres.com &middot; powered by Jewell Tyres</span>
   </footer>
