@@ -108,7 +108,7 @@ function gatePage(next, failed) {
   .jt-endorse{display:inline-flex;align-items:center;gap:9px;margin-top:16px;padding-top:14px;
     border-top:1px solid #2C2C2C}
   .jt-type{display:flex;flex-direction:column;gap:1px;text-align:left}
-  .jt-type small{font-size:8px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#6E6E6E}
+  .jt-type small{font-size:8px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#9A9A9A}
   .jt-type b{font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#FFFFFF}
   h1{font-weight:800;margin:22px 0 6px;font-size:28px;text-transform:uppercase;letter-spacing:-0.03em}
   p.sub{opacity:.72;margin:0 0 22px;font-size:14.5px}

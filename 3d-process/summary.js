@@ -31,7 +31,8 @@ export function summaryPage() {
   --hair:    #2C2C2C;   /* all rules and borders. 1px, never heavier */
   --white:   #FFFFFF;   /* type, 30% */
   --body:    #9A9A9A;   /* body copy on dark */
-  --meta:    #6E6E6E;   /* captions and metadata */
+  --meta:    #9A9A9A;   /* small secondary text, 7.3:1 on black */
+  --meta-lg: #6E6E6E;   /* non-essential labels, 16px and above only */
   --orange:  #FB8C1F;   /* brand accent, 10%. sampled from the logo */
   --amber:   #FEC013;   /* Jewell safety amber: endorsement only */
   --fail:    #FF8A80;
@@ -79,7 +80,7 @@ body {
 }
 .nav-link .nav-num { font-variant-numeric: tabular-nums; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 10.5px; color: #A8A69E; min-width: 16px; }
 .nav-link:hover { color: var(--white); background: var(--s2); }
-.nav-link.active { color: var(--white); background: rgba(191,110,27,0.09); border-left-color: var(--orange); font-weight: 600; }
+.nav-link.active { color: var(--white); background: rgba(251,140,31,0.09); border-left-color: var(--orange); font-weight: 600; }
 .nav-link.active .nav-num { color: var(--orange); }
 .nav-link.nav-edge { color: var(--white); font-weight: 600; }
 .nav-sep { height: 1px; background: var(--hair); margin: 12px 8px; }
@@ -136,7 +137,7 @@ body {
 
 /* ── STATUS PILLS ── */
 .pill { display: inline-flex; align-items: center; gap: 7px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; padding: 5px 12px; border-radius: 999px; white-space: nowrap; }
-.pill.done { color: var(--orange); border: 1px solid rgba(191,110,27,0.4); background: rgba(191,110,27,0.07); }
+.pill.done { color: var(--orange); border: 1px solid rgba(251,140,31,0.4); background: rgba(251,140,31,0.07); }
 .pill.part { color: var(--meta); border: 1px solid rgba(61,90,108,0.4); background: rgba(61,90,108,0.07); }
 .pill.none { color: var(--meta); border: 1px solid var(--hair); background: var(--s1); }
 .pill .dot { width: 7px; height: 7px; border-radius: 999px; background: currentColor; }
@@ -154,7 +155,7 @@ body {
 .method.run .mstep { opacity: 1; transform: none; }
 .method.run .mstep[data-i="2"] { transition-delay: .32s; }
 .method.run .mstep[data-i="3"] { transition-delay: .62s; }
-.mdot { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: var(--s1); color: var(--black); font-weight: 600; font-size: 12.5px; font-family: 'IBM Plex Mono', ui-monospace, monospace; position: relative; z-index: 2; }
+.mdot { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: var(--s2); color: var(--white); font-weight: 600; font-size: 12.5px; font-family: 'IBM Plex Mono', ui-monospace, monospace; position: relative; z-index: 2; }
 .method.run .mdot::after { content: ""; position: absolute; inset: -5px; border-radius: 50%; border: 2px solid var(--orange); opacity: 0; animation: mpulse 2.6s ease-out infinite; }
 .method.run .mstep[data-i="2"] .mdot::after { animation-delay: .5s; }
 .method.run .mstep[data-i="3"] .mdot::after { animation-delay: 1s; }
@@ -185,18 +186,18 @@ body {
 .pc-bar .url { margin-left: 14px; font-size: 11.5px; color: var(--meta); font-family: 'IBM Plex Mono', ui-monospace, monospace; }
 .pc-main { padding: 22px 24px 24px; }
 .pc-eyebrow { font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--orange); font-family: 'IBM Plex Mono', ui-monospace, monospace; }
-.pc-q { color: var(--black); font-size: 18px; font-weight: 600; margin-top: 10px; letter-spacing: -0.02em; }
+.pc-q { color: var(--white); font-size: 18px; font-weight: 600; margin-top: 10px; letter-spacing: -0.02em; }
 .pc-ask { margin-top: 16px; display: flex; gap: 10px; align-items: center; border: 1px solid rgba(245,244,240,0.16); border-radius:0; padding: 11px 14px; }
 .pc-ask span { flex: 1 1 auto; color: var(--meta); font-size: 13.5px; }
-.pc-ask b { background: var(--orange); color: var(--white); font-size: 12px; font-weight: 600; padding: 6px 13px; border-radius:0; }
+.pc-ask b { background: var(--orange); color: var(--black); font-size: 12px; font-weight: 600; padding: 6px 13px; border-radius:0; }
 .pc-answer { margin-top: 18px; border-top: 1px solid rgba(245,244,240,0.1); padding-top: 16px; }
 .pc-label { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.18em; color: var(--orange); text-transform: uppercase; }
-.pc-lede { color: var(--black); font-size: 14.5px; line-height: 1.55; margin-top: 9px; font-weight: 500; }
+.pc-lede { color: var(--white); font-size: 14.5px; line-height: 1.55; margin-top: 9px; font-weight: 500; }
 .pc-body { color: rgba(245,244,240,0.72); font-size: 12.5px; line-height: 1.6; margin-top: 9px; }
 .pc-cite { display: inline-flex; align-items: center; justify-content: center; min-width: 15px; height: 15px; padding: 0 3px; border-radius:0; background: rgba(74,107,124,0.28); color: var(--orange); font-size: 9.5px; font-family: 'IBM Plex Mono', ui-monospace, monospace; vertical-align: 1px; margin: 0 1px; }
 .pc-sources { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; }
 .pc-src { font-size: 10.5px; color: rgba(245,244,240,0.55); border: 1px solid rgba(245,244,240,0.14); border-radius:0; padding: 4px 9px; }
-.pc-disc { margin-top: 14px; font-size: 10.5px; line-height: 1.5; color: rgba(245,244,240,0.4); border-left: 2px solid rgba(191,110,27,0.5); padding-left: 11px; }
+.pc-disc { margin-top: 14px; font-size: 10.5px; line-height: 1.5; color: var(--body); border-left: 2px solid rgba(251,140,31,0.5); padding-left: 11px; }
 
 /* spec table mock */
 .pc-spec { margin-top: 14px; width: 100%; border-collapse: collapse; font-size: 12px; }
@@ -233,8 +234,8 @@ body {
   padding: 13px 20px; border-radius:0; border: 1px solid var(--hair); color: var(--white); background: var(--s1);
   transition: border-color .15s, transform .18s var(--ease), opacity .15s; cursor: pointer; font-family: inherit; }
 .cta:hover { border-color: var(--orange); transform: translateY(-2px); }
-.cta-primary { background: var(--s1); border-color: var(--white); color: var(--black); }
-.cta-primary:hover { opacity: .92; }
+.cta-primary { background: var(--orange); border-color: var(--orange); color: var(--black); font-weight: 600; }
+.cta-primary:hover { background: #FFA24D; border-color: #FFA24D; transform: translateY(-2px); }
 .cta-ghost { border-color: transparent; color: var(--orange); padding-left: 6px; padding-right: 6px; }
 
 /* ── REVEAL ── */
@@ -730,10 +731,10 @@ html.viewing .viewer-split { display: block; position: absolute; left: 0; top: 0
       <p class="eyebrow amber mt40 reveal" style="margin-bottom:2px;">Phase A &middot; Instrument it</p>
       <p class="note reveal" style="margin-top:0;">First &middot; before anything else is built</p>
       <div class="mt28 stagger">
-        <div class="row"><div class="row-k">The CORE session</div><div class="row-v">Answer the 22 questions with Clent and David, starting with what counts as this site working. <strong style="color:var(--s1);">A definition of done that Deploy can be measured against.</strong></div></div>
-        <div class="row"><div class="row-k">Citation tracking</div><div class="row-v">A way to check whether the major answer engines quote the site, and on which questions. <strong style="color:var(--s1);">Evidence that the GEO stack works, or does not.</strong></div></div>
-        <div class="row"><div class="row-k">Portal logging</div><div class="row-v">Log questions asked, the abstention rate, and every escalation to David. <strong style="color:var(--s1);">The best content brief available, written by buyers.</strong></div></div>
-        <div class="row"><div class="row-k">Repository fixes</div><div class="row-v">Five contradictions found while reading, listed on the Deploy sheet. <strong style="color:var(--s1);">Fixed before a buyer or a crawler finds them.</strong></div></div>
+        <div class="row"><div class="row-k">The CORE session</div><div class="row-v">Answer the 22 questions with Clent and David, starting with what counts as this site working. <strong style="color:var(--white);">A definition of done that Deploy can be measured against.</strong></div></div>
+        <div class="row"><div class="row-k">Citation tracking</div><div class="row-v">A way to check whether the major answer engines quote the site, and on which questions. <strong style="color:var(--white);">Evidence that the GEO stack works, or does not.</strong></div></div>
+        <div class="row"><div class="row-k">Portal logging</div><div class="row-v">Log questions asked, the abstention rate, and every escalation to David. <strong style="color:var(--white);">The best content brief available, written by buyers.</strong></div></div>
+        <div class="row"><div class="row-k">Repository fixes</div><div class="row-v">Five contradictions found while reading, listed on the Deploy sheet. <strong style="color:var(--white);">Fixed before a buyer or a crawler finds them.</strong></div></div>
       </div>
 
       <p class="eyebrow amber mt40 reveal" style="margin-bottom:2px;">Phase B &middot; Fill the corpus</p>
