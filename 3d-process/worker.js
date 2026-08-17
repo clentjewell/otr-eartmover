@@ -97,34 +97,35 @@ function gatePage(next, failed) {
 <title>otrearthmovertyres.com &middot; 3D Process</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   *{box-sizing:border-box}
   body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;color:#F5F4F0;
     font-family:'Inter','Helvetica Neue',system-ui,Helvetica,Arial,sans-serif;
-    background:radial-gradient(1100px 640px at 18% 0%,rgba(191,110,27,.18),transparent 62%),
-      linear-gradient(155deg,#060A0E 0%,#0F1419 55%,#060A0E 100%)}
+    background:radial-gradient(1100px 640px at 18% 0%,rgba(221,134,47,.16),transparent 62%),
+      linear-gradient(155deg,#0B0F14 0%,#0F1419 52%,#1A2028 100%)}
   .card{width:100%;max-width:392px;text-align:center}
-  .wm{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;margin:0 0 26px;color:#F5F4F0}
-  .wm i{font-style:normal;color:#BF6E1B}
+  .wm{font-size:15px;font-weight:700;letter-spacing:-0.01em;margin:0 0 4px;color:#F5F4F0}
+  .wm i{display:block;font-style:normal;font-size:11px;font-weight:500;letter-spacing:0;color:#A8AFB8;margin-top:5px}
+  .wm i em{font-style:normal;color:#FEC013}
   h1{font-weight:700;margin:0 0 6px;font-size:28px;letter-spacing:-0.025em}
   p.sub{opacity:.72;margin:0 0 22px;font-size:14.5px}
-  p.err{background:rgba(191,110,27,.16);border:1px solid rgba(191,110,27,.55);
+  p.err{background:rgba(184,71,71,.16);border:1px solid rgba(184,71,71,.55);
     border-radius:5px;padding:10px 12px;margin:0 0 14px;font-size:14px}
   form{display:flex;flex-direction:column;gap:12px}
   input{padding:13px 14px;border-radius:6px;border:1px solid rgba(245,244,240,.26);
     background:rgba(245,244,240,.08);color:#F5F4F0;font-size:16px;font-family:inherit}
-  input:focus{outline:none;border-color:#BF6E1B}
-  button{padding:13px 14px;border-radius:6px;border:0;background:#BF6E1B;color:#0F1419;
+  input:focus{outline:none;border-color:#DD862F}
+  button{padding:13px 14px;border-radius:6px;border:0;background:#DD862F;color:#0B0F14;
     font-family:inherit;font-size:15px;font-weight:600;cursor:pointer}
-  button:hover{background:#E08428}
-  p.foot{margin:26px 0 0;font-family:'IBM Plex Mono',ui-monospace,monospace;
+  button:hover{background:#E89A4A}
+  p.foot{margin:26px 0 0;font-family:'JetBrains Mono',ui-monospace,monospace;
     font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;opacity:.45}
 </style>
 </head>
 <body>
   <main class="card">
-    <p class="wm">OTR<i>earthmovertyres.com</i></p>
+    <p class="wm">OTR Earthmover<i>by <em>Jewell Tyres</em></i></p>
     <h1>3D Process</h1>
     <p class="sub">Prepared for Clent Jewell.</p>
     ${failed ? '<p class="err">That password did not match. Try again.</p>' : ''}
