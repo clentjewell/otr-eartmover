@@ -10,36 +10,32 @@ export function packPage() {
 <title>otrearthmovertyres.com &middot; 3D Process on a page</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{
     margin:0;
-    /* DS09 v02 locked palette */
-    --sop-ink:#0B0F14;            /* text-primary */
-    --sop-slate:#2C3540;          /* text-secondary */
-    --sop-muted:#5A6573;          /* text-tertiary */
-    --sop-paper:#F5F4F0;          /* bg-primary, Bone */
-    --sop-mist:#ECEAE4;           /* bg-secondary */
-    --sop-white:#FFFFFF;          /* surface-card */
-    --sop-line:#D8D5CE;           /* border-default */
-    --sop-line-soft:#E4E1D9;
-    --sop-accent:#BF6E1B;         /* Industrial Amber */
-    --sop-accent-strong:#8C4D10;
-    --sop-accent-hover:#DD862F;
-    --sop-accent-wash:#F3E4D0;
-    --sop-data:#4A6B7C;           /* Steel Blue, data callouts */
-    --sop-data-wash:#DCE5EB;
-    --sop-jewell:#FEC013;         /* RESERVED: endorsement only */
-    --sop-surface-dark:#0F1419;   /* Graphite, dark panels */
-    --sop-font-display:'Inter','Helvetica Neue',system-ui,Helvetica,Arial,sans-serif;
-    --sop-font-label:'Inter','Helvetica Neue',system-ui,sans-serif;
-    --sop-font-body:'Inter','Helvetica Neue',system-ui,sans-serif;
-    --sop-font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
-    --sop-radius:12px;
-    background:var(--sop-paper);
-    color:var(--sop-ink);
+    /* Brand Identity v1, Aug 2026 - black ground, one high-vis orange */
+    --sop-black:#0B0B0B;          /* ground, 60%. never pure #000 */
+    --sop-s1:#151515;             /* surface 01: cards, tiles, table headers */
+    --sop-s2:#1C1C1C;             /* surface 02: panels raised above s1 */
+    --sop-hair:#2C2C2C;           /* all rules and borders. 1px, never heavier */
+    --sop-white:#FFFFFF;          /* type, 30% */
+    --sop-body:#9A9A9A;           /* body copy on dark */
+    --sop-meta:#6E6E6E;           /* captions and metadata */
+    --sop-orange:#FB8C1F;         /* brand accent, 10%. from the logo artwork */
+    --sop-amber:#FEC013;          /* Jewell safety amber: endorsement only */
+    --sop-fail:#FF8A80;
+    --sop-pass:#4FBF6A;
+    /* Type: one heavy grotesque, one mono, no third face */
+    --sop-font-display:'Archivo','Helvetica Neue',system-ui,Helvetica,Arial,sans-serif;
+    --sop-font-label:'Archivo','Helvetica Neue',system-ui,Helvetica,Arial,sans-serif;
+    --sop-font-body:'Archivo','Helvetica Neue',system-ui,Helvetica,Arial,sans-serif;
+    --sop-font-mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+    --sop-radius:0;
+    background:var(--sop-black);
+    color:var(--sop-white);
     font-family:var(--sop-font-body);
     -webkit-font-smoothing:antialiased;
   }
@@ -49,27 +45,28 @@ export function packPage() {
   table{border-collapse:collapse}
 
   /* ================= PACK BAR ================= */
-  .sop-bar{background:var(--sop-white);border-bottom:1px solid var(--sop-line);position:sticky;top:0;z-index:20}
+  .sop-bar{background:var(--sop-black);border-bottom:1px solid var(--sop-hair);position:sticky;top:0;z-index:20}
   .sop-bar-inner{max-width:1760px;margin-inline:auto;padding:11px clamp(14px,3vw,28px);
     display:flex;align-items:center;gap:12px 18px;flex-wrap:wrap}
   .sop-wordmark{display:inline-flex;align-items:baseline;gap:9px;white-space:nowrap}
-  .sop-wordmark b{font-family:var(--sop-font-display);font-weight:700;font-size:15px;
-    letter-spacing:-0.015em;color:var(--sop-ink)}
-  .sop-wordmark b i{font-style:normal;font-weight:500;font-size:11px;color:var(--sop-muted);border-left:1px solid var(--sop-line);padding-left:8px;margin-left:8px}
-  .sop-wordmark b i em{font-style:normal;color:var(--sop-jewell)}
-  .sop-wordmark span{font-family:var(--sop-font-label);font-size:11px;font-weight:500;color:var(--sop-muted)}
+  .sop-wordmark b{font-family:var(--sop-font-display);font-weight:800;font-size:15px;
+    letter-spacing:-0.02em;color:var(--sop-white);text-transform:lowercase}
+  .sop-wordmark b u{text-decoration:none;color:var(--sop-orange)}
+  .sop-wordmark i{font-style:normal;font-family:var(--sop-font-label);font-size:8.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--sop-meta);border-left:1px solid var(--sop-hair);padding-left:9px;margin-left:9px}
+  .sop-wordmark i em{font-style:normal;display:block;color:var(--sop-amber);font-size:10px;letter-spacing:.12em}
+  .sop-wordmark span{font-family:var(--sop-font-label);font-size:11px;font-weight:500;color:var(--sop-meta)}
   .sop-pills{display:flex;flex-wrap:wrap;gap:6px;margin-inline:auto}
   .sop-pill{display:inline-flex;flex-direction:column;gap:1px;padding:6px 13px;
-    border:1px solid var(--sop-line);border-radius:999px;background:var(--sop-white);
+    border:1px solid var(--sop-hair);border-radius:999px;background:var(--sop-white);
     line-height:1.15;text-align:left;transition:border-color .2s ease,background-color .2s ease}
-  .sop-pill-l{font-family:var(--sop-font-display);font-size:12.5px;font-weight:600;color:var(--sop-ink)}
+  .sop-pill-l{font-family:var(--sop-font-display);font-size:12.5px;font-weight:600;color:var(--sop-white)}
   .sop-pill-s{font-family:var(--sop-font-label);font-size:9px;font-weight:500;
-    letter-spacing:.06em;text-transform:uppercase;color:var(--sop-muted)}
+    letter-spacing:.06em;text-transform:uppercase;color:var(--sop-meta)}
   .sop-pill:hover{border-color:rgba(191,110,27,.55);background:rgba(191,110,27,.06)}
-  .sop-pill.is-current{border-color:var(--sop-accent);background:rgba(191,110,27,.1)}
-  .sop-pill.is-current .sop-pill-l{color:var(--sop-accent-strong)}
+  .sop-pill.is-current{border-color:var(--sop-orange);background:rgba(191,110,27,.1)}
+  .sop-pill.is-current .sop-pill-l{color:var(--sop-orange)}
   .sop-print{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;padding:9px 15px;
-    border:1px solid var(--sop-surface-dark);border-radius:999px;background:var(--sop-surface-dark);color:#fff;
+    border:1px solid var(--sop-s2);border-radius:999px;background:var(--sop-s2);color:#fff;
     font-family:var(--sop-font-display);font-size:12.5px;font-weight:600}
   .sop-print span{font-family:var(--sop-font-mono);font-size:10px;opacity:.8;letter-spacing:.03em}
   .sop-print:hover{background:#000}
@@ -78,46 +75,45 @@ export function packPage() {
   .sop-stage{max-width:1760px;margin-inline:auto;
     padding:clamp(20px,3vw,40px) clamp(14px,3vw,28px) clamp(40px,6vw,72px);
     display:flex;flex-direction:column;gap:clamp(20px,3vw,36px)}
-  .sop-sheet{scroll-margin-top:72px;background:var(--sop-white);border:1px solid var(--sop-line);
-    border-radius:var(--sop-radius);box-shadow:0 1px 2px rgba(11,15,20,.04),0 12px 32px -18px rgba(11,15,20,.22);
+  .sop-sheet{scroll-margin-top:72px;background:var(--sop-s1);border:1px solid var(--sop-hair);
+    border-radius:var(--sop-radius);box-shadow:none;
     width:100%;max-width:1720px;margin-inline:auto;padding:clamp(18px,2.4vw,34px);
     container-type:inline-size}
 
   /* ---- head / foot ---- */
   .sop-head{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;
-    gap:10px 20px;padding-bottom:14px;margin-bottom:18px;border-bottom:2px solid var(--sop-ink)}
+    gap:10px 20px;padding-bottom:14px;margin-bottom:18px;border-bottom:2px solid var(--sop-white)}
   .sop-head-l{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
-  .sop-mark{font-family:var(--sop-font-display);font-weight:700;font-size:13px;letter-spacing:.1em;
-    text-transform:uppercase;color:var(--sop-ink)}
-  .sop-mark i{font-style:normal;font-size:10px;font-weight:500;color:var(--sop-muted);text-transform:none;letter-spacing:0;border-left:1px solid var(--sop-line);padding-left:7px;margin-left:7px}
-    .sop-mark i em{font-style:normal;color:var(--sop-accent-strong)}
+  .sop-mark{font-family:var(--sop-font-display);font-weight:800;font-size:13px;letter-spacing:-0.02em;
+    text-transform:lowercase;color:var(--sop-white)}
+  .sop-mark u{text-decoration:none;color:var(--sop-orange)}
   .sop-title{font-family:var(--sop-font-display);font-size:clamp(20px,2.3vw,30px);font-weight:700;
     letter-spacing:-0.025em;line-height:1.05}
-  .sop-title em{font-style:normal;font-weight:400;color:var(--sop-muted)}
+  .sop-title em{font-style:normal;font-weight:500;text-transform:none;letter-spacing:-0.01em;color:var(--sop-meta)}
   .sop-meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px;justify-content:flex-end}
   .sop-tag{font-family:var(--sop-font-mono);font-size:10.5px;font-weight:500;letter-spacing:.06em;
-    text-transform:uppercase;color:var(--sop-muted);background:#fff;border:1px solid var(--sop-line);
+    text-transform:uppercase;color:var(--sop-meta);background:var(--sop-s1);border:1px solid var(--sop-hair);
     border-radius:999px;padding:4px 11px;white-space:nowrap}
-  .sop-tag.is-accent{color:var(--sop-accent-strong);border-color:rgba(191,110,27,.45);background:rgba(191,110,27,.08)}
-  .sop-mx{display:inline-flex;align-items:center;gap:7px;background:var(--sop-ink);border-radius:999px;
-    padding:6px 13px;white-space:nowrap}
-  .sop-mx small{font-family:var(--sop-font-label);font-size:8.5px;font-weight:600;letter-spacing:.1em;
-    text-transform:uppercase;color:#fff;opacity:.7}
-  .sop-mx b{font-family:var(--sop-font-display);font-size:12px;font-weight:700;color:var(--sop-jewell)}
+  .sop-tag.is-accent{color:var(--sop-orange);border-color:rgba(191,110,27,.45);background:rgba(191,110,27,.08)}
+  .sop-mx{display:inline-flex;flex-direction:column;gap:1px;padding:2px 0 2px 13px;
+    border-left:1px solid var(--sop-hair);white-space:nowrap;text-align:left}
+  .sop-mx small{font-family:var(--sop-font-label);font-size:8px;font-weight:600;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--sop-meta)}
+  .sop-mx b{font-family:var(--sop-font-label);font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--sop-amber)}
 
-  .sop-foot{margin-top:20px;padding-top:14px;border-top:1px solid var(--sop-line);
+  .sop-foot{margin-top:20px;padding-top:14px;border-top:1px solid var(--sop-hair);
     display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:12px 24px;
-    font-family:var(--sop-font-label);font-size:11px;font-weight:500;color:var(--sop-muted)}
+    font-family:var(--sop-font-label);font-size:11px;font-weight:500;color:var(--sop-meta)}
   .sop-sign{display:flex;gap:24px;flex-wrap:wrap}
   .sop-sign span{display:inline-flex;min-width:150px;text-transform:uppercase;letter-spacing:.07em;
-    font-size:10px;border-bottom:1px solid rgba(11,15,20,.3);padding-bottom:14px}
+    font-size:10px;border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:14px}
   .sop-foot-c{text-align:center;flex:1 1 auto}
   .sop-foot-r{text-transform:uppercase;letter-spacing:.07em;font-size:10px}
 
   /* ---- lede + labels ---- */
-  .sop-lede{font-size:14px;line-height:1.65;color:rgba(11,15,20,.84);max-width:80ch;margin-bottom:20px}
-  .sop-label{font-family:var(--sop-font-mono);font-size:12px;font-weight:500;letter-spacing:.08em;
-    text-transform:uppercase;color:var(--sop-muted);margin:4px 0 10px}
+  .sop-lede{font-size:14px;line-height:1.65;color:rgba(255,255,255,.84);max-width:80ch;margin-bottom:20px}
+  .sop-label{font-family:var(--sop-font-label);font-size:11px;font-weight:600;letter-spacing:.28em;
+    text-transform:uppercase;color:var(--sop-orange);margin:4px 0 10px}
 
   /* ---- grid + cells ---- */
   .sop-block{margin-bottom:20px}
@@ -131,129 +127,129 @@ export function packPage() {
     .sop-cols.c3{grid-template-columns:repeat(3,1fr)}
     .sop-cols.c4{grid-template-columns:repeat(4,1fr)}
   }
-  .sop-cell{border:1px solid var(--sop-line-soft);border-top:2px solid var(--sop-accent);
-    border-radius:8px;background:rgba(191,110,27,.025);padding:14px 16px 16px}
-  .sop-k{font-family:var(--sop-font-mono);font-size:11.5px;font-weight:500;letter-spacing:.08em;
-    text-transform:uppercase;color:var(--sop-accent-strong);margin-bottom:8px}
-  .sop-k.is-light{color:var(--sop-jewell)}
-  .sop-body{font-size:12.5px;line-height:1.5;color:rgba(11,15,20,.86);margin-bottom:8px}
+  .sop-cell{border:1px solid var(--sop-hair);border-top:2px solid var(--sop-orange);
+    border-radius:0;background:rgba(191,110,27,.025);padding:14px 16px 16px}
+  .sop-k{font-family:var(--sop-font-label);font-size:11px;font-weight:600;letter-spacing:.28em;
+    text-transform:uppercase;color:var(--sop-orange);margin-bottom:8px}
+  .sop-k.is-light{color:var(--sop-amber)}
+  .sop-body{font-size:12.5px;line-height:1.5;color:rgba(255,255,255,.86);margin-bottom:8px}
   .sop-body:last-child{margin-bottom:0}
-  .sop-body.is-lead{font-size:15px;line-height:1.42;font-weight:500;color:var(--sop-ink)}
-  .sop-body strong{color:var(--sop-ink);font-weight:600}
+  .sop-body.is-lead{font-size:15px;line-height:1.42;font-weight:500;color:var(--sop-white)}
+  .sop-body strong{color:var(--sop-white);font-weight:600}
   .sop-status{display:inline-block;font-family:var(--sop-font-mono);font-size:10px;font-weight:400;
-    color:var(--sop-muted);background:#fff;border:1px solid var(--sop-line);border-radius:999px;
+    color:var(--sop-meta);background:var(--sop-s1);border:1px solid var(--sop-hair);border-radius:999px;
     padding:3px 9px;margin-bottom:9px}
-  .sop-note{font-family:var(--sop-font-label);font-size:10.5px;color:var(--sop-muted);margin-top:8px}
+  .sop-note{font-family:var(--sop-font-label);font-size:10.5px;color:var(--sop-meta);margin-top:8px}
 
   /* chips */
   .sop-chips{display:flex;flex-wrap:wrap;gap:6px}
-  .sop-chip{font-size:11px;font-weight:500;color:rgba(11,15,20,.82);background:rgba(191,110,27,.08);
+  .sop-chip{font-size:11px;font-weight:500;color:rgba(255,255,255,.82);background:rgba(191,110,27,.08);
     border:1px solid rgba(191,110,27,.22);border-radius:999px;padding:4px 11px}
-  .sop-chip.is-arrow{background:rgba(191,110,27,.15);color:var(--sop-accent-strong);border-color:rgba(191,110,27,.4)}
+  .sop-chip.is-arrow{background:rgba(191,110,27,.15);color:var(--sop-orange);border-color:rgba(191,110,27,.4)}
 
   /* CORE banner + drop-caps */
-  .sop-core-banner{background:var(--sop-surface-dark);color:#fff;border-radius:8px;padding:9px 15px;
+  .sop-core-banner{background:var(--sop-s2);color:#fff;border-radius:0;padding:9px 15px;
     margin-bottom:12px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
   .sop-core-banner b{font-family:var(--sop-font-mono);font-size:11px;font-weight:500;letter-spacing:.08em;
-    text-transform:uppercase;color:var(--sop-accent)}
+    text-transform:uppercase;color:var(--sop-orange)}
   .sop-core-banner span{font-size:11.5px;color:rgba(255,255,255,.78)}
   .sop-core{display:flex;flex-direction:column}
   .sop-core-name{font-family:var(--sop-font-display);font-size:13px;font-weight:700;letter-spacing:.03em;
-    text-transform:uppercase;color:var(--sop-ink);margin-bottom:8px;display:flex;align-items:center}
+    text-transform:uppercase;color:var(--sop-white);margin-bottom:8px;display:flex;align-items:center}
   .sop-dropcap{font-family:var(--sop-font-display);font-size:30px;font-weight:700;line-height:.8;
-    letter-spacing:-0.02em;color:var(--sop-accent);margin-right:3px}
+    letter-spacing:-0.02em;color:var(--sop-orange);margin-right:3px}
   .sop-core-chip{margin-top:auto;align-self:flex-start;font-family:var(--sop-font-label);font-size:10px;
-    font-weight:500;color:var(--sop-muted);border:1px solid var(--sop-line);border-radius:6px;padding:4px 8px}
+    font-weight:500;color:var(--sop-meta);border:1px solid var(--sop-hair);border-radius:0;padding:4px 8px}
 
   /* four-step flow */
-  .sop-flow-col{border:1px solid var(--sop-line-soft);border-radius:8px;padding:12px 14px 14px;background:#fff}
-  .sop-flow-col.is-live{border-color:var(--sop-accent);background:rgba(191,110,27,.05)}
+  .sop-flow-col{border:1px solid var(--sop-hair);border-radius:0;padding:12px 14px 14px;background:var(--sop-s1)}
+  .sop-flow-col.is-live{border-color:var(--sop-orange);background:rgba(191,110,27,.05)}
   .sop-flow-n{font-family:var(--sop-font-mono);font-size:10px;letter-spacing:.1em;color:rgba(191,110,27,.75)}
   .sop-flow-name{font-family:var(--sop-font-display);font-size:13px;font-weight:700;letter-spacing:.02em;
-    text-transform:uppercase;color:var(--sop-ink);margin:4px 0 6px}
-  .sop-flow-name mark{background:var(--sop-accent);color:#fff;font-size:8.5px;font-family:var(--sop-font-label);
+    text-transform:uppercase;color:var(--sop-white);margin:4px 0 6px}
+  .sop-flow-name mark{background:var(--sop-orange);color:#fff;font-size:8.5px;font-family:var(--sop-font-label);
     font-weight:600;letter-spacing:.05em;padding:1px 6px;border-radius:999px;margin-left:6px;vertical-align:middle}
-  .sop-flow-d{font-size:11.5px;line-height:1.45;color:rgba(11,15,20,.78)}
+  .sop-flow-d{font-size:11.5px;line-height:1.45;color:rgba(255,255,255,.78)}
 
   /* funnel */
-  .sop-funnel .sop-fcol{border:1px solid var(--sop-line-soft);border-radius:8px;overflow:hidden;background:#fff}
-  .sop-fcol-h{background:var(--sop-surface-dark);color:#fff;font-family:var(--sop-font-label);font-size:10.5px;
+  .sop-funnel .sop-fcol{border:1px solid var(--sop-hair);border-radius:0;overflow:hidden;background:var(--sop-s1)}
+  .sop-fcol-h{background:var(--sop-s2);color:#fff;font-family:var(--sop-font-label);font-size:10.5px;
     font-weight:600;letter-spacing:.09em;text-transform:uppercase;text-align:center;padding:7px 8px}
-  .sop-fcol-d{font-size:11.5px;line-height:1.5;color:rgba(11,15,20,.8);padding:10px 12px 12px}
+  .sop-fcol-d{font-size:11.5px;line-height:1.5;color:rgba(255,255,255,.8);padding:10px 12px 12px}
 
-  .sop-engine-line{font-size:14px;font-weight:500;line-height:1.5;color:var(--sop-ink);margin-bottom:14px;max-width:72ch}
+  .sop-engine-line{font-size:14px;font-weight:500;line-height:1.5;color:var(--sop-white);margin-bottom:14px;max-width:72ch}
 
   /* stat tiles */
   .sop-tiles{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
   .sop-tiles.is-tight{grid-template-columns:repeat(auto-fit,minmax(125px,1fr));gap:8px}
-  .sop-tile{border:1px solid var(--sop-line-soft);border-radius:8px;background:#fff;padding:12px 13px 13px}
-  .sop-tile-l{font-family:var(--sop-font-body);font-size:11.5px;font-weight:600;color:var(--sop-ink);
+  .sop-tile{border:1px solid var(--sop-hair);border-radius:0;background:var(--sop-s1);padding:12px 13px 13px}
+  .sop-tile-l{font-family:var(--sop-font-body);font-size:11.5px;font-weight:600;color:var(--sop-white);
     margin-bottom:6px;line-height:1.3}
   .sop-tile-v{font-family:var(--sop-font-display);font-size:24px;font-weight:700;letter-spacing:-0.02em;
-    color:var(--sop-accent-strong);margin-bottom:5px;line-height:1}
+    color:var(--sop-orange);margin-bottom:5px;line-height:1}
   .sop-tile-v.is-pending{font-family:var(--sop-font-label);font-size:11px;font-weight:600;letter-spacing:.06em;
-    text-transform:uppercase;color:var(--sop-muted)}
-  .sop-tile-src{font-family:var(--sop-font-mono);font-size:9.5px;line-height:1.45;color:rgba(11,15,20,.6)}
+    text-transform:uppercase;color:var(--sop-meta)}
+  .sop-tile-src{font-family:var(--sop-font-mono);font-size:9.5px;line-height:1.45;color:rgba(255,255,255,.6)}
 
   /* bullets, lists */
   .sop-bullets{display:grid;gap:6px}
-  .sop-bullets li{font-size:12px;line-height:1.45;color:rgba(11,15,20,.82);padding-left:13px;position:relative}
+  .sop-bullets li{font-size:12px;line-height:1.45;color:rgba(255,255,255,.82);padding-left:13px;position:relative}
   .sop-bullets li::before{content:"";position:absolute;left:0;top:6px;width:4px;height:4px;border-radius:50%;
-    background:var(--sop-accent)}
-  .sop-bullets strong{color:var(--sop-ink);font-weight:600}
+    background:var(--sop-orange)}
+  .sop-bullets strong{color:var(--sop-white);font-weight:600}
   .sop-bullets.is-light li{color:rgba(255,255,255,.84)}
-  .sop-bullets.is-light li::before{background:var(--sop-jewell)}
+  .sop-bullets.is-light li::before{background:var(--sop-amber)}
   .sop-bullets.is-light strong{color:#fff}
 
   .sop-deflist{display:grid;gap:7px;margin-bottom:10px}
-  .sop-deflist li{font-size:12px;line-height:1.45;color:rgba(11,15,20,.8)}
-  .sop-deflist strong{color:var(--sop-ink);font-weight:600}
+  .sop-deflist li{font-size:12px;line-height:1.45;color:rgba(255,255,255,.8)}
+  .sop-deflist strong{color:var(--sop-white);font-weight:600}
 
   .sop-next90{counter-reset:n;display:grid;gap:8px}
-  .sop-next90 li{font-size:12px;line-height:1.45;color:rgba(11,15,20,.84);padding-left:22px;position:relative}
+  .sop-next90 li{font-size:12px;line-height:1.45;color:rgba(255,255,255,.84);padding-left:22px;position:relative}
   .sop-next90 li::before{counter-increment:n;content:counter(n,decimal-leading-zero);position:absolute;left:0;top:0;
-    font-family:var(--sop-font-mono);font-size:10px;font-weight:600;color:var(--sop-accent-strong)}
-  .sop-owner{display:block;font-family:var(--sop-font-label);font-size:10.5px;color:var(--sop-muted);margin-top:2px}
+    font-family:var(--sop-font-mono);font-size:10px;font-weight:600;color:var(--sop-orange)}
+  .sop-owner{display:block;font-family:var(--sop-font-label);font-size:10.5px;color:var(--sop-meta);margin-top:2px}
 
   .sop-killers{counter-reset:k;display:grid;gap:8px}
-  .sop-killers li{font-size:12px;line-height:1.45;color:rgba(11,15,20,.84);padding-left:22px;position:relative}
+  .sop-killers li{font-size:12px;line-height:1.45;color:rgba(255,255,255,.84);padding-left:22px;position:relative}
   .sop-killers li::before{counter-increment:k;content:counter(k);position:absolute;left:0;top:1px;width:15px;height:15px;
-    border-radius:50%;background:var(--sop-accent);color:#fff;font-family:var(--sop-font-mono);font-size:9px;
+    border-radius:50%;background:var(--sop-orange);color:#fff;font-family:var(--sop-font-mono);font-size:9px;
     display:grid;place-items:center}
-  .sop-killers strong{color:var(--sop-ink);font-weight:600;margin-right:3px}
+  .sop-killers strong{color:var(--sop-white);font-weight:600;margin-right:3px}
 
   /* READY checklist */
   .sop-ready{display:grid;gap:9px}
-  .sop-ready li{font-size:12px;line-height:1.4;color:rgba(11,15,20,.82);padding-left:22px;position:relative}
-  .sop-ready strong{color:var(--sop-ink);font-weight:600}
+  .sop-ready li{font-size:12px;line-height:1.4;color:rgba(255,255,255,.82);padding-left:22px;position:relative}
+  .sop-ready strong{color:var(--sop-white);font-weight:600}
   .sop-ready .sop-status{margin:4px 0 0}
-  .sop-ready-box{position:absolute;left:0;top:1px;width:13px;height:13px;border:1.5px solid var(--sop-accent);border-radius:3px}
+  .sop-ready-box{position:absolute;left:0;top:1px;width:13px;height:13px;border:1.5px solid var(--sop-orange);border-radius:0}
 
   /* personas */
   .sop-personas{display:grid;gap:8px}
-  .sop-persona{border:1px solid var(--sop-line-soft);border-radius:6px;padding:8px 10px;background:#fff}
-  .sop-persona-n{font-family:var(--sop-font-display);font-size:12px;font-weight:700;color:var(--sop-ink);margin-bottom:4px}
-  .sop-persona-l{font-size:11px;line-height:1.4;color:rgba(11,15,20,.76);margin-bottom:4px}
+  .sop-persona{border:1px solid var(--sop-hair);border-radius:0;padding:8px 10px;background:var(--sop-s1)}
+  .sop-persona-n{font-family:var(--sop-font-display);font-size:12px;font-weight:700;color:var(--sop-white);margin-bottom:4px}
+  .sop-persona-l{font-size:11px;line-height:1.4;color:rgba(255,255,255,.76);margin-bottom:4px}
   .sop-persona .sop-status{margin:0}
 
   /* mini table */
   .sop-table-wrap{overflow-x:auto}
   .sop-mini-t{width:100%;font-size:10.5px;font-family:var(--sop-font-body)}
-  .sop-mini-t th{background:var(--sop-surface-dark);color:#fff;font-family:var(--sop-font-label);font-size:9px;
+  .sop-mini-t th{background:var(--sop-s2);color:#fff;font-family:var(--sop-font-label);font-size:9px;
     letter-spacing:.05em;text-transform:uppercase;font-weight:600;text-align:left;padding:6px 8px}
-  .sop-mini-t td{border:1px solid var(--sop-line-soft);padding:6px 8px;color:rgba(11,15,20,.82);
+  .sop-mini-t td{border:1px solid var(--sop-hair);padding:6px 8px;color:rgba(255,255,255,.82);
     line-height:1.35;vertical-align:top}
-  .sop-mini-t td strong{color:var(--sop-ink);font-weight:600}
+  .sop-mini-t td strong{color:var(--sop-white);font-weight:600}
 
   /* dark gate cards */
-  .sop-cell.is-dark{background:var(--sop-surface-dark);border-color:transparent;border-top-color:var(--sop-jewell);
+  .sop-cell.is-dark{background:var(--sop-s2);border-color:transparent;border-top-color:var(--sop-amber);
     display:flex;flex-direction:column}
   .is-dark .sop-status{color:rgba(255,255,255,.72);background:transparent;border-color:rgba(255,255,255,.22)}
   .sop-gate-verdict{font-family:var(--sop-font-display);font-size:15px;font-weight:700;color:#fff;
     margin-bottom:8px;letter-spacing:-0.01em}
   .sop-gate-line{font-size:11px;line-height:1.42;color:rgba(255,255,255,.8);margin-bottom:6px}
   .sop-gate-line span{display:block;font-family:var(--sop-font-label);font-size:9px;font-weight:600;
-    letter-spacing:.06em;text-transform:uppercase;color:var(--sop-jewell);margin-bottom:1px}
+    letter-spacing:.06em;text-transform:uppercase;color:var(--sop-amber);margin-bottom:1px}
 
   /* gates row (cross-links) */
   .sop-gates .sop-gate{display:flex;gap:11px;align-items:flex-start;text-align:left;width:100%;
@@ -261,51 +257,51 @@ export function packPage() {
   .sop-gate-n{font-family:var(--sop-font-display);font-size:26px;font-weight:700;line-height:1;color:rgba(191,110,27,.5)}
   .sop-gate-body{display:flex;flex-direction:column;gap:3px}
   .sop-gate-name{font-family:var(--sop-font-display);font-size:12px;font-weight:700;letter-spacing:.03em;
-    text-transform:uppercase;color:var(--sop-ink)}
-  .sop-gate-name em{font-style:normal;font-weight:400;color:var(--sop-accent-strong)}
-  .sop-gate-status{font-size:11.5px;line-height:1.42;color:rgba(11,15,20,.74)}
-  .sop-gates .sop-gate:hover .sop-gate-name{color:var(--sop-accent-strong)}
+    text-transform:uppercase;color:var(--sop-white)}
+  .sop-gate-name em{font-style:normal;font-weight:400;color:var(--sop-orange)}
+  .sop-gate-status{font-size:11.5px;line-height:1.42;color:rgba(255,255,255,.74)}
+  .sop-gates .sop-gate:hover .sop-gate-name{color:var(--sop-orange)}
 
   /* strap */
-  .sop-strap{border-left:3px solid var(--sop-accent);padding:4px 0 4px 16px}
+  .sop-strap{border-left:3px solid var(--sop-orange);padding:4px 0 4px 16px}
   .sop-strap-k{font-family:var(--sop-font-label);font-size:11px;font-weight:600;letter-spacing:.11em;
-    text-transform:uppercase;color:var(--sop-accent-strong);margin-bottom:6px}
+    text-transform:uppercase;color:var(--sop-orange);margin-bottom:6px}
   .sop-strap-h{font-family:var(--sop-font-display);font-size:clamp(16px,1.9vw,22px);font-weight:600;
-    line-height:1.28;letter-spacing:-0.015em;color:var(--sop-ink);margin-bottom:8px}
-  .sop-strap-sub{font-size:12.5px;line-height:1.5;color:var(--sop-muted)}
+    line-height:1.28;letter-spacing:-0.015em;color:var(--sop-white);margin-bottom:8px}
+  .sop-strap-sub{font-size:12.5px;line-height:1.5;color:var(--sop-meta)}
 
   /* swatches */
   .sop-swatches{display:flex;gap:8px;flex-wrap:wrap}
   .sop-swatch{display:flex;flex-direction:column;gap:4px;flex:1 1 60px}
-  .sop-swatch-chip{height:30px;border-radius:6px;border:1px solid var(--sop-line)}
+  .sop-swatch-chip{height:30px;border-radius:0;border:1px solid var(--sop-hair)}
   .sop-swatch-l{font-family:var(--sop-font-label);font-size:8.5px;letter-spacing:.03em;text-transform:uppercase;
-    color:var(--sop-muted);line-height:1.3}
+    color:var(--sop-meta);line-height:1.3}
 
   /* do / dont */
   .sop-dodont{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
   .sop-dd-k{font-family:var(--sop-font-label);font-size:10px;font-weight:600;letter-spacing:.08em;
     text-transform:uppercase;margin-bottom:5px}
-  .sop-dd-k.is-do{color:var(--sop-accent-strong)}
-  .sop-dd-k.is-dont{color:rgba(11,15,20,.5)}
+  .sop-dd-k.is-do{color:var(--sop-orange)}
+  .sop-dd-k.is-dont{color:rgba(255,255,255,.5)}
 
   /* band */
-  .sop-band{background:var(--sop-surface-dark);border-radius:8px;padding:16px 18px}
+  .sop-band{background:var(--sop-s2);border-radius:0;padding:16px 18px}
   .sop-band-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:12px}
   .sop-band-verdict{font-family:var(--sop-font-display);font-size:16px;font-weight:700;color:#fff;letter-spacing:-0.01em}
   .sop-band-cols{display:grid;gap:16px;grid-template-columns:1fr}
   .sop-band-k{font-family:var(--sop-font-mono);font-size:10.5px;font-weight:500;letter-spacing:.08em;
-    text-transform:uppercase;color:var(--sop-jewell);margin-bottom:7px}
+    text-transform:uppercase;color:var(--sop-amber);margin-bottom:7px}
   @container (min-width:700px){.sop-band-cols{grid-template-columns:repeat(3,1fr)}}
 
   /* channels */
   .sop-channels{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
-  .sop-chan{border:1px solid var(--sop-line-soft);border-top:3px solid var(--sop-accent);border-radius:8px;
-    padding:10px 12px 12px;background:#fff;display:flex;flex-direction:column}
+  .sop-chan{border:1px solid var(--sop-hair);border-top:3px solid var(--sop-orange);border-radius:0;
+    padding:10px 12px 12px;background:var(--sop-s1);display:flex;flex-direction:column}
   .sop-chan-k{font-family:var(--sop-font-mono);font-size:11px;font-weight:500;letter-spacing:.06em;
-    text-transform:uppercase;color:var(--sop-ink);margin-bottom:6px}
-  .sop-chan-d{font-size:11.5px;line-height:1.4;color:rgba(11,15,20,.78);margin-bottom:10px}
-  .sop-chan-kpi{margin:auto 0 0;font-family:var(--sop-font-label);font-size:10.5px;color:var(--sop-accent-strong);
-    border-top:1px solid var(--sop-line-soft);padding-top:7px}
+    text-transform:uppercase;color:var(--sop-white);margin-bottom:6px}
+  .sop-chan-d{font-size:11.5px;line-height:1.4;color:rgba(255,255,255,.78);margin-bottom:10px}
+  .sop-chan-kpi{margin:auto 0 0;font-family:var(--sop-font-label);font-size:10.5px;color:var(--sop-orange);
+    border-top:1px solid var(--sop-hair);padding-top:7px}
 
   /* reveal */
   .sop-sheet[data-reveal]{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
@@ -319,7 +315,7 @@ export function packPage() {
   @page{size:A4 landscape;margin:8mm}
   @media print{
     .sop-bar{display:none !important}
-    body{background:#fff}
+    body{background:var(--sop-s1)}
     .sop-stage{max-width:none;padding:0;gap:0}
     .sop-sheet{box-shadow:none;border:1px solid #ddd;border-radius:0;max-width:none;margin:0;
       opacity:1 !important;transform:none !important;page-break-after:always;break-after:page}
@@ -336,7 +332,7 @@ export function packPage() {
 <!-- ================= PACK BAR ================= -->
 <div class="sop-bar">
   <div class="sop-bar-inner">
-    <span class="sop-wordmark"><b>OTR Earthmover<i>by <em>Jewell Tyres</em></i></b><span>3D Process on a Page</span></span>
+    <span class="sop-wordmark"><b>otr earthmovertyres.com<u>.</u></b><i>Powered by<em>Jewell Tyres</em></i><span>3D Process on a Page</span></span>
     <nav class="sop-pills" aria-label="Pack sheets">
       <button type="button" class="sop-pill" data-target="sop-process"><span class="sop-pill-l">3D on a page</span><span class="sop-pill-s">The engagement</span></button>
       <button type="button" class="sop-pill" data-target="sop-discover"><span class="sop-pill-l">Discover</span><span class="sop-pill-s">Gate 1 &middot; read from source</span></button>
@@ -353,13 +349,13 @@ export function packPage() {
 <section id="sop-process" class="sop-sheet" data-reveal>
   <header class="sop-head">
     <div class="sop-head-l">
-      <span class="sop-mark">OTR Earthmover<i>by <em>Jewell Tyres</em></i></span>
+      <span class="sop-mark">otr earthmovertyres.com<u>.</u></span>
       <h2 class="sop-title">The 3D Process <em>&middot; on a page</em></h2>
     </div>
     <div class="sop-meta">
       <span class="sop-tag is-accent">Read v01</span>
       <span class="sop-tag">From repository &middot; Aug 2026</span>
-      <span class="sop-mx"><small>Prepared by</small><b>Jewell</b></span>
+      <span class="sop-mx"><small>Powered by</small><b>Jewell Tyres</b></span>
     </div>
   </header>
 
@@ -416,8 +412,8 @@ export function packPage() {
     </div>
     <div class="sop-cell sop-core">
       <p class="sop-core-name"><span class="sop-dropcap">E</span>xpression</p>
-      <p class="sop-body">Databook with a search bar. Graphite, Industrial Amber and Steel Blue over Bone, Inter with JetBrains Mono, and Jewell Yellow reserved for endorsement only. Plain-spoken trader-to-buyer voice with a banned-phrase list, answer first then qualify, everything evaluative labelled as opinion.</p>
-      <span class="sop-core-chip">Written for people and for crawlers</span>
+      <p class="sop-body">Black ground and one high-vis orange, Archivo with IBM Plex Mono, Jewell amber reserved for the endorsement. The register is the trusted clinician: define, specify, cite the standard, and refer the judgement call to a trader rather than making it.</p>
+      <span class="sop-core-chip">Reference. Plainly written.</span>
     </div>
   </div>
 
@@ -493,9 +489,9 @@ export function packPage() {
   </div>
 
   <footer class="sop-foot">
-    <div class="sop-sign"><span>Prepared by: Jewell</span><span>Approved by</span><span>Date: Aug 2026 (Read v01)</span></div>
+    <div class="sop-sign"><span>Prepared by: Jewell Projects</span><span>Approved by</span><span>Date: Aug 2026 (Read v01)</span></div>
     <span class="sop-foot-c">The working single-page view of otrearthmovertyres.com's 3D Process.</span>
-    <span class="sop-foot-r">Jewell &middot; 3D Process</span>
+    <span class="sop-foot-r">otr earthmovertyres.com &middot; powered by Jewell Tyres</span>
   </footer>
 </section>
 
@@ -503,13 +499,13 @@ export function packPage() {
 <section id="sop-discover" class="sop-sheet" data-reveal>
   <header class="sop-head">
     <div class="sop-head-l">
-      <span class="sop-mark">OTR Earthmover<i>by <em>Jewell Tyres</em></i></span>
+      <span class="sop-mark">otr earthmovertyres.com<u>.</u></span>
       <h2 class="sop-title">Discover <em>&middot; on a page</em></h2>
     </div>
     <div class="sop-meta">
       <span class="sop-tag is-accent">Gate 1 &middot; read from source</span>
       <span class="sop-tag">Read v01 &middot; Aug 2026</span>
-      <span class="sop-mx"><small>Prepared by</small><b>Jewell</b></span>
+      <span class="sop-mx"><small>Powered by</small><b>Jewell Tyres</b></span>
     </div>
   </header>
 
@@ -588,8 +584,8 @@ export function packPage() {
     </div>
     <div class="sop-cell">
       <p class="sop-core-name"><span class="sop-dropcap">E</span>xpression</p>
-      <span class="sop-status">Locked &middot; DS09 v02</span>
-      <p class="sop-body">A databook with a search bar. The identity is locked in DS09 v02: Bone and Graphite surfaces, Industrial Amber for action, Steel Blue for data, Jewell Yellow reserved for the endorsement, Inter with JetBrains Mono. Voice rules are written down and enforced: plain-spoken, Australian English, answer first, a banned-phrase list, no em dashes anywhere.</p>
+      <span class="sop-status">Brand Identity v1</span>
+      <p class="sop-body">Brand Identity v1 (August 2026) sets it: black #0B0B0B ground at 60%, white type at 30%, one orange #FB8C1F at 10%, hairline rules at 1px, Archivo with IBM Plex Mono. Jewell amber #FEC013 is reserved for the endorsement so it does brand work in both directions. Voice is the trusted clinician: describe and specify, never recommend.</p>
       <div class="sop-chips"><span class="sop-chip">Opinion, not advice</span><span class="sop-chip">Sibling to Jewell Tyres</span><span class="sop-chip">Written for crawlers too</span></div>
     </div>
   </div>
@@ -620,9 +616,9 @@ export function packPage() {
   </div>
 
   <footer class="sop-foot">
-    <div class="sop-sign"><span>Prepared by: Jewell</span><span>Approved by</span><span>Date: Aug 2026 (Read v01)</span></div>
+    <div class="sop-sign"><span>Prepared by: Jewell Projects</span><span>Approved by</span><span>Date: Aug 2026 (Read v01)</span></div>
     <span class="sop-foot-c">Discover &middot; Gate 1, read from source, pending sign-off.</span>
-    <span class="sop-foot-r">Jewell &middot; 3D Process</span>
+    <span class="sop-foot-r">otr earthmovertyres.com &middot; powered by Jewell Tyres</span>
   </footer>
 </section>
 
@@ -630,13 +626,13 @@ export function packPage() {
 <section id="sop-design" class="sop-sheet" data-reveal>
   <header class="sop-head">
     <div class="sop-head-l">
-      <span class="sop-mark">OTR Earthmover<i>by <em>Jewell Tyres</em></i></span>
+      <span class="sop-mark">otr earthmovertyres.com<u>.</u></span>
       <h2 class="sop-title">Design <em>&middot; on a page</em></h2>
     </div>
     <div class="sop-meta">
       <span class="sop-tag is-accent">Gate 2 &middot; built, not reviewed</span>
       <span class="sop-tag">Read v01 &middot; Aug 2026</span>
-      <span class="sop-mx"><small>Prepared by</small><b>Jewell</b></span>
+      <span class="sop-mx"><small>Powered by</small><b>Jewell Tyres</b></span>
     </div>
   </header>
 
@@ -652,19 +648,19 @@ export function packPage() {
   <div class="sop-cols c3 sop-block">
     <div class="sop-cell">
       <p class="sop-k">Brand</p>
-      <span class="sop-status">Locked &middot; DS09 v02, 20 May 2026</span>
+      <span class="sop-status">Brand Identity v1 &middot; Aug 2026</span>
       <ul class="sop-deflist">
         <li><strong>Essence:</strong> A databook with a search bar, published by someone with no brand to defend.</li>
         <li><strong>Register:</strong> Reference-led and restrained. Calmer and more clinical than the Jewell Tyres site, which stays the warmer heritage brand.</li>
         <li><strong>Voice:</strong> Plain-spoken, trader to buyer. Answer first, qualify after. Australian English, no marketing-speak, no em dashes.</li>
       </ul>
       <div class="sop-swatches" style="margin-top:10px">
-        <div class="sop-swatch"><span class="sop-swatch-chip" style="background:#F5F4F0"></span><span class="sop-swatch-l">Bone F5F4F0</span></div>
-        <div class="sop-swatch"><span class="sop-swatch-chip" style="background:#0B0F14"></span><span class="sop-swatch-l">Ink 0B0F14</span></div>
-        <div class="sop-swatch"><span class="sop-swatch-chip" style="background:#0F1419"></span><span class="sop-swatch-l">Graphite 0F1419</span></div>
-        <div class="sop-swatch"><span class="sop-swatch-chip" style="background:#BF6E1B"></span><span class="sop-swatch-l">Industrial Amber BF6E1B</span></div>
-        <div class="sop-swatch"><span class="sop-swatch-chip" style="background:#4A6B7C"></span><span class="sop-swatch-l">Steel Blue 4A6B7C</span></div>
-        <div class="sop-swatch"><span class="sop-swatch-chip" style="background:#FEC013"></span><span class="sop-swatch-l">Jewell Yellow FEC013, endorsement only</span></div>
+        <div class="sop-swatch"><span class="sop-swatch-chip" style="background:#0B0B0B"></span><span class="sop-swatch-l">Black 0B0B0B &middot; 60%</span></div>
+        <div class="sop-swatch"><span class="sop-swatch-chip" style="background:#FFFFFF"></span><span class="sop-swatch-l">White &middot; 30%</span></div>
+        <div class="sop-swatch"><span class="sop-swatch-chip" style="background:#FB8C1F"></span><span class="sop-swatch-l">Orange FB8C1F &middot; 10%</span></div>
+        <div class="sop-swatch"><span class="sop-swatch-chip" style="background:#FEC013"></span><span class="sop-swatch-l">Amber FEC013 &middot; endorsement only</span></div>
+        <div class="sop-swatch"><span class="sop-swatch-chip" style="background:#151515"></span><span class="sop-swatch-l">Surface 01</span></div>
+        <div class="sop-swatch"><span class="sop-swatch-chip" style="background:#2C2C2C"></span><span class="sop-swatch-l">Hairline</span></div>
       </div>
     </div>
     <div class="sop-cell">
@@ -761,9 +757,9 @@ export function packPage() {
   </div>
 
   <footer class="sop-foot">
-    <div class="sop-sign"><span>Prepared by: Jewell</span><span>Approved by</span><span>Date: Aug 2026 (Read v01)</span></div>
+    <div class="sop-sign"><span>Prepared by: Jewell Projects</span><span>Approved by</span><span>Date: Aug 2026 (Read v01)</span></div>
     <span class="sop-foot-c">Design &middot; Gate 2, built and running, pending review.</span>
-    <span class="sop-foot-r">Jewell &middot; 3D Process</span>
+    <span class="sop-foot-r">otr earthmovertyres.com &middot; powered by Jewell Tyres</span>
   </footer>
 </section>
 
@@ -771,13 +767,13 @@ export function packPage() {
 <section id="sop-deploy" class="sop-sheet" data-reveal>
   <header class="sop-head">
     <div class="sop-head-l">
-      <span class="sop-mark">OTR Earthmover<i>by <em>Jewell Tyres</em></i></span>
+      <span class="sop-mark">otr earthmovertyres.com<u>.</u></span>
       <h2 class="sop-title">Deploy <em>&middot; on a page</em></h2>
     </div>
     <div class="sop-meta">
       <span class="sop-tag is-accent">Gate 3 &middot; partly deployed</span>
       <span class="sop-tag">Read v01 &middot; Aug 2026</span>
-      <span class="sop-mx"><small>Prepared by</small><b>Jewell</b></span>
+      <span class="sop-mx"><small>Powered by</small><b>Jewell Tyres</b></span>
     </div>
   </header>
 
@@ -890,7 +886,7 @@ export function packPage() {
         <li>Fix the repository inconsistencies listed at the foot of this sheet before they reach a buyer.<span class="sop-owner">Jewell</span></li>
         <li>Set Phase A scope and its exit test, then instrument.<span class="sop-owner">Jewell &middot; Clent</span></li>
       </ol>
-      <p class="sop-note">Found while reading the repository, all verifiable: wrangler.toml still routes on an old domain variant that CLAUDE.md says was swept out; the D1 SPECS binding is commented out in config while RAG-GO-LIVE.md records it live in production; index.html still badges the portal DEMO MODE though it is live; the worker system prompt says since 1975 while the site says 1974, and permits en dashes that the house rules ban. Sixth, the locked identity (DS09 v02) specifies Inter with JetBrains Mono, while css/main.css ships Helvetica Neue with IBM Plex Mono, so the built site does not match its own brand book.</p>
+      <p class="sop-note">Found while reading the repository, all verifiable: wrangler.toml still routes on an old domain variant that CLAUDE.md says was swept out; the D1 SPECS binding is commented out in config while RAG-GO-LIVE.md records it live in production; index.html still badges the portal DEMO MODE though it is live; the worker system prompt says since 1975 while the site says 1974, and permits en dashes that the house rules ban. Sixth, Brand Identity v1 adopts Archivo on a black #0B0B0B ground with orange #FB8C1F, while css/main.css still ships Helvetica Neue on graphite with amber #BF6E1B, so the built site does not match its current brand book. Seventh, and the one worth deciding first: Brand Identity v1 makes the reference platform a trusted clinician that never offers an opinion, while CLAUDE.md and the live Ask portal are built on the opposite, an OPINION label on every evaluative answer.</p>
     </div>
     <div class="sop-cell is-dark">
       <p class="sop-k is-light">Gate 3 status</p>
@@ -902,9 +898,9 @@ export function packPage() {
   </div>
 
   <footer class="sop-foot">
-    <div class="sop-sign"><span>Prepared by: Jewell</span><span>Approved by</span><span>Date: Aug 2026 (Read v01)</span></div>
+    <div class="sop-sign"><span>Prepared by: Jewell Projects</span><span>Approved by</span><span>Date: Aug 2026 (Read v01)</span></div>
     <span class="sop-foot-c">Deploy &middot; Gate 3, partly deployed, pending definition of done.</span>
-    <span class="sop-foot-r">Jewell &middot; 3D Process</span>
+    <span class="sop-foot-r">otr earthmovertyres.com &middot; powered by Jewell Tyres</span>
   </footer>
 </section>
 

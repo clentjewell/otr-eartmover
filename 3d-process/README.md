@@ -62,6 +62,22 @@ That is how the reference packs behave too, measured at the same width. For one
 physical page per sheet, set Scale to Fit in the browser print dialog. The
 `page-break-after` rule means a sheet never runs into the next one either way.
 
+## Brand
+
+Built to **Brand Identity Version 1 (August 2026)**, the current manual, which
+supersedes DS09 v02:
+
+- Black `#0B0B0B` ground at 60%, white type at 30%, one high-vis orange
+  `#FB8C1F` at 10%. Surfaces `#151515` and `#1C1C1C`, hairlines `#2C2C2C` at
+  1px and never heavier.
+- Jewell safety amber `#FEC013` appears only on the "Powered by Jewell Tyres"
+  endorsement, per the reserved-use rule.
+- Archivo for language, IBM Plex Mono for data. One grotesque, one mono, no
+  third typeface.
+- Wordmark set lowercase with the full stop in orange, never in capitals.
+  Endorsement is type-only, sits behind a hairline, and never leads.
+- Hard edges. No rounded corners, no drop shadows, no floating cards.
+
 ## How the CORE was sourced
 
 There was no discovery session for OTR. The CORE (Customers, Offering, Rivals,
