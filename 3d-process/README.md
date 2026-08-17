@@ -25,11 +25,25 @@ Knowledge Portal stack.
 
 ## Deploy
 
+Two deploy targets, both built from the same modules so they cannot drift.
+
+### Cloudflare Pages (current)
+
+```bash
+node 3d-process/build-pages.mjs
+cd 3d-process/pages && npx wrangler pages deploy public --project-name otr-3d-process --branch main
+```
+
+Live at **https://otr-3d-process.pages.dev**. The build writes `public/index.html`
+(summary), `public/pack.html` (the four sheets), `public/_headers`, and
+`functions/_middleware.js`, which is the password gate. Build output is
+generated and git-ignored; edit the modules, not the output.
+
+### Cloudflare Worker (alternative)
+
 ```bash
 npx wrangler deploy -c 3d-process/wrangler.toml
 ```
-
-That publishes to `https://otr-3d-process.<account>.workers.dev/`.
 
 ## Password
 
@@ -37,6 +51,10 @@ The gate reads `SITE_PASSWORD`, falling back to `otr2026` if the secret is not
 set. Set a real one before sharing the link:
 
 ```bash
+# Pages
+cd 3d-process/pages && npx wrangler pages secret put SITE_PASSWORD --project-name otr-3d-process
+
+# Worker
 npx wrangler secret put SITE_PASSWORD -c 3d-process/wrangler.toml
 ```
 

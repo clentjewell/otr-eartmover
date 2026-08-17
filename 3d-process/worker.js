@@ -87,7 +87,7 @@ export default {
 
 /* ─────────────────────────── PASSWORD GATE ─────────────────────────── */
 
-function gatePage(next, failed) {
+export function gatePage(next, failed) {
   const nextAttr = next.replace(/"/g, '&quot;');
   return `<!doctype html>
 <html lang="en">
