@@ -1,0 +1,17 @@
+# otrearthmovertyres.com - 3D Process pack
+#
+# Separate from the root wrangler.toml, which configures the Knowledge Portal
+# worker (worker/api/ask.js). This one serves only the private 3D Process pack.
+#
+# Deploy:  npx wrangler deploy -c 3d-process/wrangler.toml
+# Password: npx wrangler secret put SITE_PASSWORD -c 3d-process/wrangler.toml
+
+name = "otr-3d-process"
+main = "worker.js"
+compatibility_date = "2026-05-27"
+
+# No bindings. The pack is a single self-contained document with no data
+# dependencies, so it cannot leak anything from the portal stack.
+#
+# SITE_PASSWORD is set as a secret (see README.md). If it is unset the worker
+# falls back to the documented default in worker.js.
