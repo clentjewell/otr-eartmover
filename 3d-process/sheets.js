@@ -662,7 +662,7 @@ export function packPage() {
         <li><strong>Essence:</strong> Reference. Plainly written.</li>
         <li><strong>Values:</strong> Independence, accuracy, plain English, no paywalls.</li>
         <li><strong>Register:</strong> Reference-led and restrained. Calmer and more clinical than the Jewell Tyres site, which stays the warmer heritage brand.</li>
-        <li><strong>Voice:</strong> Plain-spoken, trader to buyer. Answer first, qualify after. Australian English, no marketing-speak, no em dashes.</li>
+        <li><strong>Voice:</strong> The trusted clinician. Describe, specify, cite the standard, and refer the judgement to a trader. Plain Australian, no marketing-speak, no em dashes.</li>
       </ul>
       <div class="sop-swatches" style="margin-top:10px">
         <div class="sop-swatch"><span class="sop-swatch-chip" style="background:#0B0B0B"></span><span class="sop-swatch-l">Black 0B0B0B &middot; 60%</span></div>
@@ -701,11 +701,11 @@ export function packPage() {
       <div class="sop-dodont">
         <div>
           <p class="sop-dd-k is-do">Do</p>
-          <ul class="sop-bullets"><li>State the answer first, then the caveats.</li><li>Name specifics: pattern, size, TRA code, compound.</li><li>Say "I don't have that in my sources" when the corpus is thin.</li></ul>
+          <ul class="sop-bullets"><li>Describe and specify. Define the term, then say where it is used, and cite the standard.</li><li>Name specifics: pattern, size, TRA code, compound.</li><li>Say "I don't have that in my sources" when the corpus is thin.</li></ul>
         </div>
         <div>
           <p class="sop-dd-k is-dont">Don't</p>
-          <ul class="sop-bullets"><li>Recommend a brand without application caveats.</li><li>Quote a price, ever. Decline and escalate.</li><li>Use industry-leading, world-class, cutting-edge, leverage.</li></ul>
+          <ul class="sop-bullets"><li>Recommend, or offer an opinion on fit for purpose. Describe and specify, and leave the call to a trader.</li><li>Quote a price, ever. Decline and escalate.</li><li>Use industry-leading, world-class, cutting-edge, leverage.</li></ul>
         </div>
       </div>
     </div>
@@ -739,7 +739,7 @@ export function packPage() {
       <li><strong>Depth or breadth:</strong> Finish the 600 record catalogue, or go deeper on fewer sizes with trade commentary a databook cannot match?</li>
       <li><strong>The calculators:</strong> Which of the six unbuilt calculators do buyers actually need, and which were an idea that has not survived?</li>
       <li><strong>Sign-off:</strong> What is the procedure for signing off a verified spec before it can be served, and who signs it?</li>
-      <li><strong>Opinion:</strong> How far can the OPINION voice go before it becomes advice we carry liability for?</li>
+      <li><strong>The clinician line:</strong> When a buyer asks which tyre to fit, what exactly does the portal say before it hands over, and who signs that wording off?</li>
       <li><strong>The portal's job:</strong> Is Ask a lead capture tool, a citation magnet, or a service to existing customers? It is currently built as all three.</li>
     </ol>
   </div>
@@ -761,7 +761,7 @@ export function packPage() {
       </div>
       <div>
         <p class="sop-band-k">Open decisions</p>
-        <ul class="sop-bullets is-light"><li>CQ12 depth versus breadth, which decides what the next 12 months of content is.</li><li>CQ14 spec sign-off, which is what stands between the pipeline and served numbers.</li><li>CQ16 the portal's job, which decides what to measure in Deploy.</li></ul>
+        <ul class="sop-bullets is-light"><li>CQ12 depth versus breadth, which decides what the next 12 months of content is.</li><li>CQ14 spec sign-off, which is what stands between the pipeline and served numbers.</li><li>CQ16 the portal's job, which decides what to measure in Deploy. The voice itself is settled: the manual governs, and the portal stops offering opinions.</li></ul>
       </div>
     </div>
   </div>
@@ -896,7 +896,7 @@ export function packPage() {
         <li>Fix the repository inconsistencies listed at the foot of this sheet before they reach a buyer.<span class="sop-owner">Jewell</span></li>
         <li>Set Phase A scope and its exit test, then instrument.<span class="sop-owner">Jewell &middot; Clent</span></li>
       </ol>
-      <p class="sop-note">Found while reading the repository, all verifiable: wrangler.toml still routes on an old domain variant that CLAUDE.md says was swept out; the D1 SPECS binding is commented out in config while RAG-GO-LIVE.md records it live in production; index.html still badges the portal DEMO MODE though it is live; the worker system prompt says since 1975 and permits en dashes that the house rules ban, and Brand Identity v1 settles the founding date at 1974 and supersedes the 1975 and 1976 references, so those are now corrections rather than open questions. Sixth, Brand Identity v1 adopts Archivo on a black #0B0B0B ground with orange #FB8C1F, while css/main.css still ships Helvetica Neue on graphite with amber #BF6E1B, so the built site does not match its current brand book. Seventh, and the one worth deciding first: Brand Identity v1 makes the reference platform a trusted clinician that never offers an opinion, while CLAUDE.md and the live Ask portal are built on the opposite, an OPINION label on every evaluative answer.</p>
+      <p class="sop-note">Found while reading the repository, all verifiable: wrangler.toml still routes on an old domain variant that CLAUDE.md says was swept out; the D1 SPECS binding is commented out in config while RAG-GO-LIVE.md records it live in production; index.html still badges the portal DEMO MODE though it is live; the worker system prompt says since 1975 and permits en dashes that the house rules ban, and Brand Identity v1 settles the founding date at 1974 and supersedes the 1975 and 1976 references, so those are now corrections rather than open questions. Sixth, Brand Identity v1 adopts Archivo on a black #0B0B0B ground with orange #FB8C1F, while css/main.css still ships Helvetica Neue on graphite with amber #BF6E1B, so the built site does not match its current brand book. Seventh, and the largest: Brand Identity v1 makes the reference platform a trusted clinician that never offers an opinion, and it governs. CLAUDE.md, the OPINION label on the live Ask portal, and the brand-rating example in worker/system-prompt.md all predate it and now need bringing into line.</p>
     </div>
     <div class="sop-cell is-dark">
       <p class="sop-k is-light">Gate 3 status</p>

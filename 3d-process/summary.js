@@ -199,6 +199,7 @@ body {
 .pc-lede { color: var(--white); font-size: 14.5px; line-height: 1.55; margin-top: 9px; font-weight: 500; }
 .pc-body { color: rgba(245,244,240,0.72); font-size: 12.5px; line-height: 1.6; margin-top: 9px; }
 .pc-cite { display: inline-flex; align-items: center; justify-content: center; min-width: 15px; height: 15px; padding: 0 3px; border-radius:0; background: rgba(74,107,124,0.28); color: var(--orange); font-size: 9.5px; font-family: 'IBM Plex Mono', ui-monospace, monospace; vertical-align: 1px; margin: 0 1px; }
+.pc-handover { margin-top: 12px; padding-top: 11px; border-top: 1px solid var(--hair); color: var(--orange); font-size: 13px; font-weight: 600; }
 .pc-sources { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; }
 .pc-src { font-size: 10.5px; color: rgba(245,244,240,0.55); border: 1px solid rgba(245,244,240,0.14); border-radius:0; padding: 4px 9px; }
 .pc-disc { margin-top: 14px; font-size: 10.5px; line-height: 1.5; color: var(--body); border-left: 2px solid rgba(251,140,31,0.5); padding-left: 11px; }
@@ -702,15 +703,15 @@ html.viewing .viewer-split { display: block; position: absolute; left: 0; top: 0
 
     <!-- ── 09 ASK IT ANYTHING ── -->
     <article class="page" id="ask">
-      <div class="page-head"><span class="page-chip">The trade read</span><span class="page-count">09 / 10</span></div>
+      <div class="page-head"><span class="page-chip">The clinician line</span><span class="page-count">09 / 10</span></div>
       <h2 class="h-section reveal">Ask it anything.</h2>
-      <p class="body mt28 reveal" style="max-width:660px;">Any databook holds the spec. What a databook will not tell you is which tyre to put on a 992K in the Pilbara, and that is the question buyers actually arrive with. The brand book draws a hard line through it: the platform is the trusted clinician, and it describes and specifies rather than making the call. The recommendation belongs to a trader.</p>
+      <p class="body mt28 reveal" style="max-width:660px;">Buyers arrive asking which tyre to put on a 992K. Brand Identity v1 draws a hard line through that question: the platform is the trusted clinician, so it answers the part that is a matter of record and hands the rest over. Describe and specify, cite the standard, then say who to ring. The recommendation belongs to a trader, and so does the liability that comes with it.</p>
       <div class="darkwrap mt40 reveal">
         <div class="cols-2" style="gap:clamp(32px,4vw,56px); align-items:start;">
           <div>
-            <p class="body light" style="margin:0;">The answer below is the tone calibration example written into the system prompt in the repository. It is what a good answer is supposed to look like: specific, caveated, and honest that the choice depends on cycle, ambient and price tolerance rather than on which brand is best in the abstract.</p>
+            <p class="body light" style="margin:0;">The answer beside is what Brand Identity v1 requires: the fitment and the standard stated plainly, the variables named, and the judgement handed to a trader in the manual's own words. It is deliberately not the tone calibration example currently written into the system prompt, which names four brands and rates them against each other. That example recommends, and under the manual the platform does not.</p>
             <div class="rule dark mt28"></div>
-            <p class="note light mt20" style="margin:0;">Every answer carries the verify-against-OEM disclaimer. The OPINION label shown here is what the live portal does today, under the older house rules. Brand Identity v1 supersedes it, so the label is a decision to make, not a settled design.</p>
+            <p class="note light mt20" style="margin:0;">Every answer carries the verify-against-OEM disclaimer. The live portal still labels its answers OPINION under the older house rules. Brand Identity v1 supersedes that, so the label and the system prompt are corrections to make.</p>
           </div>
           <div>
             <div class="pc">
@@ -718,19 +719,21 @@ html.viewing .viewer-split { display: block; position: absolute; left: 0; top: 0
                 <p class="pc-eyebrow">Question</p>
                 <p class="pc-q" style="font-size:15.5px;">What's the best tyre for a CAT 992K in iron ore?</p>
                 <div class="pc-answer" style="margin-top:14px;">
-                  <span class="pc-label">/ Opinion</span>
-                  <p class="pc-lede">For a CAT 992K running iron ore in the Pilbara, the practical answer is a heat-resistant L-5 tyre in 45/65R45<span class="pc-cite">1</span><span class="pc-cite">2</span>.</p>
-                  <p class="pc-body">Bridgestone VRDP is the long-running default and the broadest fitment history<span class="pc-cite">3</span>. Michelin XLD D2 L-5 and Goodyear RL-5L are credible tier-one alternatives<span class="pc-cite">4</span>. Yokohama RL5K+ usually delivers at better cost with comparable life<span class="pc-cite">5</span>.</p>
-                  <p class="pc-body">The choice between them depends on cycle length, ambient temperature and price tolerance, not on which brand is best in the abstract.</p>
+                  <span class="pc-label">/ Reference</span>
+                  <p class="pc-lede">Standard fitment for a CAT 992K is 45/65R45. For iron ore haul the service code that applies is L-5, extra deep rock<span class="pc-cite">1</span><span class="pc-cite">2</span>.</p>
+                  <p class="pc-body">Load, inflation and TKPH for that size are set by the manufacturer's databook for the specific pattern and compound, and must be confirmed against current OEM data before fitting<span class="pc-cite">3</span>. AS 4457:2019 governs what may be mixed on the machine, and the repair and scrapping decision<span class="pc-cite">4</span>.</p>
+                  <p class="pc-body">Which pattern suits your cycle length, ambient temperature and price tolerance is a fit-for-purpose call. This platform does not make it.</p>
+                  <p class="pc-handover">Want a recommendation for the job? Talk to a trader.</p>
                   <div class="pc-sources">
                     <span class="pc-src">Manufacturer databooks</span>
                     <span class="pc-src">TRA Year Book</span>
-                    <span class="pc-src">Jewell trading experience</span>
+                    <span class="pc-src">AS 4457:2019</span>
                   </div>
                 </div>
               </div>
             </div>
-            <p class="note light" style="margin-top:12px; text-align:center;">The documented example answer from worker/system-prompt.md.</p>
+            </div>
+            <p class="note light" style="margin-top:12px; text-align:center;">The clinician answer, as Brand Identity v1 defines it.</p>
           </div>
         </div>
       </div>
