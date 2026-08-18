@@ -117,7 +117,9 @@ body {
 .row { display: flex; gap: clamp(20px, 4vw, 48px); padding: 22px 0; border-bottom: 1px solid var(--hair); }
 .row:first-child { border-top: 1px solid var(--hair); }
 .row-k { font-size: 17px; font-weight: 600; min-width: 250px; flex-shrink: 0; line-height: 1.4; }
-.row-v { font-size: 15px; font-weight: 400; color: var(--meta); line-height: 1.65; }
+.row-v { font-size: 15px; font-weight: 400; color: var(--meta); line-height: 1.65; max-width: 62ch; }
+.row.is-exit .row-k { color: var(--orange); }
+.row.is-exit .row-v { color: var(--white); }
 
 /* ── NUMBERED GAP ITEMS ── */
 .gap-item { padding: 26px 0; border-bottom: 1px solid var(--hair); font-size: clamp(18px, 2vw, 26px); font-weight: 400; line-height: 1.4; letter-spacing: -0.015em; }
@@ -1068,28 +1070,41 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
       <p class="body mt28 reveal">The build is done and it runs. The next step is not more content. It is finding out whether the content already published is doing the job it was published to do, and that takes one session and some instrumentation.</p>
 
       <p class="eyebrow amber mt40 reveal" style="margin-bottom:2px;">Phase A &middot; Instrument it</p>
-      <p class="note reveal" style="margin-top:0;">First &middot; before anything else is built</p>
+      <p class="note reveal" style="margin-top:0;">First, before anything else is built</p>
       <div class="mt28 stagger">
-        <div class="row"><div class="row-k">The CORE session</div><div class="row-v">Answer the 22 questions with Clent and David, starting with what counts as this site working. <strong style="color:var(--white);">A definition of done that Deploy can be measured against.</strong></div></div>
-        <div class="row"><div class="row-k">Citation tracking</div><div class="row-v">A way to check whether the major answer engines quote the site, and on which questions. <strong style="color:var(--white);">Evidence that the GEO stack works, or does not.</strong></div></div>
-        <div class="row"><div class="row-k">Portal logging</div><div class="row-v">Log questions asked, the abstention rate, and every escalation to David. <strong style="color:var(--white);">The best content brief available, written by buyers.</strong></div></div>
-        <div class="row"><div class="row-k">Repository fixes</div><div class="row-v">Five contradictions found while reading, listed on the Deploy sheet. <strong style="color:var(--white);">Fixed before a buyer or a crawler finds them.</strong></div></div>
+        <div class="row"><div class="row-k">The CORE session</div><div class="row-v">Answer the 22 questions with Clent and David, starting with what counts as this platform working.</div></div>
+        <div class="row"><div class="row-k">Citation tracking</div><div class="row-v">A repeatable check on whether the major answer engines quote the platform, and on which questions.</div></div>
+        <div class="row"><div class="row-k">Portal logging</div><div class="row-v">Log questions asked, the abstention rate, and every escalation to David.</div></div>
+        <div class="row"><div class="row-k">Repository fixes</div><div class="row-v">Seven contradictions found while reading, listed on the Deploy sheet.</div></div>
+        <div class="row is-exit"><div class="row-k">Exit test</div><div class="row-v">Last month's citations, questions and escalations can be stated from data, not impression.</div></div>
       </div>
 
       <p class="eyebrow amber mt40 reveal" style="margin-bottom:2px;">Phase B &middot; Fill the corpus</p>
-      <p class="body reveal" style="margin-top:0;">Run the extraction pipeline on real databooks with keys set, work the review queue to signed-off records, extend the tyre guide and the programmatic surface, and decide the fate of the six unbuilt calculators. Exit test: the published figures match what the site actually holds, or the published figures change.</p>
+      <p class="note reveal" style="margin-top:0;">Then, once there is something to measure against</p>
+      <div class="mt28 stagger">
+        <div class="row"><div class="row-k">A real extraction run</div><div class="row-v">Run the pipeline on real databooks with extraction keys set, and work the review queue to signed-off records.</div></div>
+        <div class="row"><div class="row-k">The catalogue</div><div class="row-v">Extend the tyre guide and the programmatic surface, and decide the fate of the six unbuilt calculators.</div></div>
+        <div class="row"><div class="row-k">The unclaimed subject</div><div class="row-v">Publish the disposal and second-life reference. Every operator faces it and nobody has claimed it.</div></div>
+        <div class="row is-exit"><div class="row-k">Exit test</div><div class="row-v">The published figures match what the platform actually holds, or the published figures change.</div></div>
+      </div>
 
       <p class="eyebrow amber mt40 reveal" style="margin-bottom:2px;">Phase C &middot; Convert it</p>
-      <p class="body reveal" style="margin-top:0;">Make the path from a portal answer to a conversation with David explicit and tracked. Exit test: enquiries arriving through the site are attributed and worth more than the cost of running it.</p>
+      <p class="note reveal" style="margin-top:0;">Last, once reading can be traced to trade</p>
+      <div class="mt28 stagger">
+        <div class="row"><div class="row-k">The handover</div><div class="row-v">Make the path from a portal answer to a conversation with David explicit and tracked.</div></div>
+        <div class="row"><div class="row-k">The content brief</div><div class="row-v">Tune the reference to the questions buyers actually asked, using the Phase A log as the brief.</div></div>
+        <div class="row is-exit"><div class="row-k">Exit test</div><div class="row-v">Enquiries arriving through the platform are attributed, and worth more than the cost of running it.</div></div>
+      </div>
 
-      <div class="mt40 stagger">
+      <p class="note mt40 reveal">No dates on any of it. Each phase has to pass its exit test before the next one starts, and timing gets set with you.</p>
+
+      <div class="mt28 stagger">
         <a class="linkrow" href="#sop-deploy" data-view data-title="Deploy, on a page">
           <span class="lr-k">The Deploy sheet in full</span>
-          <span class="lr-v">Every phase above with its exit test, the channel plan, the automation triage, and the five repository contradictions.</span>
+          <span class="lr-v">Every phase above with its exit test, the channel plan, the automation triage, and the seven repository contradictions.</span>
           <span class="lr-go">&rarr;</span>
         </a>
       </div>
-      <p class="note mt28 reveal">No dates attached to any of it. Timing gets set with you.</p>
 
       <div class="rule mt56 reveal"></div>
       <h2 class="h-hero mt40 reveal" style="font-size:clamp(40px,8vw,92px);">Powered by the trade,<br>not selling for it.</h2>
