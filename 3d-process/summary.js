@@ -732,7 +732,6 @@ html.viewing .viewer-split { display: block; position: absolute; left: 0; top: 0
                 </div>
               </div>
             </div>
-            </div>
             <p class="note light" style="margin-top:12px; text-align:center;">The clinician answer, as Brand Identity v1 defines it.</p>
           </div>
         </div>
