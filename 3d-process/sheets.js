@@ -365,7 +365,7 @@ export function packPage() {
     </div>
   </header>
 
-  <p class="sop-lede">This is the whole otrearthmovertyres.com build on four printable sheets, in the same shape as the rest of the 3D Process work. One difference is worth stating up front. There was no discovery session for this one. The CORE was read out of the <strong>otr-eartmover</strong> repository, front end and backend, because the material was already there. Everything on these sheets is traceable to a file. Where the repository does not answer a CORE question, the sheet says so instead of filling the gap.</p>
+  <p class="sop-lede"><strong>We move big tyres for people who move the earth.</strong> That is the line every other line here sits under. This is the whole otrearthmovertyres.com build on four printable sheets, in the same shape as the rest of the 3D Process work. One difference is worth stating up front. There was no discovery session for this one. The CORE was read out of the <strong>otr-eartmover</strong> repository, front end and backend, because the material was already there. Everything on these sheets is traceable to a file. Where the repository does not answer a CORE question, the sheet says so instead of filling the gap.</p>
 
   <!-- belief / position / constraint -->
   <div class="sop-cols c3 sop-block">
@@ -373,7 +373,7 @@ export function packPage() {
       <p class="sop-k">The belief</p>
       <span class="sop-status">Read from source</span>
       <p class="sop-body is-lead">Jewell Tyres trades the tyres. otrearthmovertyres.com teaches the trade. Fifty years of answers get published free, so that buyers and answer engines come here for them.</p>
-      <p class="sop-body">The site sells nothing. Its job is to be the reference a buyer reads before they buy, and the page a chatbot quotes when someone asks what fits a 992K.</p>
+      <p class="sop-body">Reference. Plainly written. The site sells nothing. Its job is to take the knowledge that runs the trade and put it on the open web, in plain Australian, so it is the reference a buyer reads before they buy and the page a chatbot quotes when someone asks what fits a 992K.</p>
     </div>
     <div class="sop-cell">
       <p class="sop-k">The position</p>
@@ -418,7 +418,7 @@ export function packPage() {
     </div>
     <div class="sop-cell sop-core">
       <p class="sop-core-name"><span class="sop-dropcap">E</span>xpression</p>
-      <p class="sop-body">Black ground and one high-vis orange, Archivo with IBM Plex Mono, Jewell amber reserved for the endorsement. The register is the trusted clinician: define, specify, cite the standard, and refer the judgement call to a trader rather than making it.</p>
+      <p class="sop-body">Straight-talking, unbought, technically credible, practical, hard-wearing, kept current, unpretentious. Never a tyre advertisement, never a glossy brochure. Black ground and one high-vis orange, Archivo with IBM Plex Mono, Jewell amber held for the endorsement.</p>
       <span class="sop-core-chip">Reference. Plainly written.</span>
     </div>
   </div>
@@ -439,7 +439,7 @@ export function packPage() {
     </div>
     <div class="sop-cell">
       <p class="sop-k">The north star</p>
-      <p class="sop-body">Be the source. When a fleet engineer, a procurement officer or a chatbot needs an OTR answer in Australia, the answer comes from here and is attributed here. The manual sets the horizon: a national reference, built to be sold inside 36 months.</p>
+      <p class="sop-body">Build the national independent technical reference for the OTR category, and sell it within 36 months. Manufacturer-agnostic, no paywalls, no placement money. When a fleet engineer, a procurement officer or a chatbot needs an OTR answer in Australia, it comes from here and is attributed here.</p>
     </div>
   </div>
 
@@ -468,13 +468,15 @@ export function packPage() {
   <!-- the numbers -->
   <p class="sop-label">The numbers <em style="font-style:normal;text-transform:none;letter-spacing:0;font-weight:400">(counted from the repository, August 2026)</em></p>
   <div class="sop-tiles sop-block">
+    <div class="sop-tile"><p class="sop-tile-l">Trading since</p><p class="sop-tile-v">1974</p><p class="sop-tile-src">David Jewell, Wodonga. Brand Identity v1</p></div>
+    <div class="sop-tile"><p class="sop-tile-l">Trade records migrated</p><p class="sop-tile-v">~2,500</p><p class="sop-tile-src">Into a CRM. Brand Identity v1</p></div>
     <div class="sop-tile"><p class="sop-tile-l">Brands covered</p><p class="sop-tile-v">19</p><p class="sop-tile-src">Tier 1 five, tier 2 ten, tier 3 four, per brands.html</p></div>
     <div class="sop-tile"><p class="sop-tile-l">Tyre records live</p><p class="sop-tile-v">26</p><p class="sop-tile-src">In data/tyres.json, against a stated 600+ rollout</p></div>
     <div class="sop-tile"><p class="sop-tile-l">Corpus chunks</p><p class="sop-tile-v">172</p><p class="sop-tile-src">First-party prose corpus, committed in the repo</p></div>
     <div class="sop-tile"><p class="sop-tile-l">Calculators live</p><p class="sop-tile-v">1 of 7</p><p class="sop-tile-src">TKPH live, six marked coming soon</p></div>
     <div class="sop-tile"><p class="sop-tile-l">Market notes</p><p class="sop-tile-v">14</p><p class="sop-tile-src">Sourced editorial, Feb to Jul 2026</p></div>
     <div class="sop-tile"><p class="sop-tile-l">Programmatic SEO</p><p class="sop-tile-v">4</p><p class="sop-tile-src">Two sizes, one machine, one TRA code. Samples</p></div>
-    <div class="sop-tile"><p class="sop-tile-l">AU OTR market</p><p class="sop-tile-v">$208m</p><p class="sop-tile-src">AUD, 2023, Credence Research, converted at AUD 1 = USD 0.65</p></div>
+    <div class="sop-tile"><p class="sop-tile-l">Target sale horizon</p><p class="sop-tile-v">36 mths</p><p class="sop-tile-src">The vision, stated in Brand Identity v1</p></div>
     <div class="sop-tile"><p class="sop-tile-l">Citations earned</p><p class="sop-tile-v is-pending">Not measured</p><p class="sop-tile-src">No answer-engine tracking anywhere in the repo</p></div>
   </div>
 
@@ -520,8 +522,8 @@ export function packPage() {
     <div class="sop-cell">
       <p class="sop-k">The belief</p>
       <span class="sop-status">Read from source</span>
-      <p class="sop-body is-lead">The knowledge is the asset. Jewell Tyres has spent 50 years collating manufacturer material to do its own trading job, and otrearthmovertyres.com publishes that working knowledge free, searchable and cross-brand.</p>
-      <p class="sop-body">Founded by David Jewell in 1974 in Wodonga, Victoria, trading off-the-road tyres into mining, civil, ag, forestry and industrial fleets across Australia and New Zealand. The site's own words: the reference we wish had existed when we started.</p>
+      <p class="sop-body is-lead">The knowledge exists. It just is not reachable. TRA codes sit in North American reference books, load and inflation tables sit behind a databook login, AS 4457 sits behind a Standards Australia paywall, and the rest sits in supplier inboxes and in the heads of people who have done it long enough not to need it explained.</p>
+      <p class="sop-body">David Jewell has traded off-the-road tyres since 1974: family-owned, independent, on relationships and recall, with about 2,500 trade records now migrated into a CRM. otrearthmovertyres.com organises that knowledge properly, on the open web.</p>
     </div>
     <div class="sop-cell">
       <p class="sop-k">Are you READY?</p>
@@ -647,7 +649,7 @@ export function packPage() {
     <p class="sop-strap-k">Strategy on a line</p>
     <span class="sop-status">Built and running &middot; never reviewed against the CORE</span>
     <p class="sop-strap-h">Publish the trade knowledge that manufacturers cannot publish about each other, in the format an answer engine can quote, and let the citation do the selling.</p>
-    <p class="sop-strap-sub">Every databook belongs to one maker. An independent trader who has traded all of them can say what none of them will, and that is the only content here a competitor cannot copy. The system was designed and shipped before this was written down. What follows is the design read back out of the build.</p>
+    <p class="sop-strap-sub">Powered by the trade, not selling for it. Every databook belongs to one maker, and an independent trader who has traded all of them can say what none of them will. Jewell's fifty years is the source of the authority; the platform stays independent of the sale, so enquiries route across and editorial does not bend. The system was shipped before this was written down. What follows is the design read back out of the build.</p>
   </div>
 
   <!-- brand / customer / model -->
@@ -656,7 +658,8 @@ export function packPage() {
       <p class="sop-k">Brand</p>
       <span class="sop-status">Brand Identity v1 &middot; Aug 2026</span>
       <ul class="sop-deflist">
-        <li><strong>Essence:</strong> A databook with a search bar, published by someone with no brand to defend.</li>
+        <li><strong>Essence:</strong> Reference. Plainly written.</li>
+        <li><strong>Values:</strong> Independence, accuracy, plain English, no paywalls.</li>
         <li><strong>Register:</strong> Reference-led and restrained. Calmer and more clinical than the Jewell Tyres site, which stays the warmer heritage brand.</li>
         <li><strong>Voice:</strong> Plain-spoken, trader to buyer. Answer first, qualify after. Australian English, no marketing-speak, no em dashes.</li>
       </ul>
@@ -892,7 +895,7 @@ export function packPage() {
         <li>Fix the repository inconsistencies listed at the foot of this sheet before they reach a buyer.<span class="sop-owner">Jewell</span></li>
         <li>Set Phase A scope and its exit test, then instrument.<span class="sop-owner">Jewell &middot; Clent</span></li>
       </ol>
-      <p class="sop-note">Found while reading the repository, all verifiable: wrangler.toml still routes on an old domain variant that CLAUDE.md says was swept out; the D1 SPECS binding is commented out in config while RAG-GO-LIVE.md records it live in production; index.html still badges the portal DEMO MODE though it is live; the worker system prompt says since 1975 while the site says 1974, and permits en dashes that the house rules ban. Sixth, Brand Identity v1 adopts Archivo on a black #0B0B0B ground with orange #FB8C1F, while css/main.css still ships Helvetica Neue on graphite with amber #BF6E1B, so the built site does not match its current brand book. Seventh, and the one worth deciding first: Brand Identity v1 makes the reference platform a trusted clinician that never offers an opinion, while CLAUDE.md and the live Ask portal are built on the opposite, an OPINION label on every evaluative answer.</p>
+      <p class="sop-note">Found while reading the repository, all verifiable: wrangler.toml still routes on an old domain variant that CLAUDE.md says was swept out; the D1 SPECS binding is commented out in config while RAG-GO-LIVE.md records it live in production; index.html still badges the portal DEMO MODE though it is live; the worker system prompt says since 1975 and permits en dashes that the house rules ban, and Brand Identity v1 settles the founding date at 1974 and supersedes the 1975 and 1976 references, so those are now corrections rather than open questions. Sixth, Brand Identity v1 adopts Archivo on a black #0B0B0B ground with orange #FB8C1F, while css/main.css still ships Helvetica Neue on graphite with amber #BF6E1B, so the built site does not match its current brand book. Seventh, and the one worth deciding first: Brand Identity v1 makes the reference platform a trusted clinician that never offers an opinion, while CLAUDE.md and the live Ask portal are built on the opposite, an OPINION label on every evaluative answer.</p>
     </div>
     <div class="sop-cell is-dark">
       <p class="sop-k is-light">Gate 3 status</p>

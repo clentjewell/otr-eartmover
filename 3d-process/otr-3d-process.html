@@ -87,6 +87,8 @@ body {
 .eyebrow.light { color: var(--meta); }
 .eyebrow.amber { color: var(--orange); }
 
+.masterline { font-size: clamp(15px, 1.4vw, 17px); font-weight: 600; color: var(--white); letter-spacing: -0.01em; margin-bottom: 20px; }
+.stat-u { font-size: 0.42em; font-weight: 600; margin-left: 4px; letter-spacing: 0; }
 .h-hero { font-size: clamp(38px, 6vw, 72px); font-weight: 800; text-transform: uppercase; line-height: 0.92; letter-spacing: -0.03em; }
 .h-section { font-size: clamp(24px, 3.4vw, 40px); font-weight: 800; text-transform: uppercase; line-height: 0.98; letter-spacing: -0.03em; max-width: 20ch; }
 .h-section.light { color: var(--black); }
@@ -691,8 +693,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
     <!-- ── WELCOME ── -->
     <section class="welcome" id="top">
       <div class="eyebrow reveal">Jewell &middot; Prepared for Clent Jewell</div>
+      <p class="masterline reveal">We move big tyres for people who move the earth.</p>
       <h1 class="h-hero reveal" style="transition-delay:.06s">Your 3D Process.<br>Read from the build.</h1>
-      <p class="lead mt28 reveal" style="transition-delay:.14s">The Discover, Design and Deploy set for otrearthmovertyres.com, on four sheets. There was no discovery session for this one. The CORE was read out of the repository, front end and backend, because the material was already there.</p>
+      <p class="lead mt28 reveal" style="transition-delay:.14s">The Discover, Design and Deploy set for otrearthmovertyres.com, on four sheets. Reference. Plainly written. There was no discovery session for this one: the CORE was read out of the repository, front end and backend, because the material was already there.</p>
       <div class="rule mt40 reveal"></div>
       <p class="eyebrow mt40 reveal" style="margin-bottom:18px;">Inside this summary</p>
       <div class="ov-grid stagger">
@@ -713,15 +716,15 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
     <section class="starthere" id="starthere">
       <span class="eyebrow amber reveal">Start here &middot; if you read nothing else</span>
       <h2 class="h-section reveal">Fifty years of answers, finally written down.</h2>
-      <p class="lead mt20 reveal">The site is built and it works. Two things are missing: most of the content it promises, and any way of telling whether it is being read.</p>
+      <p class="lead mt20 reveal">A bloke rings up and asks what fits a 777D. For fifty years the answer lived in one man's head, one notebook and one phone number. The platform that fixes that is built and it works. Two things are missing: most of the content it promises, and any way of telling whether it is being read.</p>
 
       <div class="stat-row mt40 stagger">
-        <div class="stat"><span class="stat-n">19</span><span class="stat-l">brands covered</span></div>
-        <div class="stat"><span class="stat-n">26</span><span class="stat-l">tyre records live, of a stated 600+</span></div>
-        <div class="stat"><span class="stat-n">14</span><span class="stat-l">market notes published</span></div>
+        <div class="stat"><span class="stat-n">1974</span><span class="stat-l">trading since</span></div>
+        <div class="stat"><span class="stat-n">~2,500</span><span class="stat-l">trade records migrated</span></div>
+        <div class="stat"><span class="stat-n">36<span class="stat-u">mths</span></span><span class="stat-l">target sale horizon</span></div>
         <div class="stat"><span class="stat-n">0</span><span class="stat-l">citations measured, so far</span></div>
       </div>
-      <p class="note mt20 reveal">Counted from the repository, August 2026.</p>
+      <p class="note mt20 reveal">First three from Brand Identity v1. The fourth counted from the repository, August 2026.</p>
 
       <div class="callout mt40 reveal">
         <p class="body" style="margin:0;"><strong>The one next step:</strong> run the CORE session and settle what counts as this site working, then instrument it. Everything else in Deploy depends on that answer. <a href="#next" style="color:var(--orange);font-weight:600;text-decoration:none;">See the plan &#8599;</a></p>
@@ -741,7 +744,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
       <div class="rule mt40 reveal"></div>
       <p class="body mt40 reveal">Clent, this one runs backwards compared to the rest of the 3D Process work. Normally CORE comes out of a discovery session and the build follows. Here the build already existed, so the CORE was extracted from it: the site, the copy, the data, the RAG corpus, the Knowledge Portal, the Cloudflare and Supabase backends, the scripts and the documentation.</p>
       <p class="body mt20 reveal">A note on status. Everything on the sheets traces to a file in the repository. Nothing has been invented to make the set look complete. Where the repository does not answer a CORE question, the sheet names the gap instead of filling it, and there are three of those.</p>
-      <p class="body mt20 reveal">The same standard as always: nothing is asserted as fact that the evidence does not carry. Where the work is thin or the numbers do not match what the site claims, the page says so.</p>
+      <p class="body mt20 reveal">The register is the one the brand book calls investor material: the most forward of the four, and still evidence-first. Lead with the number you can defend, pre-flag the risks, confident but never promotional. So nothing is asserted as fact that the evidence does not carry, and where the work is thin or the numbers do not match what the site claims, the page says so.</p>
       <p class="note mt28 reveal">Yours, Clent.</p>
       <nav class="page-nav">
         <a class="pn-btn prev" href="#top"><span>Previous</span><strong>Welcome</strong></a>
@@ -755,12 +758,20 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
       <h2 class="h-section reveal">Discover to Deploy, on four sheets.</h2>
       <div class="cols-2 mt40 stagger">
         <div>
-          <div class="col-label">The whole build on four printable sheets.</div>
-          <div class="col-body">3D on a page, then Discover, Design and Deploy. Each sheet is standalone, print-ready, and carries its own gate status. The set is the record while the process runs.</div>
+          <div class="col-label">Purpose</div>
+          <div class="col-body">Take the knowledge that runs the OTR trade and put it on the open web, in plain Australian.</div>
         </div>
         <div>
-          <div class="col-label">Scaffolding, built to be updated.</div>
-          <div class="col-body">The structure is the lasting asset. As the CORE questions close and the corpus fills, the sheets update around them without starting over.</div>
+          <div class="col-label">Mission</div>
+          <div class="col-body">Be the reference desk operators actually keep open on the workshop screen.</div>
+        </div>
+        <div>
+          <div class="col-label">Vision</div>
+          <div class="col-body">Build the national independent technical reference for the OTR category, and sell it within 36 months.</div>
+        </div>
+        <div>
+          <div class="col-label">What these four sheets are</div>
+          <div class="col-body">3D on a page, then Discover, Design and Deploy. Each is standalone, print-ready, and carries its own gate status. The structure is the lasting asset: as the CORE questions close and the corpus fills, the sheets update around them without starting over.</div>
         </div>
       </div>
       <div class="callout mt56 reveal">
@@ -957,7 +968,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
     <article class="page" id="portal">
       <div class="page-head"><span class="page-chip">The engine room</span><span class="page-count">08 / 10</span></div>
       <h2 class="h-section reveal">The Knowledge Portal.</h2>
-      <p class="body mt28 reveal" style="max-width:680px;">The part of this build that competitors cannot copy quickly. A question goes to a Pages Function, which prefers the Cloudflare worker (Workers AI for embeddings, Vectorize for the corpus, D1 for verified specs) and falls back to a Supabase edge function holding the same contract. It is live in production today.</p>
+      <p class="body mt28 reveal" style="max-width:680px;">The knowledge exists. It just is not reachable: gated in databooks, scattered across inboxes, undocumented in the trade. The portal is what organises it properly, on the open web. A question goes to a Pages Function, which prefers the Cloudflare worker (Workers AI for embeddings, Vectorize for the corpus, D1 for verified specs) and falls back to a Supabase edge function holding the same contract. It is live in production today.</p>
 
       <div class="darkwrap mt40 reveal">
         <p class="eyebrow light" style="margin-bottom:20px;">A question through the portal</p>
@@ -1011,7 +1022,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
     <article class="page" id="ask">
       <div class="page-head"><span class="page-chip">The trade read</span><span class="page-count">09 / 10</span></div>
       <h2 class="h-section reveal">Ask it anything.</h2>
-      <p class="body mt28 reveal" style="max-width:660px;">Any databook holds the spec. What a databook will not tell you is which tyre to put on a 992K in the Pilbara, and that is the question buyers actually arrive with.</p>
+      <p class="body mt28 reveal" style="max-width:660px;">Any databook holds the spec. What a databook will not tell you is which tyre to put on a 992K in the Pilbara, and that is the question buyers actually arrive with. The brand book draws a hard line through it: the platform is the trusted clinician, and it describes and specifies rather than making the call. The recommendation belongs to a trader.</p>
       <div class="darkwrap mt40 reveal">
         <div class="cols-2" style="gap:clamp(32px,4vw,56px); align-items:start;">
           <div>
@@ -1078,7 +1089,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
       <p class="note mt28 reveal">No dates attached to any of it. Timing gets set with you.</p>
 
       <div class="rule mt56 reveal"></div>
-      <h2 class="h-hero mt40 reveal" style="font-size:clamp(44px,9vw,104px);">Be the source.</h2>
+      <h2 class="h-hero mt40 reveal" style="font-size:clamp(40px,8vw,92px);">Powered by the trade,<br>not selling for it.</h2>
+      <p class="body grey mt20 reveal">Jewell's fifty years is the source of the authority. The platform stays independent of the sale: enquiries route across, editorial does not bend.</p>
       <p class="body grey mt28 reveal">Clent Jewell &nbsp;&middot;&nbsp; <a href="mailto:clent@jewellprojects.com" style="color:var(--orange); text-decoration:none;">clent@jewellprojects.com</a></p>
 
       <nav class="page-nav">
@@ -1202,7 +1214,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
     </div>
   </header>
 
-  <p class="sop-lede">This is the whole otrearthmovertyres.com build on four printable sheets, in the same shape as the rest of the 3D Process work. One difference is worth stating up front. There was no discovery session for this one. The CORE was read out of the <strong>otr-eartmover</strong> repository, front end and backend, because the material was already there. Everything on these sheets is traceable to a file. Where the repository does not answer a CORE question, the sheet says so instead of filling the gap.</p>
+  <p class="sop-lede"><strong>We move big tyres for people who move the earth.</strong> That is the line every other line here sits under. This is the whole otrearthmovertyres.com build on four printable sheets, in the same shape as the rest of the 3D Process work. One difference is worth stating up front. There was no discovery session for this one. The CORE was read out of the <strong>otr-eartmover</strong> repository, front end and backend, because the material was already there. Everything on these sheets is traceable to a file. Where the repository does not answer a CORE question, the sheet says so instead of filling the gap.</p>
 
   <!-- belief / position / constraint -->
   <div class="sop-cols c3 sop-block">
@@ -1210,7 +1222,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
       <p class="sop-k">The belief</p>
       <span class="sop-status">Read from source</span>
       <p class="sop-body is-lead">Jewell Tyres trades the tyres. otrearthmovertyres.com teaches the trade. Fifty years of answers get published free, so that buyers and answer engines come here for them.</p>
-      <p class="sop-body">The site sells nothing. Its job is to be the reference a buyer reads before they buy, and the page a chatbot quotes when someone asks what fits a 992K.</p>
+      <p class="sop-body">Reference. Plainly written. The site sells nothing. Its job is to take the knowledge that runs the trade and put it on the open web, in plain Australian, so it is the reference a buyer reads before they buy and the page a chatbot quotes when someone asks what fits a 992K.</p>
     </div>
     <div class="sop-cell">
       <p class="sop-k">The position</p>
@@ -1255,7 +1267,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
     </div>
     <div class="sop-cell sop-core">
       <p class="sop-core-name"><span class="sop-dropcap">E</span>xpression</p>
-      <p class="sop-body">Black ground and one high-vis orange, Archivo with IBM Plex Mono, Jewell amber reserved for the endorsement. The register is the trusted clinician: define, specify, cite the standard, and refer the judgement call to a trader rather than making it.</p>
+      <p class="sop-body">Straight-talking, unbought, technically credible, practical, hard-wearing, kept current, unpretentious. Never a tyre advertisement, never a glossy brochure. Black ground and one high-vis orange, Archivo with IBM Plex Mono, Jewell amber held for the endorsement.</p>
       <span class="sop-core-chip">Reference. Plainly written.</span>
     </div>
   </div>
@@ -1276,7 +1288,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
     </div>
     <div class="sop-cell">
       <p class="sop-k">The north star</p>
-      <p class="sop-body">Be the source. When a fleet engineer, a procurement officer or a chatbot needs an OTR answer in Australia, the answer comes from here and is attributed here. The manual sets the horizon: a national reference, built to be sold inside 36 months.</p>
+      <p class="sop-body">Build the national independent technical reference for the OTR category, and sell it within 36 months. Manufacturer-agnostic, no paywalls, no placement money. When a fleet engineer, a procurement officer or a chatbot needs an OTR answer in Australia, it comes from here and is attributed here.</p>
     </div>
   </div>
 
@@ -1305,13 +1317,15 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
   <!-- the numbers -->
   <p class="sop-label">The numbers <em style="font-style:normal;text-transform:none;letter-spacing:0;font-weight:400">(counted from the repository, August 2026)</em></p>
   <div class="sop-tiles sop-block">
+    <div class="sop-tile"><p class="sop-tile-l">Trading since</p><p class="sop-tile-v">1974</p><p class="sop-tile-src">David Jewell, Wodonga. Brand Identity v1</p></div>
+    <div class="sop-tile"><p class="sop-tile-l">Trade records migrated</p><p class="sop-tile-v">~2,500</p><p class="sop-tile-src">Into a CRM. Brand Identity v1</p></div>
     <div class="sop-tile"><p class="sop-tile-l">Brands covered</p><p class="sop-tile-v">19</p><p class="sop-tile-src">Tier 1 five, tier 2 ten, tier 3 four, per brands.html</p></div>
     <div class="sop-tile"><p class="sop-tile-l">Tyre records live</p><p class="sop-tile-v">26</p><p class="sop-tile-src">In data/tyres.json, against a stated 600+ rollout</p></div>
     <div class="sop-tile"><p class="sop-tile-l">Corpus chunks</p><p class="sop-tile-v">172</p><p class="sop-tile-src">First-party prose corpus, committed in the repo</p></div>
     <div class="sop-tile"><p class="sop-tile-l">Calculators live</p><p class="sop-tile-v">1 of 7</p><p class="sop-tile-src">TKPH live, six marked coming soon</p></div>
     <div class="sop-tile"><p class="sop-tile-l">Market notes</p><p class="sop-tile-v">14</p><p class="sop-tile-src">Sourced editorial, Feb to Jul 2026</p></div>
     <div class="sop-tile"><p class="sop-tile-l">Programmatic SEO</p><p class="sop-tile-v">4</p><p class="sop-tile-src">Two sizes, one machine, one TRA code. Samples</p></div>
-    <div class="sop-tile"><p class="sop-tile-l">AU OTR market</p><p class="sop-tile-v">$208m</p><p class="sop-tile-src">AUD, 2023, Credence Research, converted at AUD 1 = USD 0.65</p></div>
+    <div class="sop-tile"><p class="sop-tile-l">Target sale horizon</p><p class="sop-tile-v">36 mths</p><p class="sop-tile-src">The vision, stated in Brand Identity v1</p></div>
     <div class="sop-tile"><p class="sop-tile-l">Citations earned</p><p class="sop-tile-v is-pending">Not measured</p><p class="sop-tile-src">No answer-engine tracking anywhere in the repo</p></div>
   </div>
 
@@ -1358,8 +1372,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
     <div class="sop-cell">
       <p class="sop-k">The belief</p>
       <span class="sop-status">Read from source</span>
-      <p class="sop-body is-lead">The knowledge is the asset. Jewell Tyres has spent 50 years collating manufacturer material to do its own trading job, and otrearthmovertyres.com publishes that working knowledge free, searchable and cross-brand.</p>
-      <p class="sop-body">Founded by David Jewell in 1974 in Wodonga, Victoria, trading off-the-road tyres into mining, civil, ag, forestry and industrial fleets across Australia and New Zealand. The site's own words: the reference we wish had existed when we started.</p>
+      <p class="sop-body is-lead">The knowledge exists. It just is not reachable. TRA codes sit in North American reference books, load and inflation tables sit behind a databook login, AS 4457 sits behind a Standards Australia paywall, and the rest sits in supplier inboxes and in the heads of people who have done it long enough not to need it explained.</p>
+      <p class="sop-body">David Jewell has traded off-the-road tyres since 1974: family-owned, independent, on relationships and recall, with about 2,500 trade records now migrated into a CRM. otrearthmovertyres.com organises that knowledge properly, on the open web.</p>
     </div>
     <div class="sop-cell">
       <p class="sop-k">Are you READY?</p>
@@ -1486,7 +1500,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
     <p class="sop-strap-k">Strategy on a line</p>
     <span class="sop-status">Built and running &middot; never reviewed against the CORE</span>
     <p class="sop-strap-h">Publish the trade knowledge that manufacturers cannot publish about each other, in the format an answer engine can quote, and let the citation do the selling.</p>
-    <p class="sop-strap-sub">Every databook belongs to one maker. An independent trader who has traded all of them can say what none of them will, and that is the only content here a competitor cannot copy. The system was designed and shipped before this was written down. What follows is the design read back out of the build.</p>
+    <p class="sop-strap-sub">Powered by the trade, not selling for it. Every databook belongs to one maker, and an independent trader who has traded all of them can say what none of them will. Jewell's fifty years is the source of the authority; the platform stays independent of the sale, so enquiries route across and editorial does not bend. The system was shipped before this was written down. What follows is the design read back out of the build.</p>
   </div>
 
   <!-- brand / customer / model -->
@@ -1495,7 +1509,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
       <p class="sop-k">Brand</p>
       <span class="sop-status">Brand Identity v1 &middot; Aug 2026</span>
       <ul class="sop-deflist">
-        <li><strong>Essence:</strong> A databook with a search bar, published by someone with no brand to defend.</li>
+        <li><strong>Essence:</strong> Reference. Plainly written.</li>
+        <li><strong>Values:</strong> Independence, accuracy, plain English, no paywalls.</li>
         <li><strong>Register:</strong> Reference-led and restrained. Calmer and more clinical than the Jewell Tyres site, which stays the warmer heritage brand.</li>
         <li><strong>Voice:</strong> Plain-spoken, trader to buyer. Answer first, qualify after. Australian English, no marketing-speak, no em dashes.</li>
       </ul>
@@ -1732,7 +1747,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
         <li>Fix the repository inconsistencies listed at the foot of this sheet before they reach a buyer.<span class="sop-owner">Jewell</span></li>
         <li>Set Phase A scope and its exit test, then instrument.<span class="sop-owner">Jewell &middot; Clent</span></li>
       </ol>
-      <p class="sop-note">Found while reading the repository, all verifiable: wrangler.toml still routes on an old domain variant that CLAUDE.md says was swept out; the D1 SPECS binding is commented out in config while RAG-GO-LIVE.md records it live in production; index.html still badges the portal DEMO MODE though it is live; the worker system prompt says since 1975 while the site says 1974, and permits en dashes that the house rules ban. Sixth, Brand Identity v1 adopts Archivo on a black #0B0B0B ground with orange #FB8C1F, while css/main.css still ships Helvetica Neue on graphite with amber #BF6E1B, so the built site does not match its current brand book. Seventh, and the one worth deciding first: Brand Identity v1 makes the reference platform a trusted clinician that never offers an opinion, while CLAUDE.md and the live Ask portal are built on the opposite, an OPINION label on every evaluative answer.</p>
+      <p class="sop-note">Found while reading the repository, all verifiable: wrangler.toml still routes on an old domain variant that CLAUDE.md says was swept out; the D1 SPECS binding is commented out in config while RAG-GO-LIVE.md records it live in production; index.html still badges the portal DEMO MODE though it is live; the worker system prompt says since 1975 and permits en dashes that the house rules ban, and Brand Identity v1 settles the founding date at 1974 and supersedes the 1975 and 1976 references, so those are now corrections rather than open questions. Sixth, Brand Identity v1 adopts Archivo on a black #0B0B0B ground with orange #FB8C1F, while css/main.css still ships Helvetica Neue on graphite with amber #BF6E1B, so the built site does not match its current brand book. Seventh, and the one worth deciding first: Brand Identity v1 makes the reference platform a trusted clinician that never offers an opinion, while CLAUDE.md and the live Ask portal are built on the opposite, an OPINION label on every evaluative answer.</p>
     </div>
     <div class="sop-cell is-dark">
       <p class="sop-k is-light">Gate 3 status</p>

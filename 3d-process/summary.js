@@ -101,6 +101,8 @@ body {
 .eyebrow.light { color: var(--meta); }
 .eyebrow.amber { color: var(--orange); }
 
+.masterline { font-size: clamp(15px, 1.4vw, 17px); font-weight: 600; color: var(--white); letter-spacing: -0.01em; margin-bottom: 20px; }
+.stat-u { font-size: 0.42em; font-weight: 600; margin-left: 4px; letter-spacing: 0; }
 .h-hero { font-size: clamp(38px, 6vw, 72px); font-weight: 800; text-transform: uppercase; line-height: 0.92; letter-spacing: -0.03em; }
 .h-section { font-size: clamp(24px, 3.4vw, 40px); font-weight: 800; text-transform: uppercase; line-height: 0.98; letter-spacing: -0.03em; max-width: 20ch; }
 .h-section.light { color: var(--black); }
@@ -373,8 +375,9 @@ html.viewing .viewer-split { display: block; position: absolute; left: 0; top: 0
     <!-- ── WELCOME ── -->
     <section class="welcome" id="top">
       <div class="eyebrow reveal">Jewell &middot; Prepared for Clent Jewell</div>
+      <p class="masterline reveal">We move big tyres for people who move the earth.</p>
       <h1 class="h-hero reveal" style="transition-delay:.06s">Your 3D Process.<br>Read from the build.</h1>
-      <p class="lead mt28 reveal" style="transition-delay:.14s">The Discover, Design and Deploy set for otrearthmovertyres.com, on four sheets. There was no discovery session for this one. The CORE was read out of the repository, front end and backend, because the material was already there.</p>
+      <p class="lead mt28 reveal" style="transition-delay:.14s">The Discover, Design and Deploy set for otrearthmovertyres.com, on four sheets. Reference. Plainly written. There was no discovery session for this one: the CORE was read out of the repository, front end and backend, because the material was already there.</p>
       <div class="rule mt40 reveal"></div>
       <p class="eyebrow mt40 reveal" style="margin-bottom:18px;">Inside this summary</p>
       <div class="ov-grid stagger">
@@ -395,15 +398,15 @@ html.viewing .viewer-split { display: block; position: absolute; left: 0; top: 0
     <section class="starthere" id="starthere">
       <span class="eyebrow amber reveal">Start here &middot; if you read nothing else</span>
       <h2 class="h-section reveal">Fifty years of answers, finally written down.</h2>
-      <p class="lead mt20 reveal">The site is built and it works. Two things are missing: most of the content it promises, and any way of telling whether it is being read.</p>
+      <p class="lead mt20 reveal">A bloke rings up and asks what fits a 777D. For fifty years the answer lived in one man's head, one notebook and one phone number. The platform that fixes that is built and it works. Two things are missing: most of the content it promises, and any way of telling whether it is being read.</p>
 
       <div class="stat-row mt40 stagger">
-        <div class="stat"><span class="stat-n">19</span><span class="stat-l">brands covered</span></div>
-        <div class="stat"><span class="stat-n">26</span><span class="stat-l">tyre records live, of a stated 600+</span></div>
-        <div class="stat"><span class="stat-n">14</span><span class="stat-l">market notes published</span></div>
+        <div class="stat"><span class="stat-n">1974</span><span class="stat-l">trading since</span></div>
+        <div class="stat"><span class="stat-n">~2,500</span><span class="stat-l">trade records migrated</span></div>
+        <div class="stat"><span class="stat-n">36<span class="stat-u">mths</span></span><span class="stat-l">target sale horizon</span></div>
         <div class="stat"><span class="stat-n">0</span><span class="stat-l">citations measured, so far</span></div>
       </div>
-      <p class="note mt20 reveal">Counted from the repository, August 2026.</p>
+      <p class="note mt20 reveal">First three from Brand Identity v1. The fourth counted from the repository, August 2026.</p>
 
       <div class="callout mt40 reveal">
         <p class="body" style="margin:0;"><strong>The one next step:</strong> run the CORE session and settle what counts as this site working, then instrument it. Everything else in Deploy depends on that answer. <a href="#next" style="color:var(--orange);font-weight:600;text-decoration:none;">See the plan &#8599;</a></p>
@@ -423,7 +426,7 @@ html.viewing .viewer-split { display: block; position: absolute; left: 0; top: 0
       <div class="rule mt40 reveal"></div>
       <p class="body mt40 reveal">Clent, this one runs backwards compared to the rest of the 3D Process work. Normally CORE comes out of a discovery session and the build follows. Here the build already existed, so the CORE was extracted from it: the site, the copy, the data, the RAG corpus, the Knowledge Portal, the Cloudflare and Supabase backends, the scripts and the documentation.</p>
       <p class="body mt20 reveal">A note on status. Everything on the sheets traces to a file in the repository. Nothing has been invented to make the set look complete. Where the repository does not answer a CORE question, the sheet names the gap instead of filling it, and there are three of those.</p>
-      <p class="body mt20 reveal">The same standard as always: nothing is asserted as fact that the evidence does not carry. Where the work is thin or the numbers do not match what the site claims, the page says so.</p>
+      <p class="body mt20 reveal">The register is the one the brand book calls investor material: the most forward of the four, and still evidence-first. Lead with the number you can defend, pre-flag the risks, confident but never promotional. So nothing is asserted as fact that the evidence does not carry, and where the work is thin or the numbers do not match what the site claims, the page says so.</p>
       <p class="note mt28 reveal">Yours, Clent.</p>
       <nav class="page-nav">
         <a class="pn-btn prev" href="#top"><span>Previous</span><strong>Welcome</strong></a>
@@ -437,12 +440,20 @@ html.viewing .viewer-split { display: block; position: absolute; left: 0; top: 0
       <h2 class="h-section reveal">Discover to Deploy, on four sheets.</h2>
       <div class="cols-2 mt40 stagger">
         <div>
-          <div class="col-label">The whole build on four printable sheets.</div>
-          <div class="col-body">3D on a page, then Discover, Design and Deploy. Each sheet is standalone, print-ready, and carries its own gate status. The set is the record while the process runs.</div>
+          <div class="col-label">Purpose</div>
+          <div class="col-body">Take the knowledge that runs the OTR trade and put it on the open web, in plain Australian.</div>
         </div>
         <div>
-          <div class="col-label">Scaffolding, built to be updated.</div>
-          <div class="col-body">The structure is the lasting asset. As the CORE questions close and the corpus fills, the sheets update around them without starting over.</div>
+          <div class="col-label">Mission</div>
+          <div class="col-body">Be the reference desk operators actually keep open on the workshop screen.</div>
+        </div>
+        <div>
+          <div class="col-label">Vision</div>
+          <div class="col-body">Build the national independent technical reference for the OTR category, and sell it within 36 months.</div>
+        </div>
+        <div>
+          <div class="col-label">What these four sheets are</div>
+          <div class="col-body">3D on a page, then Discover, Design and Deploy. Each is standalone, print-ready, and carries its own gate status. The structure is the lasting asset: as the CORE questions close and the corpus fills, the sheets update around them without starting over.</div>
         </div>
       </div>
       <div class="callout mt56 reveal">
@@ -639,7 +650,7 @@ html.viewing .viewer-split { display: block; position: absolute; left: 0; top: 0
     <article class="page" id="portal">
       <div class="page-head"><span class="page-chip">The engine room</span><span class="page-count">08 / 10</span></div>
       <h2 class="h-section reveal">The Knowledge Portal.</h2>
-      <p class="body mt28 reveal" style="max-width:680px;">The part of this build that competitors cannot copy quickly. A question goes to a Pages Function, which prefers the Cloudflare worker (Workers AI for embeddings, Vectorize for the corpus, D1 for verified specs) and falls back to a Supabase edge function holding the same contract. It is live in production today.</p>
+      <p class="body mt28 reveal" style="max-width:680px;">The knowledge exists. It just is not reachable: gated in databooks, scattered across inboxes, undocumented in the trade. The portal is what organises it properly, on the open web. A question goes to a Pages Function, which prefers the Cloudflare worker (Workers AI for embeddings, Vectorize for the corpus, D1 for verified specs) and falls back to a Supabase edge function holding the same contract. It is live in production today.</p>
 
       <div class="darkwrap mt40 reveal">
         <p class="eyebrow light" style="margin-bottom:20px;">A question through the portal</p>
@@ -693,7 +704,7 @@ html.viewing .viewer-split { display: block; position: absolute; left: 0; top: 0
     <article class="page" id="ask">
       <div class="page-head"><span class="page-chip">The trade read</span><span class="page-count">09 / 10</span></div>
       <h2 class="h-section reveal">Ask it anything.</h2>
-      <p class="body mt28 reveal" style="max-width:660px;">Any databook holds the spec. What a databook will not tell you is which tyre to put on a 992K in the Pilbara, and that is the question buyers actually arrive with.</p>
+      <p class="body mt28 reveal" style="max-width:660px;">Any databook holds the spec. What a databook will not tell you is which tyre to put on a 992K in the Pilbara, and that is the question buyers actually arrive with. The brand book draws a hard line through it: the platform is the trusted clinician, and it describes and specifies rather than making the call. The recommendation belongs to a trader.</p>
       <div class="darkwrap mt40 reveal">
         <div class="cols-2" style="gap:clamp(32px,4vw,56px); align-items:start;">
           <div>
@@ -760,7 +771,8 @@ html.viewing .viewer-split { display: block; position: absolute; left: 0; top: 0
       <p class="note mt28 reveal">No dates attached to any of it. Timing gets set with you.</p>
 
       <div class="rule mt56 reveal"></div>
-      <h2 class="h-hero mt40 reveal" style="font-size:clamp(44px,9vw,104px);">Be the source.</h2>
+      <h2 class="h-hero mt40 reveal" style="font-size:clamp(40px,8vw,92px);">Powered by the trade,<br>not selling for it.</h2>
+      <p class="body grey mt20 reveal">Jewell's fifty years is the source of the authority. The platform stays independent of the sale: enquiries route across, editorial does not bend.</p>
       <p class="body grey mt28 reveal">Clent Jewell &nbsp;&middot;&nbsp; <a href="mailto:clent@jewellprojects.com" style="color:var(--orange); text-decoration:none;">clent@jewellprojects.com</a></p>
 
       <nav class="page-nav">
