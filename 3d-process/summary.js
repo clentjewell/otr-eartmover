@@ -377,7 +377,7 @@ html.viewing .viewer-split { display: block; position: absolute; left: 0; top: 0
       <div class="eyebrow reveal">Jewell &middot; Prepared for Clent Jewell</div>
       <p class="masterline reveal">We move big tyres for people who move the earth.</p>
       <h1 class="h-hero reveal" style="transition-delay:.06s">Your 3D Process.<br>Read from the build.</h1>
-      <p class="lead mt28 reveal" style="transition-delay:.14s">The Discover, Design and Deploy set for otrearthmovertyres.com, on four sheets. Reference. Plainly written. There was no discovery session for this one: the CORE was read out of the repository, front end and backend, because the material was already there.</p>
+      <p class="lead mt28 reveal" style="transition-delay:.14s">The Discover, Design and Deploy set for OTR earthmovertyres.com, on four sheets. Reference. Plainly written. There was no discovery session for this one: the CORE was read out of the repository, front end and backend, because the material was already there.</p>
       <div class="rule mt40 reveal"></div>
       <p class="eyebrow mt40 reveal" style="margin-bottom:18px;">Inside this summary</p>
       <div class="ov-grid stagger">
@@ -505,7 +505,7 @@ html.viewing .viewer-split { display: block; position: absolute; left: 0; top: 0
       <div class="mt40 stagger">
         <div class="row">
           <div class="row-k">The belief</div>
-          <div class="row-v">Jewell Tyres trades the tyres. otrearthmovertyres.com teaches the trade. Fifty years of answers get published free, so that buyers and answer engines come here for them.</div>
+          <div class="row-v">Jewell Tyres trades the tyres. OTR earthmovertyres.com teaches the trade. The knowledge that made the trade work gets published free, so that buyers and answer engines come here for it.</div>
         </div>
         <div class="row">
           <div class="row-k">The position</div>
@@ -566,7 +566,7 @@ html.viewing .viewer-split { display: block; position: absolute; left: 0; top: 0
       <div class="mt40 stagger">
         <div class="row">
           <div class="row-k">The reference site <span class="pill done" style="margin-left:8px;"><span class="dot"></span>Live</span></div>
-          <div class="row-v">14 pages on Cloudflare Pages. Tyre guide, TRA service-code matrix, tyre naming, mixing rules, a 40-term glossary, 8 failure modes and the AS4457:2019 summary. Free and ad-free.</div>
+          <div class="row-v">14 pages on Cloudflare Pages. Tyre guide, TRA service-code matrix, tyre naming, mixing rules, a 40-term glossary, 8 failure modes and the AS 4457:2019 summary. Free and ad-free.</div>
         </div>
         <div class="row">
           <div class="row-k">The Knowledge Portal <span class="pill done" style="margin-left:8px;"><span class="dot"></span>Live</span></div>
@@ -710,7 +710,7 @@ html.viewing .viewer-split { display: block; position: absolute; left: 0; top: 0
           <div>
             <p class="body light" style="margin:0;">The answer below is the tone calibration example written into the system prompt in the repository. It is what a good answer is supposed to look like: specific, caveated, and honest that the choice depends on cycle, ambient and price tolerance rather than on which brand is best in the abstract.</p>
             <div class="rule dark mt28"></div>
-            <p class="note light mt20" style="margin:0;">One source of truth. Every evaluative answer carries the OPINION label, and every answer carries the verify-against-OEM disclaimer.</p>
+            <p class="note light mt20" style="margin:0;">Every answer carries the verify-against-OEM disclaimer. The OPINION label shown here is what the live portal does today, under the older house rules. Brand Identity v1 supersedes it, so the label is a decision to make, not a settled design.</p>
           </div>
           <div>
             <div class="pc">

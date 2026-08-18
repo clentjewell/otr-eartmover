@@ -365,14 +365,14 @@ export function packPage() {
     </div>
   </header>
 
-  <p class="sop-lede"><strong>We move big tyres for people who move the earth.</strong> That is the line every other line here sits under. This is the whole otrearthmovertyres.com build on four printable sheets, in the same shape as the rest of the 3D Process work. One difference is worth stating up front. There was no discovery session for this one. The CORE was read out of the <strong>otr-eartmover</strong> repository, front end and backend, because the material was already there. Everything on these sheets is traceable to a file. Where the repository does not answer a CORE question, the sheet says so instead of filling the gap.</p>
+  <p class="sop-lede"><strong>We move big tyres for people who move the earth.</strong> That is the line every other line here sits under. This is the whole OTR earthmovertyres.com build on four printable sheets, in the same shape as the rest of the 3D Process work. One difference is worth stating up front. There was no discovery session for this one. The CORE was read out of the <strong>otr-eartmover</strong> repository, front end and backend, because the material was already there. Everything on these sheets is traceable to a file. Where the repository does not answer a CORE question, the sheet says so instead of filling the gap.</p>
 
   <!-- belief / position / constraint -->
   <div class="sop-cols c3 sop-block">
     <div class="sop-cell">
       <p class="sop-k">The belief</p>
       <span class="sop-status">Read from source</span>
-      <p class="sop-body is-lead">Jewell Tyres trades the tyres. otrearthmovertyres.com teaches the trade. Fifty years of answers get published free, so that buyers and answer engines come here for them.</p>
+      <p class="sop-body is-lead">Jewell Tyres trades the tyres. OTR earthmovertyres.com teaches the trade. The knowledge that made the trade work gets published free, so that buyers and answer engines come here for it.</p>
       <p class="sop-body">Reference. Plainly written. The site sells nothing. Its job is to take the knowledge that runs the trade and put it on the open web, in plain Australian, so it is the reference a buyer reads before they buy and the page a chatbot quotes when someone asks what fits a 992K.</p>
     </div>
     <div class="sop-cell">
@@ -408,7 +408,7 @@ export function packPage() {
     </div>
     <div class="sop-cell sop-core">
       <p class="sop-core-name"><span class="sop-dropcap">O</span>ffering</p>
-      <p class="sop-body">A free, ad-free technical reference: tyre guide, TRA service-code matrix, mixing rules, glossary, failure modes, AS4457:2019 summary, calculators, 14 sourced market notes, and an Ask portal that answers from the databook corpus with citations.</p>
+      <p class="sop-body">A free, ad-free technical reference: tyre guide, TRA service-code matrix, mixing rules, glossary, failure modes, AS 4457:2019 summary, calculators, 14 sourced market notes, and an Ask portal that answers from the databook corpus with citations.</p>
       <span class="sop-core-chip">Free reference, commercial tie declared</span>
     </div>
     <div class="sop-cell sop-core">
@@ -498,7 +498,7 @@ export function packPage() {
 
   <footer class="sop-foot">
     <div class="sop-sign"><span>Prepared by: Jewell</span><span>Approved by</span><span>Date: Aug 2026 (Read v01)</span></div>
-    <span class="sop-foot-c">The working single-page view of otrearthmovertyres.com's 3D Process.</span>
+    <span class="sop-foot-c">The working single-page view of OTR earthmovertyres.com's 3D Process.</span>
     <span class="sop-foot-r">otr earthmovertyres.com &middot; powered by Jewell Tyres</span>
   </footer>
 </section>
@@ -523,7 +523,7 @@ export function packPage() {
       <p class="sop-k">The belief</p>
       <span class="sop-status">Read from source</span>
       <p class="sop-body is-lead">The knowledge exists. It just is not reachable. TRA codes sit in North American reference books, load and inflation tables sit behind a databook login, AS 4457 sits behind a Standards Australia paywall, and the rest sits in supplier inboxes and in the heads of people who have done it long enough not to need it explained.</p>
-      <p class="sop-body">David Jewell has traded off-the-road tyres since 1974: family-owned, independent, on relationships and recall, with about 2,500 trade records now migrated into a CRM. otrearthmovertyres.com organises that knowledge properly, on the open web.</p>
+      <p class="sop-body">David Jewell has traded off-the-road tyres since 1974: family-owned, independent, on relationships and recall, with about 2,500 trade records now migrated into a CRM. OTR earthmovertyres.com organises that knowledge properly, on the open web.</p>
     </div>
     <div class="sop-cell">
       <p class="sop-k">Are you READY?</p>
@@ -571,7 +571,7 @@ export function packPage() {
     <div class="sop-cell">
       <p class="sop-core-name"><span class="sop-dropcap">O</span>ffering</p>
       <span class="sop-status">Built &middot; verifiable</span>
-      <p class="sop-body">Free and ad-free. Tyre guide across 19 brands and 24 inch to 63 inch rims. Reference: TRA service codes, tyre naming, mixing rules, a 40-term glossary, 8 failure modes, AS4457:2019. Calculators. 14 market notes. The Ask portal.</p>
+      <p class="sop-body">Free and ad-free. Tyre guide across 19 brands and 24 inch to 63 inch rims. Reference: TRA service codes, tyre naming, mixing rules, a 40-term glossary, 8 failure modes, AS 4457:2019. Calculators. 14 market notes. The Ask portal.</p>
       <div class="sop-chips"><span class="sop-chip is-arrow">Cross-brand</span><span class="sop-chip is-arrow">Free, no ads</span><span class="sop-chip is-arrow">Cited sources</span></div>
       <p class="sop-note">The only commercial tie is Jewell Tyres, which trades the tyres referenced. The site states this itself.</p>
     </div>
@@ -592,9 +592,10 @@ export function packPage() {
     </div>
     <div class="sop-cell">
       <p class="sop-core-name"><span class="sop-dropcap">E</span>xpression</p>
-      <span class="sop-status">Brand Identity v1</span>
-      <p class="sop-body">Brand Identity v1 (August 2026) sets it: black #0B0B0B ground at 60%, white type at 30%, one orange #FB8C1F at 10%, hairline rules at 1px, Archivo with IBM Plex Mono. Jewell amber #FEC013 is reserved for the endorsement so it does brand work in both directions. Voice is the trusted clinician: describe and specify, never recommend.</p>
-      <div class="sop-chips"><span class="sop-chip">Opinion, not advice</span><span class="sop-chip">Sibling to Jewell Tyres</span><span class="sop-chip">Written for crawlers too</span></div>
+      <span class="sop-status">Locked &middot; Brand Identity v1</span>
+      <p class="sop-body">Plain Australian. Kept current. Written like a tyre engineer explaining something to a fitter who is busy: short sentences, real words, and the term explained the first time it appears. Never a tyre advertisement, never a glossy brochure, never a site trying to sell you something.</p>
+      <div class="sop-chips"><span class="sop-chip">Describe, do not recommend</span><span class="sop-chip">Sister to Jewell Tyres</span><span class="sop-chip">Written for crawlers too</span></div>
+    </div>
     </div>
   </div>
 
@@ -609,7 +610,7 @@ export function packPage() {
       <p class="sop-k">Evidence</p>
       <ul class="sop-bullets">
         <li>The premise is stated on the site itself: every databook is manufacturer-aligned, PDF-gated, not cross-referenced, and none tell you what the tyre next door does in the same application.</li>
-        <li>Six named source families behind the corpus: databooks across 19 brands, the TRA Year Book, AS4457:2019, OEM fitment guides from seven machine makers, Tyre Stewardship Australia material, and 50 years of trading.</li>
+        <li>Six named source families behind the corpus: databooks across 19 brands, the TRA Year Book, AS 4457:2019, OEM fitment guides from seven machine makers, Tyre Stewardship Australia material, and 50 years of trading.</li>
         <li>Australia's OTR tyre market at about AUD 208 million in 2023 heading to about AUD 317 million by 2032, 4.78% CAGR, WA largest. Credence Research, cited and converted, not our data.</li>
         <li>The intent to be cited is explicit and technical: llms.txt maintained, robots.txt explicitly allowing GPTBot, ClaudeBot, PerplexityBot and the rest, Key facts blocks and FAQPage JSON-LD on substantive pages.</li>
       </ul>
@@ -734,7 +735,7 @@ export function packPage() {
   <p class="sop-label">The CORE questions &middot; Design (CQ11 to CQ16)</p>
   <div class="sop-block">
     <ol class="sop-killers">
-      <li><strong>Naming:</strong> Does otrearthmovertyres.com stay a separate brand, or converge on Jewell Tyres once it has authority of its own?</li>
+      <li><strong>Naming:</strong> Does OTR earthmovertyres.com stay a separate brand, or converge on Jewell Tyres once it has authority of its own?</li>
       <li><strong>Depth or breadth:</strong> Finish the 600 record catalogue, or go deeper on fewer sizes with trade commentary a databook cannot match?</li>
       <li><strong>The calculators:</strong> Which of the six unbuilt calculators do buyers actually need, and which were an idea that has not survived?</li>
       <li><strong>Sign-off:</strong> What is the procedure for signing off a verified spec before it can be served, and who signs it?</li>
@@ -849,7 +850,7 @@ export function packPage() {
     </div>
     <div class="sop-cell">
       <p class="sop-k">High-control</p>
-      <p class="sop-body">Mixing, repair and scrapping decisions, and anything AS4457 touches. The portal can point at the rule. It says to confirm against current OEM data and qualified inspection before acting, every time.</p>
+      <p class="sop-body">Mixing, repair and scrapping decisions, and anything AS 4457 touches. The portal can point at the rule. It says to confirm against current OEM data and qualified inspection before acting, every time.</p>
     </div>
   </div>
 
